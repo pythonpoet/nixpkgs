@@ -18,13 +18,7 @@ stdenv.mkDerivation rec {
     sha256 = "sha256-9/kFI38PG3AKsdDqEV/wEzSel9IlQQ/pvOyhU/N/aV0=";
   };
 
-  # patches = [
-  #   ./dont-fail-ln.patch
-  #   ./do-link-so.patch
-  # ];
-
   nativeBuildInputs = [ which ];
-  buildInputs = lib.optionals stdenv.hostPlatform.isFreeBSD [ gettext ];
 
   # configure script is not autotools-based, doesn't support these options
   dontAddStaticConfigureFlags = true;
@@ -45,8 +39,7 @@ stdenv.mkDerivation rec {
   installTargets = [
     "install"
     "install-lib-headers"
-  ]
-  ++ lib.optionals (!enableStatic) [
+  ] ++ lib.optionals (!enableStatic) [
     "install-lib-so-link"
   ];
 
