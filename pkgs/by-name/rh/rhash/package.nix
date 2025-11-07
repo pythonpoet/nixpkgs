@@ -18,10 +18,10 @@ stdenv.mkDerivation rec {
     sha256 = "sha256-9/kFI38PG3AKsdDqEV/wEzSel9IlQQ/pvOyhU/N/aV0=";
   };
 
-  patches = [
-    ./dont-fail-ln.patch
-    ./do-link-so.patch
-  ];
+  # patches = [
+  #   ./dont-fail-ln.patch
+  #   ./do-link-so.patch
+  # ];
 
   nativeBuildInputs = [ which ];
   buildInputs = lib.optionals stdenv.hostPlatform.isFreeBSD [ gettext ];
