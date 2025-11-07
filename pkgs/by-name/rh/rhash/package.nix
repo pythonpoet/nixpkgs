@@ -8,14 +8,14 @@
 }:
 
 stdenv.mkDerivation rec {
-  version = "1.4.4";
+  version = "1.4.6";
   pname = "rhash";
 
   src = fetchFromGitHub {
     owner = "rhash";
     repo = "RHash";
     rev = "v${version}";
-    sha256 = "sha256-3CW41ULdXoID4cOgrcG2j85tgIJ/sz5hU7A83qpuxf4=";
+    sha256 = "";
   };
 
   patches = [
