@@ -14,7 +14,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   src = fetchurl {
     url = "https://hyperrealm.github.io/libconfig/dist/libconfig-${finalAttrs.version}.tar.gz";
-    hash = "sha256-1iidkvbvmdzvi0gabfks7l1pvvn836zs4d5y2f95y92bk61g7il7=";
+    hash = "sha256-h8bzgplLJF+SE740or8ZyO59Az16uqUeiPu3uteeLcY=";
   };
 
   inherit doCheck;
