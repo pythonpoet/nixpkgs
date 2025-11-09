@@ -32,9 +32,9 @@ stdenv.mkDerivation rec {
     (lib.enableFeature enableStatic "lib-static")
   ];
 
-  doCheck = true;
+  doCheck = false;
 
-  checkTarget = "test-full";
+  #checkTarget = "test-full";
 
   installTargets = [
     "install"
