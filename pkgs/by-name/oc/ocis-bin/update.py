@@ -1,6 +1,5 @@
 #!/usr/bin/env nix-shell
-#!nix-shell -I nixpkgs=../../../../. -i python3 -p common-updater-scripts gnused nix coreutils python312
-"""#!nix-shell -I nixpkgs=./. -i python3 -p common-updater-scripts gnused nix coreutils python312"""
+#!nix-shell -i python3 -p common-updater-scripts gnused nix coreutils python312
 """
 Updater script for the ocis_5-bin package.
 
@@ -24,7 +23,7 @@ TRACKING_CHANNEL = "Production"  # Either Rolling or Production
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", None)
 
 MAJOR_VERSION = 7
-PKG_NAME = f"ocis_bin"
+PKG_NAME = f"ocis-bin"
 
 class TableParser(HTMLParser):
     def __init__(self, version):
@@ -141,7 +140,9 @@ def get_hash(os_name, arch, version):
 
 
 def update_source_version(pkg_name, version, hash_value, system):
-    nix_file = os.path.join(os.path.dirname(__file__), "package.nix")
+    #nix_file = os.path.join(os.path.dirname(__file__), "package.nix")
+    script_dir = os.path.dirname(os.path.realpath(__file__))
+    nix_file = os.path.join(script_dir, "package.nix")
     subprocess.run(
         [
             "update-source-version",
