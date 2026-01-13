@@ -111,18 +111,18 @@ def get_all_versions():
 
 
 def get_current_version():
-    """Extracts the version string directly from the Nix file in the current directory."""
-    # Try common filenames for the nix expression
-    for filename in ['default.nix', 'package.nix']:
-        if os.path.exists(filename):
-            with open(filename, 'r') as f:
-                content = f.read()
-                # Regex looks for: version = "1.2.3";
-                match = re.search(r'version\s*=\s*"([^"]+)"', content)
-                if match:
-                    return match.group(1)
-    
-    raise RuntimeError("Could not find version string in default.nix or package.nix")
+    result = subprocess.run(
+        [
+            "nix-instantiate",
+            "--eval",
+            "-E",
+            f"with import ./. {{}}; {PKG_NAME}.version or (lib.getVersion {PKG_NAME})",
+        ],
+        capture_output=True,
+        text=True,
+    )
+    result.check_returncode()
+    return result.stdout.strip().strip('"')
 
 
 def get_hash(os_name, arch, version):

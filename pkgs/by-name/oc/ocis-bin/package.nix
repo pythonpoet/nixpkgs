@@ -27,18 +27,18 @@ let
 
   hash =
     {
-      hash_386-linux = "sha256-2RtkxtVk7YN7CfsIBpMP85g84MNTzrnEgk10eFdfyyw=";
-      hash_amd64-linux = "sha256-tmUfDKLO35qCs1hauJQKhJhcnMhqOpcqDFtAggMFhLE=";
-      hash_arm64-linux = "sha256-ggRDW1cnTHMQKvOvCDH3eptH3O3PgYaondlzOGHTjio=";
-      hash_arm-linux = "sha256-uMLRow1NeHufSI5B4k5qSIfH3lTxg+WxzLxgdedAz40=";
-      hash_amd64-darwin = "sha256-LZ6n/f2MdbFaPnBCoJqZZ7HQiLG3Z6ZoatgFsxaFvMc=";
-      hash_arm64-darwin = "sha256-k5X2ZInFS/HlToOZPX23TRJqlx/XM1ZG++Xr4BHn8SY=";
+      hash_386-linux = "sha256-eR5yPDwjbjCsm6/ynI/xCCyzlQUMXSlc7xPebNWQxZ8=";
+      hash_amd64-linux = "sha256-MOLyuhslnKJlCbCgm+bAg/K1pFk8Q8miREOuap3egBQ=";
+      hash_arm64-linux = "sha256-P1oZI7oGyQ8JmeXdBbG5WHqdXbR9zwPvHmmkiV0ajH8=";
+      hash_arm-linux = "sha256-RhXkCzT8fb5/au+nJLsHRYSgLpXwFzhx2vayR/P4cfg=";
+      hash_amd64-darwin = "sha256-pFCZicFI4kbzgNmlayqYaa5P7e/Qm9SsfbFbeJ5oqbM=";
+      hash_arm64-darwin = "sha256-s+Lv2OBrlRCTu4K89rJeirudzXrGBdjqKA2WBTwioUE=";
     }
     ."hash_${arch}-${os}";
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "ocis-bin";
-  version = "5.0.9";
+  version = "7.0.1";
 
   src = fetchurl {
     url = "https://github.com/owncloud/ocis/releases/download/v${finalAttrs.version}/ocis-${finalAttrs.version}-${os}-${arch}";
