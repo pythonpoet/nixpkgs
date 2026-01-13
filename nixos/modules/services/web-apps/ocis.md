@@ -37,7 +37,7 @@ However, to make this configuration work, you will need to generate a configurat
 You can do this with:
 
 ```console
-$ nix-shell -p ocis_5-bin
+$ nix-shell -p ocis-bin
 $ mkdir scratch/
 $ cd scratch/
 $ ocis init --config-path . --admin-password "changeme"

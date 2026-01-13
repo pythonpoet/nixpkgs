@@ -1,7 +1,7 @@
 #!/usr/bin/env nix-shell
 #!nix-shell -i python3 -p common-updater-scripts gnused nix coreutils python312
 """
-Updater script for the ocis_5-bin package.
+Updater script for the ocis-bin package.
 
 This script fetches an HTML table from a specified URL and parses it to determine the release type
 (either "Rolling" or "Production") of a given software version. It uses the built-in urllib.request
