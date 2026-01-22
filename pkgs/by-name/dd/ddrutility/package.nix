@@ -27,8 +27,18 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Set of utilities for hard drive data rescue";
     homepage = "https://sourceforge.net/projects/ddrutility/";
+<<<<<<< HEAD
     license = lib.licenses.gpl2Plus;
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [ orivej ];
+||||||| 213fed0310e3
+    license = licenses.gpl2Plus;
+    platforms = platforms.linux;
+    maintainers = with maintainers; [ orivej ];
+=======
+    license = lib.licenses.gpl2Plus;
+    platforms = lib.platforms.linux;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

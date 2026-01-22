@@ -8,22 +8,19 @@
   lxml,
   pyasn1,
   pycryptodome,
-  pythonOlder,
   setuptools,
 }:
 
 buildPythonPackage rec {
   pname = "pywerview";
-  version = "0.7.3";
+  version = "0.7.5";
   pyproject = true;
-
-  disabled = pythonOlder "3.7";
 
   src = fetchFromGitHub {
     owner = "the-useless-one";
     repo = "pywerview";
     tag = "v${version}";
-    hash = "sha256-ZIv0IW7oruMBwinXvH/n1YEtbBFyLb8h/Qlh4JxvV4k=";
+    hash = "sha256-wl7/u9Uja/FflO3tN3UyanX2LIRG417RfWdyZCtUtGs=";
   };
 
   build-system = [ setuptools ];
@@ -49,9 +46,19 @@ buildPythonPackage rec {
   meta = {
     description = "Module for PowerSploit's PowerView support";
     homepage = "https://github.com/the-useless-one/pywerview";
+<<<<<<< HEAD
     changelog = "https://github.com/the-useless-one/pywerview/releases/tag/v${version}";
     license = lib.licenses.gpl3Plus;
     maintainers = with lib.maintainers; [ fab ];
+||||||| 213fed0310e3
+    changelog = "https://github.com/the-useless-one/pywerview/releases/tag/v${version}";
+    license = licenses.gpl3Plus;
+    maintainers = with maintainers; [ fab ];
+=======
+    changelog = "https://github.com/the-useless-one/pywerview/releases/tag/${src.tag}";
+    license = lib.licenses.gpl3Plus;
+    maintainers = with lib.maintainers; [ fab ];
+>>>>>>> master
     mainProgram = "pywerview";
   };
 }

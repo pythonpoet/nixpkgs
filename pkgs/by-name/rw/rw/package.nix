@@ -24,8 +24,16 @@ stdenv.mkDerivation rec {
       or byte streams. The rw command is designed to be a replacement for
       dd with standard style command line flags.
     '';
+<<<<<<< HEAD
     license = lib.licenses.isc;
     maintainers = with lib.maintainers; [ dtzWill ];
+||||||| 213fed0310e3
+    license = licenses.isc;
+    maintainers = with maintainers; [ dtzWill ];
+=======
+    license = lib.licenses.isc;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "rw";
   };
 }

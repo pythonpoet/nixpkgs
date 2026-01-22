@@ -35,7 +35,17 @@ stdenv.mkDerivation rec {
     mpfr
   ];
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  makeFlags = [
+    "CFLAGS=-std=c17"
+  ];
+
+  meta = {
+>>>>>>> master
     description = "Worst-Case Peak-Gain library";
     homepage = "https://github.com/fixif/WCPG";
     license = lib.licenses.cecill-b;

@@ -90,7 +90,15 @@ buildPythonPackage {
     changelog = "https://github.com/mindsdb/type_infer/releases/tag/${tag}";
     description = "Automated type inference for Machine Learning pipelines";
     homepage = "https://github.com/mindsdb/type_infer";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Only;
     maintainers = with lib.maintainers; [ mbalatsko ];
+||||||| 213fed0310e3
+    license = licenses.gpl3Only;
+    maintainers = with maintainers; [ mbalatsko ];
+=======
+    license = lib.licenses.gpl3Only;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

@@ -74,7 +74,13 @@ in
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "glib";
+<<<<<<< HEAD
   version = "2.86.2";
+||||||| 213fed0310e3
+  version = "2.86.1";
+=======
+  version = "2.86.3";
+>>>>>>> master
 
   outputs = [
     "bin"
@@ -87,7 +93,13 @@ stdenv.mkDerivation (finalAttrs: {
 
   src = fetchurl {
     url = "mirror://gnome/sources/glib/${lib.versions.majorMinor finalAttrs.version}/glib-${finalAttrs.version}.tar.xz";
+<<<<<<< HEAD
     hash = "sha256-inJOlwhVNX6oEB4ncnICOSoP/VQQqYM2rtVOxZET5hE=";
+||||||| 213fed0310e3
+    hash = "sha256-EZ0XCMoCJVbW0pie6QrRuCvZwNFmfgZpRKbQAg4tXlc=";
+=======
+    hash = "sha256-syEdjTS5313KBXh+8K1dfKdd7JmLlw4aqwAB0imXfGU=";
+>>>>>>> master
   };
 
   patches =

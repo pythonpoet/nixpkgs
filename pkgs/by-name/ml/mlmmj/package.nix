@@ -15,7 +15,7 @@ stdenv.mkDerivation rec {
     domain = "codeberg.org";
     owner = "mlmmj";
     repo = "mlmmj";
-    rev = "refs/tags/RELEASE_" + lib.replaceStrings [ "." ] [ "_" ] version;
+    tag = "RELEASE_" + lib.replaceStrings [ "." ] [ "_" ] version;
     hash = "sha256-kAo04onxVve3kCaM4h1APsjs3C4iePabkBFJeqvnPxo=";
   };
 
@@ -41,8 +41,17 @@ stdenv.mkDerivation rec {
   meta = {
     homepage = "http://mlmmj.org";
     description = "Mailing List Management Made Joyful";
+<<<<<<< HEAD
     maintainers = [ lib.maintainers.edwtjo ];
     platforms = lib.platforms.linux;
     license = lib.licenses.mit;
+||||||| 213fed0310e3
+    maintainers = [ maintainers.edwtjo ];
+    platforms = platforms.linux;
+    license = licenses.mit;
+=======
+    platforms = lib.platforms.linux;
+    license = lib.licenses.mit;
+>>>>>>> master
   };
 }

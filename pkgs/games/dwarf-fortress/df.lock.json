@@ -1,28 +1,74 @@
 {
   "game": {
     "latest": {
+<<<<<<< HEAD
       "linux": "53.06",
+||||||| 213fed0310e3
+      "linux": "53.05",
+=======
+      "linux": "53.10",
+>>>>>>> master
       "darwin": "0.47.05"
     },
     "versions": {
+<<<<<<< HEAD
       "53.06": {
+||||||| 213fed0310e3
+      "53.05": {
+=======
+      "53.10": {
+>>>>>>> master
         "df": {
+<<<<<<< HEAD
           "version": "53.06",
+||||||| 213fed0310e3
+          "version": "53.05",
+=======
+          "version": "53.10",
+>>>>>>> master
           "urls": {
             "linux": {
+<<<<<<< HEAD
               "url": "https://www.bay12games.com/dwarves/df_53_06_linux.tar.bz2",
               "outputHash": "sha256-PSoYP9XVgAYMPih3uP2pCMwkWic3jPkz+V5j9g0KO1A="
+||||||| 213fed0310e3
+              "url": "https://www.bay12games.com/dwarves/df_53_05_linux.tar.bz2",
+              "outputHash": "sha256-9x08aZHZJbH2JUTqFTPY7gkfqjgXHAnYJ0dZ0NimzsA="
+=======
+              "url": "https://www.bay12games.com/dwarves/df_53_10_linux.tar.bz2",
+              "outputHash": "sha256-JdG48F1EJ1lvnJQUq7fMCgBKWXX2nyJj8odkOtDi/fY="
+>>>>>>> master
             }
           }
         },
         "hack": {
+<<<<<<< HEAD
           "version": "53.06-r1",
+||||||| 213fed0310e3
+          "version": "53.05-r1",
+=======
+          "version": "53.10-r1",
+>>>>>>> master
           "git": {
             "url": "https://github.com/DFHack/dfhack.git",
+<<<<<<< HEAD
             "revision": "53.06-r1",
             "outputHash": "sha256-tjhfr7UKGaiuzjanFrYeG8CS20EDjPchB2fQr/hz9HI="
+||||||| 213fed0310e3
+            "revision": "53.05-r1",
+            "outputHash": "sha256-PTDP+UxLHG4VzrHDDwVaerEasSg9m8ut8ZYgN0LO/C4="
+=======
+            "revision": "53.10-r1",
+            "outputHash": "sha256-PSmZY8QK9hHgxh+VHYn1bFN9LScpBjpVzFaGHTEGCaY="
+>>>>>>> master
           },
+<<<<<<< HEAD
           "xmlRev": "24322fe4a30209399c1c5fe903726828edd9032b"
+||||||| 213fed0310e3
+          "xmlRev": "2bd33eba052f6ea3f65f4a22670029f2311b07b4"
+=======
+          "xmlRev": "3826f45ef0fad7bd3357a6d55d5c9d28b56614c2"
+>>>>>>> master
         }
       },
       "52.05": {

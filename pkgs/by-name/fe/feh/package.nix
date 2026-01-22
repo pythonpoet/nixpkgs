@@ -73,7 +73,6 @@ stdenv.mkDerivation (finalAttrs: {
     license = lib.licenses.mit-feh;
     maintainers = with lib.maintainers; [
       gepbird
-      globin
     ];
     platforms = lib.platforms.unix;
     mainProgram = "feh";

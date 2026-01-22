@@ -36,8 +36,17 @@ stdenv.mkDerivation rec {
     description = "XML parser for jabber";
 
     homepage = "https://github.com/timothytylee/iksemel-1.4";
+<<<<<<< HEAD
     license = lib.licenses.gpl2;
     maintainers = with lib.maintainers; [ disassembler ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    license = licenses.gpl2;
+    maintainers = with maintainers; [ disassembler ];
+    platforms = platforms.linux;
+=======
+    license = lib.licenses.gpl2;
+    platforms = lib.platforms.linux;
+>>>>>>> master
   };
 }

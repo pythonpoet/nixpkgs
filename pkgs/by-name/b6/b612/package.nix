@@ -46,6 +46,13 @@ stdenvNoCC.mkDerivation rec {
       epl10
       bsd3
     ];
+<<<<<<< HEAD
     platforms = lib.platforms.all;
+||||||| 213fed0310e3
+    platforms = platforms.all;
+=======
+    maintainers = with lib.maintainers; [ sternenseemann ];
+    platforms = lib.platforms.all;
+>>>>>>> master
   };
 }

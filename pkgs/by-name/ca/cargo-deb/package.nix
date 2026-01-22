@@ -51,9 +51,18 @@ rustPlatform.buildRustPackage rec {
     description = "Cargo subcommand that generates Debian packages from information in Cargo.toml";
     mainProgram = "cargo-deb";
     homepage = "https://github.com/kornelski/cargo-deb";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [
       Br1ght0ne
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [
+      Br1ght0ne
+=======
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       matthiasbeyer
     ];
   };

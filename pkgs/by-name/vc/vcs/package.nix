@@ -52,9 +52,19 @@ stdenv.mkDerivation {
   meta = {
     description = "Generates contact sheets from video files";
     homepage = "http://p.outlyer.net/vcs";
+<<<<<<< HEAD
     license = lib.licenses.lgpl21Plus;
     maintainers = with lib.maintainers; [ elitak ];
     platforms = with lib.platforms; unix;
+||||||| 213fed0310e3
+    license = licenses.lgpl21Plus;
+    maintainers = with maintainers; [ elitak ];
+    platforms = with platforms; unix;
+=======
+    license = lib.licenses.lgpl21Plus;
+    maintainers = [ ];
+    platforms = with lib.platforms; unix;
+>>>>>>> master
     mainProgram = "vcs";
   };
 }

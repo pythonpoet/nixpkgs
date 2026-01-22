@@ -75,6 +75,9 @@ buildPythonPackage rec {
     "test_sync__source_id__list"
     "test_sync_download"
     "test_transformer_group__download_grids"
+    # https://github.com/pyproj4/pyproj/issues/1553
+    "test_datum_horizontal"
+    "test_sub_crs"
   ];
 
   pythonImportsCheck = [
@@ -98,9 +101,18 @@ buildPythonPackage rec {
     mainProgram = "pyproj";
     homepage = "https://github.com/pyproj4/pyproj";
     changelog = "https://github.com/pyproj4/pyproj/blob/${src.rev}/docs/history.rst";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [
       lsix
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [
+      lsix
+=======
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       dotlambda
     ];
     teams = [ lib.teams.geospatial ];

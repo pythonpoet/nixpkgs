@@ -13,13 +13,25 @@
 
 buildGoModule (finalAttrs: {
   pname = "cosign";
+<<<<<<< HEAD
   version = "3.0.3";
+||||||| 213fed0310e3
+  version = "3.0.2";
+=======
+  version = "3.0.4";
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "sigstore";
     repo = "cosign";
     rev = "v${finalAttrs.version}";
+<<<<<<< HEAD
     hash = "sha256-2cCeSG3ELkSWL1ZJ/bMGm4Nj7OZgewyUwu8lblRjCh4=";
+||||||| 213fed0310e3
+    hash = "sha256-5jCO2LW7nzbzo+de0fpxBcVASDmINB6yFerkQZlo2o8=";
+=======
+    hash = "sha256-Ddq9MJNRZ+ywJwxIUP4nhag8UZIH/hOYnF71P3+gI/0=";
+>>>>>>> master
   };
 
   buildInputs = lib.optional (stdenv.hostPlatform.isLinux && pivKeySupport) (lib.getDev pcsclite);
@@ -29,7 +41,13 @@ buildGoModule (finalAttrs: {
     installShellFiles
   ];
 
+<<<<<<< HEAD
   vendorHash = "sha256-LTJoEEOGrmgQi+8T++wNMfs+jdWI+R+Xo1vBXuoLBMM=";
+||||||| 213fed0310e3
+  vendorHash = "sha256-hedkslhyAsictu9Cbw7CgreoWa1StLpTt8oTPNLr5fc=";
+=======
+  vendorHash = "sha256-TuA3LwZFAKjZ4aoX92tYd7eziG5N1vDOTsEgwhg5n6w=";
+>>>>>>> master
 
   subPackages = [
     "cmd/cosign"

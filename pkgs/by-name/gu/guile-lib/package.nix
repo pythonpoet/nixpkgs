@@ -59,10 +59,20 @@ stdenv.mkDerivation rec {
       modules into a coherent library.  Think "a down-scaled, limited-scope CPAN
       for Guile".
     '';
+<<<<<<< HEAD
     license = lib.licenses.gpl3Plus;
     maintainers = with lib.maintainers; [
       foo-dogsquared
     ];
+||||||| 213fed0310e3
+    license = licenses.gpl3Plus;
+    maintainers = with maintainers; [
+      foo-dogsquared
+    ];
+=======
+    license = lib.licenses.gpl3Plus;
+    maintainers = [ ];
+>>>>>>> master
     platforms = guile.meta.platforms;
   };
 }

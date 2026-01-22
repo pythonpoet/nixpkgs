@@ -4,22 +4,19 @@
   fetchFromGitHub,
   fastcore,
   packaging,
-  pythonOlder,
   setuptools,
 }:
 
-buildPythonPackage rec {
+buildPythonPackage (finalAttrs: {
   pname = "ghapi";
-  version = "1.0.8";
+  version = "1.0.9";
   pyproject = true;
-
-  disabled = pythonOlder "3.8";
 
   src = fetchFromGitHub {
     owner = "fastai";
     repo = "ghapi";
-    tag = version;
-    hash = "sha256-ZfOo5Icusj8Fm5i/HWGjjXtNWEB1wgYNzqeLeWbBJ/4=";
+    tag = finalAttrs.version;
+    hash = "sha256-gBwOxWHjGyTrAKpG7BVoO7eQJw3fcLMXaF7CbAwMOj8=";
   };
 
   build-system = [ setuptools ];
@@ -37,8 +34,18 @@ buildPythonPackage rec {
   meta = {
     description = "Python interface to GitHub's API";
     homepage = "https://github.com/fastai/ghapi";
+<<<<<<< HEAD
     changelog = "https://github.com/fastai/ghapi/releases/tag/${version}";
     license = with lib.licenses; [ asl20 ];
     maintainers = with lib.maintainers; [ fab ];
+||||||| 213fed0310e3
+    changelog = "https://github.com/fastai/ghapi/releases/tag/${version}";
+    license = with licenses; [ asl20 ];
+    maintainers = with maintainers; [ fab ];
+=======
+    changelog = "https://github.com/fastai/ghapi/releases/tag/${finalAttrs.src.tag}";
+    license = lib.licenses.asl20;
+    maintainers = with lib.maintainers; [ fab ];
+>>>>>>> master
   };
-}
+})

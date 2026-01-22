@@ -105,6 +105,7 @@ stdenv.mkDerivation (finalAttrs: {
     };
   };
 
+<<<<<<< HEAD
   meta =
     with lib;
     {
@@ -124,4 +125,43 @@ stdenv.mkDerivation (finalAttrs: {
     // lib.optionalAttrs createGrepReplacementLinks {
       priority = (gnugrep.meta.priority or meta.defaultPriority) - 1;
     };
+||||||| 213fed0310e3
+  meta =
+    with lib;
+    {
+      description = "Ultra fast grep with interactive query UI";
+      homepage = "https://github.com/Genivia/ugrep";
+      changelog = "https://github.com/Genivia/ugrep/releases/tag/v${finalAttrs.version}";
+      maintainers = with maintainers; [
+        numkem
+        mikaelfangel
+      ];
+      license = licenses.bsd3;
+      platforms = platforms.all;
+      mainProgram = "ug";
+    }
+    # Needed to ensure that the grep replacements take precedence over
+    # `gnugrep` when installed. Lower priority values win.
+    // lib.optionalAttrs createGrepReplacementLinks {
+      priority = (gnugrep.meta.priority or meta.defaultPriority) - 1;
+    };
+=======
+  meta = {
+    description = "Ultra fast grep with interactive query UI";
+    homepage = "https://github.com/Genivia/ugrep";
+    changelog = "https://github.com/Genivia/ugrep/releases/tag/v${finalAttrs.version}";
+    maintainers = with lib.maintainers; [
+      numkem
+      mikaelfangel
+    ];
+    license = lib.licenses.bsd3;
+    platforms = lib.platforms.all;
+    mainProgram = "ug";
+  }
+  # Needed to ensure that the grep replacements take precedence over
+  # `gnugrep` when installed. Lower priority values win.
+  // lib.optionalAttrs createGrepReplacementLinks {
+    priority = (gnugrep.meta.priority or lib.meta.defaultPriority) - 1;
+  };
+>>>>>>> master
 })

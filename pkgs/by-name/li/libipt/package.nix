@@ -36,8 +36,18 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Intel Processor Trace decoder library";
     homepage = "https://github.com/intel/libipt";
+<<<<<<< HEAD
     license = lib.licenses.bsd3;
     platforms = lib.platforms.unix;
     maintainers = with lib.maintainers; [ orivej ];
+||||||| 213fed0310e3
+    license = licenses.bsd3;
+    platforms = platforms.unix;
+    maintainers = with maintainers; [ orivej ];
+=======
+    license = lib.licenses.bsd3;
+    platforms = lib.platforms.unix;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

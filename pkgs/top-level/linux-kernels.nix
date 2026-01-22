@@ -373,7 +373,7 @@ in
 
         ch9344 = callPackage ../os-specific/linux/ch9344 { };
 
-        chipsec = callPackage ../tools/security/chipsec {
+        chipsec = callPackage ../by-name/ch/chipsec/package.nix {
           inherit kernel;
           withDriver = true;
         };
@@ -572,6 +572,8 @@ in
         mwprocapture = callPackage ../os-specific/linux/mwprocapture { };
 
         mxu11x0 = callPackage ../os-specific/linux/mxu11x0 { };
+
+        morse-driver = callPackage ../os-specific/linux/morse-driver { };
 
         # compiles but has to be integrated into the kernel somehow
         # Let's have it uncommented and finish it..

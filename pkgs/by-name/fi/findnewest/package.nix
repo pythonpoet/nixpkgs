@@ -22,7 +22,14 @@ stdenv.mkDerivation rec {
     homepage = "https://github.com/0-wiz-0/findnewest";
     description = "Recursively find newest file in a hierarchy and print its timestamp";
     mainProgram = "fn";
+<<<<<<< HEAD
     license = lib.licenses.bsd2;
     maintainers = with lib.maintainers; [ bhipple ];
+||||||| 213fed0310e3
+    license = licenses.bsd2;
+    maintainers = with maintainers; [ bhipple ];
+=======
+    license = lib.licenses.bsd2;
+>>>>>>> master
   };
 }

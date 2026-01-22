@@ -51,9 +51,19 @@ stdenv.mkDerivation {
   meta = {
     description = "eBPF verifier based on abstract interpretation";
     homepage = "https://github.com/vbpf/ebpf-verifier";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [ gaelreyrol ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    platforms = platforms.linux;
+    maintainers = with maintainers; [ gaelreyrol ];
+=======
+    license = lib.licenses.mit;
+    platforms = lib.platforms.linux;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "ebpf-verifier";
   };
 }

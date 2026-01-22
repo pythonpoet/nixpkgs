@@ -25,11 +25,23 @@
 
 stdenv.mkDerivation rec {
   pname = "cups";
+<<<<<<< HEAD
   version = "2.4.15";
+||||||| 213fed0310e3
+  version = "2.4.14";
+=======
+  version = "2.4.16";
+>>>>>>> master
 
   src = fetchurl {
     url = "https://github.com/OpenPrinting/cups/releases/download/v${version}/cups-${version}-source.tar.gz";
+<<<<<<< HEAD
     hash = "sha256-7/C71I/xq8u45G4o6Frvr/o5Gh2cTY3JKrOCKhMAjX8=";
+||||||| 213fed0310e3
+    hash = "sha256-ZgKIAg3W95yveZgRxMGjIHpIaJiZrCCTlZ1wo73Ldpk=";
+=======
+    hash = "sha256-AzlYcgS0+UKN0FkuswHewL+epuqNzl2WkNVr5YWrqS0=";
+>>>>>>> master
   };
 
   outputs = [
@@ -179,8 +191,18 @@ stdenv.mkDerivation rec {
   meta = {
     homepage = "https://openprinting.github.io/cups/";
     description = "Standards-based printing system for UNIX";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ matthewbauer ];
     platforms = lib.platforms.unix;
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [ matthewbauer ];
+    platforms = platforms.unix;
+=======
+    license = lib.licenses.asl20;
+    maintainers = [ ];
+    platforms = lib.platforms.unix;
+>>>>>>> master
   };
 }

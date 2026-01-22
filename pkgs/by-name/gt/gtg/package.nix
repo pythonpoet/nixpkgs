@@ -62,6 +62,7 @@ python3Packages.buildPythonApplication rec {
     gst-python
     liblarch
     caldav
+    vobject
   ];
 
   nativeCheckInputs = with python3Packages; [
@@ -74,7 +75,7 @@ python3Packages.buildPythonApplication rec {
     export HOME="$TMP"
   '';
 
-  format = "other";
+  pyproject = false;
 
   checkPhase = "xvfb-run pytest ../tests/";
 

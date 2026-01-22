@@ -46,7 +46,13 @@ buildGoModule rec {
       mit
       bsd3
     ];
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ kranzes ];
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ kranzes ];
+=======
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "edwood";
   };
 }

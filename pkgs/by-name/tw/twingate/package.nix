@@ -56,8 +56,15 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Twingate Client";
     homepage = "https://twingate.com";
+<<<<<<< HEAD
     license = lib.licenses.unfree;
     maintainers = with lib.maintainers; [ tonyshkurenko ];
+||||||| 213fed0310e3
+    license = licenses.unfree;
+    maintainers = with maintainers; [ tonyshkurenko ];
+=======
+    license = lib.licenses.unfree;
+>>>>>>> master
     platforms = [ "x86_64-linux" ];
   };
 }

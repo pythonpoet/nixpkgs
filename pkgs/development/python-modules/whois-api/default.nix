@@ -31,7 +31,15 @@ buildPythonPackage rec {
     description = "Whois API client library for Python";
     homepage = "https://github.com/whois-api-llc/whois-api-py";
     changelog = "https://github.com/whois-api-llc/whois-api-py/blob/${src.rev}/CHANGELOG.rst";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ mbalatsko ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ mbalatsko ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

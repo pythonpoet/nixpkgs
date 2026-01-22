@@ -33,7 +33,7 @@ stdenv.mkDerivation (finalAttrs: {
     mv target/usr/local/bin $out/
   '';
 
-  meta = with lib; {
+  meta = {
     homepage = "https://hadoop.apache.org/";
     description = "Framework for distributed processing of large data sets across clusters of computers";
     license = lib.licenses.asl20;
@@ -44,7 +44,15 @@ stdenv.mkDerivation (finalAttrs: {
       resources like CPU and memory are allocated according to the policies defined in the ResourceManager.
     '';
 
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ illustris ];
     platforms = filter (strings.hasSuffix "linux") (attrNames platformAttrs);
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ illustris ];
+    platforms = filter (strings.hasSuffix "linux") (attrNames platformAttrs);
+=======
+    maintainers = with lib.maintainers; [ illustris ];
+    platforms = lib.filter (lib.strings.hasSuffix "linux") (lib.attrNames platformAttrs);
+>>>>>>> master
   };
 })

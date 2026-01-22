@@ -27,9 +27,19 @@ buildPythonPackage rec {
   meta = {
     description = "Factory and registry pattern for Python classes";
     homepage = "https://class-registry.readthedocs.io/en/latest/";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [
       hrdinka
     ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [
+      hrdinka
+    ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

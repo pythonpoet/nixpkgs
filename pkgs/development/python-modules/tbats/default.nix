@@ -51,7 +51,15 @@ buildPythonPackage rec {
     description = "BATS and TBATS forecasting methods";
     homepage = "https://github.com/intive-DataScience/tbats";
     changelog = "https://github.com/intive-DataScience/tbats/releases/tag/${src.rev}";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ mbalatsko ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ mbalatsko ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

@@ -22,24 +22,24 @@
 
 buildPythonPackage rec {
   pname = "eventlet";
-  version = "0.40.0";
+  version = "0.40.3";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "eventlet";
     repo = "eventlet";
     tag = version;
-    hash = "sha256-fzCN+idYQ97nuDVfYn6VYQFBaaMxmnjWzFrmn+Aj+u4=";
+    hash = "sha256-yieyNx91jvKoh02zDFIEFk70yf3I27DWiumqoOjtdzQ=";
   };
 
   pythonRelaxDeps = lib.optionals isPyPy [ "greenlet" ];
 
-  nativeBuildInputs = [
+  build-system = [
     hatch-vcs
     hatchling
   ];
 
-  propagatedBuildInputs = [
+  dependencies = [
     dnspython
     greenlet
     six
@@ -77,8 +77,16 @@ buildPythonPackage rec {
 
   pythonImportsCheck = [ "eventlet" ];
 
+<<<<<<< HEAD
   meta = {
     changelog = "https://github.com/eventlet/eventlet/blob/v${version}/NEWS";
+||||||| 213fed0310e3
+  meta = with lib; {
+    changelog = "https://github.com/eventlet/eventlet/blob/v${version}/NEWS";
+=======
+  meta = {
+    changelog = "https://github.com/eventlet/eventlet/blob/${src.tag}/NEWS";
+>>>>>>> master
     description = "Concurrent networking library for Python";
     homepage = "https://github.com/eventlet/eventlet/";
     license = lib.licenses.mit;

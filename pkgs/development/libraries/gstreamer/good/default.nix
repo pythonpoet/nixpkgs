@@ -291,8 +291,18 @@ stdenv.mkDerivation (finalAttrs: {
       correct functionality, our preferred license (LGPL for the plug-in
       code, LGPL or LGPL-compatible for the supporting library).
     '';
+<<<<<<< HEAD
     license = lib.licenses.lgpl2Plus;
     platforms = lib.platforms.linux ++ lib.platforms.darwin;
     maintainers = with lib.maintainers; [ matthewbauer ];
+||||||| 213fed0310e3
+    license = licenses.lgpl2Plus;
+    platforms = platforms.linux ++ platforms.darwin;
+    maintainers = with maintainers; [ matthewbauer ];
+=======
+    license = lib.licenses.lgpl2Plus;
+    platforms = lib.platforms.linux ++ lib.platforms.darwin;
+    maintainers = [ ];
+>>>>>>> master
   };
 })

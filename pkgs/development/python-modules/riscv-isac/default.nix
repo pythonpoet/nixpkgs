@@ -11,15 +11,12 @@
   pytestCheckHook,
   pyyaml,
   ruamel-yaml,
-  pythonOlder,
 }:
 
 buildPythonPackage rec {
   pname = "riscv-isac";
   version = "0.18.0";
   format = "setuptools";
-
-  disabled = pythonOlder "3.7";
 
   src = fetchFromGitHub {
     owner = "riscv-software-src";
@@ -54,7 +51,15 @@ buildPythonPackage rec {
     mainProgram = "riscv_isac";
     homepage = "https://github.com/riscv/riscv-isac";
     changelog = "https://github.com/riscv-software-src/riscv-isac/blob/${version}/CHANGELOG.md";
+<<<<<<< HEAD
     license = lib.licenses.bsd3;
     maintainers = with lib.maintainers; [ genericnerdyusername ];
+||||||| 213fed0310e3
+    license = licenses.bsd3;
+    maintainers = with maintainers; [ genericnerdyusername ];
+=======
+    license = lib.licenses.bsd3;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

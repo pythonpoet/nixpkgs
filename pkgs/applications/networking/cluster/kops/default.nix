@@ -62,7 +62,6 @@ let
         maintainers = with lib.maintainers; [
           offline
           zimbatm
-          diegolelis
           yurrriq
         ];
       };

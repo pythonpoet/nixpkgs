@@ -42,9 +42,18 @@ stdenv.mkDerivation (finalAttrs: {
     license = lib.licenses.mit;
     homepage = "https://github.com/ebiggers/libdeflate";
     changelog = "https://github.com/ebiggers/libdeflate/blob/v${finalAttrs.version}/NEWS.md";
+<<<<<<< HEAD
     platforms = lib.platforms.unix ++ lib.platforms.windows;
     maintainers = with lib.maintainers; [
       orivej
+||||||| 213fed0310e3
+    platforms = platforms.unix ++ platforms.windows;
+    maintainers = with maintainers; [
+      orivej
+=======
+    platforms = lib.platforms.unix ++ lib.platforms.windows;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       kaction
     ];
     pkgConfigModules = [ "libdeflate" ];

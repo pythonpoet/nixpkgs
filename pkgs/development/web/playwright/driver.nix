@@ -27,13 +27,25 @@ let
     }
     .${system} or throwSystem;
 
+<<<<<<< HEAD
   version = "1.56.1";
+||||||| 213fed0310e3
+  version = "1.54.1";
+=======
+  version = "1.57.0";
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "Microsoft";
     repo = "playwright";
     rev = "v${version}";
+<<<<<<< HEAD
     hash = "sha256-39s1fb2tZZWWpZrs4/MAw4TdHkzEWj8YVoK39sj2UPE=";
+||||||| 213fed0310e3
+    hash = "sha256-xwyREgelHLkpbUXOZTppKK7L6dE4jx0d/lbDWSKGzTY=";
+=======
+    hash = "sha256-1g8XCToVKWOjLpWS6g60FpoIphg9Rn/nv10oRa7oyDA=";
+>>>>>>> master
   };
 
   babel-bundle = buildNpmPackage {
@@ -50,7 +62,7 @@ let
     pname = "expect-bundle";
     inherit version src;
     sourceRoot = "${src.name}/packages/playwright/bundles/expect";
-    npmDepsHash = "sha256-KwxNqPefvPPHG4vbco2O4G8WlA7l33toJdfNWHMTDOQ=";
+    npmDepsHash = "sha256-wXy6pkHJusB/WLgNKIPnuY4mTjntOMbrFrQp0UjrqAw=";
     dontNpmBuild = true;
     installPhase = ''
       cp -r . "$out"
@@ -70,7 +82,7 @@ let
     pname = "utils-bundle-core";
     inherit version src;
     sourceRoot = "${src.name}/packages/playwright-core/bundles/utils";
-    npmDepsHash = "sha256-gEm2oTxj4QIiGnIOPffOLh3BYSngpGToF89ObnDYBqs=";
+    npmDepsHash = "sha256-lOwcHRpv7OKfdnwqHxvh+Gy5AE/Up3Vro4czedNiOpc=";
     dontNpmBuild = true;
     installPhase = ''
       cp -r . "$out"
@@ -92,7 +104,13 @@ let
     inherit version src;
 
     sourceRoot = "${src.name}"; # update.sh depends on sourceRoot presence
+<<<<<<< HEAD
     npmDepsHash = "sha256-AOjiI6Db+WL4iTaY9XWH4tntBHM8SFP7/7S8RJZitlI=";
+||||||| 213fed0310e3
+    npmDepsHash = "sha256-4bsX8Q8V3CBpIsyqMYTzfERQQPY5zlPf7CoqR6UkUHU=";
+=======
+    npmDepsHash = "sha256-69v+H3EQuJadma8b/l9rA/yMFCCb7wWiBGN/LoJLJM8=";
+>>>>>>> master
 
     nativeBuildInputs = [
       cacert
@@ -122,9 +140,6 @@ let
 
       shopt -s extglob
 
-      mkdir -p "$out/lib"
-      cp -r packages/playwright/node_modules "$out/lib/node_modules"
-
       mkdir -p "$out/lib/node_modules/playwright"
       cp -r packages/playwright/!(bundles|src|node_modules|.*) "$out/lib/node_modules/playwright"
 
@@ -149,7 +164,6 @@ let
       license = lib.licenses.asl20;
       maintainers = with lib.maintainers; [
         kalekseev
-        marie
       ];
       inherit (nodejs.meta) platforms;
     };

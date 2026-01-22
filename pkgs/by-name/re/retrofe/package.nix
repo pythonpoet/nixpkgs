@@ -105,8 +105,17 @@ stdenv.mkDerivation {
   meta = {
     description = "Frontend for arcade cabinets and media PCs";
     homepage = "http://retrofe.nl/";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Plus;
     maintainers = with lib.maintainers; [ hrdinka ];
     platforms = with lib.platforms; linux;
+||||||| 213fed0310e3
+    license = licenses.gpl3Plus;
+    maintainers = with maintainers; [ hrdinka ];
+    platforms = with platforms; linux;
+=======
+    license = lib.licenses.gpl3Plus;
+    platforms = with lib.platforms; linux;
+>>>>>>> master
   };
 }

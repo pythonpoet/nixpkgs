@@ -30,9 +30,18 @@ stdenv.mkDerivation rec {
       writing daemons in languages other than C, C++ or Perl (e.g. /bin/sh,
       Java).
     '';
+<<<<<<< HEAD
     license = lib.licenses.gpl2Plus;
     maintainers = [ lib.maintainers.sander ];
     platforms = lib.platforms.unix;
+||||||| 213fed0310e3
+    license = licenses.gpl2Plus;
+    maintainers = [ maintainers.sander ];
+    platforms = platforms.unix;
+=======
+    license = lib.licenses.gpl2Plus;
+    platforms = lib.platforms.unix;
+>>>>>>> master
     mainProgram = "daemon";
   };
 }

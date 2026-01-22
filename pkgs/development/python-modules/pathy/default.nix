@@ -5,7 +5,6 @@
   mock,
   pathlib-abc,
   pytestCheckHook,
-  pythonOlder,
   setuptools,
   smart-open,
   typer,
@@ -15,8 +14,6 @@ buildPythonPackage rec {
   pname = "pathy";
   version = "0.11.0";
   pyproject = true;
-
-  disabled = pythonOlder "3.8";
 
   src = fetchPypi {
     inherit pname version;
@@ -54,7 +51,14 @@ buildPythonPackage rec {
     description = "Path interface for local and cloud bucket storage";
     mainProgram = "pathy";
     homepage = "https://github.com/justindujardin/pathy";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ melling ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [ melling ];
+=======
+    license = lib.licenses.asl20;
+>>>>>>> master
   };
 }

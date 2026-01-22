@@ -26,9 +26,23 @@ buildGoModule rec {
   meta = {
     description = "Self-contained user/group management and authentication service";
     homepage = "https://github.com/majewsky/portunus";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Plus;
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [ majewsky ];
     teams = [ lib.teams.c3d2 ];
+||||||| 213fed0310e3
+    license = licenses.gpl3Plus;
+    platforms = platforms.linux;
+    maintainers = with maintainers; [ majewsky ];
+    teams = [ teams.c3d2 ];
+=======
+    license = lib.licenses.gpl3Plus;
+    platforms = lib.platforms.linux;
+    maintainers = with lib.maintainers; [
+      majewsky
+      SuperSandro2000
+    ];
+>>>>>>> master
   };
 }

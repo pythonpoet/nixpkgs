@@ -53,9 +53,18 @@ buildPythonApplication rec {
     description = "Browse Reddit from your Terminal (fork of rtv)";
     mainProgram = "tuir";
     homepage = "https://gitlab.com/Chocimier/tuir";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [
       Br1ght0ne
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [
+      Br1ght0ne
+=======
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       matthiasbeyer
       brokenpip3
     ];

@@ -45,7 +45,7 @@ stdenv.mkDerivation rec {
   version = "0.27.1";
 
   src = fetchurl {
-    url = "http://releases.wildfiregames.com/0ad-${version}-unix-build.tar.xz";
+    url = "https://releases.wildfiregames.com/0ad-${version}-unix-build.tar.xz";
     hash = "sha256-oKU1XutZaNJPKDdwc2FQ2XTa/sugd1TUZicH3BcBa/s=";
   };
 
@@ -162,7 +162,7 @@ stdenv.mkDerivation rec {
     install -D build/resources/0ad.desktop $out/share/applications/0ad.desktop
   '';
 
-  meta = with lib; {
+  meta = {
     description = "Free, open-source game of ancient warfare";
     homepage = "https://play0ad.com/";
     license = with lib.licenses; [
@@ -172,8 +172,16 @@ stdenv.mkDerivation rec {
       cc-by-sa-30
       lib.licenses.zlib # otherwise masked by pkgs.zlib
     ];
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ chvp ];
     platforms = subtractLists lib.platforms.i686 lib.platforms.linux;
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ chvp ];
+    platforms = subtractLists platforms.i686 platforms.linux;
+=======
+    maintainers = with lib.maintainers; [ chvp ];
+    platforms = lib.subtractLists lib.platforms.i686 lib.platforms.linux;
+>>>>>>> master
     mainProgram = "0ad";
   };
 }

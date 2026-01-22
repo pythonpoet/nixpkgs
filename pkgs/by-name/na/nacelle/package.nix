@@ -13,7 +13,7 @@ stdenvNoCC.mkDerivation {
   version = "${majorVersion}.${minorVersion}";
 
   src = fetchzip {
-    url = "https://dotcolon.net/download/fonts/nacelle_${majorVersion}${minorVersion}.zip";
+    url = "https://dotcolon.net/files/fonts/nacelle_${majorVersion}${minorVersion}.zip";
     hash = "sha256-e4QsPiyfWEAYHWdwR3CkGc2UzuA3hZPYYlWtIubY0Oo=";
     stripRoot = false;
   };
@@ -26,8 +26,16 @@ stdenvNoCC.mkDerivation {
     runHook postInstall
   '';
 
+<<<<<<< HEAD
   meta = {
     homepage = "http://dotcolon.net/font/nacelle/";
+||||||| 213fed0310e3
+  meta = with lib; {
+    homepage = "http://dotcolon.net/font/nacelle/";
+=======
+  meta = {
+    homepage = "https://dotcolon.net/font/nacelle/";
+>>>>>>> master
     description = "Improved version of the Aileron font";
     platforms = lib.platforms.all;
     maintainers = with lib.maintainers; [ minijackson ];

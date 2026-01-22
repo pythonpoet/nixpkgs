@@ -13,13 +13,21 @@
   gtk3,
   jdk25,
   openjfx25,
+<<<<<<< HEAD
   gradle_9,
+||||||| 213fed0310e3
+  gradle_8,
+=======
+  jre25_minimal,
+  gradle_9,
+>>>>>>> master
   python3,
   postgresql,
   jbang,
 }:
 
 let
+<<<<<<< HEAD
   jdk = jdk25;
   openjfx = openjfx25;
   gradle = gradle_9;
@@ -27,17 +35,76 @@ let
   ltwa = fetchurl {
     url = ltwaUrl;
     hash = "sha256-jnS8Y9x8eg2L3L3RPnS6INTs19mEtwzfNIjJUw6HtIY=";
+||||||| 213fed0310e3
+  jdk = jdk21.override {
+    enableJavaFX = true;
+    openjfx_jdk = openjfx25;
+=======
+  jdk = jdk25;
+  openjfx = openjfx25;
+  jre = jre25_minimal.override {
+    modules = [
+      "java.base"
+      "java.compiler"
+      "java.datatransfer"
+      "java.desktop"
+      "java.logging"
+      "java.management"
+      "java.naming"
+      "java.net.http"
+      "java.prefs"
+      "java.scripting"
+      "java.sql"
+      "java.sql.rowset"
+      "java.xml"
+      "jdk.httpserver"
+      "jdk.incubator.vector"
+      "jdk.jsobject"
+      "jdk.net"
+      "jdk.security.auth"
+      "jdk.unsupported"
+      "jdk.unsupported.desktop"
+      "jdk.xml.dom"
+    ];
+>>>>>>> master
   };
+<<<<<<< HEAD
+||||||| 213fed0310e3
+  # "Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0."
+  gradle = gradle_8;
+=======
+  gradle = gradle_9;
+  ltwaUrl = "https://www.issn.org/wp-content/uploads/2021/07/ltwa_20210702.csv";
+  ltwa = fetchurl {
+    url = ltwaUrl;
+    hash = "sha256-jnS8Y9x8eg2L3L3RPnS6INTs19mEtwzfNIjJUw6HtIY=";
+  };
+  kotlinDslVersion = "6.4.2";
+>>>>>>> master
 in
 stdenv.mkDerivation rec {
+<<<<<<< HEAD
   version = "6.0-alpha.3";
+||||||| 213fed0310e3
+  version = "5.13";
+=======
+  version = "6.0-alpha.4";
+>>>>>>> master
   pname = "jabref";
 
   src = fetchFromGitHub {
     owner = "JabRef";
     repo = "jabref";
+<<<<<<< HEAD
     tag = "v${version}";
     hash = "sha256-ZX4LQe8xKZCDJqVh+L9BHkJK82Pz/qPhlaE8SrAin6o=";
+||||||| 213fed0310e3
+    rev = "v${version}";
+    hash = "sha256-inE2FXAaEEiq7343KwtjEiTEHLtn01AzP0foTpsLoAw=";
+=======
+    tag = "v${version}";
+    hash = "sha256-ZhyWYZD8QT3dH6MwG2kMjTAjkxaVFIMR4C9aAvi3FJQ=";
+>>>>>>> master
     fetchSubmodules = true;
   };
 
@@ -61,6 +128,7 @@ stdenv.mkDerivation rec {
   };
 
   postPatch = ''
+<<<<<<< HEAD
     sed -i -e '/vendor/d' -e '/JavaLanguageVersion/s/24/25/' build-logic/src/main/kotlin/org.jabref.gradle.feature.compile.gradle.kts
     sed -i -e '/javafx-base/s/24.0.1/25/' build-support/src/main/java/*.java
 
@@ -71,6 +139,20 @@ stdenv.mkDerivation rec {
 
     pushd jablib
 
+||||||| 213fed0310e3
+=======
+    sed -i -e '/vendor/d' -e '/JavaLanguageVersion/s/24/25/' build-logic/src/main/kotlin/org.jabref.gradle.feature.compile.gradle.kts
+    sed -i -e '/javafx-base/s/24.0.2/25/' build-support/src/main/java/*.java
+    sed -i -e 's/javafx = .*/javafx = "25"/' versions/build.gradle.kts
+
+    sed -i -e '1a //REPOS file://${mitmCache}/https/repo.maven.apache.org/maven2,file://${mitmCache}/https/plugins.gradle.org/m2' build-support/src/main/java/*.java
+
+    substituteInPlace build-logic/build.gradle.kts \
+      --replace-fail '`kotlin-dsl`' 'id("org.gradle.kotlin.kotlin-dsl") version "${kotlinDslVersion}"'
+
+    pushd jablib
+
+>>>>>>> master
     # Disable update check
     substituteInPlace src/main/java/org/jabref/logic/preferences/JabRefCliPreferences.java \
       --replace-fail 'VERSION_CHECK_ENABLED, Boolean.TRUE' \
@@ -135,8 +217,37 @@ stdenv.mkDerivation rec {
       tar xf $tarball -C $out --strip-components=1
     done
 
+    # Replace .so files with the ones from nixpkgs
+    cp ${openjfx}/modules_libs/javafx.graphics/*.so $out/lib
     # Temp fix: openjfx doesn't build with webkit
     unzip $out/lib/javafx-web-*-*.jar libjfxwebkit.so -d $out/lib/
+
+<<<<<<< HEAD
+    # Use postgresql from nixpkgs since the bundled binary doesn't work on NixOS
+    ARCH1=${if stdenv.isAarch64 then "arm64v8" else "amd64"}
+    ARCH2=${if stdenv.isAarch64 then "arm_64" else "x86_64"}
+    mkdir postgresql
+    cd postgresql
+    ln -s ${postgresql}/{lib,share} ./
+    mkdir -p bin
+    ln -s ${postgresql}/bin/{postgres,initdb} ./bin
+    # Wrap pg_ctl to workaround https://github.com/NixOS/nixpkgs/issues/83770
+    # Use custom wrap to workaround https://github.com/NixOS/nixpkgs/issues/330471
+    makeShellWrapper ${postgresql}/bin/pg_ctl ./bin/pg_ctl \
+      --add-flags '-o "-k /tmp"'
+    chmod +x ./bin/pg_ctl
+
+    jar=$(ls $out/lib/embedded-postgres-binaries-linux-$ARCH1-*.jar)
+
+    tar -cJf postgres-linux-$ARCH2.txz *
+    zip $jar postgres-linux-$ARCH2.txz
+    cd ..
+
+||||||| 213fed0310e3
+=======
+    zip -d $out/lib/javafx-media-*-*.jar "*.so"
+    zip -d $out/lib/javafx-graphics-*-*.jar "*.so"
+    zip -d $out/lib/javafx-web-*-*.jar "*.so"
 
     # Use postgresql from nixpkgs since the bundled binary doesn't work on NixOS
     ARCH1=${if stdenv.isAarch64 then "arm64v8" else "amd64"}
@@ -158,6 +269,7 @@ stdenv.mkDerivation rec {
     zip $jar postgres-linux-$ARCH2.txz
     cd ..
 
+>>>>>>> master
     runHook postInstall
   '';
 
@@ -168,6 +280,7 @@ stdenv.mkDerivation rec {
       MODULE=$(sed -n -E 's/\s*--module (.*) \\/\1/p' $out/bin/$bin)
       rm $out/bin/$bin*
 
+<<<<<<< HEAD
       # put this in postFixup because some gappsWrapperArgs are generated in gappsWrapperArgsHook in preFixup
       makeWrapper ${jdk}/bin/java $out/bin/$bin \
         "''${gappsWrapperArgs[@]}" \
@@ -182,6 +295,29 @@ stdenv.mkDerivation rec {
           --module-path $MODULE_PATH \
           --module $MODULE"
     done
+||||||| 213fed0310e3
+    # put this in postFixup because some gappsWrapperArgs are generated in gappsWrapperArgsHook in preFixup
+    makeWrapper ${jdk}/bin/java $out/bin/JabRef \
+      "''${gappsWrapperArgs[@]}" \
+      --suffix PATH : ${lib.makeBinPath [ xdg-utils ]} \
+      --add-flags "-Djava.library.path=$out/lib/ --patch-module org.jabref=$out/share/java/jabref/resources/main" \
+      --add-flags "$DEFAULT_JVM_OPTS"
+=======
+      # put this in postFixup because some gappsWrapperArgs are generated in gappsWrapperArgsHook in preFixup
+      makeWrapper ${jre}/bin/java $out/bin/$bin \
+        "''${gappsWrapperArgs[@]}" \
+        --suffix PATH : ${
+          lib.makeBinPath [
+            xdg-utils
+            postgresql
+          ]
+        } \
+        --add-flags "$DEFAULT_JVM_OPTS \
+          -Djava.library.path=$out/lib/ \
+          --module-path $MODULE_PATH \
+          --module $MODULE"
+    done
+>>>>>>> master
 
     # lowercase alias (for convenience and required for browser extensions)
     ln -sf $out/bin/jabgui $out/bin/jabref

@@ -30,14 +30,26 @@
 
 buildPythonPackage rec {
   pname = "docling-ibm-models";
+<<<<<<< HEAD
   version = "3.10.2";
+||||||| 213fed0310e3
+  version = "3.9.1";
+=======
+  version = "3.10.3";
+>>>>>>> master
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "docling-project";
     repo = "docling-ibm-models";
     tag = "v${version}";
+<<<<<<< HEAD
     hash = "sha256-71US/jW0d38dA+hY9uPxtCWmrD9Rl43Ozx5cS3fGEtM=";
+||||||| 213fed0310e3
+    hash = "sha256-2yoXV6iE9AGjdfQtOSqoMWlNtTM2ueL+cl5IcCHguDg=";
+=======
+    hash = "sha256-eX0dnXh+WB/TIgKJzkpp1SOqJ2KSxoOD4JL+nsfqkLM=";
+>>>>>>> master
   };
 
   build-system = [

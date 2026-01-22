@@ -39,7 +39,13 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "vte";
+<<<<<<< HEAD
   version = "0.82.2";
+||||||| 213fed0310e3
+  version = "0.82.1";
+=======
+  version = "0.82.3";
+>>>>>>> master
 
   outputs = [
     "out"
@@ -49,7 +55,13 @@ stdenv.mkDerivation (finalAttrs: {
 
   src = fetchurl {
     url = "mirror://gnome/sources/vte/${lib.versions.majorMinor finalAttrs.version}/vte-${finalAttrs.version}.tar.xz";
+<<<<<<< HEAD
     hash = "sha256-4Slar8RoKztVDxI13CZ5uqD3FXDY7VQ8ABwSg9UwvpE=";
+||||||| 213fed0310e3
+    hash = "sha256-eTdtcEAtJx4tOEJEGOGupyNXk00nLjIeOQa3Fwanjjo=";
+=======
+    hash = "sha256-bcYnj2/uMNB9GgPiujM1sepOjSlWzrWdhhlDEV2TCoU=";
+>>>>>>> master
   };
 
   patches = [
@@ -67,12 +79,22 @@ stdenv.mkDerivation (finalAttrs: {
       url = "https://gitlab.gnome.org/GNOME/vte/-/commit/f672ed15a88dd3e25c33aa0a5ef6f6d291a6d5c7.patch";
       hash = "sha256-JdLDild5j7marvR5n2heW9YD00+bwzJIoxDlzO5r/6w=";
     })
+<<<<<<< HEAD
 
     (fetchpatch {
       name = "qemu-backspace.patch";
       url = "https://gitlab.gnome.org/GNOME/vte/-/commit/79d5fea437185e52a740130d5a276b83dfdcd558.patch";
       hash = "sha256-28Cehw5uJuGG7maLGUl1TBwfIwuXpkLKSQ2lXauLlz0=";
     })
+||||||| 213fed0310e3
+
+    # Add option to not build the vte application
+    (fetchpatch {
+      url = "https://github.com/GNOME/vte/commit/6b7a6a7df9df99368b7ce5ac5903bd2578167567.patch";
+      hash = "sha256-s3HigfTZLtGmsZS6dfD3YE95ZdBjB4WOWDvuoatOu3o=";
+    })
+=======
+>>>>>>> master
   ];
 
   nativeBuildInputs = [

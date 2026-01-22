@@ -49,7 +49,15 @@ buildPythonPackage rec {
     description = "This package provides \"rough path\" tools for analysing vector time series";
     homepage = "https://github.com/datasig-ac-uk/esig";
     changelog = "https://github.com/datasig-ac-uk/esig/blob/release/CHANGELOG";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Only;
     maintainers = with lib.maintainers; [ mbalatsko ];
+||||||| 213fed0310e3
+    license = licenses.gpl3Only;
+    maintainers = with maintainers; [ mbalatsko ];
+=======
+    license = lib.licenses.gpl3Only;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

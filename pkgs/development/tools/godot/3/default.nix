@@ -182,7 +182,14 @@ stdenv.mkDerivation (self: {
       "x86_64-linux"
       "aarch64-linux"
     ];
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [
+||||||| 213fed0310e3
+    maintainers = with maintainers; [
+=======
+    mainProgram = "godot3";
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       rotaerk
       twey
     ];

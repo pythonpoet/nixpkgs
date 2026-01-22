@@ -54,10 +54,21 @@ stdenv.mkDerivation (finalAttrs: {
       keyboard to keyboard messaging to Amateur Radio Operators.
     '';
     homepage = "http://js8call.com/";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Plus;
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [
       melling
+||||||| 213fed0310e3
+    license = licenses.gpl3Plus;
+    platforms = platforms.linux;
+    maintainers = with maintainers; [
+      melling
+=======
+    license = lib.licenses.gpl3Plus;
+    platforms = lib.platforms.linux;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       sarcasticadmin
     ];
   };

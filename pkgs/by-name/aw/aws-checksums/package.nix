@@ -34,8 +34,18 @@ stdenv.mkDerivation rec {
   meta = {
     description = "HW accelerated CRC32c and CRC32";
     homepage = "https://github.com/awslabs/aws-checksums";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     platforms = lib.platforms.unix;
     maintainers = with lib.maintainers; [ orivej ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    platforms = platforms.unix;
+    maintainers = with maintainers; [ orivej ];
+=======
+    license = lib.licenses.asl20;
+    platforms = lib.platforms.unix;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

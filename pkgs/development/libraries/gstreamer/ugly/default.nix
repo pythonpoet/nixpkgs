@@ -112,8 +112,18 @@ stdenv.mkDerivation (finalAttrs: {
       the plug-ins or the supporting libraries might not be how we'd
       like. The code might be widely known to present patent problems.
     '';
+<<<<<<< HEAD
     license = if enableGplPlugins then lib.licenses.gpl2Plus else lib.licenses.lgpl2Plus;
     platforms = lib.platforms.unix;
     maintainers = with lib.maintainers; [ matthewbauer ];
+||||||| 213fed0310e3
+    license = if enableGplPlugins then licenses.gpl2Plus else licenses.lgpl2Plus;
+    platforms = platforms.unix;
+    maintainers = with maintainers; [ matthewbauer ];
+=======
+    license = if enableGplPlugins then lib.licenses.gpl2Plus else lib.licenses.lgpl2Plus;
+    platforms = lib.platforms.unix;
+    maintainers = [ ];
+>>>>>>> master
   };
 })

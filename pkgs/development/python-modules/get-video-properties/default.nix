@@ -33,7 +33,15 @@ buildPythonPackage {
   meta = {
     description = "Get video properties";
     homepage = "https://github.com/mvasilkov/python-get-video-properties";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ globin ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ globin ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

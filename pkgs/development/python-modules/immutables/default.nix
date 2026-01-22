@@ -4,15 +4,12 @@
   fetchFromGitHub,
   setuptools,
   pytestCheckHook,
-  pythonOlder,
 }:
 
 buildPythonPackage rec {
   pname = "immutables";
   version = "0.21";
   pyproject = true;
-
-  disabled = pythonOlder "3.8";
 
   src = fetchFromGitHub {
     owner = "MagicStack";
@@ -45,7 +42,14 @@ buildPythonPackage rec {
     description = "Immutable mapping type";
     homepage = "https://github.com/MagicStack/immutables";
     changelog = "https://github.com/MagicStack/immutables/releases/tag/v${version}";
+<<<<<<< HEAD
     license = with lib.licenses; [ asl20 ];
     maintainers = with lib.maintainers; [ catern ];
+||||||| 213fed0310e3
+    license = with licenses; [ asl20 ];
+    maintainers = with maintainers; [ catern ];
+=======
+    license = with lib.licenses; [ asl20 ];
+>>>>>>> master
   };
 }

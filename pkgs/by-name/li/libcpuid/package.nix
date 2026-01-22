@@ -23,9 +23,18 @@ stdenv.mkDerivation rec {
     description = "Small C library for x86 CPU detection and feature extraction";
     mainProgram = "cpuid_tool";
     changelog = "https://raw.githubusercontent.com/anrieff/libcpuid/master/ChangeLog";
+<<<<<<< HEAD
     license = lib.licenses.bsd2;
     maintainers = with lib.maintainers; [
       orivej
+||||||| 213fed0310e3
+    license = licenses.bsd2;
+    maintainers = with maintainers; [
+      orivej
+=======
+    license = lib.licenses.bsd2;
+    maintainers = [
+>>>>>>> master
     ];
     platforms = lib.platforms.x86;
   };

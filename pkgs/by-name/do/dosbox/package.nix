@@ -97,9 +97,19 @@ stdenv.mkDerivation rec {
       unmodified. In order to utilize all of DOSBox's features you need to first
       understand some basic concepts about the MS-DOS environment.
     '';
+<<<<<<< HEAD
     license = lib.licenses.gpl2Plus;
     maintainers = with lib.maintainers; [ matthewbauer ];
     platforms = lib.platforms.unix;
+||||||| 213fed0310e3
+    license = licenses.gpl2Plus;
+    maintainers = with maintainers; [ matthewbauer ];
+    platforms = platforms.unix;
+=======
+    license = lib.licenses.gpl2Plus;
+    maintainers = [ ];
+    platforms = lib.platforms.unix;
+>>>>>>> master
     mainProgram = "dosbox";
   };
 }

@@ -52,7 +52,12 @@ rustPlatform.buildRustPackage (finalAttrs: {
   versionCheckProgramArg = "--argc-version";
 
   passthru = {
+<<<<<<< HEAD
     update-script = nix-update-script { };
+||||||| 213fed0310e3
+=======
+    updateScript = nix-update-script { };
+>>>>>>> master
     tests = {
       cross =
         (

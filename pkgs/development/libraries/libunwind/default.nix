@@ -67,7 +67,13 @@ stdenv.mkDerivation (finalAttrs: {
   meta = {
     homepage = "https://www.nongnu.org/libunwind";
     description = "Portable and efficient API to determine the call-chain of a program";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ orivej ];
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ orivej ];
+=======
+    maintainers = [ ];
+>>>>>>> master
     pkgConfigModules = [
       "libunwind"
       "libunwind-coredump"

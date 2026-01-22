@@ -48,7 +48,13 @@ buildGoModule rec {
       * Strip out server side fields when piping kubectl get $R -o yaml | tfk8s --strip
     '';
     homepage = "https://github.com/jrhouston/tfk8s/";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ bryanasdev000 ];
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ bryanasdev000 ];
+=======
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "tfk8s";
   };
 }

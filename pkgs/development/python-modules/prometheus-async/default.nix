@@ -53,7 +53,15 @@ buildPythonPackage rec {
     description = "Async helpers for prometheus_client";
     homepage = "https://github.com/hynek/prometheus-async";
     changelog = "https://github.com/hynek/prometheus-async/blob/${src.rev}/CHANGELOG.md";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ mbalatsko ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [ mbalatsko ];
+=======
+    license = lib.licenses.asl20;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

@@ -5,18 +5,19 @@
   meson,
   ninja,
   nix-update-script,
+  pkgsBuildBuild,
   runCommand,
 }:
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "janet";
-  version = "1.39.1";
+  version = "1.40.1";
 
   src = fetchFromGitHub {
     owner = "janet-lang";
     repo = "janet";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-Hd8DueT9f7vmK0QFJdRx7FgZ8BYh5prQyM++5Yb6tg4=";
+    hash = "sha256-BV5hVg85QgN8DXiMF2kA3IQNuvWjcsyciiuQP5+c+7c=";
   };
 
   postPatch = ''
@@ -29,6 +30,7 @@ stdenv.mkDerivation (finalAttrs: {
       --replace "'test/suite-ev.janet'," ""
   '';
 
+  depsBuildBuild = [ pkgsBuildBuild.stdenv.cc ];
   nativeBuildInputs = [
     meson
     ninja
@@ -67,9 +69,18 @@ stdenv.mkDerivation (finalAttrs: {
     description = "Janet programming language";
     mainProgram = "janet";
     homepage = "https://janet-lang.org/";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [
       andrewchambers
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [
+      andrewchambers
+=======
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       peterhoeg
     ];
     platforms = lib.platforms.all;

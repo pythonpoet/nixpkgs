@@ -72,10 +72,22 @@ python3Packages.buildPythonApplication rec {
     '';
     homepage = "https://apps.gnome.org/Letterpress/";
     changelog = "https://gitlab.gnome.org/World/Letterpress/-/releases/${version}";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Plus;
     maintainers = [ lib.maintainers.dawidd6 ];
     teams = [ lib.teams.gnome-circle ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    license = licenses.gpl3Plus;
+    maintainers = [ maintainers.dawidd6 ];
+    teams = [ teams.gnome-circle ];
+    platforms = platforms.linux;
+=======
+    license = lib.licenses.gpl3Plus;
+    maintainers = [ ];
+    teams = [ lib.teams.gnome-circle ];
+    platforms = lib.platforms.linux;
+>>>>>>> master
     mainProgram = "letterpress";
   };
 }

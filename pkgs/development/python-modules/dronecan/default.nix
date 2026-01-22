@@ -26,7 +26,14 @@ buildPythonPackage rec {
       DroneCAN is a lightweight protocol designed for reliable communication in aerospace and robotic applications via CAN bus.
     '';
     homepage = "https://dronecan.github.io/";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     teams = [ lib.teams.ororatech ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    teams = [ teams.ororatech ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
   };
 }

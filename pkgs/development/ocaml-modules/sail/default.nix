@@ -79,7 +79,15 @@ buildDunePackage {
   meta = {
     homepage = "https://github.com/rems-project/sail";
     description = "Language for describing the instruction-set architecture (ISA) semantics of processors";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ genericnerdyusername ];
     license = lib.licenses.bsd2;
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ genericnerdyusername ];
+    license = licenses.bsd2;
+=======
+    maintainers = [ ];
+    license = lib.licenses.bsd2;
+>>>>>>> master
   };
 }

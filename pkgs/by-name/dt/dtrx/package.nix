@@ -23,14 +23,14 @@
 
 python3Packages.buildPythonApplication rec {
   pname = "dtrx";
-  version = "8.5.3";
-  format = "pyproject";
+  version = "8.7.1";
+  pyproject = true;
 
   src = fetchFromGitHub {
     owner = "dtrx-py";
     repo = "dtrx";
     rev = version;
-    sha256 = "sha256-LB3F6jcqQPRsjFO4L2fPAPnacDAdtcaadgGbwXA9LAw=";
+    sha256 = "sha256-FNSFEGIK0vDNlvqc8BKDCB/0hoxrITfeh59JcyzX3jY=";
   };
 
   makeWrapperArgs =
@@ -67,8 +67,16 @@ python3Packages.buildPythonApplication rec {
   meta = {
     description = "Do The Right Extraction: A tool for taking the hassle out of extracting archives";
     homepage = "https://github.com/dtrx-py/dtrx";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Plus;
     maintainers = [ ];
+||||||| 213fed0310e3
+    license = licenses.gpl3Plus;
+    maintainers = [ ];
+=======
+    license = lib.licenses.gpl3Plus;
+    maintainers = with lib.maintainers; [ colinsane ];
+>>>>>>> master
     mainProgram = "dtrx";
   };
 }

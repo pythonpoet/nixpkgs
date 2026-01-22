@@ -5,7 +5,6 @@
   fetchFromGitHub,
   fetchpatch,
   pythonAtLeast,
-  pythonOlder,
   replaceVars,
 
   # build
@@ -45,16 +44,32 @@
 
 buildPythonPackage rec {
   pname = "django";
+<<<<<<< HEAD
   version = "4.2.27";
   format = "pyproject";
+||||||| 213fed0310e3
+  version = "4.2.26";
+  format = "pyproject";
+=======
+  version = "4.2.27";
+  pyproject = true;
+>>>>>>> master
 
-  disabled = pythonOlder "3.8";
+  disabled = pythonAtLeast "3.13";
 
   src = fetchFromGitHub {
     owner = "django";
     repo = "django";
+<<<<<<< HEAD
     rev = "refs/tags/${version}";
     hash = "sha256-vdY85Ib2knRFLPmZZ6ojiD5R9diuvpVut1+nOVXSp0Y=";
+||||||| 213fed0310e3
+    rev = "refs/tags/${version}";
+    hash = "sha256-2NkkQcsY+BDvLGtvjYfGwgAK2S6LDbbcl7CwbwuF5a0=";
+=======
+    tag = version;
+    hash = "sha256-vdY85Ib2knRFLPmZZ6ojiD5R9diuvpVut1+nOVXSp0Y=";
+>>>>>>> master
   };
 
   patches = [
@@ -137,7 +152,7 @@ buildPythonPackage rec {
     tblib
     tzdata
   ]
-  ++ lib.flatten (lib.attrValues optional-dependencies);
+  ++ lib.concatAttrValues optional-dependencies;
 
   doCheck =
     !stdenv.hostPlatform.isDarwin

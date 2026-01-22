@@ -7,7 +7,7 @@
 python3Packages.buildPythonApplication rec {
   pname = "epr";
   version = "2.4.13";
-  format = "pyproject";
+  pyproject = true;
 
   src = fetchFromGitHub {
     owner = "wustho";
@@ -24,8 +24,17 @@ python3Packages.buildPythonApplication rec {
     description = "CLI Epub Reader";
     mainProgram = "epr";
     homepage = "https://github.com/wustho/epr";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = [ lib.maintainers.Br1ght0ne ];
     platforms = lib.platforms.all;
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = [ maintainers.Br1ght0ne ];
+    platforms = platforms.all;
+=======
+    license = lib.licenses.mit;
+    platforms = lib.platforms.all;
+>>>>>>> master
   };
 }

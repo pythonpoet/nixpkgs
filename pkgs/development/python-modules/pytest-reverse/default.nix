@@ -31,7 +31,15 @@ buildPythonPackage rec {
     description = "Pytest plugin to reverse test order";
     homepage = "https://github.com/adamchainz/pytest-reverse";
     changelog = "https://github.com/adamchainz/pytest-reverse/blob/${src.tag}/CHANGELOG.rst";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ mbalatsko ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ mbalatsko ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

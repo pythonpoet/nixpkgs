@@ -40,8 +40,21 @@ stdenv.mkDerivation rec {
       lgpl21Plus
       bsd2
     ];
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ euxane ];
     teams = [ lib.teams.helsinki-systems ];
     platforms = lib.platforms.all;
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ euxane ];
+    teams = [ teams.helsinki-systems ];
+    platforms = platforms.all;
+=======
+    maintainers = with lib.maintainers; [
+      das_j
+      euxane
+      helsinki-Jo
+    ];
+    platforms = lib.platforms.all;
+>>>>>>> master
   };
 }

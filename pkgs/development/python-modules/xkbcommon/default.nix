@@ -34,7 +34,18 @@ buildPythonPackage rec {
   meta = {
     homepage = "https://github.com/sde1000/python-xkbcommon";
     description = "Python bindings for libxkbcommon using cffi";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ chvp ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ chvp ];
+=======
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [
+      chvp
+      doronbehar
+    ];
+>>>>>>> master
   };
 }

@@ -53,8 +53,21 @@ buildGoModule rec {
   meta = {
     description = "Indexes Git repositories into Elasticsearch for GitLab";
     mainProgram = "gitlab-elasticsearch-indexer";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ yayayayaka ];
     teams = [ lib.teams.cyberus ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ yayayayaka ];
+    teams = [ teams.cyberus ];
+=======
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [
+      e1mo
+      xanderio
+      yayayayaka
+    ];
+>>>>>>> master
   };
 }

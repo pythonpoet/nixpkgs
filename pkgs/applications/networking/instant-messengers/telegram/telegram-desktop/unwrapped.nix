@@ -42,14 +42,26 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "telegram-desktop-unwrapped";
+<<<<<<< HEAD
   version = "6.3.4";
+||||||| 213fed0310e3
+  version = "6.3.1";
+=======
+  version = "6.4.1";
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "telegramdesktop";
     repo = "tdesktop";
     rev = "v${finalAttrs.version}";
     fetchSubmodules = true;
+<<<<<<< HEAD
     hash = "sha256-0d5PFo0tv8yayHqsd44gvodgbyRb1b5IPXtJahkWjHU=";
+||||||| 213fed0310e3
+    hash = "sha256-kIiOHXFOjHCE3GaizNvpu8rUCuJKBN5Oi7p0NvHYy04=";
+=======
+    hash = "sha256-jmUj0kTyok5CsOe/to6bTN3jH/RMF7jE+AnFJi2nW90=";
+>>>>>>> master
   };
 
   nativeBuildInputs = [

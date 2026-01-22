@@ -9,7 +9,6 @@ let
     min
     id
     warn
-    pipe
     ;
   inherit (lib.attrsets) mapAttrs attrNames attrValues;
   inherit (lib) max;
@@ -144,10 +143,13 @@ rec {
     fold' 0;
 
   /**
-    `fold` is an alias of `foldr` for historic reasons
+    `fold` is an alias of `foldr` for historic reasons.
+
+    ::: {.warning}
+    This function will be removed in 26.05.
+    :::
   */
-  # FIXME(Profpatsch): deprecate?
-  fold = foldr;
+  fold = warn "fold has been deprecated, use foldr instead" foldr;
 
   /**
     “left fold”, like `foldr`, but from the left:
@@ -437,7 +439,7 @@ rec {
   flatten = x: if isList x then concatMap (y: flatten y) x else [ x ];
 
   /**
-    Remove elements equal to 'e' from a list.  Useful for buildInputs.
+    Remove elements equal to `e` from a list.  Useful for `buildInputs`.
 
     # Inputs
 
@@ -1924,7 +1926,7 @@ rec {
   allUnique = list: (length (unique list) == length list);
 
   /**
-    Intersects list 'list1' and another list (`list2`).
+    Intersects list `list1` and another list (`list2`).
 
     O(nm) complexity.
 
@@ -1952,7 +1954,7 @@ rec {
   intersectLists = e: filter (x: elem x e);
 
   /**
-    Subtracts list 'e' from another list (`list2`).
+    Subtracts list `e` from another list (`list2`).
 
     O(nm) complexity.
 
@@ -1981,7 +1983,7 @@ rec {
 
   /**
     Test if two lists have no common element.
-    It should be slightly more efficient than (intersectLists a b == [])
+    It should be slightly more efficient than `intersectLists a b == []`.
 
     # Inputs
 

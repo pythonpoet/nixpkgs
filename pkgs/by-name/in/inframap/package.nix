@@ -27,7 +27,15 @@ buildGoModule rec {
     description = "Read your tfstate or HCL to generate a graph specific for each provider, showing only the resources that are most important/relevant";
     homepage = "https://github.com/cycloidio/inframap";
     changelog = "https://github.com/cycloidio/inframap/releases/tag/${src.tag}";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ urandom ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ urandom ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

@@ -22,7 +22,15 @@ buildPythonPackage rec {
   meta = {
     description = "Python Implementation of Graham Cormode and S. Muthukrishnan's Effective Computation of Biased Quantiles over Data Streams in ICDE'05";
     homepage = "https://github.com/matttproud/python_quantile_estimation";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ mbalatsko ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [ mbalatsko ];
+=======
+    license = lib.licenses.asl20;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

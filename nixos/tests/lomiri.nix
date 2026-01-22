@@ -76,6 +76,7 @@ let
   };
 
   sharedTestFunctions = ''
+<<<<<<< HEAD
     from collections.abc import Callable
     import tempfile
     import subprocess
@@ -142,6 +143,76 @@ let
       machine.screenshot("lomiri_launched")
 
     def wait_for_text(text) -> None:
+||||||| 213fed0310e3
+    def wait_for_text(text):
+=======
+    from collections.abc import Callable
+    import tempfile
+    import subprocess
+
+    # Based on terminal-emulators.nix' check_for_pink
+    def check_for_color(color: str) -> Callable[[bool], bool]:
+      def check_for_color_retry(final=False) -> bool:
+        with tempfile.NamedTemporaryFile() as tmpin:
+          machine.send_monitor_command("screendump {}".format(tmpin.name))
+
+          cmd = 'convert {} -define histogram:unique-colors=true -format "%c" histogram:info:'.format(
+            tmpin.name
+          )
+          ret = subprocess.run(cmd, shell=True, capture_output=True)
+          if ret.returncode != 0:
+            raise Exception(
+              "image analysis failed with exit code {}".format(ret.returncode)
+            )
+
+          text = ret.stdout.decode("utf-8")
+          return color in text
+
+      return check_for_color_retry
+
+    def check_for_color_continued_presence(color: str) -> Callable[[bool], bool]:
+      colorFunc: Callable[[bool], bool] = check_for_color(color)
+      def check_for_color_continued_presence_retry(final=False) -> bool:
+        colorPresent: bool = colorFunc(final)
+
+        if final:
+          # If it fails now, retry handles the exception raising.
+          # Otherwise, we passed.
+          return colorPresent
+        else:
+          if colorPresent:
+            # We want retry to continue running us until the timeout, so signal failure.
+            return False
+          else:
+            # Color disappeared
+            raise Exception(
+              "color {} has disappeared from the screen!".format(color)
+            )
+      return check_for_color_continued_presence_retry
+
+    def ensure_lomiri_running() -> None:
+      """
+      Ensure that Lomiri has finished starting up.
+      """
+
+      # Process runs
+      machine.wait_until_succeeds("pgrep -u ${user} -f 'lomiri --mode=full-shell'")
+
+      # Output rendering from Lomiri has started when it starts printing performance diagnostics
+      machine.wait_for_console_text("Last frame took")
+
+      # One of the last UI elements that loads is the clock. In the past, we could OCR for AM/PM to ensure it's there. That is now flaky.
+      # The next best thing is to look for the launcher button, and ensure it stays around for awhile (DE doesn't crash).
+      launcherColor: str = "#5277C3"
+      with machine.nested("Waiting for the screen to have launcherColor {} on it:".format(launcherColor)):
+        retry(check_for_color(launcherColor))
+      with machine.nested("Ensuring launcherColor {} stays present on the screen:".format(launcherColor)):
+        retry(fn=check_for_color_continued_presence(launcherColor), timeout_seconds=30)
+
+      machine.screenshot("lomiri_launched")
+
+    def wait_for_text(text) -> None:
+>>>>>>> master
       """
       Wait for on-screen text, and try to optimise retry count for slow hardware.
       """
@@ -274,7 +345,7 @@ let
       titleOcr = "r\"(${builtins.concatStringsSep "|" titles})\"";
     in
     builtins.listToAttrs (
-      builtins.map (
+      map (
         {
           name,
           left,

@@ -8,21 +8,18 @@
   mock,
   poetry-core,
   pytestCheckHook,
-  pythonOlder,
   requests,
 }:
 
-buildPythonPackage rec {
+buildPythonPackage (finalAttrs: {
   pname = "mf2py";
   version = "2.0.1";
   pyproject = true;
 
-  disabled = pythonOlder "3.8";
-
   src = fetchFromGitHub {
     owner = "microformats";
     repo = "mf2py";
-    tag = "v${version}";
+    tag = "v${finalAttrs.version}";
     hash = "sha256-mhJ+s1rtXEJ6DqVmiyWNEK+3cdDLpR63Q4QGmD9wVio=";
   };
 
@@ -45,8 +42,18 @@ buildPythonPackage rec {
   meta = {
     description = "Microformats2 parser written in Python";
     homepage = "https://microformats.org/wiki/mf2py";
+<<<<<<< HEAD
     changelog = "https://github.com/microformats/mf2py/blob/v${version}/CHANGELOG.md";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ ambroisie ];
+||||||| 213fed0310e3
+    changelog = "https://github.com/microformats/mf2py/blob/v${version}/CHANGELOG.md";
+    license = licenses.mit;
+    maintainers = with maintainers; [ ambroisie ];
+=======
+    changelog = "https://github.com/microformats/mf2py/blob/v${finalAttrs.version}/CHANGELOG.md";
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [ ambroisie ];
+>>>>>>> master
   };
-}
+})

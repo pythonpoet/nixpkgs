@@ -39,7 +39,7 @@ stdenv.mkDerivation rec {
   enableParallelBuilding = true;
   makeFlags = [
     "PREFIX=$(out)"
-    "-C src"
+    "--directory=src"
   ];
 
   passthru.tests = {
@@ -59,7 +59,15 @@ stdenv.mkDerivation rec {
 
   # outputs = [ "out" "dev" ];
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  __structuredAttrs = true;
+
+  meta = {
+>>>>>>> master
     description = "Library for loading eBPF programs and reading and manipulating eBPF objects from user-space";
     homepage = "https://github.com/libbpf/libbpf";
     license = with lib.licenses; [

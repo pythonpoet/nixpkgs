@@ -55,8 +55,18 @@ stdenv.mkDerivation rec {
       - Distro agnostic
       - No installation
     '';
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = [ lib.maintainers.matthewbauer ];
     platforms = lib.platforms.all;
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = [ maintainers.matthewbauer ];
+    platforms = platforms.all;
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+    platforms = lib.platforms.all;
+>>>>>>> master
   };
 }

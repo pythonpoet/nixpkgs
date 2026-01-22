@@ -10,19 +10,43 @@
   prefetch-npm-deps,
   rsync,
   stdenv,
+  nodejs_22,
 }:
+<<<<<<< HEAD
 let
   electron = electron_37;
 in
+||||||| 213fed0310e3
+
+=======
+let
+  electron = electron_37;
+  nodejs = nodejs_22;
+in
+>>>>>>> master
 buildNpmPackage rec {
   pname = "super-productivity";
+<<<<<<< HEAD
   version = "16.5.5";
+||||||| 213fed0310e3
+  version = "16.3.0";
+=======
+  version = "16.9.4";
+
+  inherit nodejs;
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "johannesjo";
     repo = "super-productivity";
     tag = "v${version}";
+<<<<<<< HEAD
     hash = "sha256-0V68wkkuyOFcv4Wl2Kqk4Soa/nOB7CizelYyI0TKU+8=";
+||||||| 213fed0310e3
+    hash = "sha256-Im5f3FjXa8i9nbWrhbYXGNAflitjfRGs8lGEQi42+CU=";
+=======
+    hash = "sha256-XCpExMXWLvRFagi453T9g00hsNZtOKGQ9Qmp+KHE5aQ=";
+>>>>>>> master
 
     postFetch = ''
       find $out -name package-lock.json -exec ${lib.getExe npm-lockfile-fix} -r {} \;
@@ -65,7 +89,13 @@ buildNpmPackage rec {
       dontInstall = true;
 
       outputHashMode = "recursive";
+<<<<<<< HEAD
       hash = "sha256-gsGzwwzt54Ww9CyHaHVAM4v1mHM2vQePw5vM8x1EGao=";
+||||||| 213fed0310e3
+      hash = "sha256-uaJ/k4xdxDdakfRfAdM//sFaGYZx4pWiMwZGmrw7X3Y=";
+=======
+      hash = "sha256-s/TfHMAol3rfq/4mSMQLDaukL1HHHAdc/1rkuj7s8+A=";
+>>>>>>> master
     }
   );
 

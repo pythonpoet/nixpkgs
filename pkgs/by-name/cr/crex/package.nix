@@ -25,9 +25,19 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Explore, test, and check regular expressions in the terminal";
     homepage = "https://octobanana.com/software/crex";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ dtzWill ];
     platforms = lib.platforms.all;
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ dtzWill ];
+    platforms = platforms.all;
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+    platforms = lib.platforms.all;
+>>>>>>> master
     mainProgram = "crex";
   };
 }

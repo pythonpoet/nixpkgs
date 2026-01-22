@@ -37,9 +37,19 @@ stdenv.mkDerivation rec {
   meta = {
     homepage = "https://vslavik.github.io/diff-pdf/";
     description = "Simple tool for visually comparing two PDF files";
+<<<<<<< HEAD
     license = lib.licenses.gpl2;
     platforms = lib.platforms.all;
     maintainers = with lib.maintainers; [ dtzWill ];
+||||||| 213fed0310e3
+    license = licenses.gpl2;
+    platforms = platforms.all;
+    maintainers = with maintainers; [ dtzWill ];
+=======
+    license = lib.licenses.gpl2;
+    platforms = lib.platforms.all;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "diff-pdf";
   };
 }

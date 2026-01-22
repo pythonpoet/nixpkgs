@@ -10,16 +10,16 @@
   setuptools,
 }:
 
-buildPythonPackage rec {
+buildPythonPackage (finalAttrs: {
   pname = "python-tado";
-  version = "0.18.15";
+  version = "0.18.16";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "wmalgadey";
     repo = "PyTado";
-    tag = version;
-    hash = "sha256-FUnD5JVS816XQYqXGSDnypqcYuKVhEeFIFcENf8BkcU=";
+    tag = finalAttrs.version;
+    hash = "sha256-jHPTu0/DYJXbSqiJXQzmiK6gmtJf88Y0BV1wj/X+qpc=";
   };
 
   build-system = [ setuptools ];
@@ -49,9 +49,19 @@ buildPythonPackage rec {
   meta = {
     description = "Python binding for Tado web API";
     homepage = "https://github.com/wmalgadey/PyTado";
+<<<<<<< HEAD
     changelog = "https://github.com/wmalgadey/PyTado/releases/tag/${src.tag}";
     license = lib.licenses.gpl3Plus;
     maintainers = with lib.maintainers; [ jamiemagee ];
+||||||| 213fed0310e3
+    changelog = "https://github.com/wmalgadey/PyTado/releases/tag/${src.tag}";
+    license = licenses.gpl3Plus;
+    maintainers = with maintainers; [ jamiemagee ];
+=======
+    changelog = "https://github.com/wmalgadey/PyTado/releases/tag/${finalAttrs.src.tag}";
+    license = lib.licenses.gpl3Plus;
+    maintainers = with lib.maintainers; [ jamiemagee ];
+>>>>>>> master
     mainProgram = "pytado";
   };
-}
+})

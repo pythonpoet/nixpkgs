@@ -25,9 +25,10 @@
   apr,
   xz,
   curl,
+  c-ares,
 }:
 let
-  version = "2024.1.1";
+  version = "2024.1.3";
 in
 stdenv.mkDerivation rec {
   pname = "simgear";
@@ -36,8 +37,8 @@ stdenv.mkDerivation rec {
   src = fetchFromGitLab {
     owner = "flightgear";
     repo = "simgear";
-    tag = "v${version}";
-    hash = "sha256-hOA/q/cTsqRy82rTAXRxyHBDdw93TW9UL+K5Jq5b/08=";
+    tag = version;
+    hash = "sha256-1zbw/lIjTbVwhxHPvXRlxPmYJeWmKvPE/RDrTL0PXb4=";
   };
 
   nativeBuildInputs = [ cmake ];
@@ -66,7 +67,15 @@ stdenv.mkDerivation rec {
     xz
   ];
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  propagatedBuildInputs = [ c-ares ];
+
+  meta = {
+>>>>>>> master
     description = "Simulation construction toolkit";
     homepage = "https://wiki.flightgear.org/SimGear";
     maintainers = with lib.maintainers; [ raskin ];

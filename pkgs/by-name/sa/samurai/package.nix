@@ -58,7 +58,13 @@ stdenv.mkDerivation rec {
       mit
       asl20
     ]; # see LICENSE
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ dtzWill ];
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ dtzWill ];
+=======
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "samu";
     platforms = lib.platforms.all;
   };

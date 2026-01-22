@@ -84,8 +84,17 @@ stdenv.mkDerivation rec {
   meta = {
     homepage = "https://qtpfsgui.sourceforge.net/";
     description = "Complete open source solution for HDR photography";
+<<<<<<< HEAD
     license = lib.licenses.gpl2;
     platforms = lib.platforms.linux;
     maintainers = [ lib.maintainers.hrdinka ];
+||||||| 213fed0310e3
+    license = licenses.gpl2;
+    platforms = platforms.linux;
+    maintainers = [ maintainers.hrdinka ];
+=======
+    license = lib.licenses.gpl2;
+    platforms = lib.platforms.linux;
+>>>>>>> master
   };
 }

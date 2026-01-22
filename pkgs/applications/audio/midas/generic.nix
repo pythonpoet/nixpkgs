@@ -76,9 +76,21 @@ stdenv.mkDerivation rec {
   meta = {
     inherit homepage;
     description = "Editor for the ${brand} ${type} digital mixer";
+<<<<<<< HEAD
     sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
     license = lib.licenses.unfree;
     platforms = lib.platforms.linux;
     maintainers = [ lib.maintainers.magnetophon ];
+||||||| 213fed0310e3
+    sourceProvenance = with sourceTypes; [ binaryNativeCode ];
+    license = licenses.unfree;
+    platforms = platforms.linux;
+    maintainers = [ maintainers.magnetophon ];
+=======
+    sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
+    license = lib.licenses.unfree;
+    platforms = lib.platforms.linux;
+    maintainers = with lib.maintainers; [ magnetophon ];
+>>>>>>> master
   };
 }

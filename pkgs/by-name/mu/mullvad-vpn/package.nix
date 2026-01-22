@@ -67,7 +67,13 @@ let
     systemd
   ];
 
+<<<<<<< HEAD
   version = "2025.13";
+||||||| 213fed0310e3
+  version = "2025.7";
+=======
+  version = "2025.14";
+>>>>>>> master
 
   selectSystem =
     attrs:
@@ -79,8 +85,16 @@ let
   };
 
   hash = selectSystem {
+<<<<<<< HEAD
     x86_64-linux = "sha256-zgU6pBujCXBhDO9XAqpUSDNuQt5daQ1gVwopXwc0nGo=";
     aarch64-linux = "sha256-BDrH99li0GWJ+/9QUrHfKxC1JExG3jvd0ujXPKhGM1c=";
+||||||| 213fed0310e3
+    x86_64-linux = "sha256-wKmwCLF+H/ByZFYGQMEJT6gmAt2Aa0vZalqaMptPjhU=";
+    aarch64-linux = "sha256-lsHpbxVxThxi+eKY+9c7VcXlDdxBTds6NQKrS0rxt34=";
+=======
+    x86_64-linux = "sha256-JHuYHi4uBHzMopa45ipwsdx/3Ox/FxN3lYhBACQOCkE=";
+    aarch64-linux = "sha256-miCh1x6sCcAbg9iX7SJzYcxJ8DIQVNdrg6b39ht8gTw=";
+>>>>>>> master
   };
 in
 
@@ -147,7 +161,6 @@ stdenv.mkDerivation {
   nativeInstallCheckInputs = [
     versionCheckHook
   ];
-  versionCheckProgramArg = "--version";
   doInstallCheck = true;
 
   passthru.updateScript = ./update.sh;
@@ -162,7 +175,6 @@ stdenv.mkDerivation {
     platforms = lib.platforms.unix;
     badPlatforms = [ lib.systems.inspect.patterns.isDarwin ];
     maintainers = with lib.maintainers; [
-      Br1ght0ne
       ymarkus
     ];
   };

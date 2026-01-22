@@ -5,6 +5,7 @@
   autoconf,
   automake,
   libtool,
+  bash,
 }:
 
 stdenv.mkDerivation rec {
@@ -18,15 +19,37 @@ stdenv.mkDerivation rec {
     hash = "sha256-P3LaDMMNPyEnA8nO1Bm7H0mW/hVBr0cFdg+p2JmWcGI=";
   };
 
+  strictDeps = true;
+  enableParallelBuilding = true;
+
+  outputs = [
+    "out"
+    "dev"
+  ];
+
   nativeBuildInputs = [
     autoconf
     automake
     libtool
   ];
 
+  buildInputs = [
+    bash
+  ];
+
   preConfigure = "./autogen.sh";
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  preFixup = ''
+    moveToOutput bin/libnet-config "$dev"
+  '';
+
+  meta = {
+>>>>>>> master
     homepage = "https://github.com/sam-github/libnet";
     description = "Portable framework for low-level network packet construction";
     mainProgram = "libnet-config";

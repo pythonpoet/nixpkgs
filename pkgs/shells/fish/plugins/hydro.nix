@@ -18,7 +18,15 @@ buildFishPlugin {
   meta = {
     description = "Ultra-pure, lag-free prompt with async Git status";
     homepage = "https://github.com/jorgebucaran/hydro";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ pyrox0 ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ pyrox0 ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

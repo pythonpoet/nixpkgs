@@ -37,7 +37,15 @@ buildPythonPackage rec {
     mainProgram = "yasi";
     homepage = "https://github.com/nkmathew/yasi-sexp-indenter";
     changelog = "https://github.com/nkmathew/yasi-sexp-indenter/blob/${src.rev}/CHANGELOG.md";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ kranzes ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ kranzes ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

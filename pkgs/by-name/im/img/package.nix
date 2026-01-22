@@ -52,6 +52,12 @@ buildGoModule rec {
     mainProgram = "img";
     license = lib.licenses.mit;
     homepage = "https://github.com/genuinetools/img";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ bryanasdev000 ];
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ bryanasdev000 ];
+=======
+    maintainers = [ ];
+>>>>>>> master
   };
 }

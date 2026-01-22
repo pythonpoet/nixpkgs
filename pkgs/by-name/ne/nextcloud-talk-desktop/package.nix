@@ -26,11 +26,30 @@
 }:
 let
   pname = "nextcloud-talk-desktop";
+<<<<<<< HEAD
   version = "2.0.4"; # Ensure both hashes (Linux and Darwin) are updated!
+||||||| 213fed0310e3
+  version = "2.0.3";
+=======
+  version = "2.0.5"; # Ensure both hashes (Linux and Darwin) are updated!
+>>>>>>> master
 
+<<<<<<< HEAD
   hashes = {
     linux = "sha256-Nky3ws1UV0F4qjbBog53BjXkZ/ttTER/32NlB2ONJaE=";
     darwin = "sha256-N/v1842rheqrjG4pAwrSDYNWhQDgWinTiZPusD1dvaM=";
+||||||| 213fed0310e3
+  # Building from source would require building also building Server and Talk components
+  # See https://github.com/nextcloud/talk-desktop?tab=readme-ov-file#%EF%B8%8F-prerequisites
+  src = fetchzip {
+    url = "https://github.com/nextcloud-releases/talk-desktop/releases/download/v${finalAttrs.version}/Nextcloud.Talk-linux-x64.zip";
+    hash = "sha256-QKbg5vHLuxLpngrHom/odWw9RK43jhZsEg7Df5c7db0=";
+    stripRoot = false;
+=======
+  hashes = {
+    linux = "sha256-aKNrIbv6kaLoLmTZVgwncqzF4o/5C/hFXef3QqM7oBk=";
+    darwin = "sha256-Nli2z8eyAq5W3ALwHiH6+Ightk3Jf0gaWtwabOJS4gw=";
+>>>>>>> master
   };
 
   # Only x86_64-linux is supported with Darwin support being universal

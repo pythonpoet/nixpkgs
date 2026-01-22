@@ -21,7 +21,6 @@
   which,
   dbus,
   net-tools,
-  git,
   doxygen,
   xmlto,
   docbook_xml_dtd_45,
@@ -115,7 +114,6 @@ stdenv.mkDerivation rec {
     librsvg
     dbus
     gdk-pixbuf
-    git
     luaEnv
     libpthreadstubs
     libstartup_notification
@@ -174,7 +172,6 @@ stdenv.mkDerivation rec {
     license = lib.licenses.gpl2Plus;
     maintainers = with lib.maintainers; [
       lovek323
-      rasendubi
     ];
     platforms = lib.platforms.linux;
   };

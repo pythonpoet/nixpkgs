@@ -29,7 +29,15 @@ buildPythonPackage rec {
     description = "Multi-Language GL/GLES/EGL/GLX/WGL Loader-Generator based on the official specifications";
     mainProgram = "glad";
     homepage = "https://github.com/Dav1dde/glad";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ kranzes ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ kranzes ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

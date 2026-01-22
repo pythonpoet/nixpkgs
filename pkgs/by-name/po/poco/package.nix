@@ -110,9 +110,18 @@ stdenv.mkDerivation rec {
   meta = {
     homepage = "https://pocoproject.org/";
     description = "Cross-platform C++ libraries with a network/internet focus";
+<<<<<<< HEAD
     license = lib.licenses.boost;
     maintainers = with lib.maintainers; [
       orivej
+||||||| 213fed0310e3
+    license = licenses.boost;
+    maintainers = with maintainers; [
+      orivej
+=======
+    license = lib.licenses.boost;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       tomodachi94
     ];
     platforms = lib.platforms.unix;

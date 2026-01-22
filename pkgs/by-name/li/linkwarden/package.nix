@@ -6,6 +6,13 @@
   yarn-berry,
   makeBinaryWrapper,
   nixosTests,
+<<<<<<< HEAD
+||||||| 213fed0310e3
+  yarnConfigHook,
+  fetchpatch,
+=======
+  stdenv,
+>>>>>>> master
   # dependencies
   bash,
   monolith,
@@ -13,8 +20,8 @@
   openssl,
   google-fonts,
   playwright-driver,
-  prisma,
-  prisma-engines,
+  prisma_6,
+  prisma-engines_6,
 }:
 
 let
@@ -46,6 +53,13 @@ let
       "Bentham"
     ];
   };
+
+  chromeDir =
+    {
+      x86_64-linux = "chrome-linux64";
+      aarch64-linux = "chrome-linux";
+    }
+    .${stdenv.hostPlatform.system} or (throw "Unsupported system: ${stdenv.hostPlatform.system}");
 in
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "linkwarden";
@@ -80,9 +94,18 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   nativeBuildInputs = [
     makeBinaryWrapper
     nodejs
+<<<<<<< HEAD
     prisma
     yarn-berry
     yarn-berry.yarnBerryConfigHook
+||||||| 213fed0310e3
+    prisma
+    yarnConfigHook
+=======
+    prisma_6
+    yarn-berry
+    yarn-berry.yarnBerryConfigHook
+>>>>>>> master
   ];
 
   buildInputs = [
@@ -104,9 +127,9 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   preBuild = ''
     export PRISMA_CLIENT_ENGINE_TYPE='binary'
-    export PRISMA_QUERY_ENGINE_LIBRARY="${prisma-engines}/lib/libquery_engine.node"
-    export PRISMA_QUERY_ENGINE_BINARY="${prisma-engines}/bin/query-engine"
-    export PRISMA_SCHEMA_ENGINE_BINARY="${prisma-engines}/bin/schema-engine"
+    export PRISMA_QUERY_ENGINE_LIBRARY="${prisma-engines_6}/lib/libquery_engine.node"
+    export PRISMA_QUERY_ENGINE_BINARY="${prisma-engines_6}/bin/query-engine"
+    export PRISMA_SCHEMA_ENGINE_BINARY="${prisma-engines_6}/bin/schema-engine"
   '';
 
   buildPhase = ''
@@ -155,7 +178,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
       ${lib.getExe' nodejs "npm"} start --prefix $out/share/linkwarden/apps/worker
     else
       echo "Starting server"
-      ${lib.getExe prisma} migrate deploy --schema $out/share/linkwarden/packages/prisma/schema.prisma \
+      ${lib.getExe prisma_6} migrate deploy --schema $out/share/linkwarden/packages/prisma/schema.prisma \
         && ${lib.getExe' nodejs "npm"} start --prefix $out/share/linkwarden/apps/web -- -H \$LINKWARDEN_HOST -p \$LINKWARDEN_PORT
     fi
     " > $out/bin/start.sh
@@ -170,10 +193,10 @@ stdenvNoCC.mkDerivation (finalAttrs: {
         ]
       }" \
       --set-default PRISMA_CLIENT_ENGINE_TYPE 'binary' \
-      --set-default PRISMA_QUERY_ENGINE_LIBRARY "${prisma-engines}/lib/libquery_engine.node" \
-      --set-default PRISMA_QUERY_ENGINE_BINARY "${prisma-engines}/bin/query-engine" \
-      --set-default PRISMA_SCHEMA_ENGINE_BINARY "${prisma-engines}/bin/schema-engine" \
-      --set-default PLAYWRIGHT_LAUNCH_OPTIONS_EXECUTABLE_PATH ${playwright-driver.browsers-chromium}/chromium-*/chrome-linux/chrome \
+      --set-default PRISMA_QUERY_ENGINE_LIBRARY "${prisma-engines_6}/lib/libquery_engine.node" \
+      --set-default PRISMA_QUERY_ENGINE_BINARY "${prisma-engines_6}/bin/query-engine" \
+      --set-default PRISMA_SCHEMA_ENGINE_BINARY "${prisma-engines_6}/bin/schema-engine" \
+      --set-default PLAYWRIGHT_LAUNCH_OPTIONS_EXECUTABLE_PATH ${playwright-driver.browsers-chromium}/chromium-*/${chromeDir}/chrome \
       --set-default LINKWARDEN_CACHE_DIR /var/cache/linkwarden \
       --set-default LINKWARDEN_HOST localhost \
       --set-default LINKWARDEN_PORT 3000 \

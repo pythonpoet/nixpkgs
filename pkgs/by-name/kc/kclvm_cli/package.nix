@@ -33,7 +33,6 @@ rustPlatform.buildRustPackage rec {
     platforms = lib.platforms.linux ++ lib.platforms.darwin;
     maintainers = with lib.maintainers; [
       selfuryon
-      peefy
     ];
     mainProgram = "kclvm_cli";
   };

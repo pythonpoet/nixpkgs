@@ -27,9 +27,18 @@ rustPlatform.buildRustPackage rec {
   meta = {
     description = "Small Gotify daemon to send messages as desktop notifications";
     homepage = "https://github.com/desbma/gotify-desktop";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Plus;
     maintainers = with lib.maintainers; [
       bryanasdev000
+||||||| 213fed0310e3
+    license = licenses.gpl3Plus;
+    maintainers = with maintainers; [
+      bryanasdev000
+=======
+    license = lib.licenses.gpl3Plus;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       genofire
     ];
     broken = stdenv.hostPlatform.isDarwin;

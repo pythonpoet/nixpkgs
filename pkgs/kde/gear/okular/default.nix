@@ -31,6 +31,7 @@ mkKdeDerivation {
     ebook_tools
     discount
   ];
+<<<<<<< HEAD
   patches = [
     (fetchpatch {
       name = "okular-extreme-downsample-fix.patch";
@@ -38,5 +39,9 @@ mkKdeDerivation {
       hash = "sha256-S338z+92nBYMP6uqvk7rP9AsIoZ0JJCVu9Wo4NVSufk=";
     })
   ];
+||||||| 213fed0310e3
+=======
+
+>>>>>>> master
   meta.mainProgram = "okular";
 }

@@ -12,7 +12,7 @@
 buildPythonPackage rec {
   pname = "mbstrdecoder";
   version = "1.1.4";
-  format = "pyproject";
+  pyproject = true;
 
   src = fetchFromGitHub {
     owner = "thombashi";
@@ -35,7 +35,15 @@ buildPythonPackage rec {
   meta = {
     homepage = "https://github.com/thombashi/mbstrdecoder";
     description = "Library for decoding multi-byte character strings";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ genericnerdyusername ];
     license = lib.licenses.mit;
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ genericnerdyusername ];
+    license = licenses.mit;
+=======
+    maintainers = [ ];
+    license = lib.licenses.mit;
+>>>>>>> master
   };
 }

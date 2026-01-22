@@ -74,8 +74,15 @@ python3Packages.buildPythonApplication rec {
   meta = {
     description = "Tool that converts RSS/Atom newsfeeds to email";
     homepage = "https://pypi.python.org/pypi/rss2email";
+<<<<<<< HEAD
     license = lib.licenses.gpl2;
     maintainers = with lib.maintainers; [ ekleog ];
+||||||| 213fed0310e3
+    license = licenses.gpl2;
+    maintainers = with maintainers; [ ekleog ];
+=======
+    license = lib.licenses.gpl2;
+>>>>>>> master
     mainProgram = "r2e";
   };
   passthru.tests = {

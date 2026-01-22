@@ -77,7 +77,19 @@ stdenv.mkDerivation rec {
       --prefix PATH ':' "${git}/bin"
   '';
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  outputs = [
+    "out"
+    "doc"
+    "man"
+  ];
+
+  meta = {
+>>>>>>> master
     homepage = "https://jonas.github.io/tig/";
     description = "Text-mode interface for git";
     maintainers = with lib.maintainers; [

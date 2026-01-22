@@ -90,8 +90,18 @@ stdenv.mkDerivation rec {
       that it can be mapped onto existing solvers easily and consistently.
       It is a subset of the higher-level language Zinc.
     '';
+<<<<<<< HEAD
     license = lib.licenses.mpl20;
     platforms = lib.platforms.unix;
     maintainers = [ lib.maintainers.dtzWill ];
+||||||| 213fed0310e3
+    license = licenses.mpl20;
+    platforms = platforms.unix;
+    maintainers = [ maintainers.dtzWill ];
+=======
+    license = lib.licenses.mpl20;
+    platforms = lib.platforms.unix;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

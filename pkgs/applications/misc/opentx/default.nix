@@ -83,8 +83,15 @@ mkDerivation rec {
       "x86_64-linux"
       "aarch64-linux"
     ];
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [
       elitak
+||||||| 213fed0310e3
+    maintainers = with maintainers; [
+      elitak
+=======
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       lopsided98
     ];
   };

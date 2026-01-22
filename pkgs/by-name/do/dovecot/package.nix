@@ -17,7 +17,7 @@
   pam,
   libcap,
   coreutils,
-  clucene_core_2,
+  clucene-core_2,
   icu75,
   libexttextcat,
   libsodium,
@@ -63,7 +63,7 @@ stdenv.mkDerivation rec {
     zlib
     zstd
     xz
-    clucene_core_2
+    clucene-core_2
     icu75
     libexttextcat
     libsodium
@@ -191,12 +191,26 @@ stdenv.mkDerivation rec {
       bsdOriginal
     ];
     mainProgram = "dovecot";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [
+||||||| 213fed0310e3
+    maintainers = with maintainers; [
+=======
+    maintainers = with lib.maintainers; [
+      das_j
+>>>>>>> master
       fpletz
-      globin
+      helsinki-Jo
     ];
+<<<<<<< HEAD
     teams = [ lib.teams.helsinki-systems ];
     platforms = lib.platforms.unix;
+||||||| 213fed0310e3
+    teams = [ lib.teams.helsinki-systems ];
+    platforms = platforms.unix;
+=======
+    platforms = lib.platforms.unix;
+>>>>>>> master
   };
   passthru.tests = {
     opensmtpd-interaction = nixosTests.opensmtpd;

@@ -70,7 +70,13 @@ rustPlatform.buildRustPackage rec {
     homepage = "https://github.com/hubblo-org/scaphandre";
     license = lib.licenses.asl20;
     platforms = [ "x86_64-linux" ];
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ gaelreyrol ];
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ gaelreyrol ];
+=======
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "scaphandre";
     # Upstream needs to decide what to do about a broken dependency
     # https://github.com/hubblo-org/scaphandre/issues/403

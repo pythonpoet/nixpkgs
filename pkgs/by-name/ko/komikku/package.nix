@@ -24,7 +24,13 @@
 
 python3.pkgs.buildPythonApplication rec {
   pname = "komikku";
+<<<<<<< HEAD
   version = "1.98.0";
+||||||| 213fed0310e3
+  version = "1.92.0";
+=======
+  version = "1.100.0";
+>>>>>>> master
   pyproject = false;
 
   src = fetchFromGitea {
@@ -32,7 +38,13 @@ python3.pkgs.buildPythonApplication rec {
     owner = "valos";
     repo = "Komikku";
     tag = "v${version}";
+<<<<<<< HEAD
     hash = "sha256-7UMCSqVj6eOjpuuMeOuvMtBELjkG4ayaJgFVwMDP0Ag=";
+||||||| 213fed0310e3
+    hash = "sha256-eNKNVS8uSzDdXM13dQoSPy88u55RMDCh/Do3wCkscxI=";
+=======
+    hash = "sha256-rHOXRvUm/Wc5oQpp8+rg3szHxuko+R0oap4S/9rmHMk=";
+>>>>>>> master
   };
 
   nativeBuildInputs = [
@@ -61,6 +73,7 @@ python3.pkgs.buildPythonApplication rec {
     brotli
     colorthief
     dateparser
+    ebooklib
     emoji
     keyring
     lxml

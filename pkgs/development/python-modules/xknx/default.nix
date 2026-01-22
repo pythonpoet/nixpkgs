@@ -10,16 +10,16 @@
   setuptools,
 }:
 
-buildPythonPackage rec {
+buildPythonPackage (finalAttrs: {
   pname = "xknx";
-  version = "3.11.0";
+  version = "3.14.0";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "XKNX";
     repo = "xknx";
-    tag = version;
-    hash = "sha256-jWnDiGg7vjIt4xkqjKrauExnvHcrH8m0RGfHjQlljFY=";
+    tag = finalAttrs.version;
+    hash = "sha256-22xKxdjf0WEF2efHiGCYVhTCZ5jrD+26oqBdlxHwYdU=";
   };
 
   build-system = [ setuptools ];
@@ -34,6 +34,8 @@ buildPythonPackage rec {
     pytest-asyncio
     pytestCheckHook
   ];
+
+  pytestFlags = [ "--asyncio-mode=auto" ];
 
   pythonImportsCheck = [ "xknx" ];
 
@@ -53,9 +55,21 @@ buildPythonPackage rec {
       packets. It provides support for KNX/IP routing and tunneling devices.
     '';
     homepage = "https://github.com/XKNX/xknx";
+<<<<<<< HEAD
     changelog = "https://github.com/XKNX/xknx/releases/tag/${src.tag}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ fab ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    changelog = "https://github.com/XKNX/xknx/releases/tag/${src.tag}";
+    license = licenses.mit;
+    maintainers = with maintainers; [ fab ];
+    platforms = platforms.linux;
+=======
+    changelog = "https://github.com/XKNX/xknx/releases/tag/${finalAttrs.src.tag}";
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [ fab ];
+    platforms = lib.platforms.linux;
+>>>>>>> master
   };
-}
+})

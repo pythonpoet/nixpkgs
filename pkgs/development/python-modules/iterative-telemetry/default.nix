@@ -7,7 +7,6 @@
   filelock,
   pytestCheckHook,
   pytest-mock,
-  pythonOlder,
   requests,
   setuptools-scm,
 }:
@@ -16,8 +15,6 @@ buildPythonPackage rec {
   pname = "iterative-telemtry";
   version = "0.0.10";
   pyproject = true;
-
-  disabled = pythonOlder "3.8";
 
   src = fetchFromGitHub {
     owner = "iterative";
@@ -46,7 +43,14 @@ buildPythonPackage rec {
     description = "Common library to send usage telemetry";
     homepage = "https://github.com/iterative/iterative-telemetry";
     changelog = "https://github.com/iterative/iterative-telemetry/releases/tag/${src.tag}";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ melling ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [ melling ];
+=======
+    license = lib.licenses.asl20;
+>>>>>>> master
   };
 }

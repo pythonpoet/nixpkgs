@@ -8,7 +8,6 @@
   pytest-timeout,
   pytest-vcr,
   pytestCheckHook,
-  pythonOlder,
   requests,
   requests-mock,
   setuptools-scm,
@@ -17,9 +16,7 @@
 buildPythonPackage rec {
   pname = "rxv";
   version = "0.7.0";
-  format = "pyproject";
-
-  disabled = pythonOlder "3.7";
+  pyproject = true;
 
   src = fetchFromGitHub {
     owner = "wuub";
@@ -49,7 +46,14 @@ buildPythonPackage rec {
   meta = {
     description = "Python library for communicate with Yamaha RX-Vxxx receivers";
     homepage = "https://github.com/wuub/rxv";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ flyfloh ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ flyfloh ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
   };
 }

@@ -37,9 +37,18 @@ stdenv.mkDerivation rec {
       performant.
     '';
     homepage = "https://github.com/M4444/TMatrix";
+<<<<<<< HEAD
     license = lib.licenses.gpl2;
     platforms = lib.platforms.all;
     maintainers = with lib.maintainers; [ Br1ght0ne ];
+||||||| 213fed0310e3
+    license = licenses.gpl2;
+    platforms = platforms.all;
+    maintainers = with maintainers; [ Br1ght0ne ];
+=======
+    license = lib.licenses.gpl2;
+    platforms = lib.platforms.all;
+>>>>>>> master
     mainProgram = "tmatrix";
   };
 }

@@ -2,7 +2,6 @@
   lib,
   buildPythonPackage,
   fetchPypi,
-  pythonOlder,
   setuptools,
   unittestCheckHook,
 }:
@@ -11,8 +10,6 @@ buildPythonPackage rec {
   pname = "timecop";
   version = "0.5.0dev";
   pyproject = true;
-
-  disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
@@ -33,7 +30,14 @@ buildPythonPackage rec {
   meta = {
     description = "Port of the most excellent TimeCop Ruby Gem for Python";
     homepage = "https://github.com/bluekelp/pytimecop";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Plus;
     maintainers = with lib.maintainers; [ zakame ];
+||||||| 213fed0310e3
+    license = licenses.gpl3Plus;
+    maintainers = with maintainers; [ zakame ];
+=======
+    license = lib.licenses.gpl3Plus;
+>>>>>>> master
   };
 }

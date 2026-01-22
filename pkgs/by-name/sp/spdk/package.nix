@@ -173,6 +173,12 @@ stdenv.mkDerivation rec {
     homepage = "https://spdk.io/";
     license = lib.licenses.bsd3;
     platforms = [ "x86_64-linux" ];
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ orivej ];
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ orivej ];
+=======
+    maintainers = [ ];
+>>>>>>> master
   };
 }

@@ -58,8 +58,17 @@ stdenv.mkDerivation rec {
     description = "XML debugger";
     mainProgram = "xmloscopy";
     homepage = "https://github.com/grahamc/xmloscopy";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     platforms = lib.platforms.all;
     maintainers = with lib.maintainers; [ grahamc ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    platforms = platforms.all;
+    maintainers = with maintainers; [ grahamc ];
+=======
+    license = lib.licenses.mit;
+    platforms = lib.platforms.all;
+>>>>>>> master
   };
 }

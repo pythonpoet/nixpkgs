@@ -68,7 +68,6 @@ stdenv.mkDerivation rec {
     homepage = "https://github.com/x42/x42-plugins";
     maintainers = with lib.maintainers; [
       magnetophon
-      orivej
     ];
     license = lib.licenses.gpl2;
     platforms = [

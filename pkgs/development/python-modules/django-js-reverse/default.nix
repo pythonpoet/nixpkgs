@@ -10,7 +10,7 @@
   six,
 }:
 
-buildPythonPackage rec {
+buildPythonPackage (finalAttrs: {
   pname = "django-js-reverse";
   version = "0.10.2";
   pyproject = true;
@@ -18,7 +18,7 @@ buildPythonPackage rec {
   src = fetchFromGitHub {
     owner = "vintasoftware";
     repo = "django-js-reverse";
-    tag = "v${version}";
+    tag = "v${finalAttrs.version}";
     hash = "sha256-0S1g8tLWaJVV2QGPeiBOevhz9f0ueINxA9HOcnXuyYg=";
   };
 
@@ -46,8 +46,18 @@ buildPythonPackage rec {
   meta = {
     description = "Javascript URL handling for Django";
     homepage = "https://django-js-reverse.readthedocs.io/";
+<<<<<<< HEAD
     changelog = "https://github.com/vintasoftware/django-js-reverse/releases/tag/${src.tag}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ ambroisie ];
+||||||| 213fed0310e3
+    changelog = "https://github.com/vintasoftware/django-js-reverse/releases/tag/${src.tag}";
+    license = licenses.mit;
+    maintainers = with maintainers; [ ambroisie ];
+=======
+    changelog = "https://github.com/vintasoftware/django-js-reverse/releases/tag/v${finalAttrs.version}";
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [ ambroisie ];
+>>>>>>> master
   };
-}
+})

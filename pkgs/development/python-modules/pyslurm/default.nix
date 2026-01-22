@@ -1,6 +1,5 @@
 {
   lib,
-  pythonOlder,
   fetchFromGitHub,
   buildPythonPackage,
   setuptools,
@@ -12,8 +11,6 @@ buildPythonPackage rec {
   pname = "pyslurm";
   version = "25.5.0";
   pyproject = true;
-
-  disabled = pythonOlder "3.6";
 
   src = fetchFromGitHub {
     repo = "pyslurm";
@@ -40,8 +37,17 @@ buildPythonPackage rec {
   meta = {
     homepage = "https://github.com/PySlurm/pyslurm";
     description = "Python bindings to Slurm";
+<<<<<<< HEAD
     license = lib.licenses.gpl2;
     maintainers = with lib.maintainers; [ bhipple ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    license = licenses.gpl2;
+    maintainers = with maintainers; [ bhipple ];
+    platforms = platforms.linux;
+=======
+    license = lib.licenses.gpl2;
+    platforms = lib.platforms.linux;
+>>>>>>> master
   };
 }

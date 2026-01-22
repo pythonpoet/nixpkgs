@@ -29,8 +29,15 @@ rustPlatform.buildRustPackage {
   meta = {
     description = "Tool to generate rust bindings and user API for glib-based libraries";
     homepage = "https://github.com/gtk-rs/gir/";
+<<<<<<< HEAD
     license = with lib.licenses; [ mit ];
     maintainers = with lib.maintainers; [ ekleog ];
+||||||| 213fed0310e3
+    license = with licenses; [ mit ];
+    maintainers = with maintainers; [ ekleog ];
+=======
+    license = with lib.licenses; [ mit ];
+>>>>>>> master
     mainProgram = "gir";
   };
 }

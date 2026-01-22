@@ -43,7 +43,6 @@
   pydot,
   pygtrie,
   pyparsing,
-  pythonOlder,
   requests,
   rich,
   ruamel-yaml,
@@ -63,18 +62,16 @@
   enableSSH ? false,
 }:
 
-buildPythonPackage rec {
+buildPythonPackage (finalAttrs: {
   pname = "dvc";
-  version = "3.63.0";
+  version = "3.66.1";
   pyproject = true;
-
-  disabled = pythonOlder "3.9";
 
   src = fetchFromGitHub {
     owner = "iterative";
     repo = "dvc";
-    tag = version;
-    hash = "sha256-7wuxNPELHdxQSHKHQo8KTQ9yj8KW8RVEN0ykJN/he9E=";
+    tag = finalAttrs.version;
+    hash = "sha256-IvO5JEM3P0ggmufrBFv7fUBwoKzNIgWMUnOo31rYJRk=";
   };
 
   pythonRelaxDeps = [
@@ -135,10 +132,10 @@ buildPythonPackage rec {
     voluptuous
     zc-lockfile
   ]
-  ++ lib.optionals enableGoogle optional-dependencies.gs
-  ++ lib.optionals enableAWS optional-dependencies.s3
-  ++ lib.optionals enableAzure optional-dependencies.azure
-  ++ lib.optionals enableSSH optional-dependencies.ssh;
+  ++ lib.optionals enableGoogle finalAttrs.passthru.optional-dependencies.gs
+  ++ lib.optionals enableAWS finalAttrs.passthru.optional-dependencies.s3
+  ++ lib.optionals enableAzure finalAttrs.passthru.optional-dependencies.azure
+  ++ lib.optionals enableSSH finalAttrs.passthru.optional-dependencies.ssh;
 
   optional-dependencies = {
     azure = [ dvc-azure ];
@@ -165,12 +162,22 @@ buildPythonPackage rec {
   meta = {
     description = "Version Control System for Machine Learning Projects";
     homepage = "https://dvc.org";
+<<<<<<< HEAD
     changelog = "https://github.com/iterative/dvc/releases/tag/${src.tag}";
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [
+||||||| 213fed0310e3
+    changelog = "https://github.com/iterative/dvc/releases/tag/${src.tag}";
+    license = licenses.asl20;
+    maintainers = with maintainers; [
+=======
+    changelog = "https://github.com/iterative/dvc/releases/tag/${finalAttrs.src.tag}";
+    license = lib.licenses.asl20;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       cmcdragonkai
       fab
     ];
     mainProgram = "dvc";
   };
-}
+})

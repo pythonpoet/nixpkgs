@@ -8,21 +8,24 @@
   clang_20,
   libsecret,
   ripgrep,
+  nodejs_22,
   nix-update-script,
 }:
 
 buildNpmPackage (finalAttrs: {
   pname = "gemini-cli";
-  version = "0.17.1";
+  version = "0.23.0";
 
   src = fetchFromGitHub {
     owner = "google-gemini";
     repo = "gemini-cli";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-zfORrAMVozHiUawWiy3TMT+pjEaRJ/DrHeDFPJiCp38=";
+    hash = "sha256-tl9Iy1M0YxPvUpbIQRl7/P2iRIb5n1cvHEqK2k3OR5I=";
   };
 
-  npmDepsHash = "sha256-dKaKRuHzvNJgi8LP4kKsb68O5k2MTqblQ+7cjYqLqs0=";
+  nodejs = nodejs_22;
+
+  npmDepsHash = "sha256-gPmH/Ym6+UxbpH8CEuDmdZtbR6HqWPjMchs1zlDELDU=";
 
   nativeBuildInputs = [
     jq
@@ -47,6 +50,10 @@ buildNpmPackage (finalAttrs: {
     # Remove node-pty dependency from packages/core/package.json
     ${jq}/bin/jq 'del(.optionalDependencies."node-pty")' packages/core/package.json > packages/core/package.json.tmp && mv packages/core/package.json.tmp packages/core/package.json
 
+    # Fix ripgrep path for SearchText; ensureRgPath() on its own may return the path to a dynamically-linked ripgrep binary without required libraries
+    substituteInPlace packages/core/src/tools/ripGrep.ts \
+      --replace-fail "await ensureRgPath();" "'${lib.getExe ripgrep}';"
+
     # Ideal method to disable auto-update
     sed -i '/disableAutoUpdate: {/,/}/ s/default: false/default: true/' packages/cli/src/config/settingsSchema.ts
 
@@ -59,14 +66,30 @@ buildNpmPackage (finalAttrs: {
       --replace-fail "settings.merged.general?.disableUpdateNag" "(settings.merged.general?.disableUpdateNag ?? true)"
   '';
 
+<<<<<<< HEAD
   # Prevent npmDeps from getting into the closure
   disallowedReferences = [ finalAttrs.npmDeps ];
 
+||||||| 213fed0310e3
+=======
+  # Prevent npmDeps and python from getting into the closure
+  disallowedReferences = [
+    finalAttrs.npmDeps
+    nodejs_22.python
+  ];
+
+>>>>>>> master
   installPhase = ''
     runHook preInstall
     mkdir -p $out/{bin,share/gemini-cli}
 
+<<<<<<< HEAD
     npm prune --omit=dev
+||||||| 213fed0310e3
+=======
+    npm prune --omit=dev
+    rm node_modules/shell-quote/print.py # remove python demo to prevent python from getting into the closure
+>>>>>>> master
     cp -r node_modules $out/share/gemini-cli/
 
     rm -f $out/share/gemini-cli/node_modules/@google/gemini-cli
@@ -77,6 +100,8 @@ buildNpmPackage (finalAttrs: {
     cp -r packages/cli $out/share/gemini-cli/node_modules/@google/gemini-cli
     cp -r packages/core $out/share/gemini-cli/node_modules/@google/gemini-cli-core
     cp -r packages/a2a-server $out/share/gemini-cli/node_modules/@google/gemini-cli-a2a-server
+
+    rm -f $out/share/gemini-cli/node_modules/@google/gemini-cli-core/dist/docs/CONTRIBUTING.md
 
     ln -s $out/share/gemini-cli/node_modules/@google/gemini-cli/dist/index.js $out/bin/gemini
     chmod +x "$out/bin/gemini"
@@ -92,6 +117,7 @@ buildNpmPackage (finalAttrs: {
     license = lib.licenses.asl20;
     sourceProvenance = with lib.sourceTypes; [ fromSource ];
     maintainers = with lib.maintainers; [
+      brantes
       xiaoxiangmoe
       FlameFlag
       taranarmo

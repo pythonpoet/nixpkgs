@@ -105,11 +105,22 @@ let
       meta = {
         description = "Torrent client";
         homepage = "https://deluge-torrent.org";
+<<<<<<< HEAD
         license = lib.licenses.gpl3Plus;
         maintainers = with lib.maintainers; [
           ebzzry
         ];
         platforms = lib.platforms.all;
+||||||| 213fed0310e3
+        license = licenses.gpl3Plus;
+        maintainers = with maintainers; [
+          ebzzry
+        ];
+        platforms = platforms.all;
+=======
+        license = lib.licenses.gpl3Plus;
+        platforms = lib.platforms.all;
+>>>>>>> master
       };
     };
 

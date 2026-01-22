@@ -8,16 +8,16 @@
 # https://github.com/kovetskiy/mark/pull/581#issuecomment-2797872996
 buildGoModule rec {
   pname = "mark";
-  version = "15.0.0";
+  version = "15.3.0";
 
   src = fetchFromGitHub {
     owner = "kovetskiy";
     repo = "mark";
     rev = "v${version}";
-    sha256 = "sha256-OYLL96xvyrsnfIc0h+kQhZeW1ImyO7IG2ybD2SMBn/U=";
+    sha256 = "sha256-tQmoTvZO/Las8QDJqcmW7upAciFEQqVFVKEVx6Zg7Mg=";
   };
 
-  vendorHash = "sha256-y7MDgCYOvrFF4IMy8zpWXqyaOel1Xjei7h2OkiE6r+g=";
+  vendorHash = "sha256-Pk56hx2GRq+4NmCVx0S8Mr2Jgnn44aSRNfhtZIH9Lxk=";
 
   ldflags = [
     "-s"

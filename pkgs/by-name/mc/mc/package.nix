@@ -100,9 +100,18 @@ stdenv.mkDerivation rec {
     description = "File Manager and User Shell for the GNU Project, known as Midnight Commander";
     downloadPage = "https://ftp.osuosl.org/pub/midnightcommander/";
     homepage = "https://midnight-commander.org";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Plus;
     maintainers = with lib.maintainers; [ sander ];
     platforms = lib.platforms.linux ++ lib.platforms.darwin;
+||||||| 213fed0310e3
+    license = licenses.gpl3Plus;
+    maintainers = with maintainers; [ sander ];
+    platforms = platforms.linux ++ platforms.darwin;
+=======
+    license = lib.licenses.gpl3Plus;
+    platforms = lib.platforms.linux ++ lib.platforms.darwin;
+>>>>>>> master
     mainProgram = "mc";
   };
 }

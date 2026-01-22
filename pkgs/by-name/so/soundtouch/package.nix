@@ -32,8 +32,16 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Program and library for changing the tempo, pitch and playback rate of audio";
     homepage = "https://www.surina.net/soundtouch/";
+<<<<<<< HEAD
     license = lib.licenses.lgpl21Plus;
     maintainers = with lib.maintainers; [ orivej ];
+||||||| 213fed0310e3
+    license = licenses.lgpl21Plus;
+    maintainers = with maintainers; [ orivej ];
+=======
+    license = lib.licenses.lgpl21Plus;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "soundstretch";
     platforms = lib.platforms.all;
   };

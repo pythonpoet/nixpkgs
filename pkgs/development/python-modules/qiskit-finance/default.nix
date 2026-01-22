@@ -1,6 +1,5 @@
 {
   lib,
-  pythonOlder,
   buildPythonPackage,
   fetchFromGitHub,
 
@@ -12,7 +11,7 @@
   numpy,
   pandas,
   psutil,
-  qiskit-terra,
+  qiskit,
   qiskit-optimization,
   scikit-learn,
   scipy,
@@ -30,12 +29,10 @@ buildPythonPackage rec {
   version = "0.4.1";
   pyproject = true;
 
-  disabled = pythonOlder "3.6";
-
   src = fetchFromGitHub {
     owner = "qiskit";
     repo = pname;
-    rev = "refs/tags/${version}";
+    tag = version;
     hash = "sha256-zYhYhojCzlENzgYSenwewjeVHUBX2X6eQbbzc9znBsk=";
   };
 
@@ -50,7 +47,7 @@ buildPythonPackage rec {
     numpy
     pandas
     psutil
-    qiskit-terra
+    qiskit
     qiskit-optimization
     quandl
     scikit-learn
@@ -77,7 +74,15 @@ buildPythonPackage rec {
   ];
   pytestFlags = [ "--durations=10" ];
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  meta = {
+    # broken because it depends on qiskit-algorithms which is not yet packaged in nixpkgs
+    broken = true;
+>>>>>>> master
     description = "Software for developing quantum computing programs";
     homepage = "https://qiskit.org";
     downloadPage = "https://github.com/QISKit/qiskit-optimization/releases";

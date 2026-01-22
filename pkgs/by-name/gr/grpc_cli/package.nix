@@ -41,9 +41,18 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Command line tool for interacting with grpc services";
     homepage = "https://github.com/grpc/grpc";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ doriath ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [ doriath ];
+    platforms = platforms.linux;
+=======
+    license = lib.licenses.asl20;
+    platforms = lib.platforms.linux;
+>>>>>>> master
     mainProgram = "grpc_cli";
   };
 }

@@ -163,8 +163,15 @@ mkDerivation rec {
       "x86_64-linux"
       "aarch64-linux"
     ];
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [
       jagajaga
+||||||| 213fed0310e3
+    maintainers = with maintainers; [
+      jagajaga
+=======
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       jraygauthier
       gador
       c4patino

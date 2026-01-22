@@ -11,11 +11,11 @@
 
 stdenv.mkDerivation rec {
   pname = "vmpk";
-  version = "0.9.1";
+  version = "0.9.2";
 
   src = fetchurl {
     url = "mirror://sourceforge/${pname}/${version}/${pname}-${version}.tar.bz2";
-    hash = "sha256-O/uIg1Wq6Hwt7J5AkoXQshBhrKrQdfVTbb8qr7ttSNw=";
+    hash = "sha256-FUVI6Ioe4zmQa84pqGlw/my2Rw8fpMcZi9bZu/gzIGA=";
   };
 
   nativeBuildInputs = [
@@ -39,8 +39,18 @@ stdenv.mkDerivation rec {
     description = "Virtual MIDI Piano Keyboard";
     mainProgram = "vmpk";
     homepage = "http://vmpk.sourceforge.net/";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Plus;
     maintainers = with lib.maintainers; [ orivej ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    license = licenses.gpl3Plus;
+    maintainers = with maintainers; [ orivej ];
+    platforms = platforms.linux;
+=======
+    license = lib.licenses.gpl3Plus;
+    maintainers = [ ];
+    platforms = lib.platforms.linux;
+>>>>>>> master
   };
 }

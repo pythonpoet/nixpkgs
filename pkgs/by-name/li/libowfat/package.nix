@@ -32,7 +32,15 @@ stdenv.mkDerivation rec {
   ];
   enableParallelBuilding = true;
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  env.NIX_CFLAGS_COMPILE = toString [ "-Wno-error=incompatible-pointer-types" ];
+
+  meta = {
+>>>>>>> master
     description = "GPL reimplementation of libdjb";
     homepage = "https://www.fefe.de/libowfat/";
     license = lib.licenses.gpl2;

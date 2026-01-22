@@ -69,7 +69,15 @@ stdenv.mkDerivation (finalAttrs: {
   meta = {
     description = "Font editor which can generate fonts in TTF, EOT, SVG and BIRDFONT format";
     homepage = "https://birdfont.org";
+<<<<<<< HEAD
     license = lib.licenses.gpl3;
     maintainers = with lib.maintainers; [ dtzWill ];
+||||||| 213fed0310e3
+    license = licenses.gpl3;
+    maintainers = with maintainers; [ dtzWill ];
+=======
+    license = lib.licenses.gpl3;
+    maintainers = [ ];
+>>>>>>> master
   };
 })

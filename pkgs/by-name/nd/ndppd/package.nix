@@ -37,9 +37,18 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Daemon that proxies NDP (Neighbor Discovery Protocol) messages between interfaces";
     homepage = "https://github.com/DanielAdolfsson/ndppd";
+<<<<<<< HEAD
     license = lib.licenses.gpl3;
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [ fadenb ];
+||||||| 213fed0310e3
+    license = licenses.gpl3;
+    platforms = platforms.linux;
+    maintainers = with maintainers; [ fadenb ];
+=======
+    license = lib.licenses.gpl3;
+    platforms = lib.platforms.linux;
+>>>>>>> master
     mainProgram = "ndppd";
   };
 }

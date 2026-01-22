@@ -14,25 +14,25 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "unison-code-manager";
-  version = "0.5.49";
+  version = "1.0.2";
 
   src =
     {
       aarch64-darwin = fetchurl {
         url = "https://github.com/unisonweb/unison/releases/download/release/${finalAttrs.version}/ucm-macos-arm64.tar.gz";
-        hash = "sha256-ydrSqSaHJcL5DX2voAcUfHn3Y0QRo8CyvYHNZrTMmhI=";
+        hash = "sha256-ZoacT9ssAHb0pjLyHBfc+4VI5Xh13QVzHWGOJpz9asU=";
       };
       x86_64-darwin = fetchurl {
         url = "https://github.com/unisonweb/unison/releases/download/release/${finalAttrs.version}/ucm-macos-x64.tar.gz";
-        hash = "sha256-qd+cDB9FnfOija0xeF0GMBIZu2JAjlax/nPtfORzhlM=";
+        hash = "sha256-rHT4ssN0dqPF28PgoEcxa0pgXcFNcJufUC1sxzWKV+4=";
       };
       aarch64-linux = fetchurl {
         url = "https://github.com/unisonweb/unison/releases/download/release/${finalAttrs.version}/ucm-linux-arm64.tar.gz";
-        hash = "sha256-5QPG6JkciD3iI7WVPB6p3NEO/ZNEBgpRe30XT1op4K8=";
+        hash = "sha256-W4ComCy//3XWqVZvx6xvVFarv7okfNngSseHeDyNrDk=";
       };
       x86_64-linux = fetchurl {
         url = "https://github.com/unisonweb/unison/releases/download/release/${finalAttrs.version}/ucm-linux-x64.tar.gz";
-        hash = "sha256-LiW1Ugaaz1LzVDmfpSkiwtRYMhuv7XeNGEnFc9HndWg=";
+        hash = "sha256-7W16iJ+yklYiw2qYKhsW87FFAdhGZJZBOWldt4qHMBA=";
       };
     }
     .${stdenv.hostPlatform.system} or (throw "Unsupported platform ${stdenv.hostPlatform.system}");
@@ -69,18 +69,48 @@ stdenv.mkDerivation (finalAttrs: {
       --set UCM_WEB_UI "$out/ui"
   '';
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  passthru.updateScript = ./update.sh;
+
+  meta = {
+>>>>>>> master
     description = "Modern, statically-typed purely functional language";
     homepage = "https://unisonweb.org/";
+<<<<<<< HEAD
     license = with lib.licenses; [
       mit
       bsd3
+||||||| 213fed0310e3
+    license = with licenses; [
+      mit
+      bsd3
+=======
+    license = [
+      lib.licenses.mit
+      lib.licenses.bsd3
+>>>>>>> master
     ];
     mainProgram = "ucm";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [
       ceedubs
       sellout
       virusdave
+||||||| 213fed0310e3
+    maintainers = with maintainers; [
+      ceedubs
+      sellout
+      virusdave
+=======
+    maintainers = [
+      lib.maintainers.ceedubs
+      lib.maintainers.sellout
+      lib.maintainers.virusdave
+>>>>>>> master
     ];
     platforms = [
       "x86_64-darwin"
@@ -88,6 +118,12 @@ stdenv.mkDerivation (finalAttrs: {
       "aarch64-darwin"
       "aarch64-linux"
     ];
+<<<<<<< HEAD
     sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
+||||||| 213fed0310e3
+    sourceProvenance = with sourceTypes; [ binaryNativeCode ];
+=======
+    sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
+>>>>>>> master
   };
 })

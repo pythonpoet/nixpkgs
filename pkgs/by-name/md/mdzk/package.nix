@@ -27,9 +27,18 @@ rustPlatform.buildRustPackage rec {
     description = "Plain text Zettelkasten based on mdBook";
     homepage = "https://github.com/mdzk-rs/mdzk/";
     changelog = "https://github.com/mdzk-rs/mdzk/blob/main/CHANGELOG.md";
+<<<<<<< HEAD
     license = lib.licenses.mpl20;
     maintainers = with lib.maintainers; [
       bryanasdev000
+||||||| 213fed0310e3
+    license = licenses.mpl20;
+    maintainers = with maintainers; [
+      bryanasdev000
+=======
+    license = lib.licenses.mpl20;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       ratsclub
     ];
     mainProgram = "mdzk";

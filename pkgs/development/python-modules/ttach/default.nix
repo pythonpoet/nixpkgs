@@ -1,6 +1,5 @@
 {
   fetchFromGitHub,
-  pythonOlder,
   pytestCheckHook,
   torch,
   buildPythonPackage,
@@ -11,8 +10,6 @@ buildPythonPackage rec {
   pname = "ttach";
   version = "0.0.3";
   format = "setuptools";
-
-  disabled = pythonOlder "3.7";
 
   src = fetchFromGitHub {
     owner = "qubvel";
@@ -29,7 +26,14 @@ buildPythonPackage rec {
   meta = {
     description = "Image Test Time Augmentation with PyTorch";
     homepage = "https://github.com/qubvel/ttach";
+<<<<<<< HEAD
     license = with lib.licenses; [ mit ];
     maintainers = with lib.maintainers; [ cfhammill ];
+||||||| 213fed0310e3
+    license = with licenses; [ mit ];
+    maintainers = with maintainers; [ cfhammill ];
+=======
+    license = with lib.licenses; [ mit ];
+>>>>>>> master
   };
 }

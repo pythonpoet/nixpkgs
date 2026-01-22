@@ -220,11 +220,21 @@ stdenv.mkDerivation rec {
     done;
   '';
 
-  meta = with lib; {
+  meta = {
     description = "Free computer algebra system (CAS)";
     homepage = "https://www-fourier.ujf-grenoble.fr/~parisse/giac.html";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Plus;
     platforms = lib.platforms.linux ++ (optionals (!enableGUI) lib.platforms.darwin);
     maintainers = [ lib.maintainers.symphorien ];
+||||||| 213fed0310e3
+    license = licenses.gpl3Plus;
+    platforms = platforms.linux ++ (optionals (!enableGUI) platforms.darwin);
+    maintainers = [ maintainers.symphorien ];
+=======
+    license = lib.licenses.gpl3Plus;
+    platforms = lib.platforms.linux ++ (lib.optionals (!enableGUI) lib.platforms.darwin);
+    maintainers = [ lib.maintainers.symphorien ];
+>>>>>>> master
   };
 }

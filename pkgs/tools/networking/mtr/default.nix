@@ -55,7 +55,6 @@ stdenv.mkDerivation rec {
     license = lib.licenses.gpl2Only;
     maintainers = with lib.maintainers; [
       koral
-      orivej
       raskin
       globin
       ryan4yin

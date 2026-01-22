@@ -48,8 +48,17 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Material Design theme for GNOME/GTK based desktop environments";
     homepage = "https://github.com/nana-4/materia-theme";
+<<<<<<< HEAD
     license = lib.licenses.gpl2Only;
     platforms = lib.platforms.all;
     maintainers = [ lib.maintainers.mounium ];
+||||||| 213fed0310e3
+    license = licenses.gpl2Only;
+    platforms = platforms.all;
+    maintainers = [ maintainers.mounium ];
+=======
+    license = lib.licenses.gpl2Only;
+    platforms = lib.platforms.all;
+>>>>>>> master
   };
 }

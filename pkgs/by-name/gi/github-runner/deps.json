@@ -1,18 +1,42 @@
 [
   {
     "pname": "Azure.Core",
+<<<<<<< HEAD
     "version": "1.47.3",
     "hash": "sha256-fWyfqF1lpnap4cF3l9J0fYtZbxIqm6UFsuJgN+/hwW4="
+||||||| 213fed0310e3
+    "version": "1.44.1",
+    "hash": "sha256-0su/ylZ68+FDZ6mgfp3qsm7qpfPtD5SW75HXbVhs5qk="
+=======
+    "version": "1.50.0",
+    "hash": "sha256-8Pjz0/2wTLK5uY7G5qrxQr4CsmrjiR8gL4g6zJymj5s="
+>>>>>>> master
   },
   {
     "pname": "Azure.Storage.Blobs",
+<<<<<<< HEAD
     "version": "12.26.0",
     "hash": "sha256-J6774WE6xlrsmhkmE1dapkrhK6dFByYxSHLs1OQPk48="
+||||||| 213fed0310e3
+    "version": "12.25.1",
+    "hash": "sha256-OJgmzE7+BJsrqGMErUwG4wmaguYL1zPbhtdQvvqFuHY="
+=======
+    "version": "12.27.0",
+    "hash": "sha256-Ag8kMe/NBfq+HSchFzm0VAAo9xVnrKHFHUjbQ4KpSh0="
+>>>>>>> master
   },
   {
     "pname": "Azure.Storage.Common",
+<<<<<<< HEAD
     "version": "12.25.0",
     "hash": "sha256-4eMv4oOumO6FFx0VMsuIr6sWtouu4f6AajebTQjhj9Q="
+||||||| 213fed0310e3
+    "version": "12.24.0",
+    "hash": "sha256-ZjeMv8xaZXkmb1OgZlN9uJelhAcU7KhO/FK02qiz/zA="
+=======
+    "version": "12.26.0",
+    "hash": "sha256-GPiEPi/caj5z2cMFP5TUx/Jrj/zXZmA/xqC9CEoI+qQ="
+>>>>>>> master
   },
   {
     "pname": "Castle.Core",
@@ -431,8 +455,16 @@
   },
   {
     "pname": "System.ClientModel",
+<<<<<<< HEAD
     "version": "1.6.1",
     "hash": "sha256-OMnamkT9Nt5ZSR6xPKFmOQRUjdn0a4nP9jkD2eZxxc0="
+||||||| 213fed0310e3
+    "version": "1.1.0",
+    "hash": "sha256-FiueWJawZGar++OztDFWxU2nQE5Vih9iYsc3uEx0thM="
+=======
+    "version": "1.8.0",
+    "hash": "sha256-ZWVhuw3IRk9rZXkXERhesEET2KMMzHjUH/HDI288WK8="
+>>>>>>> master
   },
   {
     "pname": "System.Collections",
@@ -581,8 +613,8 @@
   },
   {
     "pname": "System.IO.Hashing",
-    "version": "8.0.0",
-    "hash": "sha256-szOGt0TNBo6dEdC3gf6H+e9YW3Nw0woa6UnCGGGK5cE="
+    "version": "10.0.1",
+    "hash": "sha256-k8EHcxnLitXo0CxoDZAxFmUlJJdKZVsZJ2+9zDMYB94="
   },
   {
     "pname": "System.Linq",

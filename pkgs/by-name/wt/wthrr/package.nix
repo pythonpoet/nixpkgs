@@ -37,8 +37,16 @@ rustPlatform.buildRustPackage rec {
     description = "Weather companion for the terminal";
     homepage = "https://github.com/ttytm/wthrr-the-weathercrab";
     changelog = "https://github.com/ttytm/wthrr-the-weathercrab/releases/tag/${src.rev}";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = [ ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = [ ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ lib.maintainers.matthiasbeyer ];
+>>>>>>> master
     mainProgram = "wthrr";
   };
 }

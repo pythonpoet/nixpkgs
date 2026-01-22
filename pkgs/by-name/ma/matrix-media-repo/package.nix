@@ -64,8 +64,15 @@ buildGoModule {
     description = "Highly configurable multi-domain media repository for Matrix";
     homepage = "https://github.com/t2bot/matrix-media-repo";
     changelog = "https://github.com/t2bot/matrix-media-repo/blob/${src.rev}/CHANGELOG.md";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ hexa ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ hexa ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
     mainProgram = "media_repo";
   };
 }

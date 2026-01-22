@@ -22,27 +22,51 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "slimevr";
+<<<<<<< HEAD
   version = "0.17.0";
+||||||| 213fed0310e3
+  version = "0.16.3";
+=======
+  version = "18.1.0";
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "SlimeVR";
     repo = "SlimeVR-Server";
     tag = "v${version}";
+<<<<<<< HEAD
     hash = "sha256-/7SQstUWnQcdzRZjY64PL2gfdstUqXhDmwUkCd6bhY4=";
+||||||| 213fed0310e3
+    hash = "sha256-RYHt0njzzom1wrHTP/7ch/D+YZcixqOeLMcfsGi+Kg8=";
+=======
+    hash = "sha256-vU/dcKRlNsixr3TaCrqNkCd2ewAb38fLymb+ZslAum4=";
+>>>>>>> master
     # solarxr
     fetchSubmodules = true;
   };
 
   buildAndTestSubdir = "gui/src-tauri";
 
+<<<<<<< HEAD
   cargoHash = "sha256-E825/tkIGphqSPHplDglQPHxPaz8+ZAICuQ/eYZuez4=";
+||||||| 213fed0310e3
+  cargoHash = "sha256-w2z+EQqkVGLmXQS+AzeJwkGG4ovpz9+ovmLOcUks734=";
+=======
+  cargoHash = "sha256-X5IgWZlkvsstMN3YS4r+NJl6RVfREfZqKUrfsrUPQuU=";
+>>>>>>> master
 
   pnpmDeps = fetchPnpmDeps {
     pname = "${pname}-pnpm-deps";
     inherit version src;
     pnpm = pnpm_9;
     fetcherVersion = 1;
+<<<<<<< HEAD
     hash = "sha256-EeIwEej2WiD2HGbZTgNoJTDL0t9H3mJ3+8qrPvgn8vY=";
+||||||| 213fed0310e3
+    hash = "sha256-b0oCOjxrUQqWmUR6IzTEO75pvJZB7MQD14DNbQm95sA=";
+=======
+    hash = "sha256-ExjEAr38GX2iZThVj3C3N/9mPgf0Bs7J5OAwtDdmn6I=";
+>>>>>>> master
   };
 
   nativeBuildInputs = [
@@ -147,7 +171,7 @@ rustPlatform.buildRustPackage rec {
     ];
     maintainers = with lib.maintainers; [
       gale-username
-      imurx
+      loucass003
     ];
     platforms = with lib.platforms; darwin ++ linux;
     broken = stdenv.hostPlatform.isDarwin;

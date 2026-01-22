@@ -9,20 +9,33 @@
 
 buildGoModule (finalAttrs: {
   pname = "miniflux";
+<<<<<<< HEAD
   version = "2.2.15";
+||||||| 213fed0310e3
+  version = "2.2.14";
+=======
+  version = "2.2.16";
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "miniflux";
     repo = "v2";
     tag = finalAttrs.version;
+<<<<<<< HEAD
     hash = "sha256-19i+TeBcPnI1Gfpf81gHE9sLvytsS4x1A5XU8oD7YIU=";
+||||||| 213fed0310e3
+    hash = "sha256-x6I5PMlQtsjvFtEyoaKKE6if3I0IBIyps4kPQL4c8aw=";
+=======
+    hash = "sha256-mJ0FgoTm/SzS/T6xcLk232Xs3TgaDQahib4BeWzNfAk=";
+>>>>>>> master
   };
 
   vendorHash = "sha256-XrTmXAUABlTQaA3Z0vU0HQW5Q1e/Yg6yq690oZH8M+A=";
 
   nativeBuildInputs = [ installShellFiles ];
 
-  checkFlags = [ "-skip=TestClient" ]; # skip client tests as they require network access
+  # skip tests that require network access
+  checkFlags = [ "-skip=TestResolvesToPrivateIP" ];
 
   ldflags = [
     "-s"

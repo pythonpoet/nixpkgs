@@ -27,13 +27,25 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "ruffle";
+<<<<<<< HEAD
   version = "0.2.0-nightly-2025-11-29";
+||||||| 213fed0310e3
+  version = "0.2.0-nightly-2025-11-16";
+=======
+  version = "0.2.0-nightly-2026-01-12";
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "ruffle-rs";
     repo = "ruffle";
     tag = lib.strings.removePrefix "0.2.0-" finalAttrs.version;
+<<<<<<< HEAD
     hash = "sha256-CGeLCbmACKDKfnqbrqfOSc1MNVL14rHjFMl3ZbS7/Co=";
+||||||| 213fed0310e3
+    hash = "sha256-iiiC5emyAAGyaaP4dqo25osUFjAAEtUEGd4M2et26Bg=";
+=======
+    hash = "sha256-hEfxvRcjxj3ND/qM8WQQVTgOLR7Rf0P9Wfhyx38kxY4=";
+>>>>>>> master
   };
 
   postPatch =
@@ -49,7 +61,13 @@ rustPlatform.buildRustPackage (finalAttrs: {
                        "OpenH264Version(${major}, ${minor}, ${patch})"
     '';
 
+<<<<<<< HEAD
   cargoHash = "sha256-B4q2OhzAc5zy0BUPlK+ABBCbW1nea4azu057h3F1KZo=";
+||||||| 213fed0310e3
+  cargoHash = "sha256-5sGodB0RNRZ2QiJv9zHyzFjBwTbRffvPkt21trUZgZE=";
+=======
+  cargoHash = "sha256-MY+K/KZP2xxewoh413+mjjPj+40gq2GhzdMKteJhRLc=";
+>>>>>>> master
   cargoBuildFlags = lib.optional withRuffleTools "--workspace";
 
   env =
@@ -150,7 +168,6 @@ rustPlatform.buildRustPackage (finalAttrs: {
     changelog = "https://github.com/ruffle-rs/ruffle/releases/tag/${lib.strings.removePrefix "0.2.0-" finalAttrs.version}";
     maintainers = [
       lib.maintainers.jchw
-      lib.maintainers.normalcea
     ];
     mainProgram = "ruffle";
     platforms = lib.platforms.linux ++ lib.platforms.darwin;

@@ -14,14 +14,26 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "radicle-ci-broker";
+<<<<<<< HEAD
   version = "0.24.0";
+||||||| 213fed0310e3
+  version = "0.22.0";
+=======
+  version = "0.25.0";
+>>>>>>> master
 
   src = fetchFromRadicle {
     seed = "seed.radicle.xyz";
     repo = "zwTxygwuz5LDGBq255RA2CbNGrz8";
     node = "z6MkgEMYod7Hxfy9qCvDv5hYHkZ4ciWmLFgfvm3Wn1b2w2FV";
     tag = "v${finalAttrs.version}";
+<<<<<<< HEAD
     hash = "sha256-E9i5EhzI+9PX2Sm2nNyB5SMi6F/EmjifeD0futPBi6k=";
+||||||| 213fed0310e3
+    hash = "sha256-ylgOnDQRjQrG9Dngo/N6nGOnNcKgFtN9hT96yryHn0I=";
+=======
+    hash = "sha256-28PS85ME0Yg6+FnYw8GRNeo56z5efAqSE7FNk7wiTuI=";
+>>>>>>> master
     leaveDotGit = true;
     postFetch = ''
       git -C $out rev-parse --short HEAD > $out/.git_head
@@ -29,7 +41,13 @@ rustPlatform.buildRustPackage (finalAttrs: {
     '';
   };
 
+<<<<<<< HEAD
   cargoHash = "sha256-RlqomX4XiKn/YuCdBh6H/y+8JFBwC06eDEAmhz71UXs=";
+||||||| 213fed0310e3
+  cargoHash = "sha256-Ykf8vk/5KcZcudbKkU/Ht4gPtmG45b60IorKL90RjAA=";
+=======
+  cargoHash = "sha256-v+ax8DmXZFxYGYL7WaX5W/UIByuYcvkAMQIqpb6Emyw=";
+>>>>>>> master
 
   postPatch = ''
     substituteInPlace build.rs \
@@ -57,7 +75,6 @@ rustPlatform.buildRustPackage (finalAttrs: {
   checkFlags = [ "--skip=acceptance_criteria_for_upgrades" ];
 
   nativeInstallCheckInputs = [ versionCheckHook ];
-  versionCheckProgramArg = "--version";
   doInstallCheck = true;
 
   passthru = {

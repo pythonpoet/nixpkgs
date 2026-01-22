@@ -41,8 +41,17 @@ stdenv.mkDerivation rec {
        * wasm2c: convert a WebAssembly binary file to a C source and header
     '';
     homepage = "https://github.com/WebAssembly/wabt";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ ekleog ];
     platforms = lib.platforms.unix;
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [ ekleog ];
+    platforms = platforms.unix;
+=======
+    license = lib.licenses.asl20;
+    platforms = lib.platforms.unix;
+>>>>>>> master
   };
 }

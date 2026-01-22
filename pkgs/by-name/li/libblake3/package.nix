@@ -6,8 +6,14 @@
   fetchpatch,
   onetbb,
 
+<<<<<<< HEAD
   # TBB doesn't support being built static
   useTBB ? !stdenv.hostPlatform.isStatic,
+||||||| 213fed0310e3
+  useTBB ? true,
+=======
+  useTBB ? lib.meta.availableOn stdenv.hostPlatform onetbb,
+>>>>>>> master
 }:
 
 stdenv.mkDerivation (finalAttrs: {
@@ -37,6 +43,12 @@ stdenv.mkDerivation (finalAttrs: {
     (fetchpatch {
       url = "https://patch-diff.githubusercontent.com/raw/BLAKE3-team/BLAKE3/pull/477.patch";
       hash = "sha256-kidCMGd/i9D9HLLTt7l1DbiU71sFTEyr3Vew4XHUHls=";
+      relative = "c";
+    })
+    # fix cygwin build
+    (fetchpatch {
+      url = "https://github.com/BLAKE3-team/BLAKE3/commit/d62babb7ebb01c8ac4aaa580f4b49071a639195e.patch";
+      hash = "sha256-qO8HsmBIAkR03rqITooyBiQTorUM6JCJLZOrOc2yss8=";
       relative = "c";
     })
   ];

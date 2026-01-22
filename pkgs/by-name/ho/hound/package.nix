@@ -56,9 +56,18 @@ buildGoModule rec {
   meta = {
     description = "Lightning fast code searching made easy";
     homepage = "https://github.com/hound-search/hound";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [
       grahamc
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [
+      grahamc
+=======
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       SuperSandro2000
     ];
   };

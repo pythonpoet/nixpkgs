@@ -21,8 +21,16 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Like tree but interactive";
     homepage = "https://github.com/NikitaIvanovV/ictree";
+<<<<<<< HEAD
     platforms = lib.platforms.unix;
     maintainers = with lib.maintainers; [ foo-dogsquared ];
+||||||| 213fed0310e3
+    platforms = platforms.unix;
+    maintainers = with maintainers; [ foo-dogsquared ];
+=======
+    platforms = lib.platforms.unix;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "ictree";
   };
 }

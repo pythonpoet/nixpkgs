@@ -22,14 +22,26 @@
 let
   self = python3.pkgs.buildPythonApplication rec {
     pname = "duplicity";
+<<<<<<< HEAD
     version = "3.0.6.3";
+||||||| 213fed0310e3
+    version = "3.0.6.2";
+=======
+    version = "3.0.7";
+>>>>>>> master
     format = "setuptools";
 
     src = fetchFromGitLab {
       owner = "duplicity";
       repo = "duplicity";
       rev = "rel.${version}";
+<<<<<<< HEAD
       hash = "sha256-WY2pQlWlqdsFGONUBdAoJM1sNr+Hu496pThhn8IKSXE=";
+||||||| 213fed0310e3
+      hash = "sha256-S0bfE7ddfUsqhobbldu8RSVsOKHtq2ijL/PgDB5e+sw=";
+=======
+      hash = "sha256-t2YFp/AuQ9xKZSPmNA/IuQYNOcnPO0l8xhXyLBKSuqA=";
+>>>>>>> master
     };
 
     patches = [

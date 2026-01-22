@@ -35,8 +35,16 @@ rustPlatform.buildRustPackage rec {
     description = "Network diagnostic tool";
     homepage = "https://trippy.cli.rs";
     changelog = "https://github.com/fujiapple852/trippy/blob/${src.rev}/CHANGELOG.md";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = [ ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = [ ];
+=======
+    license = lib.licenses.asl20;
+    maintainers = [ lib.maintainers.matthiasbeyer ];
+>>>>>>> master
     mainProgram = "trip";
   };
 }

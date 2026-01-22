@@ -24,15 +24,27 @@ let
 in
 python3Packages.buildPythonApplication rec {
   pname = "rcu";
+<<<<<<< HEAD
   version = "4.0.32";
+||||||| 213fed0310e3
+  version = "4.0.30";
+=======
+  version = "4.0.33";
+>>>>>>> master
 
-  format = "other";
+  pyproject = false;
 
   src =
     let
       src-tarball = requireFile {
         name = "rcu-${version}-source.tar.gz";
+<<<<<<< HEAD
         hash = "sha256-0sJyCRDV76HUy78RBO27AgkXGroL217GNwHp8HMSKx8=";
+||||||| 213fed0310e3
+        hash = "sha256-SJnDTW6oQUd+UjWgJz74Po+ibk3JfotFU7CIt4J/nDA=";
+=======
+        hash = "sha256-ezbG3qUfUyr9JEXyKTrULYCVm4hA4+nvcHPzJpdLaWY=";
+>>>>>>> master
         url = "https://www.davisr.me/projects/rcu/";
       };
     in

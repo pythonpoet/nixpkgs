@@ -22,6 +22,7 @@ let
     # Requires running Docker daemon
     "TestDocker"
     "TestJobExecutor"
+    "TestRunExec"
     "TestRunner"
     "Test_validateCmd"
 
@@ -48,19 +49,39 @@ let
 in
 buildGoModule rec {
   pname = "forgejo-runner";
+<<<<<<< HEAD
   version = "12.3.1";
+||||||| 213fed0310e3
+  version = "11.3.1";
+=======
+  version = "12.5.3";
+>>>>>>> master
 
   src = fetchFromGitea {
     domain = "code.forgejo.org";
     owner = "forgejo";
     repo = "runner";
     rev = "v${version}";
+<<<<<<< HEAD
     hash = "sha256-Rw6/G4gbWKikYjeKYw2cHxLMw8ULqnbhqHQFDzHCMrY=";
+||||||| 213fed0310e3
+    hash = "sha256-jvHnTCkRvYaejeCiPpr18ldEmxcAkrEIaOLVVBY11eg=";
+=======
+    hash = "sha256-qCk2GvPWKIQfEjYtx2Uc7GcVDehUu0/u4LP88FxoA9A=";
+>>>>>>> master
   };
 
+<<<<<<< HEAD
   vendorHash = "sha256-ReGxoPvW4G6DbFfR2OeeT3tupZkpLpX80zK824oeyVg=";
 
   nativeBuildInputs = [ makeWrapper ];
+||||||| 213fed0310e3
+  vendorHash = "sha256-7Ybh5qzkqT3CvGtRXiPkc5ShTYGlyvckTxg4EFagM/c=";
+=======
+  vendorHash = "sha256-pGLZmSW7MKEy/K+njgcPv5a+7Qtf8mqUI4OwKhfEZXY=";
+
+  nativeBuildInputs = [ makeWrapper ];
+>>>>>>> master
 
   # See upstream Makefile
   # https://code.forgejo.org/forgejo/runner/src/branch/main/Makefile
@@ -96,12 +117,12 @@ buildGoModule rec {
   doInstallCheck = true;
   nativeInstallCheckInputs = [ versionCheckHook ];
   versionCheckProgram = "${placeholder "out"}/bin/${meta.mainProgram}";
-  versionCheckProgramArg = "--version";
 
   passthru = {
     updateScript = nix-update-script { };
     tests = lib.optionalAttrs stdenv.hostPlatform.isLinux {
-      sqlite3 = nixosTests.forgejo.sqlite3;
+      latest = nixosTests.forgejo.sqlite3;
+      lts = nixosTests.forgejo-lts.sqlite3;
     };
   };
 

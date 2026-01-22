@@ -14,14 +14,26 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "ty";
+<<<<<<< HEAD
   version = "0.0.1-alpha.32";
+||||||| 213fed0310e3
+  version = "0.0.1-alpha.27";
+=======
+  version = "0.0.13";
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "astral-sh";
     repo = "ty";
     tag = finalAttrs.version;
     fetchSubmodules = true;
+<<<<<<< HEAD
     hash = "sha256-Kc5jxDpQv7bm4J7EdejkrUv/lz7hRc01riUIEdv+wmY=";
+||||||| 213fed0310e3
+    hash = "sha256-oyy6eeRr7sCCjZhjnx0zKSy9d2HwgZFKRDidmxP0juA=";
+=======
+    hash = "sha256-2KPnFNutndxE5ap0E9BCL5w6vpnfow8GIY4/N9dgYy8=";
+>>>>>>> master
   };
 
   # For Darwin platforms, remove the integration test for file notifications,
@@ -35,7 +47,13 @@ rustPlatform.buildRustPackage (finalAttrs: {
 
   cargoBuildFlags = [ "--package=ty" ];
 
+<<<<<<< HEAD
   cargoHash = "sha256-GEf/gU2DXz+u7kPHAB1NRqkmn0f7NV3M5U9u17adtkI=";
+||||||| 213fed0310e3
+  cargoHash = "sha256-fpff3fO1Udtldg68vvy+BQs1ynntGM0suzGnpnhOV5A=";
+=======
+  cargoHash = "sha256-E/kR6AxzpIqKMM80+ute5Z6LUL5f39RYfj7BnGOg6V4=";
+>>>>>>> master
 
   nativeBuildInputs = [ installShellFiles ];
 
@@ -56,6 +74,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
     "--package=ty_test" # test framework tests
   ];
 
+<<<<<<< HEAD
   checkFlags = [
     # Flaky:
     # called `Result::unwrap()` on an `Err` value: Os { code: 26, kind: ExecutableFileBusy, message: "Text file busy" }
@@ -64,8 +83,19 @@ rustPlatform.buildRustPackage (finalAttrs: {
     "--skip=python_environment::ty_environment_is_system_not_virtual"
   ];
 
+||||||| 213fed0310e3
+=======
+  checkFlags = [
+    # Flaky:
+    # called `Result::unwrap()` on an `Err` value: Os { code: 26, kind: ExecutableFileBusy, message: "Text file busy" }
+    "--skip=python_environment::ty_environment_and_active_environment"
+    "--skip=python_environment::ty_environment_and_discovered_venv"
+    "--skip=python_environment::ty_environment_is_only_environment"
+    "--skip=python_environment::ty_environment_is_system_not_virtual"
+  ];
+
+>>>>>>> master
   nativeInstallCheckInputs = [ versionCheckHook ];
-  versionCheckProgramArg = "--version";
   doInstallCheck = true;
 
   postInstall = lib.optionalString (stdenv.hostPlatform.emulatorAvailable buildPackages) (
@@ -81,7 +111,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
   );
 
   passthru = {
-    updateScript = nix-update-script { extraArgs = [ "--version=unstable" ]; };
+    updateScript = nix-update-script { };
   };
 
   meta = {

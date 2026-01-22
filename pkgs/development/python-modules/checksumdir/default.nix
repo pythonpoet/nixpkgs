@@ -3,15 +3,12 @@
   buildPythonPackage,
   fetchFromGitHub,
   setuptools,
-  pythonOlder,
 }:
 
 buildPythonPackage rec {
   pname = "checksumdir";
   version = "1.3.0";
   pyproject = true;
-
-  disabled = pythonOlder "3.6";
 
   src = fetchFromGitHub {
     owner = "to-mc";
@@ -28,7 +25,15 @@ buildPythonPackage rec {
   meta = {
     description = "Simple package to compute a single deterministic hash of the file contents of a directory";
     homepage = "https://github.com/to-mc/checksumdir";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ mbalatsko ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ mbalatsko ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

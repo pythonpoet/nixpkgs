@@ -50,6 +50,11 @@ stdenv.mkDerivation rec {
       lgpl21
       mpl11
     ];
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ Br1ght0ne ];
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ Br1ght0ne ];
+=======
+>>>>>>> master
   };
 }

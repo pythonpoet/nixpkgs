@@ -21,8 +21,16 @@ buildGoModule rec {
   meta = {
     description = "CLI Emoji Picker";
     homepage = "https://github.com/bcongdon/ep";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ urandom ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ urandom ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "ep";
   };
 }

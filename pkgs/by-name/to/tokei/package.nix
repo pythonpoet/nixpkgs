@@ -12,13 +12,25 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "tokei";
+<<<<<<< HEAD
   version = "13.0.0";
+||||||| 213fed0310e3
+  version = "13.0.0-alpha.9";
+=======
+  version = "14.0.0";
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "XAMPPRocky";
     repo = "tokei";
     tag = "v${finalAttrs.version}";
+<<<<<<< HEAD
     hash = "sha256-7VyjNqwyqJhTTnaiijwXxHzWzk6GbxvQJPjIf250Kfc=";
+||||||| 213fed0310e3
+    hash = "sha256-OSIJYSUwc8SvszEOMgt+d/ljCW2jtBkPw6buof4JpUc=";
+=======
+    hash = "sha256-BpQ+Aurx2CkFRcozUTbmLLAg7v3NkgKXm5y0TiQCfHw=";
+>>>>>>> master
   };
 
   patches = [
@@ -29,7 +41,13 @@ rustPlatform.buildRustPackage (finalAttrs: {
     })
   ];
 
+<<<<<<< HEAD
   cargoHash = "sha256-aCSz4BwSk+h+LLOPoBHy2lOmLeZI35o3qXSCE0UmEBY=";
+||||||| 213fed0310e3
+  cargoHash = "sha256-FIT+c2YzGxJEvLB5uqkdVLWkQ/wlrbCrAkSQEoS4kJw=";
+=======
+  cargoHash = "sha256-x1Oi+B6DpbsCqnX0Lp5LsmoVHNvdibwj/IEgFvhepqY=";
+>>>>>>> master
 
   buildInputs = lib.optionals stdenv.hostPlatform.isDarwin [ libiconv ];
 
@@ -39,7 +57,6 @@ rustPlatform.buildRustPackage (finalAttrs: {
   buildFeatures = [ "all" ];
 
   nativeInstallCheckInputs = [ versionCheckHook ];
-  versionCheckProgramArg = "--version";
   doInstallCheck = true;
 
   passthru.updateScript = nix-update-script { };

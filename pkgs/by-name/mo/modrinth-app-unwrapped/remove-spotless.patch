@@ -1,15 +1,35 @@
 diff --git a/packages/app-lib/java/build.gradle.kts b/packages/app-lib/java/build.gradle.kts
+<<<<<<< HEAD
 index a671dd6f..d18c28de 100644
+||||||| 213fed0310e3
+index b7f9ede0..8a336897 100644
+=======
+index 10435b98..c4346a0c 100644
+>>>>>>> master
 --- a/packages/app-lib/java/build.gradle.kts
 +++ b/packages/app-lib/java/build.gradle.kts
 @@ -1,6 +1,5 @@
  plugins {
      java
+<<<<<<< HEAD
 -    id("com.diffplug.spotless") version "7.0.4"
      id("com.gradleup.shadow") version "9.0.0-rc2"
+||||||| 213fed0310e3
+-    id("com.diffplug.spotless") version "7.0.4"
+=======
+-    id("com.diffplug.spotless") version "8.0.0"
+     id("com.gradleup.shadow") version "9.2.2"
+>>>>>>> master
  }
  
+<<<<<<< HEAD
 @@ -27,13 +26,6 @@ tasks.withType<JavaCompile>().configureEach {
+||||||| 213fed0310e3
+ repositories {
+@@ -23,13 +22,6 @@ tasks.withType<JavaCompile>().configureEach {
+=======
+@@ -28,12 +27,6 @@ tasks.withType<JavaCompile>().configureEach {
+>>>>>>> master
      options.compilerArgs.addAll(listOf("-Xlint:all", "-Werror"))
  }
  
@@ -19,7 +39,14 @@ index a671dd6f..d18c28de 100644
 -        removeUnusedImports()
 -    }
 -}
--
+ 
  tasks.jar {
+<<<<<<< HEAD
      enabled = false
  }
+||||||| 213fed0310e3
+     archiveFileName = "theseus.jar"
+ }
+=======
+     enabled = false
+>>>>>>> master

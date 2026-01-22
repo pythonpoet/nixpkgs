@@ -37,8 +37,18 @@ stdenv.mkDerivation rec {
     description = "Process monitoring tool";
     mainProgram = "health-check";
     homepage = "https://github.com/ColinIanKing/health-check";
+<<<<<<< HEAD
     license = lib.licenses.gpl2Plus;
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [ dtzWill ];
+||||||| 213fed0310e3
+    license = licenses.gpl2Plus;
+    platforms = platforms.linux;
+    maintainers = with maintainers; [ dtzWill ];
+=======
+    license = lib.licenses.gpl2Plus;
+    platforms = lib.platforms.linux;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

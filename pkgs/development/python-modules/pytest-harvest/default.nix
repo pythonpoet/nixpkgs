@@ -12,15 +12,12 @@
   pandas,
   tabulate,
   pytest-cases,
-  pythonOlder,
 }:
 
 buildPythonPackage rec {
   pname = "pytest-harvest";
   version = "1.10.5";
   pyproject = true;
-
-  disabled = pythonOlder "3.6";
 
   src = fetchFromGitHub {
     owner = "smarie";
@@ -65,7 +62,15 @@ buildPythonPackage rec {
     description = "Store data created during your `pytest` tests execution, and retrieve it at the end of the session, e.g. for applicative benchmarking purposes";
     homepage = "https://github.com/smarie/python-pytest-harvest";
     changelog = "https://github.com/smarie/python-pytest-harvest/releases/tag/${version}";
+<<<<<<< HEAD
     license = lib.licenses.bsd3;
     maintainers = with lib.maintainers; [ mbalatsko ];
+||||||| 213fed0310e3
+    license = licenses.bsd3;
+    maintainers = with maintainers; [ mbalatsko ];
+=======
+    license = lib.licenses.bsd3;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

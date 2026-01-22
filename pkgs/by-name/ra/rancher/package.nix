@@ -40,7 +40,15 @@ buildGoModule rec {
     description = "CLI tool for interacting with your Rancher Server";
     mainProgram = "rancher";
     homepage = "https://github.com/rancher/cli";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ bryanasdev000 ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [ bryanasdev000 ];
+=======
+    license = lib.licenses.asl20;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

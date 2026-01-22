@@ -19,7 +19,7 @@ rustPlatform.buildRustPackage rec {
     domain = "codeberg.org";
     owner = "irdest";
     repo = "irdest";
-    tag = "${version}";
+    tag = version;
     hash = "sha256-rdKfKbikyqs0Y/y9A8XRVSKenjHD5rS3blxwy98Tvmg=";
   };
 
@@ -46,7 +46,8 @@ rustPlatform.buildRustPackage rec {
     sourceRoot = "${src.name}/ratman/dashboard";
 
     npmDeps = fetchNpmDeps {
-      name = "${pname}-${version}-npm-deps";
+      pname = "npm-deps-${pname}";
+      inherit version;
       src = "${src}/ratman/dashboard";
       hash = "sha256-47L4V/Vf8DK3q63MYw3x22+rzIN3UPD0N/REmXh5h3w=";
     };

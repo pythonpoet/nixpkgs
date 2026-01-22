@@ -95,9 +95,18 @@ stdenv.mkDerivation rec {
     license = lib.licenses.bsl11;
     maintainers = with lib.maintainers; [
       cab404
+      e1mo
+      xanderio
       yrd
     ];
+<<<<<<< HEAD
     teams = [ lib.teams.cyberus ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    teams = [ teams.cyberus ];
+    platforms = platforms.linux;
+=======
+    platforms = lib.platforms.linux;
+>>>>>>> master
   };
 }

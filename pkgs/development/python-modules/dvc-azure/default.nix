@@ -45,7 +45,14 @@ buildPythonPackage rec {
     description = "Azure plugin for dvc";
     homepage = "https://pypi.org/project/dvc-azure/${version}";
     changelog = "https://github.com/iterative/dvc-azure/releases/tag/${version}";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ melling ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [ melling ];
+=======
+    license = lib.licenses.asl20;
+>>>>>>> master
   };
 }

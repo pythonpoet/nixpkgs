@@ -59,8 +59,17 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Cross-platform IRC framework written with Qt";
     homepage = "https://communi.github.io";
+<<<<<<< HEAD
     license = lib.licenses.bsd3;
     platforms = lib.platforms.all;
     maintainers = with lib.maintainers; [ hrdinka ];
+||||||| 213fed0310e3
+    license = licenses.bsd3;
+    platforms = platforms.all;
+    maintainers = with maintainers; [ hrdinka ];
+=======
+    license = lib.licenses.bsd3;
+    platforms = lib.platforms.all;
+>>>>>>> master
   };
 }

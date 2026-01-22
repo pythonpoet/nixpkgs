@@ -41,7 +41,13 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "nautilus";
+<<<<<<< HEAD
   version = "49.2";
+||||||| 213fed0310e3
+  version = "49.1";
+=======
+  version = "49.3";
+>>>>>>> master
 
   outputs = [
     "out"
@@ -51,7 +57,13 @@ stdenv.mkDerivation (finalAttrs: {
 
   src = fetchurl {
     url = "mirror://gnome/sources/nautilus/${lib.versions.major finalAttrs.version}/nautilus-${finalAttrs.version}.tar.xz";
+<<<<<<< HEAD
     hash = "sha256-JXazS+0ngaifCQUeyfyuOuF+txcs175nj1kqoU5MJrE=";
+||||||| 213fed0310e3
+    hash = "sha256-rdKg5BD9ItooUd3QxbPSLJ6djDMRFRHzNpYeO0YbU14=";
+=======
+    hash = "sha256-qmvzdvCJkjYoBergGJCxv1rRSPNWqnzP4fZk7aiNQT4=";
+>>>>>>> master
   };
 
   patches = [

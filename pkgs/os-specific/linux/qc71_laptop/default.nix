@@ -38,8 +38,19 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Linux driver for QC71 laptop";
     homepage = "https://github.com/pobrn/qc71_laptop/";
+<<<<<<< HEAD
     license = lib.licenses.gpl2Only;
     maintainers = with lib.maintainers; [ aacebedo ];
+||||||| 213fed0310e3
+    license = licenses.gpl2Only;
+    maintainers = with maintainers; [ aacebedo ];
+=======
+    license = lib.licenses.gpl2Only;
+    maintainers = with lib.maintainers; [
+      aacebedo
+      lucasfa
+    ];
+>>>>>>> master
     platforms = [ "x86_64-linux" ];
   };
 }

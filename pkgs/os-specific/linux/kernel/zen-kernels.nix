@@ -16,16 +16,38 @@ let
   variants = {
     # ./update-zen.py zen
     zen = {
+<<<<<<< HEAD
       version = "6.18.2"; # zen
       suffix = "zen2"; # zen
       sha256 = "1jagav0yp2s09461wrn7vjmhvb92qnhlqdhx6pdza21zbzbscpvj"; # zen
+||||||| 213fed0310e3
+      version = "6.17.8"; # zen
+      suffix = "zen1"; # zen
+      sha256 = "0khz49xgqvbxsq0gk127xspic3ks1x61v3ggnjzwhzsgpqyvjv04"; # zen
+=======
+      version = "6.18.5"; # zen
+      suffix = "zen1"; # zen
+      sha256 = "1slclm2mgv7z3s0lcjrhqhzhbas4yq9yxkdjr27hlx7madplwbmi"; # zen
+>>>>>>> master
       isLqx = false;
     };
     # ./update-zen.py lqx
     lqx = {
+<<<<<<< HEAD
       version = "6.18.2"; # lqx
+||||||| 213fed0310e3
+      version = "6.17.7"; # lqx
+=======
+      version = "6.18.6"; # lqx
+>>>>>>> master
       suffix = "lqx1"; # lqx
+<<<<<<< HEAD
       sha256 = "0g2nxdcyzswndz15s5xpia3p7jsdi9kvh8rk0d87zgwwz395zzvq"; # lqx
+||||||| 213fed0310e3
+      sha256 = "0cp625hcli2grmmkxfrja71slfl2j1pqds74a56sbx7irk82zwdh"; # lqx
+=======
+      sha256 = "18b5yw91k4m9cfa2gw6n07sw3xfnzs9xx7hb0ls26r4d8jn01lsq"; # lqx
+>>>>>>> master
       isLqx = true;
     };
   };

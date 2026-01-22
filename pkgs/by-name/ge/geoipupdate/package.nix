@@ -24,8 +24,19 @@ buildGoModule rec {
   meta = {
     description = "Automatic GeoIP database updater";
     homepage = "https://github.com/maxmind/geoipupdate";
+<<<<<<< HEAD
     license = with lib.licenses; [ asl20 ];
     teams = [ lib.teams.helsinki-systems ];
+||||||| 213fed0310e3
+    license = with licenses; [ asl20 ];
+    teams = [ teams.helsinki-systems ];
+=======
+    license = with lib.licenses; [ asl20 ];
+    maintainers = with lib.maintainers; [
+      das_j
+      helsinki-Jo
+    ];
+>>>>>>> master
     mainProgram = "geoipupdate";
   };
 }

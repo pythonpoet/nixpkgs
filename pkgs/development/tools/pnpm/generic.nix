@@ -75,6 +75,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
       pnpm' = buildPackages."pnpm_${lib.versions.major version}";
     in
     {
+<<<<<<< HEAD
       fetchDeps =
         { ... }@args:
         fetchPnpmDeps (
@@ -88,6 +89,32 @@ stdenvNoCC.mkDerivation (finalAttrs: {
           pnpm'
         ];
       });
+||||||| 213fed0310e3
+      inherit (fetchDepsAttrs) fetchDeps configHook;
+=======
+      fetchDeps =
+        lib.warn
+          "pnpm.fetchDeps: The package attribute is deprecated. Use the top-level fetchPnpmDeps attribute instead"
+          (
+            { ... }@args:
+            fetchPnpmDeps (
+              args
+              // {
+                pnpm = pnpm';
+              }
+            )
+          );
+      configHook =
+        lib.warn
+          "pnpm.configHook: The package attribute is deprecated. Use the top-level pnpmConfigHook attribute instead"
+          (
+            pnpmConfigHook.overrideAttrs (prevAttrs: {
+              propagatedBuildInputs = prevAttrs.propagatedBuildInputs or [ ] ++ [
+                pnpm'
+              ];
+            })
+          );
+>>>>>>> master
       inherit majorVersion;
 
       tests.version = lib.optionalAttrs withNode (

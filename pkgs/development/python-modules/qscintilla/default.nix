@@ -24,7 +24,7 @@ pythonPackages.buildPythonPackage {
   pname = "qscintilla-qt${qtVersion}";
   version = qscintilla.version;
   src = qscintilla.src;
-  format = "pyproject";
+  pyproject = true;
 
   disabled = !isPy3k;
 
@@ -84,8 +84,15 @@ pythonPackages.buildPythonPackage {
 
   meta = {
     description = "Python binding to QScintilla, Qt based text editing control";
+<<<<<<< HEAD
     license = lib.licenses.lgpl21Plus;
     maintainers = with lib.maintainers; [ lsix ];
+||||||| 213fed0310e3
+    license = licenses.lgpl21Plus;
+    maintainers = with maintainers; [ lsix ];
+=======
+    license = lib.licenses.lgpl21Plus;
+>>>>>>> master
     homepage = "https://www.riverbankcomputing.com/software/qscintilla/";
   };
 }

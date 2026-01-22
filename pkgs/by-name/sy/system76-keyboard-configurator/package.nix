@@ -1,5 +1,6 @@
 {
   lib,
+  stdenv,
   fetchFromGitHub,
   rustPlatform,
   gtk3,
@@ -36,12 +37,14 @@ rustPlatform.buildRustPackage rec {
     gtk3
     hidapi
     libusb1
+  ]
+  ++ lib.optionals stdenv.hostPlatform.isLinux [
     udev
   ];
 
   cargoHash = "sha256-0UmEWQz+8fKx8Z1slVuVZeiWN9JKjEKINgXzZ6a4jkE=";
 
-  postInstall = ''
+  postInstall = lib.optionalString stdenv.hostPlatform.isLinux ''
     install -Dm444 linux/com.system76.keyboardconfigurator.desktop -t $out/share/applications
     cp -r data/icons $out/share
   '';
@@ -50,8 +53,18 @@ rustPlatform.buildRustPackage rec {
     description = "Keyboard configuration application for System76 keyboards and laptops";
     mainProgram = "system76-keyboard-configurator";
     homepage = "https://github.com/pop-os/keyboard-configurator";
+<<<<<<< HEAD
     license = with lib.licenses; [ gpl3Only ];
     maintainers = with lib.maintainers; [ mirrexagon ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    license = with licenses; [ gpl3Only ];
+    maintainers = with maintainers; [ mirrexagon ];
+    platforms = platforms.linux;
+=======
+    license = with lib.licenses; [ gpl3Only ];
+    maintainers = with lib.maintainers; [ mirrexagon ];
+    platforms = with lib.platforms; linux ++ darwin;
+>>>>>>> master
   };
 }

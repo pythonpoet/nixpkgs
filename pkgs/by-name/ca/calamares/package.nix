@@ -125,8 +125,15 @@ stdenv.mkDerivation (finalAttrs: {
       bsd2
       cc0
     ];
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [
       manveru
+||||||| 213fed0310e3
+    maintainers = with maintainers; [
+      manveru
+=======
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       vlinkz
     ];
     platforms = lib.platforms.linux;

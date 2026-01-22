@@ -27,8 +27,16 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Python2/3 script for checking BibLatex .bib files";
     homepage = "https://github.com/Pezmc/BibLatex-Check";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ dtzWill ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ dtzWill ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "biblatex-check";
   };
 }

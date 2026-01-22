@@ -61,7 +61,15 @@ buildPythonPackage rec {
     description = "Official API for https://www.kaggle.com, accessible using a command line tool implemented in Python 3";
     mainProgram = "kaggle";
     homepage = "https://github.com/Kaggle/kaggle-api";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ mbalatsko ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [ mbalatsko ];
+=======
+    license = lib.licenses.asl20;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

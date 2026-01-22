@@ -42,9 +42,23 @@ stdenv.mkDerivation rec {
   meta = {
     homepage = "https://pigeonhole.dovecot.org/";
     description = "Sieve plugin for the Dovecot IMAP server";
+<<<<<<< HEAD
     license = lib.licenses.lgpl21Only;
     maintainers = with lib.maintainers; [ globin ];
     teams = [ lib.teams.helsinki-systems ];
     platforms = lib.platforms.unix;
+||||||| 213fed0310e3
+    license = licenses.lgpl21Only;
+    maintainers = with maintainers; [ globin ];
+    teams = [ teams.helsinki-systems ];
+    platforms = platforms.unix;
+=======
+    license = lib.licenses.lgpl21Only;
+    maintainers = with lib.maintainers; [
+      das_j
+      helsinki-Jo
+    ];
+    platforms = lib.platforms.unix;
+>>>>>>> master
   };
 }

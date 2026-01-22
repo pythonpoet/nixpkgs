@@ -30,9 +30,18 @@ let
 
         meta = {
           homepage = "https://www.elastic.co/products/beats";
+<<<<<<< HEAD
           license = lib.licenses.asl20;
           maintainers = with lib.maintainers; [
             fadenb
+||||||| 213fed0310e3
+          license = licenses.asl20;
+          maintainers = with maintainers; [
+            fadenb
+=======
+          license = lib.licenses.asl20;
+          maintainers = with lib.maintainers; [
+>>>>>>> master
             basvandijk
             dfithian
           ];

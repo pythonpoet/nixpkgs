@@ -1,7 +1,6 @@
 {
   lib,
   buildPythonPackage,
-  pythonOlder,
   fetchFromGitHub,
   pbr,
   httpx,
@@ -21,8 +20,6 @@ buildPythonPackage rec {
   pname = "bimmer-connected";
   version = "0.17.3";
   pyproject = true;
-
-  disabled = pythonOlder "3.8";
 
   src = fetchFromGitHub {
     owner = "bimmerconnected";
@@ -58,7 +55,7 @@ buildPythonPackage rec {
     respx
     time-machine
   ]
-  ++ lib.flatten (lib.attrValues optional-dependencies);
+  ++ lib.concatAttrValues optional-dependencies;
 
   disabledTests = [
     # presumably regressed in pytest-asyncio 0.23.0

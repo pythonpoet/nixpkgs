@@ -73,7 +73,13 @@ maven.buildMavenPackage rec {
     if (stdenv.hostPlatform.isLinux && stdenv.hostPlatform.isAarch64) then
       "sha256-gerjxTj8UQEVthMO3unWPEG7SPseMt5JPPureC/wUsw="
     else
+<<<<<<< HEAD
       "sha256-QH14GJ8JUYuu5XWnSKPYsamFeP0o+5Sobl+a0FUOIzs=";
+||||||| 213fed0310e3
+      "sha256-9uyNCUqnMgpiwm2kz544pWNB/SkRpASm2Dln0e4yZos=";
+=======
+      "sha256-LoOiLisqc99gIGClpVe8tq5/2prmyyOzLDkpmuSgwVo=";
+>>>>>>> master
 
   installPhase = ''
     runHook preInstall

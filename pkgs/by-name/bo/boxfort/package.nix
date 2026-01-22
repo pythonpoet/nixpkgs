@@ -2,25 +2,29 @@
   lib,
   stdenv,
   fetchFromGitHub,
+  pkg-config,
   meson,
   ninja,
   python3Packages,
+  gitMinimal,
 }:
 
-stdenv.mkDerivation rec {
+stdenv.mkDerivation (finalAttrs: {
   pname = "boxfort";
-  version = "0.1.4";
+  version = "0.1.5";
 
   src = fetchFromGitHub {
     owner = "Snaipe";
     repo = "BoxFort";
-    rev = "v${version}";
-    sha256 = "jmtWTOkOlqVZ7tFya3IrQjr714Y8TzAVY5Cq+RzDuRs=";
+    rev = "v${finalAttrs.version}";
+    hash = "sha256-fgX2Ilb01qa9myuz6yiC67WKeai2m/csncS6u5and3o=";
   };
 
   nativeBuildInputs = [
     meson
     ninja
+    pkg-config
+    gitMinimal
   ];
 
   preConfigure = ''
@@ -39,11 +43,20 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Convenient & cross-platform sandboxing C library";
     homepage = "https://github.com/Snaipe/BoxFort";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [
+=======
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [
+      sigmanificient
+>>>>>>> master
       thesola10
       Yumasi
     ];
     platforms = lib.platforms.unix;
   };
-}
+})

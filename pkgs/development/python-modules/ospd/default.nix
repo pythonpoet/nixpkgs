@@ -9,15 +9,12 @@
   paramiko,
   psutil,
   pytestCheckHook,
-  pythonOlder,
 }:
 
 buildPythonPackage rec {
   pname = "ospd";
   version = "21.4.4";
   format = "setuptools";
-
-  disabled = pythonOlder "3.7" || stdenv.hostPlatform.isDarwin;
 
   src = fetchFromGitHub {
     owner = "greenbone";
@@ -42,7 +39,16 @@ buildPythonPackage rec {
     description = "Framework for vulnerability scanners which support OSP";
     homepage = "https://github.com/greenbone/ospd";
     changelog = "https://github.com/greenbone/ospd/releases/tag/v${version}";
+<<<<<<< HEAD
     license = with lib.licenses; [ agpl3Plus ];
     maintainers = with lib.maintainers; [ fab ];
+||||||| 213fed0310e3
+    license = with licenses; [ agpl3Plus ];
+    maintainers = with maintainers; [ fab ];
+=======
+    license = with lib.licenses; [ agpl3Plus ];
+    maintainers = with lib.maintainers; [ fab ];
+    broken = stdenv.hostPlatform.isDarwin;
+>>>>>>> master
   };
 }

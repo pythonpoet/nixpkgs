@@ -13,7 +13,7 @@ stdenvNoCC.mkDerivation {
   version = "${majorVersion}.${minorVersion}";
 
   src = fetchzip {
-    url = "https://dotcolon.net/download/fonts/tenderness_${majorVersion}${minorVersion}.zip";
+    url = "https://dotcolon.net/files/fonts/tenderness_${majorVersion}${minorVersion}.zip";
     hash = "sha256-bwJKW+rY7/r2pBCSA6HYlaRMsI/U8UdW2vV4tmYuJww=";
     stripRoot = false;
   };
@@ -26,8 +26,16 @@ stdenvNoCC.mkDerivation {
     runHook postInstall
   '';
 
+<<<<<<< HEAD
   meta = {
     homepage = "http://dotcolon.net/font/tenderness/";
+||||||| 213fed0310e3
+  meta = with lib; {
+    homepage = "http://dotcolon.net/font/tenderness/";
+=======
+  meta = {
+    homepage = "https://dotcolon.net/font/tenderness/";
+>>>>>>> master
     description = "Serif font designed by Sora Sagano with old-style figures";
     platforms = lib.platforms.all;
     maintainers = with lib.maintainers; [

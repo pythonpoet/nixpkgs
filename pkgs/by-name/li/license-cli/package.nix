@@ -60,6 +60,12 @@ rustPlatform.buildRustPackage rec {
     description = "Command-line tool to easily add license to your project";
     license = lib.licenses.mpl20;
     mainProgram = "license";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ foo-dogsquared ];
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ foo-dogsquared ];
+=======
+    maintainers = [ ];
+>>>>>>> master
   };
 }

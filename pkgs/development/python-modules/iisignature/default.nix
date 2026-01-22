@@ -32,7 +32,15 @@ buildPythonPackage rec {
   meta = {
     description = "Iterated integral signature calculations";
     homepage = "https://pypi.org/project/iisignature";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ mbalatsko ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ mbalatsko ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

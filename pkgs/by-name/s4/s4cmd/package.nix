@@ -41,7 +41,14 @@ python3Packages.buildPythonApplication rec {
   meta = {
     homepage = "https://github.com/bloomreach/s4cmd";
     description = "Super S3 command line tool";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = [ lib.maintainers.bhipple ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = [ maintainers.bhipple ];
+=======
+    license = lib.licenses.asl20;
+>>>>>>> master
   };
 }

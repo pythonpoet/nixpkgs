@@ -21,13 +21,25 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "rtorrent";
+<<<<<<< HEAD
   version = "0.16.5";
+||||||| 213fed0310e3
+  version = "0.16.2";
+=======
+  version = "0.16.6";
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "rakshasa";
     repo = "rtorrent";
     tag = "v${finalAttrs.version}";
+<<<<<<< HEAD
     hash = "sha256-zncal17A4/+WGU3L8iJVSMJtKTKNmMHCXJ2O7Za2VOE=";
+||||||| 213fed0310e3
+    hash = "sha256-WXH5Op8P+UlcrbHri4yOTjQJSqc39fxxxOXpMmC7DHE=";
+=======
+    hash = "sha256-Y8LFysyfOsgsMmbLFcf+SjKKDdTFBwDPQU0hW6hiXII=";
+>>>>>>> master
   };
 
   outputs = [
@@ -81,7 +93,6 @@ stdenv.mkDerivation (finalAttrs: {
     license = lib.licenses.gpl2Plus;
     mainProgram = "rtorrent";
     maintainers = with lib.maintainers; [
-      ebzzry
       codyopel
       thiagokokada
     ];

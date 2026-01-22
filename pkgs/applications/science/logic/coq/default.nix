@@ -264,7 +264,8 @@ let
     ]
     ++ lib.optional buildIde "coqide"
     ++ lib.optional (!coqAtLeast "8.14") "bin/votour";
-    enableParallelBuilding = true;
+    # workaround for irreproducible build error in https://github.com/NixOS/nixpkgs/pull/474970
+    enableParallelBuilding = coqAtLeast "8.14";
 
     createFindlibDestdir = true;
 
@@ -318,8 +319,16 @@ let
         vbgl
         Zimmi48
       ];
+<<<<<<< HEAD
       platforms = lib.platforms.unix;
       mainProgram = "coqide";
+||||||| 213fed0310e3
+      platforms = platforms.unix;
+      mainProgram = "coqide";
+=======
+      platforms = lib.platforms.unix;
+      mainProgram = if buildIde then "coqide" else "coqtop";
+>>>>>>> master
     };
   };
 in

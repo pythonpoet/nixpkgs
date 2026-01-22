@@ -27,7 +27,19 @@ stdenv.mkDerivation rec {
     protobufc
   ];
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  outputs = [
+    "out"
+    "dev"
+    "man"
+  ];
+
+  meta = {
+>>>>>>> master
     homepage = "https://libivykis.sourceforge.net/";
     description = ''
       A thin wrapper over various OS'es implementation of I/O readiness

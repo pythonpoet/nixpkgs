@@ -21,6 +21,7 @@ let
       avrSuffixSalt = avrgcc.suffixSalt;
     };
   } ./setup-hook-darwin.sh;
+
 in
 stdenv.mkDerivation rec {
   pname = "simavr";
@@ -66,9 +67,24 @@ stdenv.mkDerivation rec {
     description = "Lean and mean Atmel AVR simulator";
     mainProgram = "simavr";
     homepage = "https://github.com/buserror/simavr";
+<<<<<<< HEAD
     license = lib.licenses.gpl3;
     platforms = lib.platforms.unix;
     maintainers = with lib.maintainers; [ goodrone ];
   };
+||||||| 213fed0310e3
+    license = licenses.gpl3;
+    platforms = platforms.unix;
+    maintainers = with maintainers; [ goodrone ];
+  };
+=======
+    license = lib.licenses.gpl3;
+    platforms = lib.platforms.unix;
+>>>>>>> master
 
+    maintainers = with lib.maintainers; [
+      goodrone
+      patryk27
+    ];
+  };
 }

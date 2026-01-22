@@ -25,8 +25,15 @@ buildGoModule rec {
   meta = {
     homepage = "https://github.com/shoenig/marathonctl";
     description = "CLI tool for Marathon";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ manveru ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ manveru ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
     mainProgram = "marathonctl";
   };
 }

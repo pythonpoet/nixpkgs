@@ -83,8 +83,17 @@ stdenv.mkDerivation rec {
   meta = {
     homepage = "https://www.nlnetlabs.nl";
     description = "Authoritative only, high performance, simple and open source name server";
+<<<<<<< HEAD
     license = lib.licenses.bsd3;
     platforms = lib.platforms.unix;
     maintainers = [ lib.maintainers.hrdinka ];
+||||||| 213fed0310e3
+    license = licenses.bsd3;
+    platforms = platforms.unix;
+    maintainers = [ maintainers.hrdinka ];
+=======
+    license = lib.licenses.bsd3;
+    platforms = lib.platforms.unix;
+>>>>>>> master
   };
 }

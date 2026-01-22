@@ -13,7 +13,7 @@ stdenvNoCC.mkDerivation {
   version = "${majorVersion}.${minorVersion}";
 
   src = fetchzip {
-    url = "https://dotcolon.net/download/fonts/ferrum_${majorVersion}${minorVersion}.zip";
+    url = "https://dotcolon.net/files/fonts/ferrum_${majorVersion}${minorVersion}.zip";
     hash = "sha256-NDJwgFWZgyhMkGRWlY55l2omEw6ju3e3dHCEsWNzQIc=";
     stripRoot = false;
   };
@@ -26,8 +26,16 @@ stdenvNoCC.mkDerivation {
     runHook postInstall
   '';
 
+<<<<<<< HEAD
   meta = {
     homepage = "http://dotcolon.net/font/ferrum/";
+||||||| 213fed0310e3
+  meta = with lib; {
+    homepage = "http://dotcolon.net/font/ferrum/";
+=======
+  meta = {
+    homepage = "https://dotcolon.net/font/ferrum/";
+>>>>>>> master
     description = "Decorative font";
     platforms = lib.platforms.all;
     maintainers = with lib.maintainers; [

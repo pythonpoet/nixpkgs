@@ -23,8 +23,15 @@ fetchurl rec {
     description = "Oracle Extension pack for VirtualBox";
     license = lib.licenses.virtualbox-puel;
     homepage = "https://www.virtualbox.org/";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [
       sander
+||||||| 213fed0310e3
+    maintainers = with maintainers; [
+      sander
+=======
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       friedrichaltheide
     ];
     platforms = [ "x86_64-linux" ];

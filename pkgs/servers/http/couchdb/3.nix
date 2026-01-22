@@ -62,9 +62,19 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Database that uses JSON for documents, JavaScript for MapReduce queries, and regular HTTP for an API";
     homepage = "https://couchdb.apache.org";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;
     maintainers = with lib.maintainers; [ lostnet ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    platforms = platforms.all;
+    maintainers = with maintainers; [ lostnet ];
+=======
+    license = lib.licenses.asl20;
+    platforms = lib.platforms.all;
+    maintainers = [ ];
+>>>>>>> master
     broken = stdenv.isDarwin && stdenv.isAarch64;
   };
 }

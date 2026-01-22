@@ -13,7 +13,7 @@ stdenvNoCC.mkDerivation {
   version = "${majorVersion}.${minorVersion}";
 
   src = fetchzip {
-    url = "https://dotcolon.net/download/fonts/aileron_${majorVersion}${minorVersion}.zip";
+    url = "https://dotcolon.net/files/fonts/aileron_${majorVersion}${minorVersion}.zip";
     hash = "sha256-Ht48gwJZrn0djo1yl6jHZ4+0b710FVwStiC1Zk5YXME=";
     stripRoot = false;
   };
@@ -26,8 +26,16 @@ stdenvNoCC.mkDerivation {
     runHook postInstall
   '';
 
+<<<<<<< HEAD
   meta = {
     homepage = "http://dotcolon.net/font/aileron/";
+||||||| 213fed0310e3
+  meta = with lib; {
+    homepage = "http://dotcolon.net/font/aileron/";
+=======
+  meta = {
+    homepage = "https://dotcolon.net/font/aileron/";
+>>>>>>> master
     description = "Helvetica font in nine weights";
     platforms = lib.platforms.all;
     maintainers = with lib.maintainers; [

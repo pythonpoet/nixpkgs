@@ -208,10 +208,16 @@ let
   nativeBuildInputs = [
     nukeReferences
   ]
-  ++ optionals (!stdenv.hostPlatform.isDarwin && !withMinimalDeps) [
-    autoconf-archive # needed for AX_CHECK_COMPILE_FLAG
-    autoreconfHook
-  ]
+  ++
+    optionals
+      (
+        (!stdenv.hostPlatform.isDarwin && !withMinimalDeps)
+        || (stdenv.hostPlatform != stdenv.buildPlatform && stdenv.hostPlatform.isFreeBSD)
+      )
+      [
+        autoconf-archive # needed for AX_CHECK_COMPILE_FLAG
+        autoreconfHook
+      ]
   ++
     optionals ((!stdenv.hostPlatform.isDarwin || passthru.pythonAtLeast "3.14") && !withMinimalDeps)
       [
@@ -398,6 +404,10 @@ stdenv.mkDerivation (finalAttrs: {
   ++ optionals (pythonAtLeast "3.11" && pythonOlder "3.13") [
     # backport fix for https://github.com/python/cpython/issues/95855
     ./platform-triplet-detection.patch
+  ]
+  ++ optionals (version == "3.13.10" || version == "3.14.1") [
+    # https://github.com/python/cpython/issues/142218
+    ./${lib.versions.majorMinor version}/gh-142218.patch
   ]
   ++ optionals (stdenv.hostPlatform.isMinGW) (
     let
@@ -818,12 +828,12 @@ stdenv.mkDerivation (finalAttrs: {
 
   enableParallelBuilding = true;
 
-  meta = with lib; {
+  meta = {
     homepage = "https://www.python.org";
     changelog =
       let
-        majorMinor = versions.majorMinor version;
-        dashedVersion = replaceStrings [ "." "a" "b" ] [ "-" "-alpha-" "-beta-" ] version;
+        majorMinor = lib.versions.majorMinor version;
+        dashedVersion = lib.replaceStrings [ "." "a" "b" ] [ "-" "-alpha-" "-beta-" ] version;
       in
       if sourceVersion.suffix == "" then
         "https://docs.python.org/release/${version}/whatsnew/changelog.html"

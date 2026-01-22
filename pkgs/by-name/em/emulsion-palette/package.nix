@@ -48,8 +48,18 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Store your color palettes in an easy way";
     homepage = "https://github.com/lainsce/emulsion";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Only;
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [ foo-dogsquared ];
+||||||| 213fed0310e3
+    license = licenses.gpl3Only;
+    platforms = platforms.linux;
+    maintainers = with maintainers; [ foo-dogsquared ];
+=======
+    license = lib.licenses.gpl3Only;
+    platforms = lib.platforms.linux;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

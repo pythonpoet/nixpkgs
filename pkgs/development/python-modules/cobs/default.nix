@@ -2,15 +2,12 @@
   lib,
   buildPythonPackage,
   fetchPypi,
-  pythonOlder,
 }:
 
 buildPythonPackage rec {
   pname = "cobs";
   version = "1.2.2";
   format = "setuptools";
-
-  disabled = pythonOlder "3.6";
 
   src = fetchPypi {
     inherit pname version;
@@ -38,7 +35,14 @@ buildPythonPackage rec {
       COBS is a method of encoding a packet of bytes into a form that contains no bytes with value zero (0x00). The input packet of bytes can contain bytes in the full range of 0x00 to 0xFF. The COBS encoded packet is guaranteed to generate packets with bytes only in the range 0x01 to 0xFF. Thus, in a communication protocol, packet boundaries can be reliably delimited with 0x00 bytes.
     '';
     homepage = "https://github.com/cmcqueen/cobs-python/";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     teams = [ lib.teams.ororatech ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    teams = [ teams.ororatech ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
   };
 }

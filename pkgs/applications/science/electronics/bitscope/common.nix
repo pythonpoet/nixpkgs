@@ -36,9 +36,16 @@ let
         sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
         license = lib.licenses.unfree;
         platforms = [ "x86_64-linux" ];
+<<<<<<< HEAD
         maintainers = with lib.maintainers; [
           vidbina
         ];
+||||||| 213fed0310e3
+        maintainers = with maintainers; [
+          vidbina
+        ];
+=======
+>>>>>>> master
       }
       // (attrs.meta or { });
 

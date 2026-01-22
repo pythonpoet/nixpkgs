@@ -62,8 +62,16 @@ buildGoModule rec {
   meta = {
     description = "Fast and secure initramfs generator";
     homepage = "https://github.com/anatol/booster";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ urandom ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ urandom ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "init";
   };
 }

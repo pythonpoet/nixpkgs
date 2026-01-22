@@ -5,24 +5,21 @@
   fetchFromGitHub,
 }:
 
-let
-  version = "1.1.2";
-in
-python3Packages.buildPythonApplication {
+python3Packages.buildPythonApplication (finalAttrs: {
   pname = "nile";
-  inherit version;
-  format = "pyproject";
+  version = "1.1.2";
+  pyproject = true;
 
   src = fetchFromGitHub {
     owner = "imLinguin";
     repo = "nile";
-    rev = "v${version}";
+    tag = "v${finalAttrs.version}";
     hash = "sha256-/C4b8wPKWHGgiheuAN7AvU+KcD5aj5i6KzgFSdTIkNI=";
   };
 
-  disabled = python3Packages.pythonOlder "3.8";
+  build-system = with python3Packages; [ setuptools ];
 
-  propagatedBuildInputs = with python3Packages; [
+  dependencies = with python3Packages; [
     setuptools
     requests
     protobuf
@@ -43,6 +40,7 @@ python3Packages.buildPythonApplication {
 
   pythonImportsCheck = [ "nile" ];
 
+<<<<<<< HEAD
   meta = {
     description = "Unofficial Amazon Games client";
     mainProgram = "nile";
@@ -50,7 +48,26 @@ python3Packages.buildPythonApplication {
     license = with lib.licenses; [ gpl3 ];
   };
 
+||||||| 213fed0310e3
+  meta = with lib; {
+    description = "Unofficial Amazon Games client";
+    mainProgram = "nile";
+    homepage = "https://github.com/imLinguin/nile";
+    license = with licenses; [ gpl3 ];
+  };
+
+=======
+>>>>>>> master
   passthru.updateScript = gitUpdater {
     rev-prefix = "v";
   };
-}
+
+  meta = {
+    description = "Unofficial Amazon Games client";
+    homepage = "https://github.com/imLinguin/nile";
+    changelog = "https://github.com/imLinguin/nile/releases/tag/v${finalAttrs.src.tag}";
+    license = lib.licenses.gpl3Only;
+    mainProgram = "nile";
+    maintainers = [ ];
+  };
+})

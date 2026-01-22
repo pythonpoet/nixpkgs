@@ -3,7 +3,6 @@
   stdenv,
   buildPythonPackage,
   fetchPypi,
-  pythonOlder,
   dbus,
   pkgsLibpcap,
   pkg-about,
@@ -15,8 +14,6 @@ buildPythonPackage rec {
   pname = "libpcap";
   version = "1.11.0b25";
   pyproject = true;
-
-  disabled = pythonOlder "3.10";
 
   src = fetchPypi {
     inherit pname version;
@@ -64,7 +61,14 @@ buildPythonPackage rec {
     '';
     homepage = "https://github.com/karpierz/libpcap/";
     changelog = "https://github.com/karpierz/libpcap/blob/${version}/CHANGES.rst";
+<<<<<<< HEAD
     license = lib.licenses.bsd3;
     teams = [ lib.teams.ororatech ];
+||||||| 213fed0310e3
+    license = licenses.bsd3;
+    teams = [ teams.ororatech ];
+=======
+    license = lib.licenses.bsd3;
+>>>>>>> master
   };
 }

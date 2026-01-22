@@ -28,7 +28,15 @@ buildPecl rec {
     changelog = "https://github.com/open-telemetry/opentelemetry-php-instrumentation/releases/tag/${version}";
     description = "OpenTelemetry PHP auto-instrumentation extension";
     homepage = "https://opentelemetry.io/";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ gaelreyrol ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [ gaelreyrol ];
+=======
+    license = lib.licenses.asl20;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

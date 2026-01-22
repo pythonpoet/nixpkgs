@@ -39,9 +39,19 @@ stdenv.mkDerivation rec {
     description = "Create highly optimized Animated PNG files from PNG/TGA images";
     mainProgram = "apngasm";
     homepage = "https://apngasm.sourceforge.net/";
+<<<<<<< HEAD
     license = lib.licenses.zlib;
     maintainers = with lib.maintainers; [ orivej ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    license = licenses.zlib;
+    maintainers = with maintainers; [ orivej ];
+    platforms = platforms.linux;
+=======
+    license = lib.licenses.zlib;
+    maintainers = [ ];
+    platforms = lib.platforms.linux;
+>>>>>>> master
   };
 
 }

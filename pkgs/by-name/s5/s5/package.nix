@@ -30,9 +30,17 @@ buildGoModule rec {
 
   nativeInstallCheckInputs = [ versionCheckHook ];
 
+<<<<<<< HEAD
   versionCheckProgramArg = "--version";
 
   meta = {
+||||||| 213fed0310e3
+  versionCheckProgramArg = "--version";
+
+  meta = with lib; {
+=======
+  meta = {
+>>>>>>> master
     description = "Cipher/decipher text within a file";
     mainProgram = "s5";
     homepage = "https://github.com/mvisonneau/s5";

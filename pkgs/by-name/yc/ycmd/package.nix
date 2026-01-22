@@ -133,9 +133,18 @@ stdenv.mkDerivation {
     '';
     mainProgram = "ycmd";
     homepage = "https://github.com/ycm-core/ycmd";
+<<<<<<< HEAD
     license = lib.licenses.gpl3;
     maintainers = with lib.maintainers; [
       rasendubi
+||||||| 213fed0310e3
+    license = licenses.gpl3;
+    maintainers = with maintainers; [
+      rasendubi
+=======
+    license = lib.licenses.gpl3;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       lnl7
       mel
       S0AndS0

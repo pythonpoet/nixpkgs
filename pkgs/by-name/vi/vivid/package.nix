@@ -24,8 +24,16 @@ rustPlatform.buildRustPackage rec {
       asl20 # or
       mit
     ];
+<<<<<<< HEAD
     maintainers = [ lib.maintainers.dtzWill ];
     platforms = lib.platforms.unix;
+||||||| 213fed0310e3
+    maintainers = [ maintainers.dtzWill ];
+    platforms = platforms.unix;
+=======
+    maintainers = [ ];
+    platforms = lib.platforms.unix;
+>>>>>>> master
     mainProgram = "vivid";
   };
 }

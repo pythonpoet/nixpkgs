@@ -5,7 +5,6 @@
   poetry-core,
   pyrate-limiter,
   pytestCheckHook,
-  pythonOlder,
   requests-mock,
   requests,
   requests-cache,
@@ -15,8 +14,6 @@ buildPythonPackage rec {
   pname = "requests-ratelimiter";
   version = "0.7.0";
   pyproject = true;
-
-  disabled = pythonOlder "3.7";
 
   src = fetchFromGitHub {
     owner = "JWCook";
@@ -46,7 +43,15 @@ buildPythonPackage rec {
     description = "Module for rate-limiting for requests";
     homepage = "https://github.com/JWCook/requests-ratelimiter";
     changelog = "https://github.com/JWCook/requests-ratelimiter/blob/${src.rev}/HISTORY.md";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ mbalatsko ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ mbalatsko ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

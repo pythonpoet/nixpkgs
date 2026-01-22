@@ -100,8 +100,16 @@ stdenv.mkDerivation rec {
     homepage = "https://www.gnu.org/software/inetutils/";
     license = lib.licenses.gpl3Plus;
 
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ matthewbauer ];
     platforms = lib.platforms.unix;
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ matthewbauer ];
+    platforms = platforms.unix;
+=======
+    maintainers = [ ];
+    platforms = lib.platforms.unix;
+>>>>>>> master
 
     /**
       The `logger` binary from `util-linux` is preferred over `inetutils`.

@@ -2,7 +2,6 @@
   lib,
   buildPythonPackage,
   fetchPypi,
-  pythonOlder,
 }:
 
 buildPythonPackage rec {
@@ -23,8 +22,17 @@ buildPythonPackage rec {
     homepage = "https://github.com/asottile/future-fstrings";
     description = "Backport of fstrings to python<3.6";
     mainProgram = "future-fstrings-show";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ nyanloutre ];
     broken = pythonOlder "3.6"; # dependency tokenize-rt not packaged
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ nyanloutre ];
+    broken = pythonOlder "3.6"; # dependency tokenize-rt not packaged
+=======
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [ nyanloutre ];
+>>>>>>> master
   };
 }

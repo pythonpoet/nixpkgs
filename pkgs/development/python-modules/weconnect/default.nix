@@ -5,25 +5,23 @@
   fetchFromGitHub,
   oauthlib,
   pillow,
+  pyjwt,
   pytest-cov-stub,
   pytestCheckHook,
-  pythonOlder,
   requests,
   setuptools,
 }:
 
 buildPythonPackage rec {
   pname = "weconnect";
-  version = "0.60.8";
+  version = "0.60.11";
   pyproject = true;
-
-  disabled = pythonOlder "3.8";
 
   src = fetchFromGitHub {
     owner = "tillsteinbach";
     repo = "WeConnect-python";
     tag = "v${version}";
-    hash = "sha256-o8g409R+3lXlwPiDFi9eCzTwcDcZhMEMcc8a1YvlomM=";
+    hash = "sha256-llAWCjhP/fwI+H8BRpMYxba8jC+WDc66xkUDwT3NHcA=";
   };
 
   postPatch = ''
@@ -40,6 +38,7 @@ buildPythonPackage rec {
 
   dependencies = [
     oauthlib
+    pyjwt
     requests
   ];
 
@@ -62,8 +61,18 @@ buildPythonPackage rec {
   meta = {
     description = "Python client for the Volkswagen WeConnect Services";
     homepage = "https://github.com/tillsteinbach/WeConnect-python";
+<<<<<<< HEAD
     changelog = "https://github.com/tillsteinbach/WeConnect-python/releases/tag/v${version}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ fab ];
+||||||| 213fed0310e3
+    changelog = "https://github.com/tillsteinbach/WeConnect-python/releases/tag/v${version}";
+    license = licenses.mit;
+    maintainers = with maintainers; [ fab ];
+=======
+    changelog = "https://github.com/tillsteinbach/WeConnect-python/releases/tag/${src.tag}";
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [ fab ];
+>>>>>>> master
   };
 }

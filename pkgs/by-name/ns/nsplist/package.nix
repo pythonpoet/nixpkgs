@@ -32,8 +32,16 @@ stdenv.mkDerivation {
       --replace-fail "cmake_minimum_required(VERSION 2.6)" "cmake_minimum_required(VERSION 3.10)"
   '';
 
+<<<<<<< HEAD
   meta = {
     maintainers = with lib.maintainers; [ matthewbauer ];
+||||||| 213fed0310e3
+  meta = with lib; {
+    maintainers = with maintainers; [ matthewbauer ];
+=======
+  meta = {
+    maintainers = [ ];
+>>>>>>> master
     description = "Parses .plist files";
     license = lib.licenses.mit;
     platforms = lib.platforms.unix;

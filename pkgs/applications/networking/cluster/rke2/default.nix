@@ -5,6 +5,7 @@ let
   extraArgs = removeAttrs args [ "callPackage" ];
 in
 rec {
+<<<<<<< HEAD
   rke2_1_31 =
     (common (
       (import ./1_31/versions.nix)
@@ -19,6 +20,19 @@ rec {
         meta.knownVulnerabilities = [ "rke2_1_31 has reached end-of-life on 2025-11-11" ];
       };
 
+||||||| 213fed0310e3
+  rke2_1_31 = common (
+    (import ./1_31/versions.nix)
+    // {
+      updateScript = [
+        ./update-script.sh
+        "31"
+      ];
+    }
+  ) extraArgs;
+
+=======
+>>>>>>> master
   rke2_1_32 = common (
     (import ./1_32/versions.nix)
     // {
@@ -49,7 +63,17 @@ rec {
     }
   ) extraArgs;
 
+  rke2_1_35 = common (
+    (import ./1_35/versions.nix)
+    // {
+      updateScript = [
+        ./update-script.sh
+        "35"
+      ];
+    }
+  ) extraArgs;
+
   # Automatically set by update script
-  rke2_stable = rke2_1_33;
-  rke2_latest = rke2_1_34;
+  rke2_stable = rke2_1_34;
+  rke2_latest = rke2_1_35;
 }

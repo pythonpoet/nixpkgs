@@ -35,7 +35,18 @@ buildPythonPackage rec {
   meta = {
     homepage = "https://github.com/JnyJny/bitvector";
     description = "This simple bit vector implementation aims to make addressing single bits a little less fiddly";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     teams = [ lib.teams.helsinki-systems ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    teams = [ teams.helsinki-systems ];
+=======
+    license = lib.licenses.asl20;
+    maintainers = with lib.maintainers; [
+      das_j
+      helsinki-Jo
+    ];
+>>>>>>> master
   };
 }

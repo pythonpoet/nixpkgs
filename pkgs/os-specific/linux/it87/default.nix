@@ -41,6 +41,11 @@ stdenv.mkDerivation rec {
       "x86_64-linux"
       "i686-linux"
     ];
+<<<<<<< HEAD
     teams = [ lib.teams.lumiguide ];
+||||||| 213fed0310e3
+    teams = [ teams.lumiguide ];
+=======
+>>>>>>> master
   };
 }

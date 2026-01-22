@@ -42,7 +42,10 @@ python27.pkgs.buildPythonApplication {
   ];
 
   makeWrapperArgs = [
-    "--prefix PATH : ${lib.makeBinPath [ gawk ]}"
+    "--prefix"
+    "PATH"
+    ":"
+    (lib.makeBinPath [ gawk ])
   ];
 
   postPatch = ''
@@ -78,7 +81,15 @@ python27.pkgs.buildPythonApplication {
     };
   };
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  __structuredAttrs = true;
+
+  meta = {
+>>>>>>> master
     description = "Resolve external shell-script dependencies";
     homepage = "https://github.com/abathur/resholve";
     changelog = "https://github.com/abathur/resholve/blob/v${version}/CHANGELOG.md";

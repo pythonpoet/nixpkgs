@@ -89,11 +89,19 @@ stdenv.mkDerivation {
     runHook postCheck
   '';
 
-  meta = with lib; {
+  meta = {
     description = "Sandboxed execution environment";
     homepage = "https://github.com/solo5/solo5";
+<<<<<<< HEAD
     license = lib.licenses.isc;
     platforms = mapCartesianProduct ({ arch, os }: "${arch}-${os}") {
+||||||| 213fed0310e3
+    license = licenses.isc;
+    platforms = mapCartesianProduct ({ arch, os }: "${arch}-${os}") {
+=======
+    license = lib.licenses.isc;
+    platforms = lib.mapCartesianProduct ({ arch, os }: "${arch}-${os}") {
+>>>>>>> master
       arch = [
         "aarch64"
         "x86_64"

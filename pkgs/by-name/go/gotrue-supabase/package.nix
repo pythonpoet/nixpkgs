@@ -39,7 +39,15 @@ buildGoModule rec {
     description = "JWT based API for managing users and issuing JWT tokens";
     mainProgram = "auth";
     changelog = "https://github.com/supabase/auth/releases/tag/v${version}";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ urandom ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ urandom ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

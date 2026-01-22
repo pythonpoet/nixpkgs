@@ -14,6 +14,11 @@ stdenv.mkDerivation rec {
     hash = "sha256-FfJNJtoMz8Bzq83vAwnygeRoTyqnESb4JlcsTIRejdk=";
   };
 
+  postPatch = lib.optionalString stdenv.hostPlatform.isDarwin ''
+    substituteInPlace Makefile \
+      --replace-fail "-lrt" ""
+  '';
+
   outputs = [
     "out"
     "man"
@@ -29,9 +34,18 @@ stdenv.mkDerivation rec {
   meta = {
     homepage = "http://www.irif.fr/~jch/software/babel/";
     description = "Loop-avoiding distance-vector routing protocol";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ hexa ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ hexa ];
+    platforms = platforms.linux;
+=======
+    license = lib.licenses.mit;
+    platforms = lib.platforms.unix;
+>>>>>>> master
     mainProgram = "babeld";
   };
 }

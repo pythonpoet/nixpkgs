@@ -22,8 +22,18 @@ buildPythonPackage rec {
   meta = {
     description = "Featureful, correct URL for Python";
     homepage = "https://github.com/python-hyper/hyperlink";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     platforms = lib.platforms.all;
     maintainers = with lib.maintainers; [ apeschar ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    platforms = platforms.all;
+    maintainers = with maintainers; [ apeschar ];
+=======
+    license = lib.licenses.mit;
+    platforms = lib.platforms.all;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

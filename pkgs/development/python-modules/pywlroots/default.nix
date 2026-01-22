@@ -8,13 +8,11 @@
   libxkbcommon,
   libinput,
   pixman,
-  pythonOlder,
   udev,
   wlroots,
   wayland,
   pywayland,
   xkbcommon,
-  xorg,
   pytestCheckHook,
   qtile,
 }:
@@ -23,8 +21,6 @@ buildPythonPackage rec {
   pname = "pywlroots";
   version = "0.17.0";
   format = "setuptools";
-
-  disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
@@ -37,8 +33,6 @@ buildPythonPackage rec {
     libinput
     libxkbcommon
     pixman
-    xorg.libxcb
-    xorg.xcbutilwm
     udev
     wayland
     wlroots
@@ -63,8 +57,21 @@ buildPythonPackage rec {
   meta = {
     homepage = "https://github.com/flacjacket/pywlroots";
     description = "Python bindings to wlroots using cffi";
+<<<<<<< HEAD
     license = lib.licenses.ncsa;
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [ chvp ];
+||||||| 213fed0310e3
+    license = licenses.ncsa;
+    platforms = platforms.linux;
+    maintainers = with maintainers; [ chvp ];
+=======
+    license = lib.licenses.ncsa;
+    platforms = lib.platforms.linux;
+    maintainers = with lib.maintainers; [
+      chvp
+      doronbehar
+    ];
+>>>>>>> master
   };
 }

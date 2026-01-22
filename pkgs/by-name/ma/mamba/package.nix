@@ -51,7 +51,6 @@ stdenv.mkDerivation rec {
     license = lib.licenses.bsd0;
     maintainers = with lib.maintainers; [
       magnetophon
-      orivej
     ];
     platforms = lib.platforms.linux;
   };

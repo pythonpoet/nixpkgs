@@ -2,7 +2,7 @@
   lib,
   stdenv,
   fetchFromGitHub,
-  asio,
+  asio_1_32_0,
   boost,
   check,
   openssl,
@@ -25,7 +25,8 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ cmake ];
 
   buildInputs = [
-    asio
+    # depends on io_service
+    asio_1_32_0
     boost.dev
     check
     openssl
@@ -50,10 +51,26 @@ stdenv.mkDerivation rec {
     description = "Galera 3 wsrep provider library";
     mainProgram = "garbd";
     homepage = "https://galeracluster.com/";
+<<<<<<< HEAD
     license = lib.licenses.lgpl2Only;
     maintainers = with lib.maintainers; [ izorkin ];
     teams = [ lib.teams.helsinki-systems ];
     platforms = lib.platforms.all;
+||||||| 213fed0310e3
+    license = licenses.lgpl2Only;
+    maintainers = with maintainers; [ izorkin ];
+    teams = [ teams.helsinki-systems ];
+    platforms = platforms.all;
+=======
+    license = lib.licenses.lgpl2Only;
+    maintainers = with lib.maintainers; [
+      conni2461
+      das_j
+      helsinki-Jo
+      izorkin
+    ];
+    platforms = lib.platforms.all;
+>>>>>>> master
     broken = stdenv.hostPlatform.isDarwin;
   };
 }

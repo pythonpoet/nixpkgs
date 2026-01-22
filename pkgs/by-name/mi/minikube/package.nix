@@ -73,9 +73,18 @@ buildGoModule rec {
     homepage = "https://minikube.sigs.k8s.io";
     description = "Tool that makes it easy to run Kubernetes locally";
     mainProgram = "minikube";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [
       ebzzry
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [
+      ebzzry
+=======
+    license = lib.licenses.asl20;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       vdemeester
       atkinschang
       Chili-Man

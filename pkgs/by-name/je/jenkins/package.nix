@@ -81,8 +81,14 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [
       earldouglas
+<<<<<<< HEAD
       nequissimus
       felixsinger
+||||||| 213fed0310e3
+      nequissimus
+=======
+      felixsinger
+>>>>>>> master
     ];
     changelog = "https://www.jenkins.io/changelog-stable/#v${finalAttrs.version}";
     mainProgram = "jenkins-cli";

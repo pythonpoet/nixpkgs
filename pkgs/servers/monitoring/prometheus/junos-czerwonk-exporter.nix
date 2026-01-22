@@ -21,7 +21,15 @@ buildGoModule rec {
     description = "Exporter for metrics from devices running JunOS";
     mainProgram = "junos_exporter";
     homepage = "https://github.com/czerwonk/junos_exporter";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     teams = [ lib.teams.wdz ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    teams = [ teams.wdz ];
+=======
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [ johannwagner ];
+>>>>>>> master
   };
 }

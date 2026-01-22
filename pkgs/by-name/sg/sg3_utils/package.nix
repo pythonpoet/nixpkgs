@@ -4,17 +4,29 @@
   fetchurl,
 }:
 
-stdenv.mkDerivation rec {
+stdenv.mkDerivation (finalAttrs: {
   pname = "sg3_utils";
   version = "1.48";
 
   src = fetchurl {
-    url = "https://sg.danny.cz/sg/p/sg3_utils-${version}.tgz";
+    url = "https://sg.danny.cz/sg/p/sg3_utils-${finalAttrs.version}.tgz";
     sha256 = "sha256-1itsPPIDkPpzVwRDkAhBZtJfHZMqETXEULaf5cKD13M=";
   };
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  postPatch = ''
+    substituteInPlace scripts/rescan-scsi-bus.sh \
+      --replace-fail '/usr/bin/sg_' "$out/bin/sg_"
+  '';
+
+  meta = {
+>>>>>>> master
     homepage = "https://sg.danny.cz/sg/";
+    changelog = "https://sg.danny.cz/sg/p/sg3_utils.ChangeLog";
     description = "Utilities that send SCSI commands to devices";
     platforms = lib.platforms.linux;
     license = with lib.licenses; [
@@ -22,4 +34,4 @@ stdenv.mkDerivation rec {
       gpl2Plus
     ];
   };
-}
+})

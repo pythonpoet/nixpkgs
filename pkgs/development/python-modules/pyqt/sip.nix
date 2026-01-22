@@ -26,6 +26,11 @@ buildPythonPackage rec {
     homepage = "https://github.com/Python-SIP/sip";
     license = lib.licenses.gpl3Only;
     inherit (mesa.meta) platforms;
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ sander ];
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ sander ];
+=======
+>>>>>>> master
   };
 }

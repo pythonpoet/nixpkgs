@@ -39,7 +39,6 @@ stdenv.mkDerivation rec {
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [
       avnik
-      orivej
     ];
     platforms = lib.platforms.linux;
   };

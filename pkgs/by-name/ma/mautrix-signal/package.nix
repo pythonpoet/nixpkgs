@@ -20,14 +20,28 @@ let
 in
 buildGoModule rec {
   pname = "mautrix-signal";
+<<<<<<< HEAD
   version = "25.12";
   tag = "v0.2512.0";
+||||||| 213fed0310e3
+  version = "25.11";
+  tag = "v0.2511.0";
+=======
+  version = "26.01";
+  tag = "v0.2601.0";
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "mautrix";
     repo = "signal";
     inherit tag;
+<<<<<<< HEAD
     hash = "sha256-qD3kehVZINfAg6ZitYlkabo19Zfn7X//5BoMbub9Y60=";
+||||||| 213fed0310e3
+    hash = "sha256-ynHJcVoSDFOulIE5Z5qmLGgmqGYtcAc2r+NhJ+THdHU=";
+=======
+    hash = "sha256-zvB0CbSzrLcUJiEIj3vtDq2C0XEYUNRbaUAn+636+uk=";
+>>>>>>> master
   };
 
   buildInputs =
@@ -44,7 +58,13 @@ buildGoModule rec {
 
   CGO_LDFLAGS = lib.optional withGoolm [ cppStdLib ];
 
+<<<<<<< HEAD
   vendorHash = "sha256-zfe3mdM3azHe+NssRKJqjaP7A0wrvHyIVnqUWJMsylw=";
+||||||| 213fed0310e3
+  vendorHash = "sha256-oz/rCeA/UgwmIZhHxbcty5XWiIecBmHs1M1lavugZ24=";
+=======
+  vendorHash = "sha256-Eo7T/63ywNnn/t0RzjwkSYRmrL0IMdIsv4wqrQFv+5U=";
+>>>>>>> master
 
   ldflags = [
     "-X"
@@ -67,7 +87,6 @@ buildGoModule rec {
 
   doInstallCheck = true;
   nativeInstallCheckInputs = [ versionCheckHook ];
-  versionCheckProgramArg = "--version";
 
   meta = {
     homepage = "https://github.com/mautrix/signal";

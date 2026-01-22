@@ -3,7 +3,6 @@
   stdenv,
   fetchpatch,
   perlPackages,
-  shortenPerlShebang,
   texlive,
 }:
 
@@ -69,13 +68,22 @@ perlPackages.buildPerlModule {
     TestDifferences
     PerlIOutf8_strict
   ];
-  nativeBuildInputs = lib.optional stdenv.hostPlatform.isDarwin shortenPerlShebang;
 
+<<<<<<< HEAD
   postInstall = lib.optionalString stdenv.hostPlatform.isDarwin ''
     shortenPerlShebang $out/bin/biber
   '';
 
   meta = {
+||||||| 213fed0310e3
+  postInstall = lib.optionalString stdenv.hostPlatform.isDarwin ''
+    shortenPerlShebang $out/bin/biber
+  '';
+
+  meta = with lib; {
+=======
+  meta = {
+>>>>>>> master
     description = "Backend for BibLaTeX";
     license = biberSource.meta.license;
     platforms = lib.platforms.unix;

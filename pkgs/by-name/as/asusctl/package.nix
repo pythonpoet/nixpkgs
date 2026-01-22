@@ -18,16 +18,16 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "asusctl";
-  version = "6.1.17";
+  version = "6.3.1";
 
   src = fetchFromGitLab {
     owner = "asus-linux";
     repo = "asusctl";
     tag = version;
-    hash = "sha256-rNLQYCE7NZAel2fr5VoAMlm7QkH1KrySKdEn2+WMPo8=";
+    hash = "sha256-x3WKxjYrWYaLWDi52b3uQSYnr/Qunf6JYu4ikt4ajls=";
   };
 
-  cargoHash = "sha256-/vMVSGUO6Zu/8GSTq1jsXLWVP9sWsuD7fJty3NnKXf4=";
+  cargoHash = "sha256-FyVbeHzwMr8UJ2OoVYVekXJFhus/ab7KwfGK4eaua6A=";
 
   postPatch = ''
     files="
@@ -46,7 +46,6 @@ rustPlatform.buildRustPackage rec {
     substituteInPlace rog-control-center/src/main.rs \
       --replace-fail 'std::env::var("RUST_TRANSLATIONS").is_ok()' 'true'
 
-    substituteInPlace data/asusd.rules --replace-fail /usr/bin/systemctl ${lib.getExe' systemd "systemctl"}
     substituteInPlace data/asusd.service \
       --replace-fail /usr/bin/asusd $out/bin/asusd \
       --replace-fail /bin/sleep ${lib.getExe' coreutils "sleep"}
@@ -78,14 +77,18 @@ rustPlatform.buildRustPackage rec {
     wayland
   ];
 
-  # force linking to all the dlopen()ed dependencies
-  RUSTFLAGS = map (a: "-C link-arg=${a}") [
-    "-Wl,--push-state,--no-as-needed"
-    "-lEGL"
-    "-lfontconfig"
-    "-lwayland-client"
-    "-Wl,--pop-state"
-  ];
+  env = {
+    # force linking to all the dlopen()ed dependencies
+    RUSTFLAGS = toString (
+      map (a: "-C link-arg=${a}") [
+        "-Wl,--push-state,--no-as-needed"
+        "-lEGL"
+        "-lfontconfig"
+        "-lwayland-client"
+        "-Wl,--pop-state"
+      ]
+    );
+  };
 
   # upstream has minimal tests, so don't rebuild twice
   doCheck = false;
@@ -106,6 +109,7 @@ rustPlatform.buildRustPackage rec {
     maintainers = with lib.maintainers; [
       k900
       aacebedo
+      yuannan
     ];
   };
 }

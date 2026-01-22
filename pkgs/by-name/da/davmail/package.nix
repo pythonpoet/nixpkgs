@@ -2,6 +2,7 @@
   stdenv,
   fetchFromGitHub,
   lib,
+  nix-update-script,
   makeWrapper,
   glib,
   gtk2,
@@ -76,7 +77,15 @@ stdenv.mkDerivation (finalAttrs: {
     runHook postInstall
   '';
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  passthru.updateScript = nix-update-script { };
+
+  meta = {
+>>>>>>> master
     description = "Java application which presents a Microsoft Exchange server as local CALDAV, IMAP and SMTP servers";
     homepage = "https://davmail.sourceforge.net/";
     license = lib.licenses.gpl2Plus;

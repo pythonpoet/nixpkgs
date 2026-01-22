@@ -20,8 +20,15 @@ buildGoModule rec {
   meta = {
     description = "Flamegraph generator for Postgres EXPLAIN ANALYZE output";
     homepage = "https://github.com/mgartner/pg_flame";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ Br1ght0ne ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [ Br1ght0ne ];
+=======
+    license = lib.licenses.asl20;
+>>>>>>> master
     mainProgram = "pg_flame";
   };
 }

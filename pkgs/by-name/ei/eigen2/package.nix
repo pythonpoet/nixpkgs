@@ -25,9 +25,18 @@ stdenv.mkDerivation rec {
   meta = {
     homepage = "https://eigen.tuxfamily.org";
     description = "C++ template library for linear algebra: vectors, matrices, and related algorithms";
+<<<<<<< HEAD
     license = lib.licenses.lgpl3Plus;
     maintainers = with lib.maintainers; [
       sander
+||||||| 213fed0310e3
+    license = licenses.lgpl3Plus;
+    maintainers = with maintainers; [
+      sander
+=======
+    license = lib.licenses.lgpl3Plus;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       raskin
     ];
     platforms = lib.platforms.unix;

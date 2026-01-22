@@ -34,9 +34,18 @@ buildGoModule rec {
     homepage = "https://github.com/caddyserver/xcaddy";
     description = "Build Caddy with plugins";
     mainProgram = "xcaddy";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [
       tjni
     ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [
+      tjni
+    ];
+=======
+    license = lib.licenses.asl20;
+>>>>>>> master
   };
 }

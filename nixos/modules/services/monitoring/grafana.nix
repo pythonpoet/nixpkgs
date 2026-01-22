@@ -13,7 +13,7 @@ let
   opt = options.services.grafana;
   provisioningSettingsFormat = pkgs.formats.yaml { };
   declarativePlugins = pkgs.linkFarm "grafana-plugins" (
-    builtins.map (pkg: {
+    map (pkg: {
       name = pkg.pname;
       path = pkg;
     }) cfg.declarativePlugins
@@ -1297,6 +1297,18 @@ in
             feedback_links_enabled = mkOption {
               description = "Set to `false` to remove all feedback links from the UI.";
               default = true;
+              type = types.bool;
+            };
+          };
+
+          plugins = {
+            preinstall_disabled = mkOption {
+              description = ''
+                When set to `true`, disables the Background Plugin Installer, which runs before Grafana starts.
+                This component causes issues with `declarativePlugins` and is disabled by default if those are used.
+              '';
+              default = cfg.declarativePlugins != null;
+              defaultText = literalExpression "cfg.declarativePlugins != null";
               type = types.bool;
             };
           };

@@ -25,8 +25,16 @@ rustPlatform.buildRustPackage rec {
   meta = {
     description = "Tool to analyze file system usage written in Rust";
     homepage = "https://github.com/nachoparker/dutree";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Plus;
     maintainers = [ ];
+||||||| 213fed0310e3
+    license = licenses.gpl3Plus;
+    maintainers = [ ];
+=======
+    license = lib.licenses.gpl3Plus;
+    maintainers = [ lib.maintainers.matthiasbeyer ];
+>>>>>>> master
     mainProgram = "dutree";
   };
 }

@@ -24,23 +24,47 @@ let
 in
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "libsignal-node";
+<<<<<<< HEAD
   version = "0.86.3";
+||||||| 213fed0310e3
+  version = "0.83.0";
+=======
+  version = "0.86.9";
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "signalapp";
     repo = "libsignal";
     tag = "v${finalAttrs.version}";
+<<<<<<< HEAD
     hash = "sha256-MEwtFOYdp8VjZ++R003kXj72m5yY5V/s+PwyORmN5os=";
+||||||| 213fed0310e3
+    hash = "sha256-lSk9C2RIRsAlSUr8folhdHkHkpAfPM+vwJ/rZ6mys3Q=";
+=======
+    hash = "sha256-WQdaE9RqRn0/DldUC8FgLALagVGit0Cd3n90t0nEgUs=";
+>>>>>>> master
   };
 
+<<<<<<< HEAD
   cargoHash = "sha256-xAYMoOdEhq0502lWSwm1aDFh4gIEP1OYUWdOAqijeGM=";
+||||||| 213fed0310e3
+  cargoHash = "sha256-0P89+p0WlQaa48wpgsaapIhEzlAnWVPl9qD+jnBw9mM=";
+=======
+  cargoHash = "sha256-2vIEBQmMBLppk4/t8mvR1n2K/YWUtUaxNl9SpUCNVM8=";
+>>>>>>> master
 
   npmRoot = "node";
   npmDeps = fetchNpmDeps {
     name = "${finalAttrs.pname}-npm-deps";
     inherit (finalAttrs) version src;
     sourceRoot = "${finalAttrs.src.name}/${finalAttrs.npmRoot}";
+<<<<<<< HEAD
     hash = "sha256-6LL0+jLDfvU021EnArI71IAJOM/0HZcxNu5D+HfitS4=";
+||||||| 213fed0310e3
+    hash = "sha256-4sd8JVQfCC4dAkksICbb3e4JjNcgplOW26TyRkAFWp0=";
+=======
+    hash = "sha256-a7TNY+oe7bBLE5D3WYn75Su7RK/xl6UEkv7sosc/TBU=";
+>>>>>>> master
   };
 
   nativeBuildInputs = [

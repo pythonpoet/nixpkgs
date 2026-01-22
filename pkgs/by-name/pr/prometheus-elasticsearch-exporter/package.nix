@@ -20,7 +20,18 @@ buildGoModule rec {
     description = "Elasticsearch stats exporter for Prometheus";
     mainProgram = "elasticsearch_exporter";
     homepage = "https://github.com/prometheus-community/elasticsearch_exporter";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     teams = [ lib.teams.deshaw ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    teams = [ teams.deshaw ];
+=======
+    license = lib.licenses.asl20;
+    maintainers = with lib.maintainers; [
+      de11n
+      despsyched
+    ];
+>>>>>>> master
   };
 }

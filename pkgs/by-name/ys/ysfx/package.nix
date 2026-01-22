@@ -71,8 +71,18 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Hosting library for JSFX";
     homepage = "https://github.com/jpcima/ysfx";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ orivej ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [ orivej ];
+    platforms = platforms.linux;
+=======
+    license = lib.licenses.asl20;
+    maintainers = [ ];
+    platforms = lib.platforms.linux;
+>>>>>>> master
   };
 }

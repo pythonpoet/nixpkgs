@@ -25,8 +25,16 @@ stdenv.mkDerivation (finalAttrs: {
   src = fetchFromBitbucket {
     owner = "ecwolf";
     repo = "ecwolf";
+<<<<<<< HEAD
     rev = "refs/tags/${finalAttrs.version}";
     hash = "sha256-T5K6B2fWMKMLB/662p/YLEv0Od9n0vUakznyoOnr0kI=";
+||||||| 213fed0310e3
+    rev = "refs/tags/${finalAttrs.version}";
+    hash = "sha256-V2pSP8i20zB50WtUMujzij+ISSupdQQ/oCYYrOaTU1g=";
+=======
+    tag = finalAttrs.version;
+    hash = "sha256-T5K6B2fWMKMLB/662p/YLEv0Od9n0vUakznyoOnr0kI=";
+>>>>>>> master
   };
 
   nativeBuildInputs = [
@@ -99,7 +107,6 @@ stdenv.mkDerivation (finalAttrs: {
     license = lib.licenses.gpl2Plus;
     maintainers = with lib.maintainers; [
       jayman2000
-      sander
     ];
     platforms = lib.platforms.all;
   };

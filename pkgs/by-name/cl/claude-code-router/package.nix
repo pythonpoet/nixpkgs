@@ -1,49 +1,89 @@
 {
   buildNpmPackage,
-  esbuild,
   fetchFromGitHub,
   lib,
   makeBinaryWrapper,
+<<<<<<< HEAD
   nodejs_24,
   pnpm_9,
   fetchPnpmDeps,
   pnpmConfigHook,
+||||||| 213fed0310e3
+  nodejs_24,
+  pnpm_9,
+=======
+  nodejs,
+  pnpm,
+  fetchPnpmDeps,
+  pnpmConfigHook,
+>>>>>>> master
   versionCheckHook,
 }:
+<<<<<<< HEAD
 let
   buildNpmPackage' = buildNpmPackage.override { nodejs = nodejs_24; };
   pnpm' = pnpm_9.override { nodejs = nodejs_24; };
 in
 buildNpmPackage' (finalAttrs: {
+||||||| 213fed0310e3
+let
+  buildNpmPackage' = buildNpmPackage.override { nodejs = nodejs_24; };
+in
+buildNpmPackage' (finalAttrs: {
+=======
+
+buildNpmPackage (finalAttrs: {
+>>>>>>> master
   pname = "claude-code-router";
-  version = "1.0.64";
+  version = "2.0.0";
 
   src = fetchFromGitHub {
     owner = "musistudio";
     repo = "claude-code-router";
-    rev = "1a4462a92362e8c41d4539dc1a79fb85fccf9559";
-    hash = "sha256-q818e8PcKjdBqYk6WfGLKQ8pybXWVxmNV8KX7GjEQq0=";
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-Pw+MkOr/yN3Oq88YtpHqYHNQx3AZD/UcJZ1xdcX3DZ8=";
   };
 
   postPatch = ''
-    substituteInPlace src/cli.ts \
-      --replace-fail '"node"' '"${lib.getExe nodejs_24}"'
+    substituteInPlace packages/cli/src/{cli.ts,utils/index.ts} \
+      --replace-fail '"node"' '"${lib.getExe nodejs}"'
   '';
 
   npmDeps = null;
+<<<<<<< HEAD
   pnpmDeps = fetchPnpmDeps {
+||||||| 213fed0310e3
+  pnpmDeps = pnpm_9.fetchDeps {
+=======
+  pnpmDeps = fetchPnpmDeps {
+    inherit pnpm;
+>>>>>>> master
     inherit (finalAttrs) pname src;
+<<<<<<< HEAD
     pnpm = pnpm';
     fetcherVersion = 2;
     hash = "sha256-BLPGTbDvvI40kuXfE/p3+s9hkE0reXr7OJA6UGXN4ys=";
+||||||| 213fed0310e3
+    fetcherVersion = 2;
+    hash = "sha256-BLPGTbDvvI40kuXfE/p3+s9hkE0reXr7OJA6UGXN4ys=";
+=======
+    fetcherVersion = 3;
+    hash = "sha256-8184F3ShoC6j7nov35CSZWz2dzPFQC7Bty1iTNs1qzc=";
+>>>>>>> master
   };
 
   nativeBuildInputs = [
-    esbuild
     makeBinaryWrapper
+<<<<<<< HEAD
     pnpm'
+||||||| 213fed0310e3
+    pnpm_9.configHook
+=======
+    pnpm
+>>>>>>> master
   ];
 
+<<<<<<< HEAD
   npmConfigHook = pnpmConfigHook;
 
   buildPhase = ''
@@ -53,17 +93,28 @@ buildNpmPackage' (finalAttrs: {
 
     runHook postBuild
   '';
+||||||| 213fed0310e3
+  npmConfigHook = pnpm_9.configHook;
+
+  buildPhase = ''
+    runHook preBuild
+
+    esbuild src/cli.ts --bundle --platform=node --outfile=dist/cli.js
+
+    runHook postBuild
+  '';
+=======
+  npmConfigHook = pnpmConfigHook;
+>>>>>>> master
 
   installPhase = ''
     runHook preInstall
 
-    mkdir -p $out/lib/claude-code-router/dist
-    cp dist/cli.js $out/lib/claude-code-router/dist/
-    cp node_modules/tiktoken/tiktoken_bg.wasm $out/lib/claude-code-router/dist/
-    cp ${finalAttrs.passthru.ui}/index.html $out/lib/claude-code-router/dist/
+    mkdir -p $out/lib/claude-code-router
+    cp -r dist $out/lib/claude-code-router
 
     mkdir -p $out/bin
-    makeBinaryWrapper ${lib.getExe nodejs_24} $out/bin/ccr \
+    makeBinaryWrapper ${lib.getExe nodejs} $out/bin/ccr \
       --add-flags "$out/lib/claude-code-router/dist/cli.js"
 
     runHook postInstall
@@ -73,6 +124,7 @@ buildNpmPackage' (finalAttrs: {
   nativeInstallCheckInputs = [ versionCheckHook ];
   versionCheckProgramArg = "-v";
 
+<<<<<<< HEAD
   passthru.ui = buildNpmPackage' (finalAttrs': {
     pname = finalAttrs.pname + "-ui";
     inherit (finalAttrs) version src;
@@ -103,6 +155,38 @@ buildNpmPackage' (finalAttrs: {
     '';
   });
 
+||||||| 213fed0310e3
+  passthru.ui = buildNpmPackage' (finalAttrs': {
+    pname = finalAttrs.pname + "-ui";
+    inherit (finalAttrs) version src;
+
+    sourceRoot = "${finalAttrs'.src.name}/ui";
+
+    npmDeps = null;
+    pnpmDeps = pnpm_9.fetchDeps {
+      inherit (finalAttrs') pname src sourceRoot;
+      fetcherVersion = 2;
+      hash = "sha256-ZjYLUec9EADQmKfju8hMbq0y4f1TDVwjbe3yw8Gh4Ac=";
+    };
+
+    nativeBuildInputs = [
+      pnpm_9.configHook
+    ];
+
+    npmConfigHook = pnpm_9.configHook;
+
+    installPhase = ''
+      runHook preInstall
+
+      mkdir -p $out
+      cp dist/index.html $out/
+
+      runHook postInstall
+    '';
+  });
+
+=======
+>>>>>>> master
   meta = {
     description = "Tool to route Claude Code requests to different models and customize any request";
     homepage = "https://github.com/musistudio/claude-code-router";

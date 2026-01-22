@@ -84,7 +84,14 @@ buildPythonPackage rec {
   meta = {
     description = "Binance Exchange API python implementation for automated trading";
     homepage = "https://github.com/sammchardy/python-binance";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ bhipple ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ bhipple ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
   };
 }

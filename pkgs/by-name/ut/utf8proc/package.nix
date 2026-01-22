@@ -7,24 +7,33 @@
   tmux,
   fcft,
   arrow-cpp,
+  enableStatic ? stdenv.hostPlatform.isStatic,
 }:
 
-stdenv.mkDerivation rec {
+stdenv.mkDerivation (finalAttrs: {
   pname = "utf8proc";
   version = "2.11.2";
 
   src = fetchFromGitHub {
     owner = "JuliaStrings";
     repo = "utf8proc";
+<<<<<<< HEAD
     rev = "v${version}";
     hash = "sha256-/+/IrsLQ9ykuVOaItd2ZbX60pPlP2omvS1qJz51AnWA=";
+||||||| 213fed0310e3
+    rev = "v${version}";
+    hash = "sha256-fFeevzek6Oql+wMmkZXVzKlDh3wZ6AjGCKJFsXBaqzg=";
+=======
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-/+/IrsLQ9ykuVOaItd2ZbX60pPlP2omvS1qJz51AnWA=";
+>>>>>>> master
   };
 
   nativeBuildInputs = [ cmake ];
 
   cmakeFlags = [
-    "-DBUILD_SHARED_LIBS=ON"
-    "-DUTF8PROC_ENABLE_TESTING=ON"
+    (lib.cmakeBool "BUILD_SHARED_LIBS" (!enableStatic))
+    (lib.cmakeBool "UTF8PROC_ENABLE_TESTING" finalAttrs.finalPackage.doCheck)
   ];
 
   doCheck = true;
@@ -43,4 +52,4 @@ stdenv.mkDerivation rec {
       lib.maintainers.sternenseemann
     ];
   };
-}
+})

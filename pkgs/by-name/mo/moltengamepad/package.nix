@@ -37,9 +37,18 @@ stdenv.mkDerivation {
     homepage = "https://github.com/jgeumlek/MoltenGamepad";
     description = "Flexible Linux input device translator, geared for gamepads";
     mainProgram = "moltengamepad";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = [ lib.maintainers.ebzzry ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = [ maintainers.ebzzry ];
+    platforms = platforms.linux;
+=======
+    license = lib.licenses.mit;
+    platforms = lib.platforms.linux;
+>>>>>>> master
   };
 
 }

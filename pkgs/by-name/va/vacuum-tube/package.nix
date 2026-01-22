@@ -10,16 +10,35 @@
 
 buildNpmPackage rec {
   pname = "vacuum-tube";
+<<<<<<< HEAD
   version = "1.4.1";
+||||||| 213fed0310e3
+  version = "1.4.0";
+=======
+  version = "1.5.4";
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "shy1132";
     repo = "VacuumTube";
     tag = "v${version}";
+<<<<<<< HEAD
     hash = "sha256-NZdrueEOzir1/1RncSWk/eDEXFqo3bIhKVspruP4k8s=";
+||||||| 213fed0310e3
+    hash = "sha256-fWcEdxP14wRltPtKIZGyGLpk0PWIJgTcxj93HpWmf2k=";
+=======
+    hash = "sha256-b5OnDoMejnupeK4sWoXQo7vpFFD/y1p4vxMZTMMO25g=";
+>>>>>>> master
   };
 
+<<<<<<< HEAD
   npmDepsHash = "sha256-JfsZI2V2nsoa/boQ9jBrEK+CkGa8KdsJriqnAv+YpmY=";
+||||||| 213fed0310e3
+  npmDepsHash = "sha256-5B5ADVxbfd6vzVGH4+ASQvxMMh1+/LsvelXgkVrPrEM=";
+=======
+  npmDepsHash = "sha256-NBsLgcYFHnj+hVELTKMreLsrJAu3S+RuhBcOTeIhQew=";
+  makeCacheWritable = true;
+>>>>>>> master
 
   env = {
     ELECTRON_SKIP_BINARY_DOWNLOAD = true;

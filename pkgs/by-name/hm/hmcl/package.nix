@@ -39,13 +39,27 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "hmcl";
+<<<<<<< HEAD
   version = "3.8.1";
+||||||| 213fed0310e3
+  version = "3.6.18";
+=======
+  version = "3.9.2";
+>>>>>>> master
 
   src = fetchurl {
     # HMCL has built-in keys, such as the Microsoft OAuth secret and the CurseForge API key.
     # See https://github.com/HMCL-dev/HMCL/blob/refs/tags/release-3.6.12/.github/workflows/gradle.yml#L26-L28
+<<<<<<< HEAD
     url = "https://github.com/HMCL-dev/HMCL/releases/download/v${finalAttrs.version}/HMCL-${finalAttrs.version}.jar";
     hash = "sha256-mQ0iuIOVRETdueNbe5s9USbis6IB6n0eA2EzsMzyGng=";
+||||||| 213fed0310e3
+    url = "https://github.com/HMCL-dev/HMCL/releases/download/release-${finalAttrs.version}/HMCL-${finalAttrs.version}.jar";
+    hash = "sha256-x8UcHdBYXdnTabJh2hxsknYipYNBJW2vKxJKHhryMLQ=";
+=======
+    url = "https://github.com/HMCL-dev/HMCL/releases/download/v${finalAttrs.version}/HMCL-${finalAttrs.version}.jar";
+    hash = "sha256-/thuAsPadixV2vkez3w9yhkDdpJra54WkhFYaeKH0GU=";
+>>>>>>> master
   };
 
   # - HMCL prompts users to download prebuilt Terracotta binary for
@@ -172,6 +186,7 @@ stdenv.mkDerivation (finalAttrs: {
     runHook postInstall
   '';
 
+<<<<<<< HEAD
   postFixup = ''
     makeShellWrapper ${hmclJdk}/bin/java $out/bin/hmcl \
       --add-flags "-jar $out/lib/hmcl/hmcl-terracotta-patch.jar" \
@@ -180,6 +195,54 @@ stdenv.mkDerivation (finalAttrs: {
       --run 'cd $HOME' \
       ''${gappsWrapperArgs[@]}
   '';
+||||||| 213fed0310e3
+  fixupPhase =
+    let
+      libpath = lib.makeLibraryPath (
+        [
+          libGL
+          glfw
+          glib
+          openal
+          libglvnd
+          vulkan-loader
+        ]
+        ++ lib.optionals stdenv.hostPlatform.isLinux [
+          xorg.libX11
+          xorg.libXxf86vm
+          xorg.libXext
+          xorg.libXcursor
+          xorg.libXrandr
+          xorg.libXtst
+          libpulseaudio
+          wayland
+          alsa-lib
+        ]
+      );
+    in
+    ''
+      runHook preFixup
+
+      makeBinaryWrapper ${hmclJdk}/bin/java $out/bin/hmcl \
+        --add-flags "-jar $out/lib/hmcl/hmcl.jar" \
+        --set LD_LIBRARY_PATH ${libpath} \
+        --prefix PATH : "${lib.makeBinPath minecraftJdks}"\
+        ''${gappsWrapperArgs[@]}
+
+      runHook postFixup
+    '';
+=======
+  postFixup = ''
+    makeShellWrapper ${hmclJdk}/bin/java $out/bin/hmcl \
+      --add-flags "-jar $out/lib/hmcl/hmcl-terracotta-patch.jar" \
+      --set LD_LIBRARY_PATH ${lib.makeLibraryPath finalAttrs.runtimeDeps} \
+      --prefix PATH : "${
+        lib.makeBinPath (minecraftJdks ++ lib.optional stdenv.hostPlatform.isLinux xorg.xrandr)
+      }" \
+      --run 'cd $HOME' \
+      ''${gappsWrapperArgs[@]}
+  '';
+>>>>>>> master
 
   passthru.updateScript = lib.getExe (callPackage ./update.nix { });
 
@@ -200,6 +263,7 @@ stdenv.mkDerivation (finalAttrs: {
     '';
     maintainers = with lib.maintainers; [
       daru-san
+      Misaka13514
       moraxyc
     ];
     inherit (hmclJdk.meta) platforms;

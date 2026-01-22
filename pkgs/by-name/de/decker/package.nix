@@ -80,7 +80,15 @@ stdenv.mkDerivation rec {
     description = "Multimedia platform for creating and sharing interactive documents";
     license = lib.licenses.mit;
     mainProgram = "decker";
+<<<<<<< HEAD
     platforms = lib.platforms.all;
     maintainers = with lib.maintainers; [ foo-dogsquared ];
+||||||| 213fed0310e3
+    platforms = platforms.all;
+    maintainers = with maintainers; [ foo-dogsquared ];
+=======
+    platforms = lib.platforms.all;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

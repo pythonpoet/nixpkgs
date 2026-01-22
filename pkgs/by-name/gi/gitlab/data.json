@@ -1,16 +1,47 @@
 {
+<<<<<<< HEAD
   "version": "18.6.2",
   "repo_hash": "1lpv4p85hnrikl0r41md6hrj9dxdl2236n1a11z2k1rjnyxwsl62",
   "yarn_hash": "1qrgi5zkjy3d74lfjhqwnlh9il572vjwcb63q0s1mcq7cpk8fwhs",
+||||||| 213fed0310e3
+  "version": "18.6.0",
+  "repo_hash": "0pnl0n4yx15i2p7c7738vs4wk4w922zw5nv8p2mjgi6h4frkcg89",
+  "yarn_hash": "1qrgi5zkjy3d74lfjhqwnlh9il572vjwcb63q0s1mcq7cpk8fwhs",
+=======
+  "version": "18.6.3",
+  "repo_hash": "1ims6fy3zjnrappy1kkb02b8s2vldr18dz7ick176ljk042lqa5g",
+  "yarn_hash": "19fhh3457mvls3g4swyzr2dh9q46z2zinjyw5v6sjjhfmrqs921d",
+>>>>>>> master
   "frontend_islands_yarn_hash": "0m64xhlybjlax33k5rmj9kxcj1vzqqygybyz1yzzx9pd87570k2h",
   "owner": "gitlab-org",
   "repo": "gitlab",
+<<<<<<< HEAD
   "rev": "v18.6.2-ee",
+||||||| 213fed0310e3
+  "rev": "v18.6.0-ee",
+=======
+  "rev": "v18.6.3-ee",
+>>>>>>> master
   "passthru": {
+<<<<<<< HEAD
     "GITALY_SERVER_VERSION": "18.6.2",
     "GITLAB_PAGES_VERSION": "18.6.2",
+||||||| 213fed0310e3
+    "GITALY_SERVER_VERSION": "18.6.0",
+    "GITLAB_PAGES_VERSION": "18.6.0",
+=======
+    "GITALY_SERVER_VERSION": "18.6.3",
+    "GITLAB_KAS_VERSION": "18.6.3",
+    "GITLAB_PAGES_VERSION": "18.6.3",
+>>>>>>> master
     "GITLAB_SHELL_VERSION": "14.45.3",
     "GITLAB_ELASTICSEARCH_INDEXER_VERSION": "5.10.1",
+<<<<<<< HEAD
     "GITLAB_WORKHORSE_VERSION": "18.6.2"
+||||||| 213fed0310e3
+    "GITLAB_WORKHORSE_VERSION": "18.6.0"
+=======
+    "GITLAB_WORKHORSE_VERSION": "18.6.3"
+>>>>>>> master
   }
 }

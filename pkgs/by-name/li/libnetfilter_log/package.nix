@@ -29,8 +29,18 @@ stdenv.mkDerivation rec {
       library has been previously known as libnfnetlink_log.
     '';
     homepage = "https://netfilter.org/projects/libnetfilter_log/";
+<<<<<<< HEAD
     license = lib.licenses.gpl2Plus;
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [ orivej ];
+||||||| 213fed0310e3
+    license = licenses.gpl2Plus;
+    platforms = platforms.linux;
+    maintainers = with maintainers; [ orivej ];
+=======
+    license = lib.licenses.gpl2Plus;
+    platforms = lib.platforms.linux;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

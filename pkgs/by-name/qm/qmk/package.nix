@@ -16,7 +16,7 @@
 python3.pkgs.buildPythonApplication rec {
   pname = "qmk";
   version = "1.1.8";
-  format = "pyproject";
+  pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
@@ -76,11 +76,22 @@ python3.pkgs.buildPythonApplication rec {
         - qmk lint
       - ... and many more!
     '';
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [
       bhipple
       ekleog
     ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [
+      bhipple
+      ekleog
+    ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "qmk";
   };
 }

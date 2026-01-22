@@ -108,8 +108,16 @@ stdenv.mkDerivation (finalAttrs: {
 
   LC_ALL = "en_US.utf8";
 
+<<<<<<< HEAD
   meta = {
     homepage = "http://www.profanity.im/";
+||||||| 213fed0310e3
+  meta = with lib; {
+    homepage = "http://www.profanity.im/";
+=======
+  meta = {
+    homepage = "https://profanity-im.github.io";
+>>>>>>> master
     description = "Console based XMPP client";
     mainProgram = "profanity";
     longDescription = ''

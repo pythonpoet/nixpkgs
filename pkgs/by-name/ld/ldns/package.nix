@@ -62,8 +62,16 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Library with the aim of simplifying DNS programming in C";
     homepage = "https://www.nlnetlabs.nl/projects/ldns/";
+<<<<<<< HEAD
     license = lib.licenses.bsd3;
     maintainers = with lib.maintainers; [ dtzWill ];
+||||||| 213fed0310e3
+    license = licenses.bsd3;
+    maintainers = with maintainers; [ dtzWill ];
+=======
+    license = lib.licenses.bsd3;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "drill";
     platforms = lib.platforms.unix;
   };

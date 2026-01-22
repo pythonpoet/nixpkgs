@@ -34,8 +34,18 @@ stdenv.mkDerivation rec {
   meta = {
     homepage = "https://github.com/google/cctz";
     description = "C++ library for translating between absolute and civil times";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ orivej ];
     platforms = lib.platforms.all;
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [ orivej ];
+    platforms = platforms.all;
+=======
+    license = lib.licenses.asl20;
+    maintainers = [ ];
+    platforms = lib.platforms.all;
+>>>>>>> master
   };
 }

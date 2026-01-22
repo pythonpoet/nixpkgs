@@ -52,8 +52,15 @@ buildGoModule rec {
     mainProgram = "checkmake";
     homepage = "https://github.com/mrtazz/checkmake";
     changelog = "https://github.com/mrtazz/checkmake/releases/tag/${src.rev}";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ vidbina ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ vidbina ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
     longDescription = ''
       checkmake is an experimental tool for linting and checking
       Makefiles. It may not do what you want it to.

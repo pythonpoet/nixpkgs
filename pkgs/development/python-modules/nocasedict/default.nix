@@ -1,7 +1,7 @@
 {
   lib,
   buildPythonPackage,
-  fetchPypi,
+  fetchFromGitHub,
   pytestCheckHook,
   setuptools,
   setuptools-scm,
@@ -12,9 +12,11 @@ buildPythonPackage rec {
   version = "2.1.0";
   pyproject = true;
 
-  src = fetchPypi {
-    inherit pname version;
-    hash = "sha256-tWPVhRy7DgsQ+7YYm6h+BhLSLlpvOgBKRXOrWziqqn0=";
+  src = fetchFromGitHub {
+    owner = "pywbem";
+    repo = "nocasedict";
+    tag = version;
+    hash = "sha256-6n0id4WBdrD+rYX9tFuynA6bV1n1LjVy5dj/TgXNkPw=";
   };
 
   build-system = [
@@ -29,8 +31,16 @@ buildPythonPackage rec {
   meta = {
     description = "Case-insensitive ordered dictionary for Python";
     homepage = "https://github.com/pywbem/nocasedict";
+<<<<<<< HEAD
     changelog = "https://github.com/pywbem/nocasedict/blob/${version}/docs/changes.rst";
     license = lib.licenses.lgpl21Plus;
+||||||| 213fed0310e3
+    changelog = "https://github.com/pywbem/nocasedict/blob/${version}/docs/changes.rst";
+    license = licenses.lgpl21Plus;
+=======
+    changelog = "https://github.com/pywbem/nocasedict/blob/${src.tag}/docs/changes.rst";
+    license = lib.licenses.lgpl21Plus;
+>>>>>>> master
     maintainers = [ ];
   };
 }

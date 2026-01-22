@@ -3,20 +3,36 @@
   fetchFromGitHub,
   buildGoModule,
   buildNpmPackage,
+<<<<<<< HEAD
   pnpm_9,
   fetchPnpmDeps,
   pnpmConfigHook,
+||||||| 213fed0310e3
+  pnpm_9,
+=======
+  fetchPnpmDeps,
+  pnpmConfigHook,
+  nodejs_24,
+  pnpm_10,
+>>>>>>> master
   nix-update-script,
   nixosTests,
 }:
-let
-  version = "2.44.1";
 
+<<<<<<< HEAD
+||||||| 213fed0310e3
+  pnpm = pnpm_9;
+
+=======
+let
+  version = "2.55.0";
+
+>>>>>>> master
   src = fetchFromGitHub {
     owner = "filebrowser";
     repo = "filebrowser";
     rev = "v${version}";
-    hash = "sha256-ln7Dst+sN99c3snPU7DrIGpwKBz/e4Lz+uOknmm6sxg=";
+    hash = "sha256-1ZzTATJEVBr76+CMk8OzxdpWGqFHPPhyC7z2MgfqN+M=";
   };
 
   frontend = buildNpmPackage rec {
@@ -25,9 +41,17 @@ let
 
     sourceRoot = "${src.name}/frontend";
 
+<<<<<<< HEAD
     nativeBuildInputs = [ pnpm_9 ];
     npmConfigHook = pnpmConfigHook;
+||||||| 213fed0310e3
+    npmConfigHook = pnpm.configHook;
+=======
+    nativeBuildInputs = [ pnpm_10 ];
+    npmConfigHook = pnpmConfigHook;
+>>>>>>> master
     npmDeps = pnpmDeps;
+    nodejs = nodejs_24;
 
     pnpmDeps = fetchPnpmDeps {
       inherit
@@ -36,9 +60,18 @@ let
         src
         sourceRoot
         ;
+<<<<<<< HEAD
       pnpm = pnpm_9;
       fetcherVersion = 2;
       hash = "sha256-3n44BGJLdQR6uBSF09oyUzJm35/S3/ZEyZh4Wxqlfiw=";
+||||||| 213fed0310e3
+      fetcherVersion = 2;
+      hash = "sha256-3n44BGJLdQR6uBSF09oyUzJm35/S3/ZEyZh4Wxqlfiw=";
+=======
+      fetcherVersion = 3;
+      pnpm = pnpm_10;
+      hash = "sha256-iv0LZoEyF5fASqBKNkTJhLMY0Xpa6x0i4csDoHmGU+g=";
+>>>>>>> master
     };
 
     installPhase = ''
@@ -50,12 +83,13 @@ let
       runHook postInstall
     '';
   };
+
 in
 buildGoModule {
   pname = "filebrowser";
   inherit version src;
 
-  vendorHash = "sha256-aVtL64Cm+nqum/qHFvplpEawgMXM2S6l8QFrJBzLVtU=";
+  vendorHash = "sha256-4WDggP5eL7IPUWTxewxV2JUZZ3kV0PwewQQothz7AC8=";
 
   excludedPackages = [ "tools" ];
 

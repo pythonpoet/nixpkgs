@@ -36,8 +36,16 @@ stdenv.mkDerivation {
     pugixml
   ];
 
+<<<<<<< HEAD
   meta = {
     maintainers = with lib.maintainers; [ matthewbauer ];
+||||||| 213fed0310e3
+  meta = with lib; {
+    maintainers = with maintainers; [ matthewbauer ];
+=======
+  meta = {
+    maintainers = [ ];
+>>>>>>> master
     description = "CPP bindings for Plist";
     license = lib.licenses.mit;
     platforms = lib.platforms.unix;

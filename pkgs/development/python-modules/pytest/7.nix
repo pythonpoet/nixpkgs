@@ -109,7 +109,6 @@ let
       maintainers = with lib.maintainers; [
         lovek323
         madjar
-        lsix
       ];
       license = lib.licenses.mit;
     };

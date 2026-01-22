@@ -40,13 +40,25 @@ let
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "prl-tools";
+<<<<<<< HEAD
   version = "26.2.0-57363";
+||||||| 213fed0310e3
+  version = "26.1.2-57293";
+=======
+  version = "26.2.1-57371";
+>>>>>>> master
 
   # We download the full distribution to extract prl-tools-lin.iso from
   # => ${dmg}/Parallels\ Desktop.app/Contents/Resources/Tools/prl-tools-lin.iso
   src = fetchurl {
     url = "https://download.parallels.com/desktop/v${lib.versions.major finalAttrs.version}/${finalAttrs.version}/ParallelsDesktop-${finalAttrs.version}.dmg";
+<<<<<<< HEAD
     hash = "sha256-vxSLyqpKaf8azw0RvKMBHNa2x50HM6wwt+iH9rMyZQE=";
+||||||| 213fed0310e3
+    hash = "sha256-0sL6uKYw/D7gYYZyAWkxcP/KbJ1rBnlXIKYDu6MlTLQ=";
+=======
+    hash = "sha256-mmZsaLYaA9OjYwfZ75Be59n8Ve2DjdG6fGqgx8NpdLI=";
+>>>>>>> master
   };
 
   hardeningDisable = [

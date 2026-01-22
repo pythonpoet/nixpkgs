@@ -58,7 +58,6 @@ stdenv.mkDerivation rec {
     platforms = lib.platforms.all;
     maintainers = with lib.maintainers; [
       kragniz
-      rasendubi
     ];
   };
 }

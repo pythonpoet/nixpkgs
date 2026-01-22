@@ -23,8 +23,16 @@ rustPlatform.buildRustPackage {
   meta = {
     description = "River-status client written in Rust";
     homepage = "https://gitlab.com/snakedye/ristate";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ kranzes ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ kranzes ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "ristate";
   };
 }

@@ -105,11 +105,23 @@ assert lib.all (p: p.enabled -> !(builtins.elem null p.buildInputs)) plugins;
 
 stdenv.mkDerivation rec {
   pname = "weechat";
+<<<<<<< HEAD
   version = "4.8.0";
+||||||| 213fed0310e3
+  version = "4.7.1";
+=======
+  version = "4.8.1";
+>>>>>>> master
 
   src = fetchurl {
     url = "https://weechat.org/files/src/weechat-${version}.tar.xz";
+<<<<<<< HEAD
     hash = "sha256-7SjcoqsRtBwEHfYVM62LRzw+vzVEoZka1D0Iz6Zv4WU=";
+||||||| 213fed0310e3
+    hash = "sha256-6D+3HKJRxd10vZxaa9P4XcLrjs7AlV9DwH8+CRHtt9M=";
+=======
+    hash = "sha256-56wfvMcUWO1keq2odHmQkFy1v7k/2MzMvCqWlnOkKFo=";
+>>>>>>> master
   };
 
   # Why is this needed? https://github.com/weechat/weechat/issues/2031
@@ -174,7 +186,6 @@ stdenv.mkDerivation rec {
 
   doInstallCheck = true;
   nativeInstallCheckInputs = [ versionCheckHook ];
-  versionCheckProgramArg = "--version";
 
   passthru.updateScript = writeScript "update-weechat" ''
     #!/usr/bin/env nix-shell

@@ -38,7 +38,14 @@ buildPythonPackage rec {
     description = "Use requests to talk HTTP via a UNIX domain socket";
     homepage = "https://github.com/msabramo/requests-unixsocket";
     changelog = "https://github.com/msabramo/requests-unixsocket/releases/tag/v${version}";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ catern ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [ catern ];
+=======
+    license = lib.licenses.asl20;
+>>>>>>> master
   };
 }

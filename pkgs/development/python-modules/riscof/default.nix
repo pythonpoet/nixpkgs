@@ -3,7 +3,6 @@
   buildPythonPackage,
   fetchFromGitHub,
   jinja2,
-  pythonOlder,
   riscv-config,
   riscv-isac,
 }:
@@ -12,8 +11,6 @@ buildPythonPackage rec {
   pname = "riscof";
   version = "1.25.3";
   format = "setuptools";
-
-  disabled = pythonOlder "3.6";
 
   src = fetchFromGitHub {
     owner = "riscv-software-src";
@@ -51,7 +48,15 @@ buildPythonPackage rec {
     mainProgram = "riscof";
     homepage = "https://github.com/riscv-software-src/riscof";
     changelog = "https://github.com/riscv-software-src/riscof/blob/${version}/CHANGELOG.md";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ genericnerdyusername ];
     license = lib.licenses.bsd3;
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ genericnerdyusername ];
+    license = licenses.bsd3;
+=======
+    maintainers = [ ];
+    license = lib.licenses.bsd3;
+>>>>>>> master
   };
 }

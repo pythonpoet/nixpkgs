@@ -48,8 +48,17 @@ buildPythonPackage rec {
   meta = {
     homepage = "https://github.com/dcantrell/pyparted/";
     description = "Python interface for libparted";
+<<<<<<< HEAD
     license = lib.licenses.gpl2Plus;
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [ lsix ];
+||||||| 213fed0310e3
+    license = licenses.gpl2Plus;
+    platforms = platforms.linux;
+    maintainers = with maintainers; [ lsix ];
+=======
+    license = lib.licenses.gpl2Plus;
+    platforms = lib.platforms.linux;
+>>>>>>> master
   };
 }

@@ -61,9 +61,18 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Lightweight text editor written in Lua";
     homepage = "https://github.com/rxi/lite";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ Br1ght0ne ];
     platforms = lib.platforms.unix;
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ Br1ght0ne ];
+    platforms = platforms.unix;
+=======
+    license = lib.licenses.mit;
+    platforms = lib.platforms.unix;
+>>>>>>> master
     mainProgram = "lite";
   };
 }

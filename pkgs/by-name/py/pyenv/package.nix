@@ -7,13 +7,13 @@
 
 stdenv.mkDerivation rec {
   pname = "pyenv";
-  version = "2.6.13";
+  version = "2.6.14";
 
   src = fetchFromGitHub {
     owner = "pyenv";
     repo = "pyenv";
     tag = "v${version}";
-    hash = "sha256-VsVVdIjM7sknimEUeeBO8rU8khS9tk3xoAfiwXK+qQo=";
+    hash = "sha256-yE/D7ycD5IKZltSBUaH41Vg8xptosnJ9Py7SkCch36g=";
   };
 
   nativeBuildInputs = [
@@ -47,9 +47,18 @@ stdenv.mkDerivation rec {
     description = "Simple Python version management";
     homepage = "https://github.com/pyenv/pyenv";
     changelog = "https://github.com/pyenv/pyenv/blob/${src.rev}/CHANGELOG.md";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ tjni ];
     platforms = lib.platforms.all;
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ tjni ];
+    platforms = platforms.all;
+=======
+    license = lib.licenses.mit;
+    platforms = lib.platforms.all;
+>>>>>>> master
     mainProgram = "pyenv";
   };
 }

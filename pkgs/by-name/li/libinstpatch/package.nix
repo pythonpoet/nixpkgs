@@ -36,8 +36,18 @@ stdenv.mkDerivation rec {
   meta = {
     homepage = "http://www.swamiproject.org/";
     description = "MIDI instrument patch files support library";
+<<<<<<< HEAD
     license = lib.licenses.lgpl21;
     maintainers = with lib.maintainers; [ orivej ];
     platforms = lib.platforms.unix;
+||||||| 213fed0310e3
+    license = licenses.lgpl21;
+    maintainers = with maintainers; [ orivej ];
+    platforms = platforms.unix;
+=======
+    license = lib.licenses.lgpl21;
+    maintainers = [ ];
+    platforms = lib.platforms.unix;
+>>>>>>> master
   };
 }

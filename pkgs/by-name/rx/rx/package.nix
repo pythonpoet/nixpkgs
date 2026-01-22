@@ -58,7 +58,6 @@ rustPlatform.buildRustPackage rec {
     license = lib.licenses.gpl3;
     maintainers = with lib.maintainers; [
       minijackson
-      Br1ght0ne
     ];
     platforms = [ "x86_64-linux" ];
   };

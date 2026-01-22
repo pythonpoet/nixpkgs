@@ -56,7 +56,7 @@ buildPythonPackage rec {
     pytestCheckHook
     pytest-asyncio
   ]
-  ++ builtins.foldl' (x: y: x ++ y) [ ] (builtins.attrValues optional-dependencies);
+  ++ lib.concatAttrValues optional-dependencies;
 
   preCheck = ''
     export HOME=$TMPDIR
@@ -100,7 +100,14 @@ buildPythonPackage rec {
     '';
     homepage = "https://opencyphal.org/";
     changelog = "https://github.com/OpenCyphal/pycyphal/blob/${version}/CHANGELOG.rst";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     teams = [ lib.teams.ororatech ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    teams = [ teams.ororatech ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
   };
 }

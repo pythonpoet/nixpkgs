@@ -5,20 +5,17 @@
   cryptography,
   fetchPypi,
   h11,
-  pythonOlder,
   setuptools,
 }:
 
 buildPythonPackage rec {
   pname = "asysocks";
-  version = "0.2.17";
+  version = "0.2.18";
   pyproject = true;
-
-  disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-r6F7Sel8D3noBQE8fDYQ5k9NzIFOmUWT+1CGrWVCWTw=";
+    hash = "sha256-zGGW6CyK3Is84jId3fY1UAx2AxbaS3zKMhtTLLs9/fU=";
   };
 
   build-system = [ setuptools ];
@@ -38,7 +35,15 @@ buildPythonPackage rec {
     description = "Python Socks4/5 client and server library";
     homepage = "https://github.com/skelsec/asysocks";
     changelog = "https://github.com/skelsec/asysocks/releases/tag/${version}";
+<<<<<<< HEAD
     license = with lib.licenses; [ mit ];
     maintainers = with lib.maintainers; [ fab ];
+||||||| 213fed0310e3
+    license = with licenses; [ mit ];
+    maintainers = with maintainers; [ fab ];
+=======
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [ fab ];
+>>>>>>> master
   };
 }

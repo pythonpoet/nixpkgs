@@ -27,7 +27,14 @@ buildPythonPackage rec {
   meta = {
     homepage = "https://deeptools.readthedocs.io/en/develop";
     description = "Helper library for deeptools";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ scalavision ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ scalavision ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
   };
 }

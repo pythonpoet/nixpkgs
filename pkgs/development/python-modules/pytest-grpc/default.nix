@@ -23,7 +23,14 @@ buildPythonPackage rec {
   meta = {
     description = "Pytest plugin for grpc";
     homepage = "https://github.com/MobileDynasty/pytest-env";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     teams = [ lib.teams.deshaw ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    teams = [ teams.deshaw ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
   };
 }

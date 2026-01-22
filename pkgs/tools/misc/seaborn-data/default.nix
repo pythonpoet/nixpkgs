@@ -12,8 +12,16 @@ let
     meta = {
       description = "Data repository for seaborn examples";
       homepage = "https://github.com/mwaskom/seaborn-data";
+<<<<<<< HEAD
       platforms = lib.platforms.all;
       maintainers = with lib.maintainers; [ mbalatsko ];
+||||||| 213fed0310e3
+      platforms = platforms.all;
+      maintainers = with maintainers; [ mbalatsko ];
+=======
+      platforms = lib.platforms.all;
+      maintainers = [ ];
+>>>>>>> master
     };
   };
   makeSeabornDataPackage =

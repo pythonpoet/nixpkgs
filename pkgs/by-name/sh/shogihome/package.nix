@@ -22,16 +22,34 @@ let
 in
 buildNpmPackage (finalAttrs: {
   pname = "shogihome";
+<<<<<<< HEAD
   version = "1.26.0";
+||||||| 213fed0310e3
+  version = "1.25.1";
+=======
+  version = "1.26.1";
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "sunfish-shogi";
     repo = "shogihome";
     tag = "v${finalAttrs.version}";
+<<<<<<< HEAD
     hash = "sha256-Mq5fmxecPqb0YH4vgzAKiZ+5f77acQRoodJaqJqjjQI=";
+||||||| 213fed0310e3
+    hash = "sha256-CRPZmycYaKtqjjiISKVGLf2jUvM6Xk6cUryKZcFX3tc=";
+=======
+    hash = "sha256-7kDk85tN4uP0WJnof8yyn0M85Qairls5ZqhKwwhRQxc=";
+>>>>>>> master
   };
 
+<<<<<<< HEAD
   npmDepsHash = "sha256-iFAIwvM0SjZiLfY0Ejdk1TlKEJDh/bx3fdzkzNBOkkE=";
+||||||| 213fed0310e3
+  npmDepsHash = "sha256-8v6r3DAUzNeMQqLl99mp5rUytbUe7wFj3jkHb6lbwFI=";
+=======
+  npmDepsHash = "sha256-Sft5fEf86o1uUJ+yszx9XgQBGNRc+9aKRyR5rOelgQw=";
+>>>>>>> master
 
   postPatch = ''
     substituteInPlace package.json \

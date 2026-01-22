@@ -11,7 +11,6 @@
   poetry-core,
   pyopenssl,
   pytestCheckHook,
-  pythonOlder,
   requests,
   requests-kerberos,
   toml,
@@ -21,8 +20,6 @@ buildPythonPackage rec {
   pname = "aws-adfs";
   version = "2.12.1";
   pyproject = true;
-
-  disabled = pythonOlder "3.7";
 
   src = fetchFromGitHub {
     owner = "venth";
@@ -69,8 +66,15 @@ buildPythonPackage rec {
     description = "Command line tool to ease AWS CLI authentication against ADFS";
     homepage = "https://github.com/venth/aws-adfs";
     changelog = "https://github.com/venth/aws-adfs/releases/tag/${src.tag}";
+<<<<<<< HEAD
     license = lib.licenses.psfl;
     maintainers = with lib.maintainers; [ bhipple ];
+||||||| 213fed0310e3
+    license = licenses.psfl;
+    maintainers = with maintainers; [ bhipple ];
+=======
+    license = lib.licenses.psfl;
+>>>>>>> master
     mainProgram = "aws-adfs";
   };
 }

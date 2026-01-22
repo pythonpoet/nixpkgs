@@ -64,7 +64,6 @@ rustPlatform.buildRustPackage rec {
     ];
     maintainers = with lib.maintainers; [
       sb0
-      Br1ght0ne
     ];
   };
 }

@@ -3,7 +3,6 @@
   lib,
   buildPythonPackage,
   fetchFromGitHub,
-  pythonOlder,
   matplotlib,
   numpy,
   pandas,
@@ -19,8 +18,6 @@ buildPythonPackage rec {
   pname = "pytest-regressions";
   version = "2.8.1";
   pyproject = true;
-
-  disabled = pythonOlder "3.9";
 
   src = fetchFromGitHub {
     owner = "ESSS";
@@ -58,7 +55,7 @@ buildPythonPackage rec {
     pandas
     pytestCheckHook
   ]
-  ++ lib.flatten (lib.attrValues optional-dependencies);
+  ++ lib.concatAttrValues optional-dependencies;
 
   pytestFlags = [
     "-Wignore::DeprecationWarning"

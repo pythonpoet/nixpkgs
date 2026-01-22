@@ -34,8 +34,17 @@ stdenv.mkDerivation rec {
     description = "Grow bonsai trees in your terminal";
     mainProgram = "cbonsai";
     homepage = "https://gitlab.com/jallbrit/cbonsai";
+<<<<<<< HEAD
     license = with lib.licenses; [ gpl3Only ];
     maintainers = with lib.maintainers; [ manveru ];
     platforms = lib.platforms.unix;
+||||||| 213fed0310e3
+    license = with licenses; [ gpl3Only ];
+    maintainers = with maintainers; [ manveru ];
+    platforms = platforms.unix;
+=======
+    license = with lib.licenses; [ gpl3Only ];
+    platforms = lib.platforms.unix;
+>>>>>>> master
   };
 }

@@ -201,7 +201,15 @@ stdenv.mkDerivation (finalAttrs: {
       "gstreamer-net-1.0"
       "gstreamer-video-1.0"
     ];
+<<<<<<< HEAD
     platforms = lib.platforms.unix;
     maintainers = with lib.maintainers; [ matthewbauer ];
+||||||| 213fed0310e3
+    platforms = platforms.unix;
+    maintainers = with maintainers; [ matthewbauer ];
+=======
+    platforms = lib.platforms.unix;
+    maintainers = [ ];
+>>>>>>> master
   };
 })

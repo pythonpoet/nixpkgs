@@ -67,9 +67,18 @@ in
   meta = {
     description = "Your project's nix-env";
     homepage = "https://github.com/nix-community/lorri";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [
       grahamc
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [
+      grahamc
+=======
+    license = lib.licenses.asl20;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       Profpatsch
       nyarly
     ];

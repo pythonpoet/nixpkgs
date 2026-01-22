@@ -44,7 +44,6 @@ stdenv.mkDerivation (finalAttrs: {
   nativeInstallCheckInputs = [
     versionCheckHook
   ];
-  versionCheckProgramArg = "--version";
   doInstallCheck = true;
 
   meta = {
@@ -54,9 +53,16 @@ stdenv.mkDerivation (finalAttrs: {
     license = lib.licenses.gpl3Plus;
     mainProgram = "less";
     maintainers = with lib.maintainers; [
+<<<<<<< HEAD
       # dtzWill is not active
       dtzWill
       mdaniels5757
+||||||| 213fed0310e3
+      # not active
+      dtzWill
+=======
+      mdaniels5757
+>>>>>>> master
     ];
     platforms = lib.platforms.unix;
   };

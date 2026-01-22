@@ -97,9 +97,19 @@ let
     meta = {
       description = "Launcher for RuneScape 3, the current main RuneScape";
       homepage = "https://www.runescape.com/";
+<<<<<<< HEAD
       sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
       license = lib.licenses.unfree;
       maintainers = with lib.maintainers; [ grburst ];
+||||||| 213fed0310e3
+      sourceProvenance = with sourceTypes; [ binaryNativeCode ];
+      license = licenses.unfree;
+      maintainers = with maintainers; [ grburst ];
+=======
+      sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
+      license = lib.licenses.unfree;
+      maintainers = [ ];
+>>>>>>> master
       platforms = [ "x86_64-linux" ];
     };
   };
@@ -148,8 +158,16 @@ buildFHSEnv {
   meta = {
     description = "RuneScape Game Client (NXT) - Launcher for RuneScape 3";
     homepage = "https://www.runescape.com/";
+<<<<<<< HEAD
     license = lib.licenses.unfree;
     maintainers = with lib.maintainers; [ grburst ];
+||||||| 213fed0310e3
+    license = licenses.unfree;
+    maintainers = with maintainers; [ grburst ];
+=======
+    license = lib.licenses.unfree;
+    maintainers = [ ];
+>>>>>>> master
     platforms = [ "x86_64-linux" ];
   };
 }

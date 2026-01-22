@@ -32,7 +32,7 @@ rustPlatform.buildRustPackage rec {
     libiconv
   ];
 
-  OPENSSL_NO_VENDOR = 1;
+  env.OPENSSL_NO_VENDOR = 1;
 
   # tries to use "/homeless-shelter" and fails
   doCheck = false;
@@ -45,6 +45,11 @@ rustPlatform.buildRustPackage rec {
       asl20 # or
       mit
     ];
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ Br1ght0ne ];
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ Br1ght0ne ];
+=======
+>>>>>>> master
   };
 }

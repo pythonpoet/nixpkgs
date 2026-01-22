@@ -9,13 +9,16 @@
 }:
 
 let
+  # tests can be based on builtins.derivation and bootstrapTools directly to minimize rebuilds
+  # see test 'make-symlinks-relative' in ./hooks.nix as an example.
+  bootstrapTools = stdenv.bootstrapTools;
   # early enough not to rebuild gcc but late enough to have patchelf
-  earlyPkgs = stdenv.__bootPackages.stdenv.__bootPackages;
+  earlyPkgs = stdenv.__bootPackages.stdenv.__bootPackages or pkgs;
   earlierPkgs =
-    stdenv.__bootPackages.stdenv.__bootPackages.stdenv.__bootPackages.stdenv.__bootPackages.stdenv.__bootPackages;
+    stdenv.__bootPackages.stdenv.__bootPackages.stdenv.__bootPackages.stdenv.__bootPackages.stdenv.__bootPackages
+      or earlyPkgs;
   # use a early stdenv so when hacking on stdenv this test can be run quickly
-  bootStdenv =
-    stdenv.__bootPackages.stdenv.__bootPackages.stdenv.__bootPackages.stdenv.__bootPackages.stdenv;
+  bootStdenv = earlyPkgs.stdenv.__bootPackages.stdenv.__bootPackages.stdenv or earlyPkgs.stdenv;
   pkgsStructured = import pkgs.path {
     config = {
       structuredAttrsByDefault = true;
@@ -23,7 +26,8 @@ let
     inherit (stdenv.hostPlatform) system;
   };
   bootStdenvStructuredAttrsByDefault =
-    pkgsStructured.stdenv.__bootPackages.stdenv.__bootPackages.stdenv.__bootPackages.stdenv.__bootPackages.stdenv;
+    pkgsStructured.stdenv.__bootPackages.stdenv.__bootPackages.stdenv.__bootPackages.stdenv.__bootPackages.stdenv
+      or pkgsStructured.stdenv;
 
   runCommand = earlierPkgs.runCommand;
 
@@ -239,7 +243,7 @@ in
     import ./hooks.nix {
       stdenv = bootStdenv;
       pkgs = earlyPkgs;
-      inherit lib;
+      inherit bootstrapTools lib;
     }
   );
 
@@ -448,6 +452,8 @@ in
     stdenv' = bootStdenv;
   };
 
+  tests-stdenv-gcc-stageCompare = pkgs.callPackage ./gcc-stageCompare.nix { };
+
   ensure-no-execve-in-setup-sh =
     derivation {
       name = "ensure-no-execve-in-setup-sh";
@@ -498,7 +504,7 @@ in
       import ./hooks.nix {
         stdenv = bootStdenvStructuredAttrsByDefault;
         pkgs = earlyPkgs;
-        inherit lib;
+        inherit bootstrapTools lib;
       }
     );
 

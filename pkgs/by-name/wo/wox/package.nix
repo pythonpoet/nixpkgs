@@ -2,7 +2,7 @@
   lib,
   stdenv,
   fetchFromGitHub,
-  flutter335,
+  flutter338,
   keybinder3,
   nodejs,
   pnpm_9,
@@ -24,13 +24,13 @@
 }:
 
 let
-  version = "2.0.0-beta.5";
+  version = "2.0.0-beta.8";
 
   src = fetchFromGitHub {
     owner = "Wox-launcher";
     repo = "Wox";
     tag = "v${version}";
-    hash = "sha256-ZuKsIWooLqGeEex8uRiMVYVxnAJyiQt0soZ9OP6+qq0=";
+    hash = "sha256-eucyQKNuzJCLwAnyQVE/64gth+uVrCgyHLAJNfrUxvk=";
   };
 
   metaCommon = {
@@ -40,7 +40,7 @@ let
     maintainers = [ ];
   };
 
-  ui-flutter = flutter335.buildFlutterApplication {
+  ui-flutter = flutter338.buildFlutterApplication {
     pname = "wox-ui-flutter";
     inherit version src;
 
@@ -79,7 +79,7 @@ let
         ;
       pnpm = pnpm_9;
       fetcherVersion = 2;
-      hash = "sha256-HhdMwVNt7178EQlZGpTiTySBp8GR9tBpUaikEWt1BGY=";
+      hash = "sha256-8EovIVJ+uAo9XJIIgRrpkQrcmNkKC2Ruja2md7NFZ4A=";
     };
 
     buildPhase = ''
@@ -156,9 +156,10 @@ buildGoModule {
       --replace-fail "update-desktop-database" "${desktop-file-utils}/bin/update-desktop-database" \
       --replace-fail "xdg-mime" "${xdg-utils}/bin/xdg-mime" \
       --replace-fail "Exec=%s" "Exec=wox"
+    sed -i '/^	"path"$/d' plugin/host/host_python.go
   '';
 
-  vendorHash = "sha256-Ft4X2woSf0ib0Z8dAwf0VAFQv0ck9nVs7EnpWgGi2+0=";
+  vendorHash = "sha256-UMbhTV6fm9a2SVDsvwV1w9e4pPUhCdTi5FNVf8Rl3XM=";
 
   proxyVendor = true;
 

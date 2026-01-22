@@ -133,7 +133,13 @@ stdenv.mkDerivation (finalAttrs: {
     homepage = "https://s3-docs.fd.io/vpp/${finalAttrs.version}/";
     license = lib.licenses.asl20;
     platforms = lib.platforms.linux;
+<<<<<<< HEAD
     mainProgram = "vpp";
     maintainers = with lib.maintainers; [ azey7f ];
+||||||| 213fed0310e3
+=======
+    mainProgram = "vpp";
+    maintainers = with lib.maintainers; [ maevii ];
+>>>>>>> master
   };
 })

@@ -10,7 +10,14 @@
   makeWrapper,
   makeDesktopItem,
 
+<<<<<<< HEAD
   electron_37,
+||||||| 213fed0310e3
+  electron_36,
+=======
+  electron_37,
+  nodejs_22,
+>>>>>>> master
   commandLineArgs ? "",
 }:
 
@@ -63,7 +70,16 @@ buildNpmPackage rec {
     copyDesktopItems
   ];
 
+<<<<<<< HEAD
   npmDepsHash = "sha256-t6I8ch36Yh6N+qZy4/yr/gSyJ3qdyMWss5LbsagEFMQ=";
+||||||| 213fed0310e3
+  npmDepsHash = "sha256-cA9NdHe3lEg8twMLWoeomWgobidZ34TKwdC5rDezZ5g=";
+=======
+  # Npm 11 (nodejs 24) can't resolve all dependencies from the prefetched cache.
+  nodejs = nodejs_22;
+
+  npmDepsHash = "sha256-t6I8ch36Yh6N+qZy4/yr/gSyJ3qdyMWss5LbsagEFMQ=";
+>>>>>>> master
 
   makeCacheWritable = true;
 

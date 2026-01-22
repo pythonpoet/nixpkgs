@@ -17,7 +17,6 @@
   pytest-asyncio,
   pytest-httpx,
   pytestCheckHook,
-  pythonOlder,
   pytz,
   requests,
   requests-toolbelt,
@@ -31,8 +30,6 @@ buildPythonPackage rec {
   pname = "zeep";
   version = "4.3.1";
   pyproject = true;
-
-  disabled = pythonOlder "3.6";
 
   src = fetchFromGitHub {
     owner = "mvantellingen";
@@ -76,7 +73,7 @@ buildPythonPackage rec {
     pytestCheckHook
     requests-mock
   ]
-  ++ lib.flatten (builtins.attrValues optional-dependencies);
+  ++ lib.concatAttrValues optional-dependencies;
 
   disabledTests = [
     # Failed: External connections not allowed during tests.

@@ -37,8 +37,16 @@ stdenv.mkDerivation {
     description = "Program for recording soundfiles with jack";
     mainProgram = "jack_capture";
     homepage = "https://github.com/kmatheussen/jack_capture/";
+<<<<<<< HEAD
     license = lib.licenses.gpl2;
     maintainers = with lib.maintainers; [ orivej ];
+||||||| 213fed0310e3
+    license = licenses.gpl2;
+    maintainers = with maintainers; [ orivej ];
+=======
+    license = lib.licenses.gpl2;
+    maintainers = [ ];
+>>>>>>> master
     platforms = lib.platforms.linux;
   };
 }

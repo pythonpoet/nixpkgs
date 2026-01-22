@@ -27,9 +27,18 @@ buildGoModule {
   meta = {
     description = "Export entries from systemd's journal and send them to a graylog server using gelf";
     homepage = "https://github.com/parse-nl/SystemdJournal2Gelf";
+<<<<<<< HEAD
     license = lib.licenses.bsd2;
     maintainers = with lib.maintainers; [
       fadenb
+||||||| 213fed0310e3
+    license = licenses.bsd2;
+    maintainers = with maintainers; [
+      fadenb
+=======
+    license = lib.licenses.bsd2;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       fpletz
     ];
     mainProgram = "SystemdJournal2Gelf";

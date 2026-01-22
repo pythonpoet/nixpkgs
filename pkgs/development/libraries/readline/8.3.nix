@@ -114,7 +114,13 @@ stdenv.mkDerivation (finalAttrs: {
 
     license = lib.licenses.gpl3Plus;
 
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ dtzWill ];
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ dtzWill ];
+=======
+    maintainers = [ ];
+>>>>>>> master
 
     platforms = lib.platforms.unix ++ lib.platforms.windows;
     branch = "8.3";

@@ -70,7 +70,6 @@ stdenv.mkDerivation rec {
     license = lib.licenses.unfree;
     maintainers = with lib.maintainers; [
       husjon
-      orivej
     ];
     platforms = [ "x86_64-linux" ];
     mainProgram = "ToneLib-GFX";

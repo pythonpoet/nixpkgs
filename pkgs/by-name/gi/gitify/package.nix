@@ -15,13 +15,13 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "gitify";
-  version = "6.13.0";
+  version = "6.15.0";
 
   src = fetchFromGitHub {
     owner = "gitify-app";
     repo = "gitify";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-BOpFY6Yj4rmCr+ui7pitsUT15Ls7Tzx+FviZfgGJa4E=";
+    hash = "sha256-rSz8lBlKIBVIEhFZayeFweMSzR4QtH+JxI1ltzIzB8M=";
   };
 
   nativeBuildInputs = [
@@ -37,7 +37,7 @@ stdenv.mkDerivation (finalAttrs: {
     inherit (finalAttrs) pname version src;
     pnpm = pnpm_10;
     fetcherVersion = 2;
-    hash = "sha256-S4K6IZjWDfUdnvwfGin4kZjc10c9Xml8NwFkMpWtDDQ=";
+    hash = "sha256-2sDJazY9VB87cKUwfVyhk/muoWxmcPlzJdepbJ83Rrk=";
   };
 
   env.ELECTRON_SKIP_BINARY_DOWNLOAD = 1;

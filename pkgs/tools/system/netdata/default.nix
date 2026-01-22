@@ -66,13 +66,25 @@ stdenv.mkDerivation (
   finalAttrs:
   {
     pname = "netdata";
+<<<<<<< HEAD
     version = "2.8.4";
+||||||| 213fed0310e3
+    version = "2.8.0";
+=======
+    version = "2.8.5";
+>>>>>>> master
 
     src = fetchFromGitHub {
       owner = "netdata";
       repo = "netdata";
       rev = "v${finalAttrs.version}";
+<<<<<<< HEAD
       hash = "sha256-rrwoyTejfOwSWMZ0juTE4CzgeRVBrC7AISFUoFBMaIs=";
+||||||| 213fed0310e3
+      hash = "sha256-QV9h+TMAuRCkYFr8KMOPhWq5fEnKpmA/HxQ8fV/jKBI=";
+=======
+      hash = "sha256-NO6KE2Gf09Y9Ff6uJQj5XAZ+05WMdvRV2iSBdWTs2CE=";
+>>>>>>> master
       fetchSubmodules = true;
     };
 
@@ -333,12 +345,20 @@ stdenv.mkDerivation (
       tests.netdata = nixosTests.netdata;
     };
 
-    meta = with lib; {
+    meta = {
       broken = stdenv.buildPlatform != stdenv.hostPlatform || withEbpf;
       description = "Real-time performance monitoring tool";
       homepage = "https://www.netdata.cloud/";
+<<<<<<< HEAD
       changelog = "https://github.com/netdata/netdata/releases/tag/v${version}";
       license = [ lib.licenses.gpl3Plus ] ++ lib.optionals withCloudUi [ lib.licenses.ncul1 ];
+||||||| 213fed0310e3
+      changelog = "https://github.com/netdata/netdata/releases/tag/v${version}";
+      license = [ licenses.gpl3Plus ] ++ lib.optionals withCloudUi [ licenses.ncul1 ];
+=======
+      changelog = "https://github.com/netdata/netdata/releases/tag/v${finalAttrs.version}";
+      license = [ lib.licenses.gpl3Plus ] ++ lib.optionals withCloudUi [ lib.licenses.ncul1 ];
+>>>>>>> master
       mainProgram = "netdata";
       platforms = lib.platforms.unix;
       maintainers = with lib.maintainers; [

@@ -27,8 +27,16 @@ stdenvNoCC.mkDerivation {
     runHook postInstall
   '';
 
+<<<<<<< HEAD
   meta = {
     homepage = "http://dotcolon.net/font/f1_8/";
+||||||| 213fed0310e3
+  meta = with lib; {
+    homepage = "http://dotcolon.net/font/f1_8/";
+=======
+  meta = {
+    homepage = "https://dotcolon.net/font/f1_8/";
+>>>>>>> master
     description = "Weighted decorative font";
     platforms = lib.platforms.all;
     maintainers = with lib.maintainers; [ minijackson ];

@@ -44,8 +44,18 @@ stdenv.mkDerivation (finalAttrs: {
     description = "Network tester for access and routing protocols";
     homepage = "https://github.com/rtbrick/bngblaster/";
     changelog = "https://github.com/rtbrick/bngblaster/releases/tag/${finalAttrs.version}";
+<<<<<<< HEAD
     license = lib.licenses.bsd3;
     teams = [ lib.teams.wdz ];
     badPlatforms = lib.platforms.darwin;
+||||||| 213fed0310e3
+    license = licenses.bsd3;
+    teams = [ teams.wdz ];
+    badPlatforms = platforms.darwin;
+=======
+    license = lib.licenses.bsd3;
+    maintainers = with lib.maintainers; [ johannwagner ];
+    badPlatforms = lib.platforms.darwin;
+>>>>>>> master
   };
 })

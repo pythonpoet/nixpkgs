@@ -37,8 +37,16 @@ stdenv.mkDerivation rec {
   meta = {
     description = "NAT-PMP client";
     homepage = "http://miniupnp.free.fr/libnatpmp.html";
+<<<<<<< HEAD
     license = lib.licenses.bsd3;
     maintainers = with lib.maintainers; [ orivej ];
+||||||| 213fed0310e3
+    license = licenses.bsd3;
+    maintainers = with maintainers; [ orivej ];
+=======
+    license = lib.licenses.bsd3;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "natpmpc";
     platforms = lib.platforms.all;
   };

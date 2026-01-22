@@ -3,7 +3,6 @@
   stdenv,
   buildPythonPackage,
   fetchPypi,
-  pythonOlder,
   aiodns,
   aiohttp,
   flask,
@@ -27,8 +26,6 @@ buildPythonPackage rec {
   version = "1.35.0";
   pname = "azure-core";
   pyproject = true;
-
-  disabled = pythonOlder "3.7";
 
   __darwinAllowLocalNetworking = true;
 
@@ -64,7 +61,7 @@ buildPythonPackage rec {
     pytestCheckHook
     trio
   ]
-  ++ lib.flatten (builtins.attrValues optional-dependencies);
+  ++ lib.concatAttrValues optional-dependencies;
 
   # test server needs to be available
   preCheck = ''

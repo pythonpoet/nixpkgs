@@ -2,19 +2,49 @@
   "comment": "This file is kept up to date via update.sh",
   "browsers": {
     "chromium": {
+<<<<<<< HEAD
       "revision": "1194",
       "browserVersion": "141.0.7390.37"
+||||||| 213fed0310e3
+      "revision": "1181",
+      "browserVersion": "139.0.7258.5"
+=======
+      "revision": "1200",
+      "browserVersion": "143.0.7499.4"
+>>>>>>> master
     },
     "chromium-headless-shell": {
+<<<<<<< HEAD
       "revision": "1194",
       "browserVersion": "141.0.7390.37"
+||||||| 213fed0310e3
+      "revision": "1181",
+      "browserVersion": "139.0.7258.5"
+=======
+      "revision": "1200",
+      "browserVersion": "143.0.7499.4"
+>>>>>>> master
     },
     "firefox": {
+<<<<<<< HEAD
       "revision": "1495",
       "browserVersion": "142.0.1"
+||||||| 213fed0310e3
+      "revision": "1489",
+      "browserVersion": "140.0.2"
+=======
+      "revision": "1497",
+      "browserVersion": "144.0.2"
+>>>>>>> master
     },
     "webkit": {
+<<<<<<< HEAD
       "revision": "2215",
+||||||| 213fed0310e3
+      "revision": "2191",
+=======
+      "revision": "2227",
+>>>>>>> master
       "revisionOverrides": {
         "debian11-x64": "2105",
         "debian11-arm64": "2105",

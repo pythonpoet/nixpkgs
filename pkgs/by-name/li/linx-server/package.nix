@@ -28,7 +28,15 @@ buildGoModule {
   meta = {
     description = "Self-hosted file/code/media sharing website";
     homepage = "https://put.icu";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Only;
     maintainers = with lib.maintainers; [ urandom ];
+||||||| 213fed0310e3
+    license = licenses.gpl3Only;
+    maintainers = with maintainers; [ urandom ];
+=======
+    license = lib.licenses.gpl3Only;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

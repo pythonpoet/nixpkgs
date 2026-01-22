@@ -66,13 +66,15 @@ stdenv.mkDerivation {
   pname = "corefonts";
   version = "1";
 
-  exes = map (
-    { name, hash }:
-    fetchurl {
-      url = "mirror://sourceforge/corefonts/the%20fonts/final/${name}32.exe";
-      inherit hash;
-    }
-  ) fonts;
+  env.exes = toString (
+    map (
+      { name, hash }:
+      fetchurl {
+        url = "mirror://sourceforge/corefonts/the%20fonts/final/${name}32.exe";
+        inherit hash;
+      }
+    ) fonts
+  );
 
   nativeBuildInputs = [ cabextract ];
 
@@ -137,7 +139,15 @@ stdenv.mkDerivation {
     done
   '';
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  __structuredAttrs = true;
+
+  meta = {
+>>>>>>> master
     homepage = "https://corefonts.sourceforge.net/";
     description = "Microsoft's TrueType core fonts for the Web";
     platforms = lib.platforms.all;

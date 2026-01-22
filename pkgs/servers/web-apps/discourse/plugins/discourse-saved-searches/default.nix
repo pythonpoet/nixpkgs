@@ -9,13 +9,20 @@ mkDiscoursePlugin {
   src = fetchFromGitHub {
     owner = "discourse";
     repo = "discourse-saved-searches";
-    rev = "e9afd599d95fa79ba8a37316290c1a059e995e04";
-    sha256 = "sha256-UtXDY3IxxM+JFOGZlN9mgiwrDImOAzJJuHNlhIdnotM=";
+    rev = "ba5e374a8d3b05b40f98585e664769fa50677e64";
+    sha256 = "sha256-hQufTeIG40Txtiit+XL338P2Hu6TX1E6b/Xcr3SbSbY=";
   };
   meta = {
     homepage = "https://github.com/discourse/discourse-saved-searches";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ dpausp ];
     license = lib.licenses.mit;
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ dpausp ];
+    license = licenses.mit;
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
     description = "Allow users to save searches and be notified of new results";
   };
 }

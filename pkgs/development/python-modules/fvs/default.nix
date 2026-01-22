@@ -28,7 +28,15 @@ buildPythonPackage rec {
     description = "File Versioning System with hash comparison and data storage to create unlinked states that can be deleted";
     mainProgram = "fvs";
     homepage = "https://github.com/mirkobrombin/FVS";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ bryanasdev000 ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ bryanasdev000 ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

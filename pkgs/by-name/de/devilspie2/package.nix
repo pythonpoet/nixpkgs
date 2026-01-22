@@ -46,9 +46,18 @@ stdenv.mkDerivation rec {
       on a specific workspace.
     '';
     homepage = "https://www.nongnu.org/devilspie2/";
+<<<<<<< HEAD
     license = lib.licenses.gpl3;
     maintainers = [ lib.maintainers.ebzzry ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    license = licenses.gpl3;
+    maintainers = [ maintainers.ebzzry ];
+    platforms = platforms.linux;
+=======
+    license = lib.licenses.gpl3;
+    platforms = lib.platforms.linux;
+>>>>>>> master
     mainProgram = "devilspie2";
   };
 }

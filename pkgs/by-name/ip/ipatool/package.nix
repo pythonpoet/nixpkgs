@@ -46,8 +46,16 @@ buildGoModule rec {
     description = "Command-line tool that allows searching and downloading app packages (known as ipa files) from the iOS App Store";
     homepage = "https://github.com/majd/ipatool";
     changelog = "https://github.com/majd/ipatool/blob/${src.rev}/CHANGELOG.md";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ gaelreyrol ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ gaelreyrol ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "ipatool";
   };
 }

@@ -46,15 +46,32 @@ let
     in
     (formats.yaml { }).generate "frontend-templates.yaml" (officialThemes ++ communityThemes);
 in
+<<<<<<< HEAD
 buildGoModule (finalAttrs: {
   pname = "nezha";
   version = "1.14.10";
+||||||| 213fed0310e3
+buildGoModule {
+  inherit pname version;
+=======
+buildGoModule (finalAttrs: {
+  pname = "nezha";
+  version = "1.14.14";
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "nezhahq";
     repo = "nezha";
+<<<<<<< HEAD
     tag = "v${finalAttrs.version}";
     hash = "sha256-tgjLkNSNEQCJP1/Pcgfldl5DGQnzca6KMrqEjl45ex4=";
+||||||| 213fed0310e3
+    tag = "v${version}";
+    hash = "sha256-q4LxqoelZ0Haz8rArINOPvopQQKGnkqIMZ2INo/2C3c=";
+=======
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-F6M/bpuupQDDxKrafWlB3vk6iKf1QfJU1x0p3MAzzhM=";
+>>>>>>> master
   };
 
   proxyVendor = true;
@@ -94,7 +111,7 @@ buildGoModule (finalAttrs: {
     GOROOT=''${GOROOT-$(go env GOROOT)} swag init --pd -d . -g ./cmd/dashboard/main.go -o ./cmd/dashboard/docs --parseGoList=false
   '';
 
-  vendorHash = "sha256-Q+ur9hIG0xVJHdi79K5e4sV8xuR45qp195ptEDbHAvc=";
+  vendorHash = "sha256-9vJzQqXkoENRapcHp/afSCcdOrt8bxrIyJT/cBeas+A=";
 
   ldflags = [
     "-s"

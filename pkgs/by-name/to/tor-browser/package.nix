@@ -102,7 +102,13 @@ let
     ++ lib.optionals mediaSupport [ ffmpeg_7 ]
   );
 
+<<<<<<< HEAD
   version = "15.0.3";
+||||||| 213fed0310e3
+  version = "15.0.2";
+=======
+  version = "15.0.4";
+>>>>>>> master
 
   sources = {
     x86_64-linux = fetchurl {
@@ -112,7 +118,13 @@ let
         "https://tor.eff.org/dist/torbrowser/${version}/tor-browser-linux-x86_64-${version}.tar.xz"
         "https://tor.calyxinstitute.org/dist/torbrowser/${version}/tor-browser-linux-x86_64-${version}.tar.xz"
       ];
+<<<<<<< HEAD
       hash = "sha256-MVbxV8U1WKT3loM174Zk0QG33qftzr/Ay3w/hbFAF2U=";
+||||||| 213fed0310e3
+      hash = "sha256-GtO7u9KhZgIbdTJqMTQ2ZabA6PKrwW0ogxYJvmkVfV8=";
+=======
+      hash = "sha256-Te7E+x4Jqr1g65+FdVZmUMYwDz97ZnJqJvJx48RpSt0=";
+>>>>>>> master
     };
 
     i686-linux = fetchurl {
@@ -122,7 +134,13 @@ let
         "https://tor.eff.org/dist/torbrowser/${version}/tor-browser-linux-i686-${version}.tar.xz"
         "https://tor.calyxinstitute.org/dist/torbrowser/${version}/tor-browser-linux-i686-${version}.tar.xz"
       ];
+<<<<<<< HEAD
       hash = "sha256-3IEmpO1ZanAVXiUINhA44hX06J1/9vEJ8T8hQjfnAHY=";
+||||||| 213fed0310e3
+      hash = "sha256-SHJQvNqC4Ulyg81rcp6sTG0Wwv9fHqWYQPpPBsPgwss=";
+=======
+      hash = "sha256-Cb7X9QYk1t6u5sjTtDnLWEubliWxpupDfgMKD9PC9VI=";
+>>>>>>> master
     };
   };
 

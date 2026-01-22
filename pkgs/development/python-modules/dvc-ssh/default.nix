@@ -6,15 +6,12 @@
   fetchPypi,
   setuptools-scm,
   sshfs,
-  pythonOlder,
 }:
 
 buildPythonPackage rec {
   pname = "dvc-ssh";
   version = "4.2.2";
   pyproject = true;
-
-  disabled = pythonOlder "3.9";
 
   src = fetchPypi {
     pname = "dvc_ssh";
@@ -56,7 +53,14 @@ buildPythonPackage rec {
     description = "SSH plugin for dvc";
     homepage = "https://pypi.org/project/dvc-ssh/${version}";
     changelog = "https://github.com/iterative/dvc-ssh/releases/tag/${version}";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ melling ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [ melling ];
+=======
+    license = lib.licenses.asl20;
+>>>>>>> master
   };
 }

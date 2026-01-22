@@ -8,7 +8,13 @@
   librsvg,
   gdk-pixbuf,
   glib,
+<<<<<<< HEAD
   gobject-introspection,
+||||||| 213fed0310e3
+=======
+  gobject-introspection,
+  askalono,
+>>>>>>> master
   borgbackup,
   writeText,
   nixosTests,
@@ -17,13 +23,13 @@
 let
   python = python3.override {
     packageOverrides = final: prev: {
-      django = prev.django_5_2;
+      django = prev.django_5;
     };
   };
 in
 python.pkgs.buildPythonApplication rec {
   pname = "weblate";
-  version = "5.14.3";
+  version = "5.15.2";
 
   pyproject = true;
 
@@ -36,7 +42,7 @@ python.pkgs.buildPythonApplication rec {
     owner = "WeblateOrg";
     repo = "weblate";
     tag = "weblate-${version}";
-    hash = "sha256-DwoJ24yGLJt+bItN/9SW0ruf+Lz3A9JxvD4QjlKaqzw=";
+    hash = "sha256-qNv3aaPyQ/bOrPbK7u9vtq8R1MFqXLJzvLUZfVgjMK0=";
   };
 
   build-system = with python.pkgs; [ setuptools ];
@@ -65,6 +71,7 @@ python.pkgs.buildPythonApplication rec {
 
   pythonRelaxDeps = [
     "certifi"
+    "urllib3"
   ];
 
   dependencies =
@@ -77,6 +84,7 @@ python.pkgs.buildPythonApplication rec {
       celery
       certifi
       charset-normalizer
+      confusable-homoglyphs
       crispy-bootstrap3
       crispy-bootstrap5
       cryptography
@@ -101,6 +109,7 @@ python.pkgs.buildPythonApplication rec {
       docutils
       drf-spectacular
       drf-standardized-errors
+      fedora-messaging
       filelock
       fluent-syntax
       gitpython
@@ -115,6 +124,7 @@ python.pkgs.buildPythonApplication rec {
       packaging
       phply
       pillow
+      pyaskalono
       pycairo
       pygments
       pygobject3
@@ -130,11 +140,11 @@ python.pkgs.buildPythonApplication rec {
       siphashc
       social-auth-app-django
       social-auth-core
-      standardwebhooks
       tesserocr
       translate-toolkit
       translation-finder
       unidecode
+      urllib3
       user-agents
       weblate-language-data
       weblate-schemas
@@ -142,7 +152,10 @@ python.pkgs.buildPythonApplication rec {
     ++ django.optional-dependencies.argon2
     ++ celery.optional-dependencies.redis
     ++ drf-spectacular.optional-dependencies.sidecar
-    ++ drf-standardized-errors.optional-dependencies.openapi;
+    ++ drf-standardized-errors.optional-dependencies.openapi
+    ++ translate-toolkit.optional-dependencies.toml
+    ++ urllib3.optional-dependencies.brotli
+    ++ urllib3.optional-dependencies.zstd;
 
   optional-dependencies = {
     postgres = with python.pkgs; [ psycopg ];

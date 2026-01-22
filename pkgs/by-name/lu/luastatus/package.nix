@@ -86,9 +86,21 @@ stdenv.mkDerivation (finalAttrs: {
   meta = {
     description = "Universal status bar content generator";
     homepage = "https://github.com/shdown/luastatus";
+<<<<<<< HEAD
     changelog = "https://github.com/shdown/luastatus/releases/tag/${finalAttrs.version}";
     license = lib.licenses.gpl3Only;
     maintainers = with lib.maintainers; [ kashw2 ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    changelog = "https://github.com/shdown/luastatus/releases/tag/${finalAttrs.version}";
+    license = licenses.gpl3Only;
+    maintainers = with maintainers; [ kashw2 ];
+    platforms = platforms.linux;
+=======
+    changelog = "https://github.com/shdown/luastatus/releases/tag/v${finalAttrs.version}";
+    license = lib.licenses.gpl3Only;
+    maintainers = with lib.maintainers; [ kashw2 ];
+    platforms = lib.platforms.linux;
+>>>>>>> master
   };
 })

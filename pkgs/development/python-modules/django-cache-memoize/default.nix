@@ -12,15 +12,15 @@
 
 buildPythonPackage rec {
   pname = "django-cache-memoize";
-  version = "0.2.1";
+  version = "0-unstable-2025-12-08";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "peterbe";
     repo = "django-cache-memoize";
     # No tags. See <https://github.com/peterbe/django-cache-memoize/issues/60>.
-    rev = "9a0dc28315b9bd2848973d38b6f63a400a0e0526";
-    hash = "sha256-oORTN53s9GVHiY9tbx5FKb7ygkYUKWgPRJusdB0RfcA=";
+    rev = "2112fc0507fd2d4128043d49dcccffd0b01320ca";
+    hash = "sha256-4C84AFSOsO51x424hhYNS2sVg3RmRAUi/0Lqr0WkoLY=";
   };
 
   build-system = [

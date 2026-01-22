@@ -48,7 +48,17 @@ buildGoModule rec {
     runHook postCheck
   '';
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  postInstall = ''
+    rm -rf "$out/share/fish"
+  '';
+
+  meta = {
+>>>>>>> master
     description = "Shell extension that manages your environment";
     longDescription = ''
       Once hooked into your shell direnv is looking for an .envrc file in your

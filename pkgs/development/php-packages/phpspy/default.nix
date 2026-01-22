@@ -67,7 +67,13 @@ stdenv.mkDerivation (finalAttrs: {
     homepage = "https://github.com/adsr/phpspy";
     license = lib.licenses.mit;
     mainProgram = "phpspy";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ gaelreyrol ];
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ gaelreyrol ];
+=======
+    maintainers = [ ];
+>>>>>>> master
     platforms = [ "x86_64-linux" ];
   };
 })

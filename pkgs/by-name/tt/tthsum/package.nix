@@ -39,9 +39,18 @@ stdenv.mkDerivation rec {
       http://adc.sourceforge.net/draft-jchapweske-thex-02.html
     '';
     homepage = "http://tthsum.devs.nu/";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Plus;
     maintainers = [ lib.maintainers.ebzzry ];
     platforms = lib.platforms.unix;
+||||||| 213fed0310e3
+    license = licenses.gpl3Plus;
+    maintainers = [ maintainers.ebzzry ];
+    platforms = platforms.unix;
+=======
+    license = lib.licenses.gpl3Plus;
+    platforms = lib.platforms.unix;
+>>>>>>> master
     mainProgram = "tthsum";
   };
 }

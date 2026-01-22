@@ -33,8 +33,15 @@ rustPlatform.buildRustPackage rec {
       asl20 # or
       mit
     ];
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [
       Br1ght0ne
+||||||| 213fed0310e3
+    maintainers = with maintainers; [
+      Br1ght0ne
+=======
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       matthiasbeyer
     ];
   };

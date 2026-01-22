@@ -45,9 +45,19 @@ stdenvNoCC.mkDerivation rec {
   meta = {
     homepage = "https://github.com/phisch/giph";
     description = "Simple gif recorder";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = [ lib.maintainers.lom ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = [ maintainers.lom ];
+    platforms = platforms.linux;
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+    platforms = lib.platforms.linux;
+>>>>>>> master
     mainProgram = "giph";
   };
 }

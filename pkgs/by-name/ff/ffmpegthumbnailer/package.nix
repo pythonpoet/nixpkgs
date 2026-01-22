@@ -64,9 +64,18 @@ stdenv.mkDerivation (finalAttrs: {
         The only dependencies are ffmpeg and libpng/libjpeg.
     ";
     homepage = "https://github.com/dirkvdb/ffmpegthumbnailer";
+<<<<<<< HEAD
     license = lib.licenses.gpl2Plus;
     maintainers = [ lib.maintainers.jagajaga ];
     platforms = lib.platforms.unix;
+||||||| 213fed0310e3
+    license = licenses.gpl2Plus;
+    maintainers = [ maintainers.jagajaga ];
+    platforms = platforms.unix;
+=======
+    license = lib.licenses.gpl2Plus;
+    platforms = lib.platforms.unix;
+>>>>>>> master
     mainProgram = "ffmpegthumbnailer";
   };
 })

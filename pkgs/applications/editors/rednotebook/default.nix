@@ -56,8 +56,16 @@ buildPythonApplication rec {
     homepage = "https://rednotebook.sourceforge.io/";
     changelog = "https://github.com/jendrikseipp/rednotebook/blob/${src.tag}/CHANGELOG.md";
     description = "Modern journal that includes a calendar navigation, customizable templates, export functionality and word clouds";
+<<<<<<< HEAD
     license = lib.licenses.gpl2Plus;
     maintainers = with lib.maintainers; [ orivej ];
+||||||| 213fed0310e3
+    license = licenses.gpl2Plus;
+    maintainers = with maintainers; [ orivej ];
+=======
+    license = lib.licenses.gpl2Plus;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "rednotebook";
   };
 }

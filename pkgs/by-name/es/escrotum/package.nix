@@ -13,7 +13,7 @@
 python3Packages.buildPythonApplication {
   pname = "escrotum";
   version = "1.0.1-unstable-2020-12-07";
-  format = "pyproject";
+  pyproject = true;
 
   src = fetchFromGitHub {
     owner = "Roger";
@@ -65,9 +65,19 @@ python3Packages.buildPythonApplication {
   meta = {
     homepage = "https://github.com/Roger/escrotum";
     description = "Linux screen capture using pygtk, inspired by scrot";
+<<<<<<< HEAD
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [ rasendubi ];
     license = lib.licenses.gpl3;
+||||||| 213fed0310e3
+    platforms = platforms.linux;
+    maintainers = with maintainers; [ rasendubi ];
+    license = licenses.gpl3;
+=======
+    platforms = lib.platforms.linux;
+    maintainers = [ ];
+    license = lib.licenses.gpl3;
+>>>>>>> master
     mainProgram = "escrotum";
   };
 }

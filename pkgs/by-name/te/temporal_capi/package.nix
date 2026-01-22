@@ -5,6 +5,7 @@
   fetchFromGitHub,
   nix-update-script,
   testers,
+  validatePkgConfig,
 }:
 
 rustPlatform.buildRustPackage (finalAttrs: {
@@ -34,6 +35,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
     "--features"
     "zoneinfo64,compiled_data"
   ];
+  nativeBuildInputs = [ validatePkgConfig ];
 
   installPhase = ''
     runHook preInstall
@@ -84,7 +86,6 @@ rustPlatform.buildRustPackage (finalAttrs: {
   passthru.tests = {
     pkg-config = testers.hasPkgConfigModules {
       package = finalAttrs.finalPackage;
-      moduleNames = [ "temporal_capi" ];
     };
     updateScript = nix-update-script { };
   };
@@ -97,6 +98,13 @@ rustPlatform.buildRustPackage (finalAttrs: {
       asl20
       mit
     ];
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ aduh95 ];
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ aduh95 ];
+=======
+    maintainers = with lib.maintainers; [ aduh95 ];
+    pkgConfigModules = [ "temporal_capi" ];
+>>>>>>> master
   };
 })

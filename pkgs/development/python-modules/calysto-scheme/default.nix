@@ -32,7 +32,15 @@ buildPythonPackage rec {
     description = "Scheme kernel for Jupyter that can use Python libraries";
     homepage = "https://github.com/Calysto/calysto_scheme";
     changelog = "https://github.com/Calysto/calysto_scheme/blob/${src.rev}/ChangeLog.md";
+<<<<<<< HEAD
     license = lib.licenses.bsd3;
     maintainers = with lib.maintainers; [ kranzes ];
+||||||| 213fed0310e3
+    license = licenses.bsd3;
+    maintainers = with maintainers; [ kranzes ];
+=======
+    license = lib.licenses.bsd3;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

@@ -37,7 +37,15 @@ buildPythonPackage rec {
   meta = {
     description = "Tools for Jupyter and Python";
     homepage = "https://github.com/Calysto/calysto";
+<<<<<<< HEAD
     license = lib.licenses.bsd2;
     maintainers = with lib.maintainers; [ kranzes ];
+||||||| 213fed0310e3
+    license = licenses.bsd2;
+    maintainers = with maintainers; [ kranzes ];
+=======
+    license = lib.licenses.bsd2;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

@@ -49,10 +49,23 @@ buildPythonPackage rec {
 
   pythonImportsCheck = [ "mahotas" ];
 
+<<<<<<< HEAD
   disabled = stdenv.hostPlatform.isi686; # Failing tests
 
   meta = {
     broken = (stdenv.hostPlatform.isLinux && stdenv.hostPlatform.isAarch64);
+||||||| 213fed0310e3
+  disabled = stdenv.hostPlatform.isi686; # Failing tests
+
+  meta = with lib; {
+    broken = (stdenv.hostPlatform.isLinux && stdenv.hostPlatform.isAarch64);
+=======
+  meta = {
+    broken =
+      (stdenv.hostPlatform.isLinux && stdenv.hostPlatform.isAarch64)
+      # Failing tests
+      || stdenv.hostPlatform.isi686;
+>>>>>>> master
     description = "Computer vision package based on numpy";
     homepage = "https://mahotas.readthedocs.io/";
     maintainers = with lib.maintainers; [ luispedro ];

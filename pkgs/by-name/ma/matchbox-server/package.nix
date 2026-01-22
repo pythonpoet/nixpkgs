@@ -2,16 +2,17 @@
   lib,
   buildGoModule,
   fetchFromGitHub,
+  nix-update-script,
 }:
 
-buildGoModule rec {
+buildGoModule (finalAttrs: {
   pname = "matchbox-server";
-  version = "v0.11.0";
+  version = "0.11.0";
 
   src = fetchFromGitHub {
     owner = "poseidon";
     repo = "matchbox";
-    rev = "${version}";
+    tag = "v${finalAttrs.version}";
     hash = "sha256-u1VY+zEx2YToz+WxVFaUDzY7HM9OeokbR/FmzcR3UJ8=";
   };
 
@@ -24,7 +25,7 @@ buildGoModule rec {
   # Go linker flags (go tool link)
   # Omit symbol tables and debug info
   ldflags = [
-    "-w -s -X github.com/poseidon/matchbox/matchbox/version.Version=${version}"
+    "-w -s -X github.com/poseidon/matchbox/matchbox/version.Version=${finalAttrs.version}"
   ];
 
   # Disable cgo to produce a static binary
@@ -33,7 +34,15 @@ buildGoModule rec {
   # Don't run Go tests
   doCheck = false;
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  passthru.updateScript = nix-update-script { };
+
+  meta = {
+>>>>>>> master
     description = "Server to network boot and provision Fedora CoreOS and Flatcar Linux clusters";
     homepage = "https://matchbox.psdn.io/";
     changelog = "https://github.com/poseidon/matchbox/blob/main/CHANGES.md";
@@ -41,4 +50,4 @@ buildGoModule rec {
     maintainers = with lib.maintainers; [ dghubble ];
     mainProgram = "matchbox";
   };
-}
+})

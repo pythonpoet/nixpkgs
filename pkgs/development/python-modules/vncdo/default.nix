@@ -6,7 +6,6 @@
   pillow,
   pycryptodomex,
   pytestCheckHook,
-  pythonOlder,
   pyvirtualdisplay,
   setuptools,
   twisted,
@@ -16,8 +15,6 @@ buildPythonPackage rec {
   pname = "vncdo";
   version = "1.2.0";
   pyproject = true;
-
-  disabled = pythonOlder "3.7";
 
   src = fetchFromGitHub {
     owner = "sibson";
@@ -46,8 +43,16 @@ buildPythonPackage rec {
     description = "Command line VNC client and Python library";
     homepage = "https://github.com/sibson/vncdotool";
     changelog = "https://github.com/sibson/vncdotool/releases/tag/v${version}";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ elitak ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ elitak ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "vncdo";
     platforms = with lib.platforms; linux ++ darwin;
   };

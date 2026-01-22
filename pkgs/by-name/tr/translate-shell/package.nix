@@ -45,8 +45,15 @@ stdenv.mkDerivation rec {
   meta = {
     homepage = "https://www.soimort.org/translate-shell";
     description = "Command-line translator using Google Translate, Bing Translator, Yandex.Translate, and Apertium";
+<<<<<<< HEAD
     license = lib.licenses.unlicense;
     maintainers = with lib.maintainers; [ ebzzry ];
+||||||| 213fed0310e3
+    license = licenses.unlicense;
+    maintainers = with maintainers; [ ebzzry ];
+=======
+    license = lib.licenses.unlicense;
+>>>>>>> master
     mainProgram = "trans";
     platforms = lib.platforms.unix;
   };

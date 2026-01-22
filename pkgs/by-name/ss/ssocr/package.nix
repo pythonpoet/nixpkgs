@@ -29,8 +29,15 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Seven Segment Optical Character Recognition";
     homepage = "https://github.com/auerswal/ssocr";
+<<<<<<< HEAD
     license = lib.licenses.gpl3;
     maintainers = [ lib.maintainers.kroell ];
+||||||| 213fed0310e3
+    license = licenses.gpl3;
+    maintainers = [ maintainers.kroell ];
+=======
+    license = lib.licenses.gpl3;
+>>>>>>> master
     mainProgram = "ssocr";
     platforms = lib.platforms.unix;
   };

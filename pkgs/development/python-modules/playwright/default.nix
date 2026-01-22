@@ -1,14 +1,12 @@
 {
   lib,
   stdenv,
-  auditwheel,
   buildPythonPackage,
   gitMinimal,
   greenlet,
   fetchFromGitHub,
   pyee,
   python,
-  pythonOlder,
   setuptools,
   setuptools-scm,
   playwright-driver,
@@ -22,15 +20,26 @@ in
 buildPythonPackage rec {
   pname = "playwright";
   # run ./pkgs/development/python-modules/playwright/update.sh to update
+<<<<<<< HEAD
   version = "1.56.0";
+||||||| 213fed0310e3
+  version = "1.54.0";
+=======
+  version = "1.57.0";
+>>>>>>> master
   pyproject = true;
-  disabled = pythonOlder "3.9";
 
   src = fetchFromGitHub {
     owner = "microsoft";
     repo = "playwright-python";
     tag = "v${version}";
+<<<<<<< HEAD
     hash = "sha256-46+UxHimmmyQMTe+G2ootSbVX9pAzdfdyTO2qrWd9l8=";
+||||||| 213fed0310e3
+    hash = "sha256-xyuofDL0hWL8Gn4sYNLKte8q/4bMo+3aSbYaf5iWiBk=";
+=======
+    hash = "sha256-LXTMVC6ytjo7l0QDkNPxtoMTYjmYMjCVqHz61BgAn6A=";
+>>>>>>> master
   };
 
   patches = [
@@ -67,8 +76,7 @@ buildPythonPackage rec {
     gitMinimal
     setuptools-scm
     setuptools
-  ]
-  ++ lib.optionals stdenv.hostPlatform.isLinux [ auditwheel ];
+  ];
 
   pythonRelaxDeps = [
     "greenlet"

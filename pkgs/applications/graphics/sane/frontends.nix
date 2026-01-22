@@ -3,6 +3,7 @@
   stdenv,
   fetchurl,
   fetchpatch,
+  autoconf,
   sane-backends,
   libX11,
   gtk2,
@@ -67,11 +68,25 @@ stdenv.mkDerivation rec {
     gtk2
   ]
   ++ lib.optional (libusb-compat-0_1 != null) libusb-compat-0_1;
-  nativeBuildInputs = [ pkg-config ];
+  nativeBuildInputs = [
+    pkg-config
+    autoconf
+  ];
 
   enableParallelBuilding = true;
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  # https://bugzilla.redhat.com/show_bug.cgi?id=2341321
+  preConfigure = ''
+    autoconf
+  '';
+
+  meta = {
+>>>>>>> master
     description = "Scanner Access Now Easy";
     homepage = "http://www.sane-project.org/";
     license = lib.licenses.gpl2Plus;

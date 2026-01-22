@@ -13,7 +13,7 @@ stdenvNoCC.mkDerivation {
   version = "${majorVersion}.${minorVersion}";
 
   src = fetchzip {
-    url = "https://dotcolon.net/download/fonts/eunomia_${majorVersion}${minorVersion}.zip";
+    url = "https://dotcolon.net/files/fonts/eunomia_${majorVersion}${minorVersion}.zip";
     hash = "sha256-Rd2EakaTWjzoEV00tHTgg/bXgJUFfPjCyQUWi7QhFG4=";
     stripRoot = false;
   };
@@ -26,8 +26,16 @@ stdenvNoCC.mkDerivation {
     runHook postInstall
   '';
 
+<<<<<<< HEAD
   meta = {
     homepage = "http://dotcolon.net/font/eunomia/";
+||||||| 213fed0310e3
+  meta = with lib; {
+    homepage = "http://dotcolon.net/font/eunomia/";
+=======
+  meta = {
+    homepage = "https://dotcolon.net/font/eunomia/";
+>>>>>>> master
     description = "Futuristic decorative font";
     platforms = lib.platforms.all;
     maintainers = with lib.maintainers; [

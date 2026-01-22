@@ -89,10 +89,21 @@ stdenv.mkDerivation rec {
       binaryBytecode
       binaryNativeCode
     ];
+<<<<<<< HEAD
     license = lib.licenses.elastic20;
     platforms = lib.platforms.unix;
     maintainers = with lib.maintainers; [
       apeschar
+||||||| 213fed0310e3
+    license = licenses.elastic20;
+    platforms = platforms.unix;
+    maintainers = with maintainers; [
+      apeschar
+=======
+    license = lib.licenses.elastic20;
+    platforms = lib.platforms.unix;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       basvandijk
     ];
   };

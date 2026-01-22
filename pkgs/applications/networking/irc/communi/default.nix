@@ -78,8 +78,17 @@ stdenv.mkDerivation {
     description = "Simple and elegant cross-platform IRC client";
     mainProgram = "communi";
     homepage = "https://github.com/communi/communi-desktop";
+<<<<<<< HEAD
     license = lib.licenses.bsd3;
     maintainers = with lib.maintainers; [ hrdinka ];
     platforms = lib.platforms.all;
+||||||| 213fed0310e3
+    license = licenses.bsd3;
+    maintainers = with maintainers; [ hrdinka ];
+    platforms = platforms.all;
+=======
+    license = lib.licenses.bsd3;
+    platforms = lib.platforms.all;
+>>>>>>> master
   };
 }

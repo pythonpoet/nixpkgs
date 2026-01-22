@@ -43,6 +43,11 @@ buildPythonPackage rec {
       isc
       bsdOriginal
     ];
+<<<<<<< HEAD
     teams = [ lib.teams.wdz ];
+||||||| 213fed0310e3
+    teams = [ teams.wdz ];
+=======
+>>>>>>> master
   };
 }

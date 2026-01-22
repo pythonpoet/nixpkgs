@@ -31,7 +31,15 @@ stdenv.mkDerivation (finalAttrs: {
   meta = {
     inherit (fwts.meta) homepage license;
     description = fwts.meta.description + "(efi-runtime kernel module)";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ dtzWill ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ dtzWill ];
+    platforms = platforms.linux;
+=======
+    maintainers = [ ];
+    platforms = lib.platforms.linux;
+>>>>>>> master
   };
 })

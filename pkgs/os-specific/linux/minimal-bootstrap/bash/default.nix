@@ -18,12 +18,13 @@
   coreutils,
 }:
 let
+  inherit (import ./common.nix { inherit lib; }) meta;
   pname = "bash";
-  version = "5.2.15";
+  version = "5.3";
 
   src = fetchurl {
     url = "mirror://gnu/bash/bash-${version}.tar.gz";
-    sha256 = "132qng0jy600mv1fs95ylnlisx2wavkkgpb19c6kmz7lnmjhjwhk";
+    hash = "sha256-DVzYaWX4aaJs9k9Lcb57lvkKO6iz104n6OnZ1VUPMbo=";
   };
 
   patches = [
@@ -33,7 +34,7 @@ let
 in
 bootBash.runCommand "${pname}-${version}"
   {
-    inherit pname version;
+    inherit pname version meta;
 
     nativeBuildInputs = [
       coreutils
@@ -85,13 +86,13 @@ bootBash.runCommand "${pname}-${version}"
         }
         // (removeAttrs env [ "nativeBuildInputs" ])
       );
-
     passthru.tests.get-version =
       result:
       bootBash.runCommand "${pname}-get-version-${version}" { } ''
         ${result}/bin/bash --version
         mkdir $out
       '';
+<<<<<<< HEAD
 
     meta = {
       description = "GNU Bourne-Again Shell, the de facto standard shell on Linux";
@@ -100,9 +101,20 @@ bootBash.runCommand "${pname}-${version}"
       teams = [ lib.teams.minimal-bootstrap ];
       platforms = lib.platforms.unix;
     };
+||||||| 213fed0310e3
+
+    meta = with lib; {
+      description = "GNU Bourne-Again Shell, the de facto standard shell on Linux";
+      homepage = "https://www.gnu.org/software/bash";
+      license = licenses.gpl3Plus;
+      teams = [ teams.minimal-bootstrap ];
+      platforms = platforms.unix;
+    };
+=======
+>>>>>>> master
   }
   ''
-    # Unpack
+    # unpack
     tar xzf ${src}
     cd bash-${version}
 
@@ -117,6 +129,7 @@ bootBash.runCommand "${pname}-${version}"
       --prefix=$out \
       --build=${buildPlatform.config} \
       --host=${hostPlatform.config} \
+      --disable-dependency-tracking \
       --without-bash-malloc
 
     # Build

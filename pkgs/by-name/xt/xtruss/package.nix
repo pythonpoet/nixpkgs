@@ -23,8 +23,16 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Easy-to-use X protocol tracing program";
     homepage = "https://www.chiark.greenend.org.uk/~sgtatham/xtruss";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ dtzWill ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ dtzWill ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "xtruss";
   };
 }

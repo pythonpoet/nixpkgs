@@ -89,7 +89,6 @@ stdenv.mkDerivation rec {
     license = lib.licenses.gpl2Only;
     maintainers = with lib.maintainers; [
       zx2c4
-      globin
       ma27
     ];
     mainProgram = "wg";

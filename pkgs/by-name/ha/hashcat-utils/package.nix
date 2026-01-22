@@ -27,8 +27,17 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Small utilities that are useful in advanced password cracking";
     homepage = "https://github.com/hashcat/hashcat-utils";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     platforms = lib.platforms.unix;
     maintainers = with lib.maintainers; [ fadenb ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    platforms = platforms.unix;
+    maintainers = with maintainers; [ fadenb ];
+=======
+    license = lib.licenses.mit;
+    platforms = lib.platforms.unix;
+>>>>>>> master
   };
 }

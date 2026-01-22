@@ -146,6 +146,7 @@ let
 
       # The recursiveUpdate below breaks default meta.position, so manually override it.
       pos = __curPos;
+<<<<<<< HEAD
       meta =
         with lib;
         recursiveUpdate {
@@ -153,7 +154,23 @@ let
           description = "Framework for distributed processing of large data sets across clusters of computers";
           license = lib.licenses.asl20;
           sourceProvenance = with lib.sourceTypes; [ binaryBytecode ];
+||||||| 213fed0310e3
+      meta =
+        with lib;
+        recursiveUpdate {
+          homepage = "https://hadoop.apache.org/";
+          description = "Framework for distributed processing of large data sets across clusters of computers";
+          license = licenses.asl20;
+          sourceProvenance = with sourceTypes; [ binaryBytecode ];
+=======
+      meta = lib.recursiveUpdate {
+        homepage = "https://hadoop.apache.org/";
+        description = "Framework for distributed processing of large data sets across clusters of computers";
+        license = lib.licenses.asl20;
+        sourceProvenance = with lib.sourceTypes; [ binaryBytecode ];
+>>>>>>> master
 
+<<<<<<< HEAD
           longDescription = ''
             The Apache Hadoop software library is a framework that allows for
             the distributed processing of large data sets across clusters of
@@ -168,6 +185,37 @@ let
           maintainers = with lib.maintainers; [ illustris ];
           platforms = attrNames platformAttrs;
         } (attrByPath [ stdenv.system "meta" ] { } platformAttrs);
+||||||| 213fed0310e3
+          longDescription = ''
+            The Apache Hadoop software library is a framework that allows for
+            the distributed processing of large data sets across clusters of
+            computers using a simple programming model. It is designed to
+            scale up from single servers to thousands of machines, each
+            offering local computation and storage. Rather than rely on
+            hardware to deliver high-avaiability, the library itself is
+            designed to detect and handle failures at the application layer,
+            so delivering a highly-availabile service on top of a cluster of
+            computers, each of which may be prone to failures.
+          '';
+          maintainers = with maintainers; [ illustris ];
+          platforms = attrNames platformAttrs;
+        } (attrByPath [ stdenv.system "meta" ] { } platformAttrs);
+=======
+        longDescription = ''
+          The Apache Hadoop software library is a framework that allows for
+          the distributed processing of large data sets across clusters of
+          computers using a simple programming model. It is designed to
+          scale up from single servers to thousands of machines, each
+          offering local computation and storage. Rather than rely on
+          hardware to deliver high-avaiability, the library itself is
+          designed to detect and handle failures at the application layer,
+          so delivering a highly-availabile service on top of a cluster of
+          computers, each of which may be prone to failures.
+        '';
+        maintainers = with lib.maintainers; [ illustris ];
+        platforms = lib.attrNames platformAttrs;
+      } (lib.attrByPath [ stdenv.system "meta" ] { } platformAttrs);
+>>>>>>> master
     });
 in
 {

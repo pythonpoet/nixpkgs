@@ -4,7 +4,6 @@
   fetchFromGitHub,
   poetry-core,
   pyjwt,
-  pythonOlder,
   pytestCheckHook,
   requests,
 }:
@@ -13,8 +12,6 @@ buildPythonPackage rec {
   pname = "pyixapi";
   version = "0.2.6";
   pyproject = true;
-
-  disabled = pythonOlder "3.8";
 
   src = fetchFromGitHub {
     owner = "peering-manager";
@@ -40,7 +37,14 @@ buildPythonPackage rec {
     description = "Python API client library for IX-API";
     homepage = "https://github.com/peering-manager/pyixapi/";
     changelog = "https://github.com/peering-manager/pyixapi/releases/tag/${src.tag}";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     teams = [ lib.teams.wdz ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    teams = [ teams.wdz ];
+=======
+    license = lib.licenses.asl20;
+>>>>>>> master
   };
 }

@@ -152,8 +152,16 @@ stdenv.mkDerivation (finalAttrs: {
     changelog = "https://github.com/facebook/zstd/blob/v${finalAttrs.version}/CHANGELOG";
     license = with lib.licenses; [ bsd3 ]; # Or, at your opinion, GPL-2.0-only.
     mainProgram = "zstd";
+<<<<<<< HEAD
     platforms = lib.platforms.all;
     maintainers = with lib.maintainers; [ orivej ];
+||||||| 213fed0310e3
+    platforms = platforms.all;
+    maintainers = with maintainers; [ orivej ];
+=======
+    platforms = lib.platforms.all;
+    maintainers = [ ];
+>>>>>>> master
     pkgConfigModules = [ "libzstd" ];
   };
 })

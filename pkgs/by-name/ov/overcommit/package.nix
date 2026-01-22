@@ -33,8 +33,15 @@ bundlerApp {
     changelog = "https://github.com/sds/overcommit/blob/main/CHANGELOG.md";
     license = lib.licenses.mit;
     mainProgram = "overcommit";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [
       Br1ght0ne
+||||||| 213fed0310e3
+    maintainers = with maintainers; [
+      Br1ght0ne
+=======
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       anthonyroussel
     ];
     platforms = lib.platforms.unix;

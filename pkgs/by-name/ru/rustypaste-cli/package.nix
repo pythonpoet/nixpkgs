@@ -21,8 +21,16 @@ rustPlatform.buildRustPackage rec {
     description = "CLI tool for rustypaste";
     homepage = "https://github.com/orhun/rustypaste-cli";
     changelog = "https://github.com/orhun/rustypaste-cli/blob/${src.rev}/CHANGELOG.md";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = [ ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = [ ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ lib.maintainers.matthiasbeyer ];
+>>>>>>> master
     mainProgram = "rpaste";
   };
 }

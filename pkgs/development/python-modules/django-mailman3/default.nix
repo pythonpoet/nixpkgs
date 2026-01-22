@@ -62,8 +62,19 @@ buildPythonPackage rec {
   meta = {
     description = "Django library for Mailman UIs";
     homepage = "https://gitlab.com/mailman/django-mailman3";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Plus;
     maintainers = with lib.maintainers; [ qyliss ];
     broken = lib.versionAtLeast django-allauth.version "65.0.0";
+||||||| 213fed0310e3
+    license = licenses.gpl3Plus;
+    maintainers = with maintainers; [ qyliss ];
+    broken = lib.versionAtLeast django-allauth.version "65.0.0";
+=======
+    license = lib.licenses.gpl3Plus;
+    maintainers = with lib.maintainers; [ qyliss ];
+    broken =
+      lib.versionAtLeast django-allauth.version "65.0.0" || lib.versionAtLeast django.version "5.1";
+>>>>>>> master
   };
 }

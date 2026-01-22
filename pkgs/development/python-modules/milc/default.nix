@@ -64,7 +64,14 @@ buildPythonPackage rec {
     description = "Opinionated Batteries-Included Python 3 CLI Framework";
     mainProgram = "milc-color";
     homepage = "https://milc.clueboard.co";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ bhipple ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ bhipple ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
   };
 }

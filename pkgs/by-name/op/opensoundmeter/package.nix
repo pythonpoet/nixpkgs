@@ -58,7 +58,15 @@ stdenv.mkDerivation rec {
     homepage = "https://opensoundmeter.com/";
     license = lib.licenses.gpl3Plus;
     mainProgram = "OpenSoundMeter";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ orivej ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ orivej ];
+    platforms = platforms.linux;
+=======
+    maintainers = [ ];
+    platforms = lib.platforms.linux;
+>>>>>>> master
   };
 }

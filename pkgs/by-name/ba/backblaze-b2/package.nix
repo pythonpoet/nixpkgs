@@ -104,8 +104,15 @@ python3Packages.buildPythonApplication rec {
     description = "Command-line tool for accessing the Backblaze B2 storage service";
     homepage = "https://github.com/Backblaze/B2_Command_Line_Tool";
     changelog = "https://github.com/Backblaze/B2_Command_Line_Tool/blob/${src.tag}/CHANGELOG.md";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ hrdinka ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ hrdinka ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
     mainProgram = "backblaze-b2";
   };
 }

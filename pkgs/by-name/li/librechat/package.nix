@@ -3,10 +3,12 @@
   buildNpmPackage,
   fetchNpmDeps,
   fetchFromGitHub,
+  nodejs_22,
   pkg-config,
   node-gyp,
   vips,
   nix-update-script,
+  nixosTests,
 }:
 
 buildNpmPackage rec {
@@ -43,6 +45,7 @@ buildNpmPackage rec {
     ./0004-fix-deps-v080.patch
   ];
 
+<<<<<<< HEAD
   npmDepsHash = "sha256-97cEw6VD7FoVayrxClHuS1iUcQmDw7/aUoUV6ektvOY=";
   npmDeps = fetchNpmDeps {
     inherit src;
@@ -50,6 +53,20 @@ buildNpmPackage rec {
     hash = npmDepsHash;
     patches = [ ./0004-fix-deps-v080.patch ];
   };
+||||||| 213fed0310e3
+  npmDepsHash = "sha256-knmS2I6AiSdV2bSnNBThbVHdkpk6iXiRuk4adciDK1M=";
+=======
+  npmDepsHash = "sha256-97cEw6VD7FoVayrxClHuS1iUcQmDw7/aUoUV6ektvOY=";
+  npmDeps = fetchNpmDeps {
+    inherit src;
+    name = "${pname}-${version}-npm-deps-patched";
+    hash = npmDepsHash;
+    patches = [ ./0004-fix-deps-v080.patch ];
+  };
+
+  # npm dependency install fails with nodejs_24: https://github.com/NixOS/nixpkgs/issues/474535
+  nodejs = nodejs_22;
+>>>>>>> master
 
   nativeBuildInputs = [
     pkg-config
@@ -83,6 +100,9 @@ buildNpmPackage rec {
         "--version-regex"
         "^v(\\d+\\.\\d+\\.\\d+)$"
       ];
+    };
+    tests = {
+      inherit (nixosTests) librechat;
     };
   };
 

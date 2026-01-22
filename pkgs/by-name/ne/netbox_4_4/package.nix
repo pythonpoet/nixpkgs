@@ -9,21 +9,33 @@
 let
   py = python3.override {
     self = py;
-    packageOverrides = _final: prev: { django = prev.django_5_2; };
+    packageOverrides = _final: prev: { django = prev.django_5; };
   };
 
   extraBuildInputs = plugins py.pkgs;
 in
 py.pkgs.buildPythonApplication rec {
   pname = "netbox";
+<<<<<<< HEAD
   version = "4.4.8";
+||||||| 213fed0310e3
+  version = "4.4.6";
+=======
+  version = "4.4.9";
+>>>>>>> master
   pyproject = false;
 
   src = fetchFromGitHub {
     owner = "netbox-community";
     repo = "netbox";
     tag = "v${version}";
+<<<<<<< HEAD
     hash = "sha256-C7tzY6gp/jfoCf6uPGfAvO8+xHkGe7T0o0Dod+D6YRU=";
+||||||| 213fed0310e3
+    hash = "sha256-i/S9/WR+GKo7wb9t23nYYERf9F6DPsSOTef3tvfFENk=";
+=======
+    hash = "sha256-NA84Rcs27S68pyVdo+bif8P2sNmGkfuMPrCBn1YXubc=";
+>>>>>>> master
   };
 
   patches = [

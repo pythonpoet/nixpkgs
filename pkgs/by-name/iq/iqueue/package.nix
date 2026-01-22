@@ -33,6 +33,11 @@ stdenv.mkDerivation rec {
     description = "Indexed queue";
     license = lib.licenses.asl20;
     platforms = [ "x86_64-linux" ];
+<<<<<<< HEAD
     maintainers = [ lib.maintainers.catern ];
+||||||| 213fed0310e3
+    maintainers = [ maintainers.catern ];
+=======
+>>>>>>> master
   };
 }

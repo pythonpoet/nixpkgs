@@ -21,8 +21,15 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Command-line CSV to LaTeX file converter";
     homepage = "http://brouits.free.fr/csv2latex/";
+<<<<<<< HEAD
     license = lib.licenses.gpl2Only;
     maintainers = [ lib.maintainers.catern ];
+||||||| 213fed0310e3
+    license = licenses.gpl2Only;
+    maintainers = [ maintainers.catern ];
+=======
+    license = lib.licenses.gpl2Only;
+>>>>>>> master
     mainProgram = "csv2latex";
   };
 }

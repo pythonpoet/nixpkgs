@@ -126,8 +126,18 @@ stdenv.mkDerivation rec {
   meta = {
     description = "JACK client and audio file convolver with reverb samples";
     homepage = "https://kokkinizita.linuxaudio.org/linuxaudio/";
+<<<<<<< HEAD
     license = lib.licenses.gpl2Plus;
     maintainers = with lib.maintainers; [ orivej ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    license = licenses.gpl2Plus;
+    maintainers = with maintainers; [ orivej ];
+    platforms = platforms.linux;
+=======
+    license = lib.licenses.gpl2Plus;
+    maintainers = [ ];
+    platforms = lib.platforms.linux;
+>>>>>>> master
   };
 }

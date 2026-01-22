@@ -14,7 +14,6 @@
   pyopenssl,
   pytestCheckHook,
   python-pkcs11,
-  pythonOlder,
   setuptools,
   typing-extensions,
 }:
@@ -23,8 +22,6 @@ buildPythonPackage rec {
   pname = "asyncssh";
   version = "2.21.1";
   pyproject = true;
-
-  disabled = pythonOlder "3.6";
 
   src = fetchPypi {
     inherit pname version;
@@ -57,7 +54,7 @@ buildPythonPackage rec {
     openssl
     pytestCheckHook
   ]
-  ++ lib.flatten (builtins.attrValues optional-dependencies);
+  ++ lib.concatAttrValues optional-dependencies;
 
   patches = [
     # Reverts https://github.com/ronf/asyncssh/commit/4b3dec994b3aa821dba4db507030b569c3a32730

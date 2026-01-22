@@ -47,8 +47,17 @@ stdenv.mkDerivation rec {
       logging frameworks including Logbook of the World.
     '';
     homepage = "https://gridtracker.org";
+<<<<<<< HEAD
     license = lib.licenses.bsd3;
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [ melling ];
+||||||| 213fed0310e3
+    license = licenses.bsd3;
+    platforms = platforms.linux;
+    maintainers = with maintainers; [ melling ];
+=======
+    license = lib.licenses.bsd3;
+    platforms = lib.platforms.linux;
+>>>>>>> master
   };
 }

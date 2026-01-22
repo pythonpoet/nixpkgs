@@ -7,11 +7,11 @@
 
 stdenvNoCC.mkDerivation rec {
   pname = "mediawiki";
-  version = "1.44.2";
+  version = "1.45.0";
 
   src = fetchurl {
     url = "https://releases.wikimedia.org/mediawiki/${lib.versions.majorMinor version}/mediawiki-${version}.tar.gz";
-    hash = "sha256-59cCZpeWcfr9A3BeF6IfGFvRsoP/hD7XL+KQ6G+sQzE=";
+    hash = "sha256-1Jm8frPXGDXCvsHJyu2IoDCK7DfwcmTnURDSor7wJTQ=";
   };
 
   postPatch = ''
@@ -39,7 +39,18 @@ stdenvNoCC.mkDerivation rec {
     description = "Collaborative editing software that runs Wikipedia";
     license = lib.licenses.gpl2Plus;
     homepage = "https://www.mediawiki.org/";
+<<<<<<< HEAD
     platforms = lib.platforms.all;
     teams = [ lib.teams.c3d2 ];
+||||||| 213fed0310e3
+    platforms = platforms.all;
+    teams = [ teams.c3d2 ];
+=======
+    platforms = lib.platforms.all;
+    maintainers = with lib.maintainers; [
+      # for the C3D2
+      SuperSandro2000
+    ];
+>>>>>>> master
   };
 }

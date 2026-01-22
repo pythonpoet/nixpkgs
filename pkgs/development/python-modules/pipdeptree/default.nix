@@ -2,7 +2,6 @@
   lib,
   buildPythonPackage,
   fetchFromGitHub,
-  pythonOlder,
   diff-cover,
   graphviz,
   hatchling,
@@ -18,8 +17,6 @@ buildPythonPackage rec {
   pname = "pipdeptree";
   version = "2.28.0";
   pyproject = true;
-
-  disabled = pythonOlder "3.8";
 
   src = fetchFromGitHub {
     owner = "tox-dev";
@@ -55,7 +52,7 @@ buildPythonPackage rec {
     pytestCheckHook
     virtualenv
   ]
-  ++ lib.flatten (builtins.attrValues optional-dependencies);
+  ++ lib.concatAttrValues optional-dependencies;
 
   pythonImportsCheck = [ "pipdeptree" ];
 

@@ -34,8 +34,18 @@ stdenv.mkDerivation rec {
   meta = {
     homepage = "http://www.qhull.org/";
     description = "Compute the convex hull, Delaunay triangulation, Voronoi diagram and more";
+<<<<<<< HEAD
     license = lib.licenses.qhull;
     platforms = lib.platforms.unix;
     maintainers = with lib.maintainers; [ orivej ];
+||||||| 213fed0310e3
+    license = licenses.qhull;
+    platforms = platforms.unix;
+    maintainers = with maintainers; [ orivej ];
+=======
+    license = lib.licenses.qhull;
+    platforms = lib.platforms.unix;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

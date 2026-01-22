@@ -67,7 +67,12 @@ stdenv.mkDerivation rec {
       Chili-Man
       techknowlogick
     ];
+<<<<<<< HEAD
     teams = [ lib.teams.serokell ];
+||||||| 213fed0310e3
+    teams = [ teams.serokell ];
+=======
+>>>>>>> master
     mainProgram = "vault";
     platforms = [
       "x86_64-linux"

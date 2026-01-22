@@ -28,9 +28,18 @@ stdenv.mkDerivation rec {
     mainProgram = "capnpc-java";
     longDescription = "Only includes compiler plugin, the Java runtime/library that the generated code will link to must be built separately with Maven.";
     homepage = "https://dwrensha.github.io/capnproto-java/index.html";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [
       bhipple
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [
+      bhipple
+=======
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       solson
     ];
   };

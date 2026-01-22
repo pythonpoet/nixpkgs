@@ -68,9 +68,18 @@ stdenvNoLibc.mkDerivation (finalAttrs: {
     changelog = "https://github.com/WebAssembly/wasi-sdk/releases/tag/wasi-sdk-${finalAttrs.version}";
     description = "WASI libc implementation for WebAssembly";
     homepage = "https://wasi.dev";
+<<<<<<< HEAD
     platforms = lib.platforms.wasi;
     maintainers = with lib.maintainers; [
       matthewbauer
+||||||| 213fed0310e3
+    platforms = platforms.wasi;
+    maintainers = with maintainers; [
+      matthewbauer
+=======
+    platforms = lib.platforms.wasi;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       rvolosatovs
       wucke13
     ];

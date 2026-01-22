@@ -28,7 +28,14 @@ stdenv.mkDerivation rec {
     homepage = "https://airsonic.github.io";
     sourceProvenance = with lib.sourceTypes; [ binaryBytecode ];
     license = lib.licenses.gpl3;
+<<<<<<< HEAD
     platforms = lib.platforms.all;
     maintainers = with lib.maintainers; [ disassembler ];
+||||||| 213fed0310e3
+    platforms = platforms.all;
+    maintainers = with maintainers; [ disassembler ];
+=======
+    platforms = lib.platforms.all;
+>>>>>>> master
   };
 }

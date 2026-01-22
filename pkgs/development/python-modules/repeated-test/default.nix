@@ -2,7 +2,6 @@
   lib,
   buildPythonPackage,
   fetchPypi,
-  pythonOlder,
   setuptools-scm,
   pytestCheckHook,
 }:
@@ -10,9 +9,7 @@
 buildPythonPackage rec {
   pname = "repeated-test";
   version = "2.3.3";
-  format = "pyproject";
-
-  disabled = pythonOlder "3.5";
+  pyproject = true;
 
   src = fetchPypi {
     pname = "repeated_test";
@@ -30,7 +27,14 @@ buildPythonPackage rec {
     description = "Unittest-compatible framework for repeating a test function over many fixtures";
     homepage = "https://github.com/epsy/repeated_test";
     changelog = "https://github.com/epsy/repeated_test/releases/tag/v${version}";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ tjni ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ tjni ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
   };
 }

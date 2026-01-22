@@ -8,7 +8,7 @@
 buildPythonPackage {
   pname = "cmake";
   inherit (cmake) version;
-  format = "pyproject";
+  pyproject = true;
 
   src = ./stub;
 
@@ -34,7 +34,14 @@ buildPythonPackage {
       provided by nixpkgs instead of downloading cmake from the web.
     '';
     homepage = "https://github.com/scikit-build/cmake-python-distributions";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ tjni ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [ tjni ];
+=======
+    license = lib.licenses.asl20;
+>>>>>>> master
   };
 }

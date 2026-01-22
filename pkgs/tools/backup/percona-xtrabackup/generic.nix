@@ -107,9 +107,24 @@ stdenv.mkDerivation (finalAttrs: {
   meta = {
     description = "Non-blocking backup tool for MySQL";
     homepage = "http://www.percona.com/software/percona-xtrabackup";
+<<<<<<< HEAD
     license = lib.licenses.gpl2Only;
     platforms = lib.platforms.linux;
     maintainers = [ lib.maintainers.izorkin ];
     teams = [ lib.teams.flyingcircus ];
+||||||| 213fed0310e3
+    license = licenses.gpl2Only;
+    platforms = platforms.linux;
+    maintainers = [ maintainers.izorkin ];
+    teams = [ teams.flyingcircus ];
+=======
+    license = lib.licenses.gpl2Only;
+    platforms = lib.platforms.linux;
+    maintainers = [
+      lib.maintainers.izorkin
+      lib.maintainers.leona
+      lib.maintainers.osnyx
+    ];
+>>>>>>> master
   };
 })

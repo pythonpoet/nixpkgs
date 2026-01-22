@@ -55,12 +55,18 @@ stdenv.mkDerivation (finalAttrs: {
     pipewire
   ];
 
-  meta = with lib; {
+  meta = {
     description = "Screen recorder for GNOME / Wayland / pipewire";
     homepage = "https://github.com/stronnag/wayfarer";
     license = lib.licenses.gpl3Plus;
     maintainers = with lib.maintainers; [ fgaz ];
     mainProgram = "wayfarer";
+<<<<<<< HEAD
     platforms = subtractLists lib.platforms.darwin lib.platforms.unix;
+||||||| 213fed0310e3
+    platforms = subtractLists platforms.darwin platforms.unix;
+=======
+    platforms = lib.subtractLists lib.platforms.darwin lib.platforms.unix;
+>>>>>>> master
   };
 })

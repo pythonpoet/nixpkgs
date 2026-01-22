@@ -28,8 +28,16 @@ buildGoModule rec {
   meta = {
     description = "MarkDown Renderer for the terminal";
     homepage = "https://github.com/MichaelMure/mdr";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = [ ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = [ ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ lib.maintainers.matthiasbeyer ];
+>>>>>>> master
     mainProgram = "mdr";
   };
 }

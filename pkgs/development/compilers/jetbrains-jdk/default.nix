@@ -62,7 +62,7 @@ jdk.overrideAttrs (oldAttrs: rec {
     hash = "sha256-P2boCbGB66X8LB4sZHGFO8lqHbv6F4kqGVMGBd9yKu0=";
   };
 
-  env = {
+  env = (oldAttrs.env or { }) // {
     BOOT_JDK = jdk.home;
     # run `git log -1 --pretty=%ct` in jdk repo for new value on update
     SOURCE_DATE_EPOCH = 1765114563;
@@ -197,8 +197,15 @@ jdk.overrideAttrs (oldAttrs: rec {
     '';
     homepage = "https://confluence.jetbrains.com/display/JBR/JetBrains+Runtime";
     inherit (jdk.meta) license platforms mainProgram;
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [
       edwtjo
+||||||| 213fed0310e3
+    maintainers = with maintainers; [
+      edwtjo
+=======
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       aoli-al
     ];
 

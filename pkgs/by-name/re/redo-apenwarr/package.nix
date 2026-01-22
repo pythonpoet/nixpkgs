@@ -82,8 +82,15 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Smaller, easier, more powerful, and more reliable than make. An implementation of djb's redo";
     homepage = "https://github.com/apenwarr/redo";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [
       andrewchambers
+||||||| 213fed0310e3
+    maintainers = with maintainers; [
+      andrewchambers
+=======
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       ck3d
     ];
     license = lib.licenses.asl20;

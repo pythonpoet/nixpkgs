@@ -27,8 +27,17 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Programs for dealing with numbers from the command line";
     homepage = "https://suso.suso.org/xulu/Num-utils";
+<<<<<<< HEAD
     license = lib.licenses.gpl2Plus;
     platforms = lib.platforms.all;
     maintainers = [ lib.maintainers.catern ];
+||||||| 213fed0310e3
+    license = licenses.gpl2Plus;
+    platforms = platforms.all;
+    maintainers = [ maintainers.catern ];
+=======
+    license = lib.licenses.gpl2Plus;
+    platforms = lib.platforms.all;
+>>>>>>> master
   };
 }

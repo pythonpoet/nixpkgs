@@ -75,7 +75,14 @@ buildPythonPackage rec {
     mainProgram = "setuptools-git-versioning";
     homepage = "https://github.com/dolfinus/setuptools-git-versioning";
     changelog = "https://github.com/dolfinus/setuptools-git-versioning/blob/${src.rev}/CHANGELOG.rst";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ tjni ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ tjni ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
   };
 }

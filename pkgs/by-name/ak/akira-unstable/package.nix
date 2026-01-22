@@ -13,7 +13,7 @@
   wrapGAppsHook3,
   cairo,
   glib,
-  goocanvas3,
+  goocanvas_3,
   gtk3,
   gtksourceview3,
   json-glib,
@@ -47,7 +47,7 @@ stdenv.mkDerivation rec {
   buildInputs = [
     cairo
     glib
-    goocanvas3
+    goocanvas_3
     pantheon.granite
     gtk3
     gtksourceview3
@@ -67,12 +67,26 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Native Linux Design application built in Vala and GTK";
     homepage = "https://github.com/akiraux/Akira";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Plus;
     maintainers = with lib.maintainers; [
       Br1ght0ne
     ];
     teams = [ lib.teams.pantheon ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    license = licenses.gpl3Plus;
+    maintainers = with maintainers; [
+      Br1ght0ne
+    ];
+    teams = [ teams.pantheon ];
+    platforms = platforms.linux;
+=======
+    license = lib.licenses.gpl3Plus;
+    maintainers = [ ];
+    teams = [ lib.teams.pantheon ];
+    platforms = lib.platforms.linux;
+>>>>>>> master
     mainProgram = "com.github.akiraux.akira";
   };
 }

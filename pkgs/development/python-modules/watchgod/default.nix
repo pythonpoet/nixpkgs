@@ -26,7 +26,15 @@ buildPythonPackage rec {
     description = "Simple, modern file watching and code reload in python";
     mainProgram = "watchgod";
     homepage = "https://github.com/samuelcolvin/watchgod";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ globin ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ globin ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

@@ -23,7 +23,14 @@ buildPythonPackage rec {
   meta = {
     description = "Verifying Yubico OTPs based on the validation protocol version 2.0";
     homepage = "https://github.com/Kami/python-yubico-client/";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ peterromfeldhk ];
     license = lib.licenses.bsd3;
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ peterromfeldhk ];
+    license = licenses.bsd3;
+=======
+    license = lib.licenses.bsd3;
+>>>>>>> master
   };
 }

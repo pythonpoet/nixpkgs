@@ -39,7 +39,7 @@ let
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "phoc";
-  version = "0.50.0";
+  version = "0.51.0";
 
   src = fetchFromGitLab {
     domain = "gitlab.gnome.org";
@@ -47,7 +47,7 @@ stdenv.mkDerivation (finalAttrs: {
     owner = "Phosh";
     repo = "phoc";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-Fq/XinXdFerzuutjXUGbpvAvJBt/23ISHvY5KfVgbFI=";
+    hash = "sha256-6glG5QvphanjBvf9xKiXjkVceWBQ8EjFkRywdfYc7E4=";
   };
 
   nativeBuildInputs = [
@@ -108,9 +108,18 @@ stdenv.mkDerivation (finalAttrs: {
     description = "Wayland compositor for mobile phones like the Librem 5";
     mainProgram = "phoc";
     homepage = "https://gitlab.gnome.org/World/Phosh/phoc";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Plus;
     maintainers = with lib.maintainers; [
       masipcat
+||||||| 213fed0310e3
+    license = licenses.gpl3Plus;
+    maintainers = with maintainers; [
+      masipcat
+=======
+    license = lib.licenses.gpl3Plus;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       zhaofengli
       armelclo
     ];

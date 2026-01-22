@@ -13,13 +13,13 @@
 
 stdenv.mkDerivation rec {
   pname = "nemo-python";
-  version = "6.4.0";
+  version = "6.6.0";
 
   src = fetchFromGitHub {
     owner = "linuxmint";
     repo = "nemo-extensions";
     rev = version;
-    hash = "sha256-39hWA4SNuEeaPA6D5mWMHjJDs4hYK7/ZdPkTyskvm5Y=";
+    hash = "sha256-tXeMkaCYnWzg+6ng8Tyg4Ms1aUeE3xiEkQ3tKEX6Vv8=";
   };
 
   sourceRoot = "${src.name}/nemo-python";
@@ -53,7 +53,7 @@ stdenv.mkDerivation rec {
       --replace "get_option('prefix'), get_option('libdir')" "'${python3}/lib'"
   '';
 
-  PKG_CONFIG_LIBNEMO_EXTENSION_EXTENSIONDIR = "${placeholder "out"}/${nemo.extensiondir}";
+  env.PKG_CONFIG_LIBNEMO_EXTENSION_EXTENSIONDIR = "${placeholder "out"}/${nemo.extensiondir}";
 
   passthru.nemoPythonExtensionDeps = [ python3.pkgs.pygobject3 ];
 

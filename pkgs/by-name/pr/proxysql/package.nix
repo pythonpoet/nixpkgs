@@ -226,8 +226,17 @@ stdenv.mkDerivation (finalAttrs: {
     description = "High-performance MySQL proxy";
     mainProgram = "proxysql";
     homepage = "https://proxysql.com/";
+<<<<<<< HEAD
     license = with lib.licenses; [ gpl3Only ];
     teams = [ lib.teams.helsinki-systems ];
     platforms = lib.platforms.unix;
+||||||| 213fed0310e3
+    license = with licenses; [ gpl3Only ];
+    teams = [ teams.helsinki-systems ];
+    platforms = platforms.unix;
+=======
+    license = with lib.licenses; [ gpl3Only ];
+    platforms = lib.platforms.unix;
+>>>>>>> master
   };
 })

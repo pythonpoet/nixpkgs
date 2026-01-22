@@ -17,8 +17,17 @@ stdenv.mkDerivation rec {
   meta = {
     homepage = "https://github.com/catern/supervise";
     description = "Minimal unprivileged process supervisor making use of modern Linux features";
+<<<<<<< HEAD
     platforms = lib.platforms.linux;
     license = lib.licenses.gpl3;
     maintainers = with lib.maintainers; [ catern ];
+||||||| 213fed0310e3
+    platforms = platforms.linux;
+    license = licenses.gpl3;
+    maintainers = with lib.maintainers; [ catern ];
+=======
+    platforms = lib.platforms.linux;
+    license = lib.licenses.gpl3;
+>>>>>>> master
   };
 }

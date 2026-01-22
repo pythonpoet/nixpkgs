@@ -134,9 +134,18 @@ let
             support open-source telemetry data formats (e.g. Jaeger, Prometheus, etc.)
             sending to multiple open-source or commercial back-ends.
           '';
+<<<<<<< HEAD
           license = lib.licenses.asl20;
           maintainers = with lib.maintainers; [
             uri-canva
+||||||| 213fed0310e3
+          license = licenses.asl20;
+          maintainers = with maintainers; [
+            uri-canva
+=======
+          license = lib.licenses.asl20;
+          maintainers = with lib.maintainers; [
+>>>>>>> master
             jk
             zimbatm
           ];

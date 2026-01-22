@@ -179,9 +179,18 @@ stdenv.mkDerivation (finalAttrs: {
   meta = {
     description = "Mozilla's JavaScript engine written in C/C++";
     homepage = "https://spidermonkey.dev/";
+<<<<<<< HEAD
     license = lib.licenses.mpl20;
     maintainers = with lib.maintainers; [
       lostnet
+||||||| 213fed0310e3
+    license = licenses.mpl20;
+    maintainers = with maintainers; [
+      lostnet
+=======
+    license = lib.licenses.mpl20;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       catap
       bobby285271
     ];

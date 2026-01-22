@@ -43,7 +43,6 @@ stdenv.mkDerivation rec {
     homepage = "https://x42-plugins.com/x42/x42-avldrums";
     maintainers = with lib.maintainers; [
       magnetophon
-      orivej
     ];
     license = lib.licenses.gpl2Plus;
     platforms = lib.platforms.linux;

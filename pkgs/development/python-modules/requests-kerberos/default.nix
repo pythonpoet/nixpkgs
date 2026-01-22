@@ -7,7 +7,6 @@
   pyspnego,
   pytest-mock,
   pytestCheckHook,
-  pythonOlder,
   requests,
 }:
 
@@ -15,8 +14,6 @@ buildPythonPackage rec {
   pname = "requests-kerberos";
   version = "0.15.0";
   format = "setuptools";
-
-  disabled = pythonOlder "3.6";
 
   src = fetchFromGitHub {
     owner = "requests";
@@ -43,7 +40,14 @@ buildPythonPackage rec {
   meta = {
     description = "Authentication handler for using Kerberos with Python Requests";
     homepage = "https://github.com/requests/requests-kerberos";
+<<<<<<< HEAD
     license = lib.licenses.isc;
     maintainers = with lib.maintainers; [ catern ];
+||||||| 213fed0310e3
+    license = licenses.isc;
+    maintainers = with maintainers; [ catern ];
+=======
+    license = lib.licenses.isc;
+>>>>>>> master
   };
 }

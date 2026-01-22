@@ -34,7 +34,14 @@ python3.pkgs.buildPythonApplication {
   meta = {
     description = "Bisect nix builds";
     homepage = "https://github.com/timokau/nix-bisect";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ hexa ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ hexa ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
   };
 }

@@ -91,9 +91,18 @@ lib.makeOverridable (
 
       strictDeps = true;
 
+<<<<<<< HEAD
       meta = {
         maintainers = with lib.maintainers; [
           matthewbauer
+||||||| 213fed0310e3
+      meta = with lib; {
+        maintainers = with maintainers; [
+          matthewbauer
+=======
+      meta = {
+        maintainers = with lib.maintainers; [
+>>>>>>> master
           qyliss
         ];
         platforms = lib.platforms.unix;

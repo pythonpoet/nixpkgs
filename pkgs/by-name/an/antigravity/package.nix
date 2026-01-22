@@ -58,9 +58,17 @@ in
     );
 
   tests = { };
+<<<<<<< HEAD
   updateScript = ./update.js;
 
   dontFixup = hostPlatform.isDarwin;
+||||||| 213fed0310e3
+  updateScript = ./update.sh;
+
+  dontFixup = hostPlatform.isDarwin;
+=======
+  updateScript = ./update.js;
+>>>>>>> master
 
   meta = {
     mainProgram = "antigravity";

@@ -11,12 +11,12 @@
 
 buildPythonPackage rec {
   pname = "bandit";
-  version = "1.9.1";
+  version = "1.9.3";
   pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-bbr9GlHiduBlQE8GmA1iS60UI0Ta6sOwhRIfz9EXt88=";
+    hash = "sha256-reS5t3hvie9vxzRKUrNFWMrsXadMuQNzrtAd6IRy93Q=";
   };
 
   build-system = [ pbr ];

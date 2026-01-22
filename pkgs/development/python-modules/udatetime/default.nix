@@ -23,7 +23,15 @@ buildPythonPackage rec {
     description = "Fast RFC3339 compliant Python date-time library";
     mainProgram = "bench_udatetime.py";
     homepage = "https://github.com/freach/udatetime";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ globin ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [ globin ];
+=======
+    license = lib.licenses.asl20;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

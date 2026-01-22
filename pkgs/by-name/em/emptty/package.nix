@@ -28,8 +28,16 @@ buildGoModule rec {
   meta = {
     description = "Dead simple CLI Display Manager on TTY";
     homepage = "https://github.com/tvrzna/emptty";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ urandom ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ urandom ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
     # many undefined functions
     broken = stdenv.hostPlatform.isDarwin;
     mainProgram = "emptty";

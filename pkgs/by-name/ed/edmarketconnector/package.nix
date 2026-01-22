@@ -24,13 +24,25 @@ let
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "edmarketconnector";
+<<<<<<< HEAD
   version = "6.0.0";
+||||||| 213fed0310e3
+  version = "5.13.2";
+=======
+  version = "6.0.2";
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "EDCD";
     repo = "EDMarketConnector";
     tag = "Release/${finalAttrs.version}";
+<<<<<<< HEAD
     hash = "sha256-FByD4JC/MZ++LcA6tWgvLpZs76Os8KZuv0quG8yW0kw=";
+||||||| 213fed0310e3
+    hash = "sha256-BqzrW5pV9ty1MBaILQir+iOda2xQoJeTq8eZG0x6+90=";
+=======
+    hash = "sha256-/Te7PTM/t+uN5v1DDa7zgQsVcy4CDMRSxvPqt1OwcW4=";
+>>>>>>> master
   };
 
   nativeBuildInputs = [ makeWrapper ];

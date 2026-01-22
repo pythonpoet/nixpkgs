@@ -38,9 +38,19 @@ rustPlatform.buildRustPackage rec {
   meta = {
     description = "Easy and efficient encrypted backups";
     homepage = "https://bupstash.io";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     platforms = lib.platforms.unix;
     maintainers = with lib.maintainers; [ andrewchambers ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    platforms = platforms.unix;
+    maintainers = with maintainers; [ andrewchambers ];
+=======
+    license = lib.licenses.mit;
+    platforms = lib.platforms.unix;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "bupstash";
   };
 }

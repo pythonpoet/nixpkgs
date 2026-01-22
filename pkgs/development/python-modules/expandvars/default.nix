@@ -2,7 +2,6 @@
   lib,
   buildPythonPackage,
   fetchPypi,
-  pythonOlder,
 
   # build-system
   hatchling,
@@ -14,9 +13,7 @@
 buildPythonPackage rec {
   pname = "expandvars";
   version = "1.1.1";
-  format = "pyproject";
-
-  disabled = pythonOlder "3.6";
+  pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
@@ -32,7 +29,14 @@ buildPythonPackage rec {
   meta = {
     description = "Expand system variables Unix style";
     homepage = "https://github.com/sayanarijit/expandvars";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ geluk ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ geluk ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
   };
 }

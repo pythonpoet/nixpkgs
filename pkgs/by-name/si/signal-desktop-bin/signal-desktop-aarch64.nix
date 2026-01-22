@@ -1,7 +1,13 @@
 { callPackage, commandLineArgs }:
 callPackage ./generic.nix { inherit commandLineArgs; } {
   pname = "signal-desktop-bin";
+<<<<<<< HEAD
   version = "7.83.0";
+||||||| 213fed0310e3
+  version = "7.80.0";
+=======
+  version = "7.85.0";
+>>>>>>> master
 
   libdir = "usr/lib64/signal-desktop";
   bindir = "usr/bin";
@@ -10,6 +16,14 @@ callPackage ./generic.nix { inherit commandLineArgs; } {
     bsdtar -xf $downloadedFile -C "$out"
   '';
 
+<<<<<<< HEAD
   url = "https://download.copr.fedorainfracloud.org/results/useidel/signal-desktop/fedora-42-aarch64/09932085-signal-desktop/signal-desktop-7.83.0-1.fc42.aarch64.rpm";
   hash = "sha256-OY+sHfAC/WTC2MkjFjlImYXLNflFNAw4VRcbQ/B3s10=";
+||||||| 213fed0310e3
+  url = "https://download.copr.fedorainfracloud.org/results/useidel/signal-desktop/fedora-42-aarch64/09815595-signal-desktop/signal-desktop-7.80.0-1.fc42.aarch64.rpm";
+  hash = "sha256-RunFdBUGBmDmztWdn9Rjbotnzwiid+gCIKPz1Nrc8v0=";
+=======
+  url = "https://download.copr.fedorainfracloud.org/results/useidel/signal-desktop/fedora-43-aarch64/10010734-signal-desktop/signal-desktop-7.85.0-1.fc43.aarch64.rpm";
+  hash = "sha256-ewjW5mwPph1xZXtqwYPishJ/zYjzpA/df+5WvdcEfWI=";
+>>>>>>> master
 }

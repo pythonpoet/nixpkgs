@@ -45,8 +45,19 @@ stdenvNoCC.mkDerivation rec {
   meta = {
     description = "Firmware for Broadcom WIDCOMM® Bluetooth devices";
     homepage = "https://www.catalog.update.microsoft.com/Search.aspx?q=Broadcom+bluetooth";
+<<<<<<< HEAD
     license = lib.licenses.unfree;
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [ zraexy ];
+||||||| 213fed0310e3
+    license = licenses.unfree;
+    platforms = platforms.linux;
+    maintainers = with maintainers; [ zraexy ];
+=======
+    license = lib.licenses.unfree;
+    platforms = lib.platforms.linux;
+    maintainers = with lib.maintainers; [ zraexy ];
+    sourceProvenance = with lib.sourceTypes; [ binaryFirmware ];
+>>>>>>> master
   };
 }

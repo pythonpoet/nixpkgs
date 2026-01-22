@@ -24,7 +24,14 @@ buildPythonPackage rec {
   meta = {
     description = "Sphinx extension which renders display math in HTML via JavaScript";
     homepage = "https://github.com/sphinx-doc/sphinxcontrib-jsmath";
+<<<<<<< HEAD
     license = lib.licenses.bsd0;
     teams = [ lib.teams.sphinx ];
+||||||| 213fed0310e3
+    license = licenses.bsd0;
+    teams = [ teams.sphinx ];
+=======
+    license = lib.licenses.bsd0;
+>>>>>>> master
   };
 }

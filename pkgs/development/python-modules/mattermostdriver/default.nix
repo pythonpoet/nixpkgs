@@ -2,7 +2,6 @@
   lib,
   buildPythonPackage,
   fetchPypi,
-  pythonOlder,
   websockets,
   requests,
 }:
@@ -11,8 +10,6 @@ buildPythonPackage rec {
   pname = "mattermostdriver";
   version = "7.3.2";
   format = "setuptools";
-
-  disabled = pythonOlder "3.5";
 
   src = fetchPypi {
     inherit pname version;
@@ -32,7 +29,15 @@ buildPythonPackage rec {
   meta = {
     description = "Python Mattermost Driver";
     homepage = "https://github.com/Vaelor/python-mattermost-driver";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ globin ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ globin ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

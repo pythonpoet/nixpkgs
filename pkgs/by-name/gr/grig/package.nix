@@ -44,10 +44,21 @@ stdenv.mkDerivation rec {
       same interface regardless of which radio they use.
     '';
     homepage = "https://groundstation.sourceforge.net/grig/";
+<<<<<<< HEAD
     license = lib.licenses.gpl2;
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [
       melling
+||||||| 213fed0310e3
+    license = licenses.gpl2;
+    platforms = platforms.linux;
+    maintainers = with maintainers; [
+      melling
+=======
+    license = lib.licenses.gpl2;
+    platforms = lib.platforms.linux;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       mafo
     ];
   };

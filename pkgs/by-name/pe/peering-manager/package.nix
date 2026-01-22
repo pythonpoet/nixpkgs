@@ -7,6 +7,7 @@
   plugins ? ps: [ ],
 }:
 
+<<<<<<< HEAD
 let
   python = python3.override {
     packageOverrides = final: prev: {
@@ -15,6 +16,18 @@ let
   };
 in
 python.pkgs.buildPythonApplication rec {
+||||||| 213fed0310e3
+python3.pkgs.buildPythonApplication rec {
+=======
+let
+  python = python3.override {
+    packageOverrides = final: prev: {
+      django = prev.django_5;
+    };
+  };
+in
+python.pkgs.buildPythonApplication rec {
+>>>>>>> master
   pname = "peering-manager";
   version = "1.10.1";
 
@@ -25,7 +38,7 @@ python.pkgs.buildPythonApplication rec {
     sha256 = "sha256-ByECaQ6NW1Su+k/j/bcKJqFf7bStdWZxOZn95GJEqBg=";
   };
 
-  format = "other";
+  pyproject = false;
 
   propagatedBuildInputs =
     with python.pkgs;
@@ -91,7 +104,15 @@ python.pkgs.buildPythonApplication rec {
     license = lib.licenses.asl20;
     description = "BGP sessions management tool";
     mainProgram = "peering-manager";
+<<<<<<< HEAD
     teams = [ lib.teams.wdz ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    teams = [ teams.wdz ];
+    platforms = platforms.linux;
+=======
+    maintainers = with lib.maintainers; [ yureka-wdz ];
+    platforms = lib.platforms.linux;
+>>>>>>> master
   };
 }

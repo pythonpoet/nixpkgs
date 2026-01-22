@@ -11,7 +11,6 @@
   pint,
   pydantic,
   pytestCheckHook,
-  pythonOlder,
   scipy,
 }:
 
@@ -19,8 +18,6 @@ buildPythonPackage rec {
   pname = "qcelemental";
   version = "0.29.0";
   pyproject = true;
-
-  disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
@@ -47,7 +44,7 @@ buildPythonPackage rec {
     ];
   };
 
-  nativeCheckInputs = [ pytestCheckHook ] ++ lib.flatten (lib.attrValues optional-dependencies);
+  nativeCheckInputs = [ pytestCheckHook ] ++ lib.concatAttrValues optional-dependencies;
 
   pythonImportsCheck = [ "qcelemental" ];
 

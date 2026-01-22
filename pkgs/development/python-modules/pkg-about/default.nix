@@ -51,7 +51,14 @@ buildPythonPackage rec {
     description = "Python metadata sharing at runtime";
     homepage = "https://github.com/karpierz/pkg_about/";
     changelog = "https://github.com/karpierz/pkg_about/blob/${version}/CHANGES.rst";
+<<<<<<< HEAD
     license = lib.licenses.zlib;
     teams = [ lib.teams.ororatech ];
+||||||| 213fed0310e3
+    license = licenses.zlib;
+    teams = [ teams.ororatech ];
+=======
+    license = lib.licenses.zlib;
+>>>>>>> master
   };
 }

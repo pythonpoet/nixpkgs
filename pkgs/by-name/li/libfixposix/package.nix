@@ -27,9 +27,18 @@ stdenv.mkDerivation rec {
   meta = {
     homepage = "https://github.com/sionescu/libfixposix";
     description = "Thin wrapper over POSIX syscalls and some replacement functionality";
+<<<<<<< HEAD
     license = lib.licenses.boost;
     maintainers = with lib.maintainers; [
       orivej
+||||||| 213fed0310e3
+    license = licenses.boost;
+    maintainers = with maintainers; [
+      orivej
+=======
+    license = lib.licenses.boost;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       raskin
     ];
     platforms = lib.platforms.linux ++ lib.platforms.darwin;

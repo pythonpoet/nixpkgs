@@ -3,7 +3,12 @@
   buildNpmPackage,
   cargo,
   copyDesktopItems,
+<<<<<<< HEAD
   dart,
+||||||| 213fed0310e3
+=======
+  dart-sass,
+>>>>>>> master
   darwin,
   electron_37,
   fetchFromGitHub,
@@ -34,13 +39,25 @@ let
 in
 buildNpmPackage' rec {
   pname = "bitwarden-desktop";
+<<<<<<< HEAD
   version = "2025.11.2";
+||||||| 213fed0310e3
+  version = "2025.10.0";
+=======
+  version = "2025.12.0";
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "bitwarden";
     repo = "clients";
     rev = "desktop-v${version}";
+<<<<<<< HEAD
     hash = "sha256-0djpeXHHqA8tVcQsE/yCDZVnoEuYwUpln2Hhj2chGNc=";
+||||||| 213fed0310e3
+    hash = "sha256-A7bxAdFDChr7yiexV70N3tqhaUVAwJdGhhRKJyX0ra8=";
+=======
+    hash = "sha256-i+hLslZ2i94r04vaOzx9e55AR8aXa9sSK8el+Dcp05A=";
+>>>>>>> master
   };
 
   patches = [
@@ -87,7 +104,13 @@ buildNpmPackage' rec {
     "--ignore-scripts"
   ];
   npmWorkspace = "apps/desktop";
+<<<<<<< HEAD
   npmDepsHash = "sha256-l5Lcm1ggF7qFqNuSYRoRPf1Gbt/gH3g6dYu30YTXgsI=";
+||||||| 213fed0310e3
+  npmDepsHash = "sha256-Qhj8Lh25vNnJzbUm/M+mKIc6Fa5plSCiy53vjevs7Tc=";
+=======
+  npmDepsHash = "sha256-OT9Ll+F4e/yOJVpay/zwfEHcBqRvSFOM2mtlrJ8E6fs=";
+>>>>>>> master
 
   cargoDeps = rustPlatform.fetchCargoVendor {
     inherit
@@ -97,7 +120,13 @@ buildNpmPackage' rec {
       cargoRoot
       patches
       ;
+<<<<<<< HEAD
     hash = "sha256-WhiKqN+FCR/c9BuwhQT0EoidGUkP2ueSlsnupUflVlM=";
+||||||| 213fed0310e3
+    hash = "sha256-fgnf+yT3UV8dHTE2tDHdBWTBW+LHAYI/JGgfS0J/Bgk=";
+=======
+    hash = "sha256-rA9zY9TAF6DnsTT3MzU18VeQDm6m25gjZ0rcmnbZb8E=";
+>>>>>>> master
   };
   cargoRoot = "apps/desktop/desktop_native";
 
@@ -108,6 +137,7 @@ buildNpmPackage' rec {
 
   nativeBuildInputs = [
     cargo
+    dart-sass
     jq
     makeWrapper
     napi-rs-cli
@@ -130,9 +160,16 @@ buildNpmPackage' rec {
       exit 1
     fi
 
+<<<<<<< HEAD
     substituteInPlace node_modules/sass-embedded/dist/lib/src/compiler-path.js \
       --replace-fail "\''${compiler_module_1.compilerModule}/dart-sass/src/dart" "${lib.getExe' dart "dartaotruntime"}"
 
+||||||| 213fed0310e3
+=======
+    # force our dart-sass executable
+    echo "export const compilerCommand = ['dart-sass'];" > node_modules/sass-embedded/dist/lib/src/compiler-path.js
+
+>>>>>>> master
     pushd apps/desktop/desktop_native/napi
     npm run build
     popd

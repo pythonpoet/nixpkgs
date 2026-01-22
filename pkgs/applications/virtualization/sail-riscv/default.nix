@@ -39,7 +39,15 @@ stdenv.mkDerivation rec {
   meta = {
     homepage = "https://github.com/riscv/sail-riscv";
     description = "Formal specification of the RISC-V architecture, written in Sail";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ genericnerdyusername ];
     license = lib.licenses.bsd2;
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ genericnerdyusername ];
+    license = licenses.bsd2;
+=======
+    maintainers = [ ];
+    license = lib.licenses.bsd2;
+>>>>>>> master
   };
 }

@@ -24,18 +24,19 @@
   wayland,
   xcbutil,
   zlib,
+  zstd,
 }:
 
 let
-  buildNum = "2025-06-12-1681";
+  buildNum = "2025-12-08-1746";
 in
 stdenv.mkDerivation {
   pname = "rgp";
-  version = "2.5";
+  version = "2.6.1";
 
   src = fetchurl {
-    url = "https://gpuopen.com/download/radeon-developer-tool-suite/RadeonDeveloperToolSuite-${buildNum}.tgz";
-    hash = "sha256-e7IxoaZi77klrihRO6vDh1o2Clj5lNsVlzQ7btgLsu4=";
+    url = "https://gpuopen.com/download/RadeonDeveloperToolSuite-${buildNum}.tgz";
+    hash = "sha256-rfFZPA8DzgP5axSHToEBvhRTgWAejn/z0WlLMectya0=";
   };
 
   nativeBuildInputs = [
@@ -64,6 +65,7 @@ stdenv.mkDerivation {
     wayland
     xcbutil
     zlib
+    zstd
   ];
 
   installPhase = ''

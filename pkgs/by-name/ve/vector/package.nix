@@ -61,6 +61,10 @@ rustPlatform.buildRustPackage (finalAttrs: {
     zlib
   ];
 
+  # Fix build with gcc 15
+  # https://github.com/vectordotdev/vector/issues/22888
+  env.NIX_CFLAGS_COMPILE = "-std=gnu17";
+
   # Without this, we get SIGSEGV failure
   RUST_MIN_STACK = 33554432;
 
@@ -115,7 +119,6 @@ rustPlatform.buildRustPackage (finalAttrs: {
   nativeInstallCheckInputs = [
     versionCheckHook
   ];
-  versionCheckProgramArg = "--version";
   doInstallCheck = true;
 
   passthru = {
@@ -129,8 +132,17 @@ rustPlatform.buildRustPackage (finalAttrs: {
     description = "High-performance observability data pipeline";
     homepage = "https://github.com/vectordotdev/vector";
     changelog = "https://github.com/vectordotdev/vector/releases/tag/v${finalAttrs.version}";
+<<<<<<< HEAD
     license = lib.licenses.mpl20;
     maintainers = with lib.maintainers; [
+||||||| 213fed0310e3
+    license = licenses.mpl20;
+    maintainers = with maintainers; [
+=======
+    license = lib.licenses.mpl20;
+    maintainers = with lib.maintainers; [
+      adamcstephens
+>>>>>>> master
       thoughtpolice
       happysalada
     ];

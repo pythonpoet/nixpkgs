@@ -31,7 +31,14 @@ buildGoModule rec {
   meta = {
     description = "Command-line tool (and Lambda) for collecting Buildkite agent metrics";
     homepage = "https://github.com/buildkite/buildkite-agent-metrics";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     teams = [ lib.teams.determinatesystems ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    teams = [ teams.determinatesystems ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
   };
 }

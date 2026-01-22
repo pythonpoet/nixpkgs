@@ -48,11 +48,22 @@ let
       XChaCha20-Poly1305 & Argon2.
     '';
     homepage = "https://notesnook.com";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Only;
     maintainers = with lib.maintainers; [
       cig0
       j0lol
       keysmashes
+||||||| 213fed0310e3
+    license = licenses.gpl3Only;
+    maintainers = with maintainers; [
+      cig0
+      j0lol
+=======
+    license = lib.licenses.gpl3Only;
+    maintainers = with lib.maintainers; [
+      keysmashes
+>>>>>>> master
     ];
     platforms = [
       "x86_64-linux"

@@ -12,21 +12,18 @@
   pytest-asyncio,
   pytest-cov-stub,
   pytestCheckHook,
-  pythonOlder,
 }:
 
-buildPythonPackage rec {
+buildPythonPackage (finalAttrs: {
   pname = "yalexs-ble";
-  version = "3.2.0";
+  version = "3.2.6";
   pyproject = true;
-
-  disabled = pythonOlder "3.10";
 
   src = fetchFromGitHub {
     owner = "bdraco";
     repo = "yalexs-ble";
-    tag = "v${version}";
-    hash = "sha256-bmzRvfOwAb2dr2bBfBE/4SuPB15qBpLelmxI15jhgrQ=";
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-kk9D6433xh4MRbpdJpep7XdEEO0rsEUS3I94iBjQ6kM=";
   };
 
   build-system = [ poetry-core ];
@@ -51,8 +48,18 @@ buildPythonPackage rec {
   meta = {
     description = "Library for Yale BLE devices";
     homepage = "https://github.com/bdraco/yalexs-ble";
+<<<<<<< HEAD
     changelog = "https://github.com/bdraco/yalexs-ble/blob/${src.tag}/CHANGELOG.md";
     license = lib.licenses.gpl3Only;
     maintainers = with lib.maintainers; [ fab ];
+||||||| 213fed0310e3
+    changelog = "https://github.com/bdraco/yalexs-ble/blob/${src.tag}/CHANGELOG.md";
+    license = licenses.gpl3Only;
+    maintainers = with maintainers; [ fab ];
+=======
+    changelog = "https://github.com/bdraco/yalexs-ble/blob/${finalAttrs.src.tag}/CHANGELOG.md";
+    license = lib.licenses.gpl3Only;
+    maintainers = with lib.maintainers; [ fab ];
+>>>>>>> master
   };
-}
+})

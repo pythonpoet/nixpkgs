@@ -29,7 +29,15 @@ stdenv.mkDerivation rec {
     description = "Audio Processing Technology codec (aptX)";
     license = lib.licenses.gpl3Plus;
     homepage = "https://github.com/pali/libopenaptx";
+<<<<<<< HEAD
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [ orivej ];
+||||||| 213fed0310e3
+    platforms = platforms.linux;
+    maintainers = with maintainers; [ orivej ];
+=======
+    platforms = lib.platforms.linux;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

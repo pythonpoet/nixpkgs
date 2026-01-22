@@ -40,7 +40,15 @@ stdenv.mkDerivation rec {
   meta = {
     description = "XML parser for Vala and C programs";
     homepage = "https://birdfont.org/xmlbird.php";
+<<<<<<< HEAD
     license = lib.licenses.lgpl3;
     maintainers = with lib.maintainers; [ dtzWill ];
+||||||| 213fed0310e3
+    license = licenses.lgpl3;
+    maintainers = with maintainers; [ dtzWill ];
+=======
+    license = lib.licenses.lgpl3;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

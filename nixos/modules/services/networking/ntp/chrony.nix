@@ -28,8 +28,16 @@ let
     ${lib.optionalString (cfg.enableRTCTrimming) "rtcfile ${rtcFile}"}
     ${lib.optionalString (cfg.enableNTS) "ntsdumpdir ${stateDir}"}
 
+<<<<<<< HEAD
     ${lib.optionalString (cfg.enableRTCTrimming) "rtcautotrim ${builtins.toString cfg.autotrimThreshold}"}
     ${lib.optionalString (!config.time.hardwareClockInLocalTime) "rtconutc"}
+||||||| 213fed0310e3
+    ${optionalString (cfg.enableRTCTrimming) "rtcautotrim ${builtins.toString cfg.autotrimThreshold}"}
+    ${optionalString (!config.time.hardwareClockInLocalTime) "rtconutc"}
+=======
+    ${lib.optionalString (cfg.enableRTCTrimming) "rtcautotrim ${toString cfg.autotrimThreshold}"}
+    ${lib.optionalString (!config.time.hardwareClockInLocalTime) "rtconutc"}
+>>>>>>> master
 
     ${cfg.extraConfig}
   '';
@@ -236,7 +244,7 @@ in
       };
       serviceConfig = {
         Type = "notify";
-        ExecStart = "${chronyPkg}/bin/chronyd ${builtins.toString chronyFlags}";
+        ExecStart = "${chronyPkg}/bin/chronyd ${toString chronyFlags}";
 
         # Proc filesystem
         ProcSubset = "pid";

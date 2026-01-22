@@ -27,8 +27,16 @@ stdenv.mkDerivation rec {
   meta = {
     homepage = "https://ngyro.com/software/guile-quickcheck.html";
     description = "Guile library providing tools for randomized, property-based testing";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Plus;
     maintainers = with lib.maintainers; [ foo-dogsquared ];
+||||||| 213fed0310e3
+    license = licenses.gpl3Plus;
+    maintainers = with maintainers; [ foo-dogsquared ];
+=======
+    license = lib.licenses.gpl3Plus;
+    maintainers = [ ];
+>>>>>>> master
     platforms = guile.meta.platforms;
   };
 }

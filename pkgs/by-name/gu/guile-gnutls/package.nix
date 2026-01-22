@@ -47,8 +47,16 @@ stdenv.mkDerivation rec {
   meta = {
     homepage = "https://gitlab.com/gnutls/guile/";
     description = "Guile bindings for GnuTLS library";
+<<<<<<< HEAD
     license = lib.licenses.lgpl21Plus;
     maintainers = with lib.maintainers; [ foo-dogsquared ];
+||||||| 213fed0310e3
+    license = licenses.lgpl21Plus;
+    maintainers = with maintainers; [ foo-dogsquared ];
+=======
+    license = lib.licenses.lgpl21Plus;
+    maintainers = [ ];
+>>>>>>> master
     platforms = guile.meta.platforms;
   };
 }

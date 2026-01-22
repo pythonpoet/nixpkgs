@@ -84,7 +84,6 @@ stdenv.mkDerivation rec {
     maintainers = with lib.maintainers; [
       robberer
       qknight
-      globin
     ];
     platforms = lib.platforms.unix;
   };

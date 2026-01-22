@@ -21,15 +21,12 @@
   stdenv,
   pytest-regressions,
   pytestCheckHook,
-  pythonOlder,
 }:
 
 buildPythonPackage rec {
   pname = "markdown-it-py";
   version = "3.0.0";
-  format = "pyproject";
-
-  disabled = pythonOlder "3.6";
+  pyproject = true;
 
   src = fetchFromGitHub {
     owner = "executablebooks";
@@ -86,8 +83,15 @@ buildPythonPackage rec {
     description = "Markdown parser in Python";
     homepage = "https://markdown-it-py.readthedocs.io/";
     changelog = "https://github.com/executablebooks/markdown-it-py/blob/${src.rev}/CHANGELOG.md";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ bhipple ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ bhipple ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
     mainProgram = "markdown-it";
   };
 }

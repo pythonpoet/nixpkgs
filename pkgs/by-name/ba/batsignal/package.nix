@@ -25,7 +25,17 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ pkg-config ];
   installFlags = [ "PREFIX=${placeholder "out"}" ];
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  env.NIX_CFLAGS_COMPILE = toString [
+    "-Wno-error=incompatible-pointer-types"
+  ];
+
+  meta = {
+>>>>>>> master
     homepage = "https://github.com/electrickite/batsignal";
     description = "Lightweight battery daemon written in C";
     license = lib.licenses.isc;

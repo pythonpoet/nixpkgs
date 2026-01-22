@@ -33,14 +33,26 @@ let
 in
 python.pkgs.buildPythonApplication rec {
   pname = "esphome";
+<<<<<<< HEAD
   version = "2025.11.5";
+||||||| 213fed0310e3
+  version = "2025.11.0";
+=======
+  version = "2026.1.0";
+>>>>>>> master
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "esphome";
     repo = "esphome";
     tag = version;
+<<<<<<< HEAD
     hash = "sha256-ln+LuV//FVb+Jy6cMNth6RaFtusf/ZCLtYowlDnBybE=";
+||||||| 213fed0310e3
+    hash = "sha256-ezyuV9PcZ5SsJc5viyV+8n+pW8k0SV2bXr+JPVkOdus=";
+=======
+    hash = "sha256-TDXOftuj0ls+1TF6LXoX2Q+PzicL0nJP+1SJHi6qvMA=";
+>>>>>>> master
   };
 
   patches = [
@@ -95,6 +107,7 @@ python.pkgs.buildPythonApplication rec {
     pyparsing
     pyserial
     pyyaml
+    resvg-py
     ruamel-yaml
     tornado
     tzdata
@@ -176,8 +189,6 @@ python.pkgs.buildPythonApplication rec {
     "test_clang_tidy_mode_full_scan"
     "test_clang_tidy_mode_targeted_scan"
   ];
-
-  versionCheckProgramArg = "--version";
 
   passthru = {
     dashboard = python.pkgs.esphome-dashboard;

@@ -15,7 +15,20 @@ stdenv.mkDerivation rec {
     sha256 = "1e6LZXf/lK7sB2CbXwOg7LOi0Q8IBQNAa4d7rX0Ej3A=";
   };
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  patches = [
+    # conbination of:
+    # https://github.com/bmc/daemonize/commit/eaf4746d47e171e7b8655690eb1e91fc216f2866
+    # https://github.com/bmc/daemonize/pull/39
+    ./include-write-prototype.patch
+  ];
+
+  meta = {
+>>>>>>> master
     description = "Runs a command as a Unix daemon";
     homepage = "http://software.clapper.org/daemonize/";
     license = lib.licenses.bsd3;

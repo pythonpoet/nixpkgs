@@ -45,8 +45,19 @@ buildGoModule rec {
   meta = {
     description = "NVIDIA GPU metrics exporter for Prometheus leveraging DCGM";
     homepage = "https://github.com/NVIDIA/dcgm-exporter";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     teams = [ lib.teams.deshaw ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    teams = [ teams.deshaw ];
+=======
+    license = lib.licenses.asl20;
+    maintainers = with lib.maintainers; [
+      de11n
+      despsyched
+    ];
+>>>>>>> master
     mainProgram = "dcgm-exporter";
     platforms = lib.platforms.linux;
   };

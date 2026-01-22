@@ -33,8 +33,16 @@ stdenv.mkDerivation {
   meta = {
     description = "Adjust brightness for LG UltraFine 4K display (cross platform)";
     homepage = "https://github.com/periklis/lguf-brightness";
+<<<<<<< HEAD
     license = lib.licenses.lgpl21Plus;
     maintainers = with lib.maintainers; [ periklis ];
+||||||| 213fed0310e3
+    license = licenses.lgpl21Plus;
+    maintainers = with maintainers; [ periklis ];
+=======
+    license = lib.licenses.lgpl21Plus;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "lguf_brightness";
     platforms = with lib.platforms; linux ++ darwin;
   };

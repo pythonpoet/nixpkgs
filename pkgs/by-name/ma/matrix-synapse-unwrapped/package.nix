@@ -14,21 +14,42 @@
 
 python3Packages.buildPythonApplication rec {
   pname = "matrix-synapse";
+<<<<<<< HEAD
   version = "1.144.0";
   format = "pyproject";
+||||||| 213fed0310e3
+  version = "1.142.1";
+  format = "pyproject";
+=======
+  version = "1.145.0";
+  pyproject = true;
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "element-hq";
     repo = "synapse";
     rev = "v${version}";
+<<<<<<< HEAD
     hash = "sha256-7m0VHiTNx00bgWFbbdXX6tX9pN89IXHbvx04pp2IwnE=";
+||||||| 213fed0310e3
+    hash = "sha256-U/o7Ld9MjVO/QIIy+UyltfieR4CAdfN6dR6WWINoW40=";
+=======
+    hash = "sha256-JFMxnp4//Q8t6LZf6L2jJxaShE51r4MY7eJvD9JhhVo=";
+>>>>>>> master
   };
 
   cargoDeps = rustPlatform.fetchCargoVendor {
     inherit pname version src;
+<<<<<<< HEAD
     hash = "sha256-CKvdWo9/f8Uhi5idgRhyuZwYua6gQzoKz21XNMaXdl0=";
+||||||| 213fed0310e3
+    hash = "sha256-lGj66FmHSldaYRGx7QQE/cdrmy+43AL3MZP+DPOXMmQ=";
+=======
+    hash = "sha256-CnytwGtv/ZoJl03XFLLMTHDiRhWDgWlJD8L/QRiebyM=";
+>>>>>>> master
   };
 
+<<<<<<< HEAD
   postPatch = ''
     substituteInPlace pyproject.toml \
       --replace-fail "setuptools_rust>=1.3,<=1.11.1" "setuptools_rust<=1.12,>=1.3" \
@@ -39,6 +60,28 @@ python3Packages.buildPythonApplication rec {
     poetry-core
     setuptools-rust
   ];
+||||||| 213fed0310e3
+  postPatch = ''
+    substituteInPlace pyproject.toml \
+      --replace-fail "setuptools_rust>=1.3,<=1.11.1" "setuptools_rust<=1.12,>=1.3" \
+      --replace-fail "poetry-core>=1.1.0,<=2.1.3" "poetry-core>=1.1.0,<=2.3.0"
+  '';
+
+  build-system = with python3Packages; [
+    poetry-core
+    setuptools-rust
+  ];
+=======
+  build-system =
+    with python3Packages;
+    [
+      poetry-core
+      setuptools-rust
+    ]
+    ++ [
+      rustPlatform.maturinBuildHook
+    ];
+>>>>>>> master
 
   nativeBuildInputs = [
     rustPlatform.cargoSetupHook
@@ -53,7 +96,7 @@ python3Packages.buildPythonApplication rec {
     libiconv
   ];
 
-  pythonRemoveDeps = [ "setuptools_rust" ];
+  pythonRemoveDeps = [ "setuptools-rust" ];
 
   dependencies =
     with python3Packages;
@@ -80,6 +123,8 @@ python3Packages.buildPythonApplication rec {
       pydantic
       pymacaroons
       pyopenssl
+      pyparsing
+      pyrsistent
       pyyaml
       service-identity
       signedjson
@@ -135,7 +180,7 @@ python3Packages.buildPythonApplication rec {
     mock
     parameterized
   ])
-  ++ lib.filter (pkg: !pkg.meta.broken) (lib.flatten (lib.attrValues optional-dependencies));
+  ++ lib.filter (pkg: !pkg.meta.broken) (lib.concatAttrValues optional-dependencies);
 
   doCheck = !stdenv.hostPlatform.isDarwin;
 

@@ -39,8 +39,18 @@ stdenv.mkDerivation {
   meta = {
     homepage = "https://sqlite.org/sqlar";
     description = "SQLite Archive utilities";
+<<<<<<< HEAD
     license = lib.licenses.bsd2;
     platforms = lib.platforms.all;
     maintainers = with lib.maintainers; [ dtzWill ];
+||||||| 213fed0310e3
+    license = licenses.bsd2;
+    platforms = platforms.all;
+    maintainers = with maintainers; [ dtzWill ];
+=======
+    license = lib.licenses.bsd2;
+    platforms = lib.platforms.all;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

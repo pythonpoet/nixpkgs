@@ -6,14 +6,22 @@
 
 python3.pkgs.buildPythonApplication rec {
   pname = "ghstack";
-  version = "0.12.0";
+  version = "0.13.0";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "ezyang";
     repo = "ghstack";
+<<<<<<< HEAD
     tag = version;
     hash = "sha256-pLKwDezkwGrqYgP4WnIl5nAam6bMNO6BK+xbxhp7Aq8=";
+||||||| 213fed0310e3
+    rev = "fa7e7023d798aad6b115b88c5ad67ce88a4fc2a6";
+    hash = "sha256-Ywwjeupa8eE/vkrbl5SIbvQs53xaLnq9ieWRFwzmuuc=";
+=======
+    tag = version;
+    hash = "sha256-cRdwX5BVdpGjLPR0tpFYo62HYu/lmUzJE+vyxI9A4O8=";
+>>>>>>> master
   };
 
   postPatch = ''

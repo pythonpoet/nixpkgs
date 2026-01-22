@@ -101,7 +101,7 @@ stdenv.mkDerivation (finalAttrs: {
     };
   };
 
-  meta = with lib; {
+  meta = {
     description = "Library for playback of various streamed audio formats used in video games";
     homepage = "https://vgmstream.org";
     maintainers = with lib.maintainers; [ zane ];
@@ -111,7 +111,15 @@ stdenv.mkDerivation (finalAttrs: {
         isc # vgmstream itself
         mit # atrac9
       ]
+<<<<<<< HEAD
       ++ optional (stdenv.system == "x86_64-linux") bsd2;
     platforms = with lib.platforms; unix;
+||||||| 213fed0310e3
+      ++ optional (stdenv.system == "x86_64-linux") bsd2;
+    platforms = with platforms; unix;
+=======
+      ++ lib.optional (stdenv.system == "x86_64-linux") bsd2;
+    platforms = with lib.platforms; unix;
+>>>>>>> master
   };
 })

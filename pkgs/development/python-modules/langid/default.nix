@@ -32,7 +32,15 @@ buildPythonPackage rec {
     description = "Langid.py is a standalone Language Identification (LangID) tool";
     mainProgram = "langid";
     homepage = "https://pypi.org/project/langid/";
+<<<<<<< HEAD
     license = lib.licenses.bsd2;
     maintainers = with lib.maintainers; [ mbalatsko ];
+||||||| 213fed0310e3
+    license = licenses.bsd2;
+    maintainers = with maintainers; [ mbalatsko ];
+=======
+    license = lib.licenses.bsd2;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

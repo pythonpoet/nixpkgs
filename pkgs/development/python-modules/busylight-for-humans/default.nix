@@ -20,14 +20,14 @@
 
 buildPythonPackage rec {
   pname = "busylight-for-humans";
-  version = "0.45.2";
+  version = "0.45.3";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "JnyJny";
     repo = "busylight";
     tag = "v${version}";
-    hash = "sha256-G+l+jkHZzz3tX1CcC7Cq1iCFZPbeQ6CI4xCMkTWA5EE=";
+    hash = "sha256-EP+2jWOrXQE8sZQYclMMbpfr+FmPHIbZ35NNbfCTnUk=";
   };
 
   build-system = [ hatchling ];
@@ -55,7 +55,7 @@ buildPythonPackage rec {
     pytest-mock
     udevCheckHook
   ]
-  ++ lib.flatten (builtins.attrValues optional-dependencies);
+  ++ lib.concatAttrValues optional-dependencies;
 
   disabledTestPaths = [ "tests/test_pydantic_models.py" ];
 
@@ -70,8 +70,19 @@ buildPythonPackage rec {
     description = "Control USB connected presence lights from multiple vendors via the command-line or web API";
     homepage = "https://github.com/JnyJny/busylight";
     changelog = "https://github.com/JnyJny/busylight/releases/tag/${src.tag}";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     teams = [ lib.teams.helsinki-systems ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    teams = [ teams.helsinki-systems ];
+=======
+    license = lib.licenses.asl20;
+    maintainers = with lib.maintainers; [
+      das_j
+      helsinki-Jo
+    ];
+>>>>>>> master
     mainProgram = "busylight";
   };
 }

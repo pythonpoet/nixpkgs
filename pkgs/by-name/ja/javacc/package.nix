@@ -65,6 +65,11 @@ stdenv.mkDerivation (finalAttrs: {
     homepage = "https://javacc.github.io/javacc";
     license = lib.licenses.bsd2;
     mainProgram = "javacc";
+<<<<<<< HEAD
     teams = [ lib.teams.deshaw ];
+||||||| 213fed0310e3
+    teams = [ teams.deshaw ];
+=======
+>>>>>>> master
   };
 })

@@ -212,7 +212,12 @@ stdenvNoCC.mkDerivation (
         "x86_64-linux"
         "x86_64-darwin"
       ];
+<<<<<<< HEAD
       maintainers = with lib.maintainers; [ bhipple ];
+||||||| 213fed0310e3
+      maintainers = with maintainers; [ bhipple ];
+=======
+>>>>>>> master
     };
   }
   // lib.optionalAttrs stdenvNoCC.hostPlatform.isDarwin {

@@ -31,7 +31,6 @@
   pytestCheckHook,
   python-dateutil,
   python-multipart,
-  pythonOlder,
   rich,
   sanic,
   sanic-testing,
@@ -46,8 +45,6 @@ buildPythonPackage rec {
   pname = "strawberry-graphql";
   version = "0.278.0";
   pyproject = true;
-
-  disabled = pythonOlder "3.10";
 
   src = fetchFromGitHub {
     owner = "strawberry-graphql";
@@ -139,7 +136,7 @@ buildPythonPackage rec {
     pytestCheckHook
     sanic-testing
   ]
-  ++ lib.flatten (builtins.attrValues optional-dependencies);
+  ++ lib.concatAttrValues optional-dependencies;
 
   pythonImportsCheck = [ "strawberry" ];
 

@@ -3,25 +3,37 @@
   fetchFromGitea,
   fetchNpmDeps,
   buildGoModule,
-  nodejs,
+  nodejs_22,
   npmHooks,
   python3,
 }:
 
 buildGoModule rec {
   pname = "readeck";
+<<<<<<< HEAD
   version = "0.21.3";
+||||||| 213fed0310e3
+  version = "0.21.2";
+=======
+  version = "0.21.5";
+>>>>>>> master
 
   src = fetchFromGitea {
     domain = "codeberg.org";
     owner = "readeck";
     repo = "readeck";
     tag = version;
+<<<<<<< HEAD
     hash = "sha256-d4FLyD2uOngUANc7fai8j0wZSY1ISS18JEBDxCqXdQw=";
+||||||| 213fed0310e3
+    hash = "sha256-qbH95jsOrB/AEw4uy0DXfRCqLL+VSj9322PeP5mUgdk=";
+=======
+    hash = "sha256-9M9Bgl1CJ35x/Onlk5xUNCFkZKW40efF6qMOM+2/HR0=";
+>>>>>>> master
   };
 
   nativeBuildInputs = [
-    nodejs
+    nodejs_22
     npmHooks.npmConfigHook
     (python3.withPackages (ps: with ps; [ babel ]))
   ];
@@ -62,10 +74,22 @@ buildGoModule rec {
 
   npmDeps = fetchNpmDeps {
     src = "${src}/web";
+<<<<<<< HEAD
     hash = "sha256-XT+4IR1xVXiDY4wx2smt0pcNUx6UFoXYq+zxvbGsQ8A=";
+||||||| 213fed0310e3
+    hash = "sha256-yhheyR9drXFgIdUIjfNe1rZWlNR1ShZooIZ12eIwlHM=";
+=======
+    hash = "sha256-znUKRaUdx6GXD2YL6hs0iveaAAHQ8H9n4NHZFi331+g=";
+>>>>>>> master
   };
 
+<<<<<<< HEAD
   vendorHash = "sha256-IWRlruj+zYixCRgbaf7QYBeCGwzf0qRY8OFa4s/PzME=";
+||||||| 213fed0310e3
+  vendorHash = "sha256-Lf4chATpS+vwuWsrO3weVS/GvwWTvnT2FRu04wZLHZ8=";
+=======
+  vendorHash = "sha256-2MB7v5oG/LcEKtgbFNxPXSI8TljpbqYUrI7pvu7m+e8=";
+>>>>>>> master
 
   meta = {
     description = "Web application that lets you save the readable content of web pages you want to keep forever";

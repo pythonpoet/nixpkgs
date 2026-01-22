@@ -20,8 +20,15 @@ buildGoModule rec {
   meta = {
     description = "HTTP load generator, ApacheBench (ab) replacement";
     homepage = "https://github.com/rakyll/hey";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ Br1ght0ne ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [ Br1ght0ne ];
+=======
+    license = lib.licenses.asl20;
+>>>>>>> master
     mainProgram = "hey";
   };
 }

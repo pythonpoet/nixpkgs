@@ -13,7 +13,13 @@
   zstd,
   installShellFiles,
   nixosTests,
+<<<<<<< HEAD
   versionCheckHook,
+||||||| 213fed0310e3
+=======
+  nix-update-script,
+  versionCheckHook,
+>>>>>>> master
 }:
 
 let
@@ -143,7 +149,23 @@ python.pkgs.buildPythonApplication rec {
     "man"
   ];
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  disabled = python.pythonOlder "3.9";
+
+  meta = with lib; {
+=======
+  passthru.updateScript = nix-update-script {
+    # Only match tags formatted as x.y.z (e.g., 1.2.3)
+    extraArgs = [
+      "--version-regex"
+      "^([0-9]+\\.[0-9]+\\.[0-9]+)$"
+    ];
+  };
+
+  meta = {
+>>>>>>> master
     changelog = "https://github.com/borgbackup/borg/blob/${src.rev}/docs/changes.rst";
     description = "Deduplicating archiver with compression and encryption";
     homepage = "https://www.borgbackup.org";
@@ -152,7 +174,6 @@ python.pkgs.buildPythonApplication rec {
     mainProgram = "borg";
     maintainers = with lib.maintainers; [
       dotlambda
-      globin
     ];
   };
 }

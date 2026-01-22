@@ -42,8 +42,17 @@ eggDerivation rec {
   meta = {
     homepage = "https://www.kitten-technologies.co.uk/project/ugarit/";
     description = "Backup/archival system based around content-addressible storage";
+<<<<<<< HEAD
     license = lib.licenses.bsd3;
     maintainers = [ lib.maintainers.ebzzry ];
     platforms = lib.platforms.unix;
+||||||| 213fed0310e3
+    license = licenses.bsd3;
+    maintainers = [ maintainers.ebzzry ];
+    platforms = platforms.unix;
+=======
+    license = lib.licenses.bsd3;
+    platforms = lib.platforms.unix;
+>>>>>>> master
   };
 }

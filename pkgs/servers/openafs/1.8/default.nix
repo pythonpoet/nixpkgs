@@ -1,5 +1,6 @@
 {
   lib,
+  callPackage,
   stdenv,
   buildPackages,
   fetchurl,
@@ -103,7 +104,7 @@ stdenv.mkDerivation {
     )
   ''
   + optionalString withTsm ''
-    export XBSA_CFLAGS="-Dxbsa -DNEW_XBSA -I${tsm-client}/lib64/sample -DXBSA_TSMLIB=\\\"${tsm-client}/lib64/libApiTSM64.so\\\""
+    export XBSA_CFLAGS="-Dxbsa -DNEW_XBSA -I${tsm-client}/opt/tivoli/tsm/client/api/bin64/sample -DXBSA_TSMLIB=\\\"${tsm-client}/lib64/libApiTSM64.so\\\""
   '';
 
   buildFlags = [ "all_nolibafs" ];
@@ -143,7 +144,15 @@ stdenv.mkDerivation {
     done
   '';
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  passthru.cellservdb = callPackage ../cellservdb.nix { };
+
+  meta = {
+>>>>>>> master
     outputsToInstall = [
       "out"
       "doc"

@@ -94,10 +94,21 @@ stdenv.mkDerivation rec {
       customizable menu system, and bash integration
     '';
     homepage = "http://ignorantguru.github.io/spacefm/";
+<<<<<<< HEAD
     platforms = lib.platforms.linux;
     license = lib.licenses.gpl3Plus;
     maintainers = with lib.maintainers; [
       jagajaga
+||||||| 213fed0310e3
+    platforms = platforms.linux;
+    license = licenses.gpl3Plus;
+    maintainers = with maintainers; [
+      jagajaga
+=======
+    platforms = lib.platforms.linux;
+    license = lib.licenses.gpl3Plus;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       obadz
     ];
   };

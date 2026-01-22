@@ -36,8 +36,15 @@ stdenv.mkDerivation rec {
     homepage = "https://r-wos.org/hacks/gti";
     license = lib.licenses.mit;
     description = "Humorous typo-based git runner; drives a car over the terminal";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ fadenb ];
     platforms = lib.platforms.unix;
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ fadenb ];
+    platforms = platforms.unix;
+=======
+    platforms = lib.platforms.unix;
+>>>>>>> master
     mainProgram = "gti";
   };
 }

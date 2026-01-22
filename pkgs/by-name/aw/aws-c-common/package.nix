@@ -58,9 +58,18 @@ stdenv.mkDerivation rec {
     license = lib.licenses.asl20;
     platforms = lib.platforms.unix;
     # https://github.com/awslabs/aws-c-common/issues/1175
+<<<<<<< HEAD
     badPlatforms = lib.platforms.bigEndian;
     maintainers = with lib.maintainers; [
       orivej
+||||||| 213fed0310e3
+    badPlatforms = platforms.bigEndian;
+    maintainers = with maintainers; [
+      orivej
+=======
+    badPlatforms = lib.platforms.bigEndian;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       r-burns
     ];
   };

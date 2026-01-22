@@ -23,7 +23,15 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Utilities for manipulating OpenType, PostScript Type 1, and Multiple Master fonts";
     homepage = "https://www.lcdf.org/type";
+<<<<<<< HEAD
     license = lib.licenses.gpl2Only;
     maintainers = with lib.maintainers; [ dtzWill ];
+||||||| 213fed0310e3
+    license = licenses.gpl2Only;
+    maintainers = with maintainers; [ dtzWill ];
+=======
+    license = lib.licenses.gpl2Only;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

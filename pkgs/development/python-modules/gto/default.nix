@@ -6,14 +6,13 @@
   fetchFromGitHub,
   freezegun,
   funcy,
-  gitMinimal,
+  gitSetupHook,
   pydantic,
   pydantic-settings,
   pytest-cov-stub,
   pytest-mock,
   pytest-test-utils,
   pytestCheckHook,
-  pythonOlder,
   rich,
   ruamel-yaml,
   scmrepo,
@@ -22,19 +21,18 @@
   setuptools,
   tabulate,
   typer,
+  writableTmpDirAsHomeHook,
 }:
 
-buildPythonPackage rec {
+buildPythonPackage (finalAttrs: {
   pname = "gto";
   version = "1.9.0";
   pyproject = true;
 
-  disabled = pythonOlder "3.9";
-
   src = fetchFromGitHub {
     owner = "iterative";
     repo = "gto";
-    tag = version;
+    tag = finalAttrs.version;
     hash = "sha256-LXYpOnk9W/ellG70qZLihmvk4kvVcwZfE5buPNU2qzQ=";
   };
 
@@ -58,28 +56,25 @@ buildPythonPackage rec {
 
   nativeCheckInputs = [
     freezegun
-    gitMinimal
+    gitSetupHook
     pytest-cov-stub
     pytest-mock
     pytest-test-utils
     pytestCheckHook
+    writableTmpDirAsHomeHook
   ];
 
   preCheck = ''
-    export HOME=$(mktemp -d)
-
-    git config --global user.email "nobody@example.com"
-    git config --global user.name "Nobody"
-
     # _pygit2.GitError: OpenSSL error: failed to load certificates: error:00000000:lib(0)::reason(0)
     export SSL_CERT_FILE=${cacert}/etc/ssl/certs/ca-bundle.crt
   '';
 
   disabledTests = [
-    # Tests want to with a remote repo
+    # Tests want to do it with a remote repo
     "remote_repo"
     "remote_git_repo"
     "test_action_doesnt_push_even_if_repo_has_remotes_set"
+    "test_api"
     # ValueError: stderr not separately captured
     "test_register"
     "test_assign"
@@ -92,9 +87,19 @@ buildPythonPackage rec {
   meta = {
     description = "Module for Git Tag Operations";
     homepage = "https://github.com/iterative/gto";
+<<<<<<< HEAD
     changelog = "https://github.com/iterative/gto/releases/tag/${src.tag}";
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ fab ];
+||||||| 213fed0310e3
+    changelog = "https://github.com/iterative/gto/releases/tag/${src.tag}";
+    license = licenses.asl20;
+    maintainers = with maintainers; [ fab ];
+=======
+    changelog = "https://github.com/iterative/gto/releases/tag/${finalAttrs.src.tag}";
+    license = lib.licenses.asl20;
+    maintainers = with lib.maintainers; [ fab ];
+>>>>>>> master
     mainProgram = "gto";
   };
-}
+})

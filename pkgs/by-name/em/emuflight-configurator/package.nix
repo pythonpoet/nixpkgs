@@ -61,9 +61,20 @@ stdenv.mkDerivation rec {
       The application allows you to configure the Emuflight software running on any supported Emuflight target.
     '';
     homepage = "https://github.com/emuflight/EmuConfigurator";
+<<<<<<< HEAD
     sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
     license = lib.licenses.gpl3Only;
     maintainers = with lib.maintainers; [ beezow ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    sourceProvenance = with sourceTypes; [ binaryNativeCode ];
+    license = licenses.gpl3Only;
+    maintainers = with maintainers; [ beezow ];
+    platforms = platforms.linux;
+=======
+    sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
+    license = lib.licenses.gpl3Only;
+    platforms = lib.platforms.linux;
+>>>>>>> master
   };
 }

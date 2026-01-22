@@ -24,8 +24,16 @@ stdenv.mkDerivation {
   outputHashMode = "recursive";
   outputHash = "0g663npi5lkvwcqafd4cjrm90ph0nv1lig7d19xzfymnj47qpj8x";
 
+<<<<<<< HEAD
   meta = {
     homepage = "https://www.google.com/fonts/specimen/Roboto+Slab";
+||||||| 213fed0310e3
+  meta = with lib; {
+    homepage = "https://www.google.com/fonts/specimen/Roboto+Slab";
+=======
+  meta = {
+    homepage = "https://fonts.google.com/specimen/Roboto+Slab";
+>>>>>>> master
     description = "Roboto Slab Typeface by Google";
     longDescription = ''
       Roboto has a dual nature. It has a mechanical skeleton and the forms

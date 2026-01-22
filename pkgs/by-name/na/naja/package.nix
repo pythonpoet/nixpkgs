@@ -17,13 +17,25 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "naja";
+<<<<<<< HEAD
   version = "0.3.0";
+||||||| 213fed0310e3
+  version = "0.2.12";
+=======
+  version = "0.3.4";
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "najaeda";
     repo = "naja";
     tag = "v${finalAttrs.version}";
+<<<<<<< HEAD
     hash = "sha256-u7pblUmMJYYd0o7jzT5g9moPrWdOgqhPXPzx+B90ybg=";
+||||||| 213fed0310e3
+    hash = "sha256-NqxgFAD/JHh1rgtuv/NTda5oEx79NgdafL3fDLJO2kU=";
+=======
+    hash = "sha256-Oh1rAS20bQRp8P/8qMPjoCTC9wghBRhmRRh7J/+NG0A=";
+>>>>>>> master
     fetchSubmodules = true;
   };
 
@@ -110,6 +122,7 @@ stdenv.mkDerivation (finalAttrs: {
   meta = {
     description = "Structural Netlist API (and more) for EDA post synthesis flow development";
     homepage = "https://github.com/najaeda/naja";
+    changelog = "https://github.com/najaeda/naja/releases/tag/${finalAttrs.src.tag}";
     license = lib.licenses.asl20;
     teams = [ lib.teams.ngi ];
     mainProgram = "naja_edit";

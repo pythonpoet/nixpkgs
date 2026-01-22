@@ -219,10 +219,26 @@ let
         meta = {
           description = "Enhanced, drop-in replacement for MySQL";
           homepage = "https://mariadb.org/";
+<<<<<<< HEAD
           license = lib.licenses.gpl2Plus;
           maintainers = with lib.maintainers; [ thoughtpolice ];
           teams = [ lib.teams.helsinki-systems ];
           platforms = lib.platforms.all;
+||||||| 213fed0310e3
+          license = licenses.gpl2Plus;
+          maintainers = with maintainers; [ thoughtpolice ];
+          teams = [ teams.helsinki-systems ];
+          platforms = platforms.all;
+=======
+          license = lib.licenses.gpl2Plus;
+          maintainers = with lib.maintainers; [
+            conni2461
+            das_j
+            helsinki-Jo
+            thoughtpolice
+          ];
+          platforms = lib.platforms.all;
+>>>>>>> master
         };
       };
 

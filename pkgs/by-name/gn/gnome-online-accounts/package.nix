@@ -32,7 +32,13 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "gnome-online-accounts";
+<<<<<<< HEAD
   version = "3.56.2";
+||||||| 213fed0310e3
+  version = "3.56.1";
+=======
+  version = "3.56.3";
+>>>>>>> master
 
   outputs = [
     "out"
@@ -45,7 +51,13 @@ stdenv.mkDerivation (finalAttrs: {
 
   src = fetchurl {
     url = "mirror://gnome/sources/gnome-online-accounts/${lib.versions.majorMinor finalAttrs.version}/gnome-online-accounts-${finalAttrs.version}.tar.xz";
+<<<<<<< HEAD
     hash = "sha256-zojfZUV/DmOg2Nr/EzIuKey1hBl6GH9Io6Ib4vzRyCQ=";
+||||||| 213fed0310e3
+    hash = "sha256-ZEWTYKNTHrft7i4DvVq3fslfEFG1aeEaR5tPlPQFxT8=";
+=======
+    hash = "sha256-OFlvF+Amn3fhYjpr95VpVzx733t82GP7R4p4rmZN6jA=";
+>>>>>>> master
   };
 
   mesonFlags = [

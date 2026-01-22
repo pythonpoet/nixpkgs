@@ -26,8 +26,17 @@ stdenv.mkDerivation {
   meta = {
     description = "Simple wrapper around make to colorize the output";
     homepage = "https://bre.klaki.net/programs/colormake/";
+<<<<<<< HEAD
     license = lib.licenses.gpl2;
     platforms = lib.platforms.unix;
     maintainers = with lib.maintainers; [ bhipple ];
+||||||| 213fed0310e3
+    license = licenses.gpl2;
+    platforms = platforms.unix;
+    maintainers = with maintainers; [ bhipple ];
+=======
+    license = lib.licenses.gpl2;
+    platforms = lib.platforms.unix;
+>>>>>>> master
   };
 }

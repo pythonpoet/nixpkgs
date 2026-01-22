@@ -6,7 +6,6 @@
   mock,
   okonomiyaki,
   pytestCheckHook,
-  pythonOlder,
   pyyaml,
   setuptools,
   six,
@@ -16,8 +15,6 @@ buildPythonPackage rec {
   pname = "simplesat";
   version = "0.9.2";
   pyproject = true;
-
-  disabled = pythonOlder "3.9";
 
   src = fetchFromGitHub {
     owner = "enthought";
@@ -53,7 +50,15 @@ buildPythonPackage rec {
     description = "Prototype for SAT-based dependency handling";
     homepage = "https://github.com/enthought/sat-solver";
     changelog = "https://github.com/enthought/sat-solver/blob/${src.tag}/CHANGES.rst";
+<<<<<<< HEAD
     license = lib.licenses.bsd3;
     maintainers = with lib.maintainers; [ genericnerdyusername ];
+||||||| 213fed0310e3
+    license = licenses.bsd3;
+    maintainers = with maintainers; [ genericnerdyusername ];
+=======
+    license = lib.licenses.bsd3;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

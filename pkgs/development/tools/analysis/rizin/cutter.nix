@@ -93,10 +93,19 @@ let
       homepage = src.meta.homepage;
       license = lib.licenses.gpl3;
       mainProgram = "cutter";
+<<<<<<< HEAD
       maintainers = with lib.maintainers; [
         mic92
         dtzWill
       ];
+||||||| 213fed0310e3
+      maintainers = with maintainers; [
+        mic92
+        dtzWill
+      ];
+=======
+      maintainers = with lib.maintainers; [ mic92 ];
+>>>>>>> master
       inherit (rizin.meta) platforms;
     };
   };

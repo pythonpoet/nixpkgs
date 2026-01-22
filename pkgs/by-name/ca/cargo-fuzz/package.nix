@@ -27,8 +27,15 @@ rustPlatform.buildRustPackage rec {
       mit
       asl20
     ];
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [
       ekleog
+||||||| 213fed0310e3
+    maintainers = with maintainers; [
+      ekleog
+=======
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       matthiasbeyer
     ];
   };

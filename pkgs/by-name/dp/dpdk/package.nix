@@ -111,9 +111,18 @@ stdenv.mkDerivation rec {
       gpl2Only
       bsd2
     ];
+<<<<<<< HEAD
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [
       orivej
+||||||| 213fed0310e3
+    platforms = platforms.linux;
+    maintainers = with maintainers; [
+      orivej
+=======
+    platforms = lib.platforms.linux;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       mic92
       zhaofengli
     ];

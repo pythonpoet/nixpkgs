@@ -19,13 +19,25 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "vencord";
+<<<<<<< HEAD
   version = "1.13.11";
+||||||| 213fed0310e3
+  version = "1.13.6";
+=======
+  version = "1.13.12";
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "Vendicated";
     repo = "Vencord";
     tag = "v${finalAttrs.version}";
+<<<<<<< HEAD
     hash = "sha256-PSA1CD5YMDSNrP6JUEfdqSC1fNXXWHKsu5hCXnoXGCA=";
+||||||| 213fed0310e3
+    hash = "sha256-QY23r5URr0yDuZXamnW7Nrp+GAJOZ2Q+yZiyEHB8+o8=";
+=======
+    hash = "sha256-YRpDcTO0/8Pko8mNbaA4WhsnLpXoL+Pp4CMx40Bcg+A=";
+>>>>>>> master
   };
 
   patches = [ ./fix-deps.patch ];

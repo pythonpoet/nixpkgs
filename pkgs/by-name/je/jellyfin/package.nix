@@ -9,17 +9,32 @@
   freetype,
   jellyfin-web,
   sqlite,
+  versionCheckHook,
 }:
 
-buildDotnetModule rec {
+buildDotnetModule (finalAttrs: {
   pname = "jellyfin";
+<<<<<<< HEAD
   version = "10.11.5"; # ensure that jellyfin-web has matching version
+||||||| 213fed0310e3
+  version = "10.11.3"; # ensure that jellyfin-web has matching version
+=======
+  version = "10.11.6"; # ensure that jellyfin-web has matching version
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "jellyfin";
     repo = "jellyfin";
+<<<<<<< HEAD
     tag = "v${version}";
     hash = "sha256-MOzMSubYkxz2kwpvamaOwz3h8drEgeSoiE9Gwassmbk=";
+||||||| 213fed0310e3
+    rev = "v${version}";
+    hash = "sha256-xNQe0hjY1BjC1D+hYTj1Gv2jCpwhWJv9dlvY6K9jkSk=";
+=======
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-bF/N6FC1/qfBar2KNut8KY3Rz+pqArCt4HV3NAH8eaU=";
+>>>>>>> master
   };
 
   propagatedBuildInputs = [ sqlite ];
@@ -43,6 +58,11 @@ buildDotnetModule rec {
     "--webdir=${jellyfin-web}/share/jellyfin-web"
   ];
 
+  nativeInstallCheckInputs = [
+    versionCheckHook
+  ];
+  doInstallCheck = true;
+
   passthru.tests = {
     smoke-test = nixosTests.jellyfin;
   };
@@ -61,6 +81,6 @@ buildDotnetModule rec {
       jojosch
     ];
     mainProgram = "jellyfin";
-    platforms = dotnet-runtime.meta.platforms;
+    platforms = finalAttrs.dotnet-runtime.meta.platforms;
   };
-}
+})

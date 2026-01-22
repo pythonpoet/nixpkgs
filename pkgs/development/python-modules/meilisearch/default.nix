@@ -7,16 +7,16 @@
   requests,
 }:
 
-buildPythonPackage rec {
+buildPythonPackage (finalAttrs: {
   pname = "meilisearch";
-  version = "0.38.0";
+  version = "0.40.0";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "meilisearch";
     repo = "meilisearch-python";
-    tag = "v${version}";
-    hash = "sha256-KTWeBjNQDZEla2iDfsW5cuGfjoV0c2MV8HrOxg0hs4E=";
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-mxIE2/gZhV8geE0UJ2ModGKs0TPjJLyp38Wvcs59wz8=";
   };
 
   build-system = [ setuptools ];
@@ -35,8 +35,18 @@ buildPythonPackage rec {
   meta = {
     description = "Client for the Meilisearch API";
     homepage = "https://github.com/meilisearch/meilisearch-python";
+<<<<<<< HEAD
     changelog = "https://github.com/meilisearch/meilisearch-python/releases/tag/${src.tag}";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ fab ];
+||||||| 213fed0310e3
+    changelog = "https://github.com/meilisearch/meilisearch-python/releases/tag/${src.tag}";
+    license = licenses.mit;
+    maintainers = with maintainers; [ fab ];
+=======
+    changelog = "https://github.com/meilisearch/meilisearch-python/releases/tag/${finalAttrs.src.tag}";
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [ fab ];
+>>>>>>> master
   };
-}
+})

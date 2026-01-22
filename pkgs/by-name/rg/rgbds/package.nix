@@ -42,8 +42,15 @@ stdenv.mkDerivation rec {
 
       This is a fork of the original RGBDS which aims to make the programs more like other UNIX tools.
     '';
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [
       matthewbauer
+||||||| 213fed0310e3
+    maintainers = with maintainers; [
+      matthewbauer
+=======
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       NieDzejkob
     ];
     platforms = lib.platforms.all;

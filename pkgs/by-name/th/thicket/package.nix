@@ -25,8 +25,15 @@ crystal.buildCrystalPackage rec {
   meta = {
     description = "Better one-line git log";
     homepage = "https://github.com/taylorthurlow/thicket";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ Br1ght0ne ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ Br1ght0ne ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
     mainProgram = "thicket";
   };
 }

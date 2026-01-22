@@ -31,7 +31,15 @@ buildPythonPackage rec {
   meta = {
     description = "Typed pure Python library to parse HID report descriptors";
     homepage = "https://github.com/usb-tools/python-hid-parser";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ kranzes ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ kranzes ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

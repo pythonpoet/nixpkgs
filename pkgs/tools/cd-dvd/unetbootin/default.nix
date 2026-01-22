@@ -84,9 +84,18 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Tool to create bootable live USB drives from ISO images";
     homepage = "https://unetbootin.github.io/";
+<<<<<<< HEAD
     license = lib.licenses.gpl2Plus;
     maintainers = with lib.maintainers; [ ebzzry ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    license = licenses.gpl2Plus;
+    maintainers = with maintainers; [ ebzzry ];
+    platforms = platforms.linux;
+=======
+    license = lib.licenses.gpl2Plus;
+    platforms = lib.platforms.linux;
+>>>>>>> master
     mainProgram = "unetbootin";
   };
 }

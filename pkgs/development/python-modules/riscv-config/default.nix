@@ -3,7 +3,6 @@
   buildPythonPackage,
   cerberus,
   fetchFromGitHub,
-  pythonOlder,
   pyyaml,
   ruamel-yaml,
   setuptools,
@@ -13,8 +12,6 @@ buildPythonPackage rec {
   pname = "riscv-config";
   version = "3.18.3";
   pyproject = true;
-
-  disabled = pythonOlder "3.7";
 
   src = fetchFromGitHub {
     owner = "riscv-software-src";
@@ -42,8 +39,16 @@ buildPythonPackage rec {
     description = "RISC-V configuration validator";
     homepage = "https://github.com/riscv/riscv-config";
     changelog = "https://github.com/riscv-software-src/riscv-config/blob/${version}/CHANGELOG.md";
+<<<<<<< HEAD
     license = lib.licenses.bsd3;
     maintainers = with lib.maintainers; [ genericnerdyusername ];
+||||||| 213fed0310e3
+    license = licenses.bsd3;
+    maintainers = with maintainers; [ genericnerdyusername ];
+=======
+    license = lib.licenses.bsd3;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "riscv-config";
   };
 }

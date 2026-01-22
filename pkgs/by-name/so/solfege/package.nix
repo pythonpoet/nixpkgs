@@ -29,7 +29,7 @@
 python3Packages.buildPythonApplication rec {
   pname = "solfege";
   version = "3.23.4";
-  format = "other";
+  pyproject = false;
 
   src = fetchurl {
     url = "https://alpha.gnu.org/gnu/solfege/solfege-${version}.tar.gz";
@@ -109,7 +109,6 @@ python3Packages.buildPythonApplication rec {
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [
       bjornfor
-      orivej
       anthonyroussel
     ];
     mainProgram = "solfege";

@@ -4,16 +4,17 @@
   fetchFromGitHub,
   replaceVars,
   stdenv,
+  nix-update-script,
 }:
 
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage (finalAttrs: {
   pname = "cargo-benchcmp";
   version = "0.4.5";
 
   src = fetchFromGitHub {
     owner = "BurntSushi";
     repo = "cargo-benchcmp";
-    tag = version;
+    tag = finalAttrs.version;
     hash = "sha256-J8KFI0V/mOhUlYtVnFAQgPIpXL9/dLhOFxSly4bR00I=";
   };
 
@@ -31,7 +32,15 @@ rustPlatform.buildRustPackage rec {
     "--skip=different_input_colored"
   ];
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  passthru.updateScript = nix-update-script { };
+
+  meta = {
+>>>>>>> master
     description = "Small utility to compare Rust micro-benchmarks";
     mainProgram = "cargo-benchcmp";
     homepage = "https://github.com/BurntSushi/cargo-benchcmp";
@@ -39,6 +48,6 @@ rustPlatform.buildRustPackage rec {
       mit
       unlicense
     ];
-    maintainers = [ ];
+    maintainers = [ lib.maintainers.progrm_jarvis ];
   };
-}
+})

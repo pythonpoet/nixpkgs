@@ -32,8 +32,16 @@ rustPlatform.buildRustPackage rec {
     description = "Quickly and easily fetch .gitignore templates from gitignore.io";
     homepage = "https://github.com/sondr3/git-ignore";
     changelog = "https://github.com/sondr3/git-ignore/blob/${src.rev}/CHANGELOG.md";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Plus;
     maintainers = [ ];
+||||||| 213fed0310e3
+    license = licenses.gpl3Plus;
+    maintainers = [ ];
+=======
+    license = lib.licenses.gpl3Plus;
+    maintainers = [ lib.maintainers.matthiasbeyer ];
+>>>>>>> master
     mainProgram = "git-ignore";
   };
 }

@@ -17,8 +17,15 @@ bundlerApp {
     changelog = "https://github.com/cucumber/cucumber-ruby/blob/main/CHANGELOG.md";
     license = lib.licenses.mit;
     mainProgram = "cucumber";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [
       manveru
+||||||| 213fed0310e3
+    maintainers = with maintainers; [
+      manveru
+=======
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       nicknovitski
       anthonyroussel
     ];

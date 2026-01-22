@@ -45,9 +45,18 @@ libfprint.overrideAttrs (
     meta = {
       homepage = "https://gitlab.freedesktop.org/3v1n0/libfprint";
       description = "Library designed to make it easy to add support for consumer fingerprint readers, with support for loaded drivers";
+<<<<<<< HEAD
       license = lib.licenses.lgpl21;
       platforms = lib.platforms.linux;
       maintainers = with lib.maintainers; [ grahamc ];
+||||||| 213fed0310e3
+      license = licenses.lgpl21;
+      platforms = platforms.linux;
+      maintainers = with maintainers; [ grahamc ];
+=======
+      license = lib.licenses.lgpl21;
+      platforms = lib.platforms.linux;
+>>>>>>> master
     };
   }
 )

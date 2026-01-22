@@ -22,7 +22,14 @@ buildPythonPackage rec {
   meta = {
     description = "These builtin rules are available in Amazon SageMaker";
     homepage = "https://github.com/awslabs/sagemaker-debugger-rulesconfig";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [ nequissimus ];
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [ nequissimus ];
+=======
+    license = lib.licenses.asl20;
+>>>>>>> master
   };
 }

@@ -41,7 +41,13 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "papers";
+<<<<<<< HEAD
   version = "49.2";
+||||||| 213fed0310e3
+  version = "49.1";
+=======
+  version = "49.3";
+>>>>>>> master
 
   outputs = [
     "out"
@@ -51,7 +57,13 @@ stdenv.mkDerivation (finalAttrs: {
 
   src = fetchurl {
     url = "mirror://gnome/sources/papers/${lib.versions.major finalAttrs.version}/papers-${finalAttrs.version}.tar.xz";
+<<<<<<< HEAD
     hash = "sha256-SanKL2LFWY+ObKTmfIf09ZxewN5wTTspnVFkyR0fakE=";
+||||||| 213fed0310e3
+    hash = "sha256-SrI6Z4l73da+LWKYIQ//YCz+wPNWiLxb/ycDYLB4TCk=";
+=======
+    hash = "sha256-dpddnR/S+Iw2j+yMMfDlb6ndk6G46F+s6qQDxZpVqpA=";
+>>>>>>> master
   };
 
   cargoDeps = rustPlatform.fetchCargoVendor {

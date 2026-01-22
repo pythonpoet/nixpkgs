@@ -60,8 +60,17 @@ stdenv.mkDerivation rec {
   meta = {
     description = "SSH client library";
     homepage = "https://libssh.org";
+<<<<<<< HEAD
     license = lib.licenses.lgpl2Plus;
     maintainers = with lib.maintainers; [ sander ];
     platforms = lib.platforms.all;
+||||||| 213fed0310e3
+    license = licenses.lgpl2Plus;
+    maintainers = with maintainers; [ sander ];
+    platforms = platforms.all;
+=======
+    license = lib.licenses.lgpl2Plus;
+    platforms = lib.platforms.all;
+>>>>>>> master
   };
 }

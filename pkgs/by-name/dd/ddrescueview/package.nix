@@ -54,9 +54,19 @@ stdenv.mkDerivation rec {
   meta = {
     description = "Tool to graphically examine ddrescue mapfiles";
     homepage = "https://sourceforge.net/projects/ddrescueview/";
+<<<<<<< HEAD
     license = lib.licenses.gpl3Plus;
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [ orivej ];
+||||||| 213fed0310e3
+    license = licenses.gpl3Plus;
+    platforms = platforms.linux;
+    maintainers = with maintainers; [ orivej ];
+=======
+    license = lib.licenses.gpl3Plus;
+    platforms = lib.platforms.linux;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "ddrescueview";
   };
 }

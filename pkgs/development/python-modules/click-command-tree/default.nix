@@ -29,7 +29,14 @@ buildPythonPackage rec {
   meta = {
     description = "Click plugin to show the command tree of your CLI";
     homepage = "https://github.com/whwright/click-command-tree";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ tjni ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ tjni ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
   };
 }

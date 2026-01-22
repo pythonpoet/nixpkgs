@@ -7,7 +7,7 @@
 python3.pkgs.buildPythonApplication rec {
   pname = "keymapviz";
   version = "1.14.1";
-  format = "pyproject";
+  pyproject = true;
 
   src = fetchFromGitHub {
     owner = "yskoht";
@@ -25,8 +25,16 @@ python3.pkgs.buildPythonApplication rec {
   meta = {
     description = "Qmk keymap.c visualizer";
     homepage = "https://github.com/yskoht/keymapviz";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ lom ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ lom ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "keymapviz";
   };
 }

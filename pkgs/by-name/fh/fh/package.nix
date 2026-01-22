@@ -10,16 +10,24 @@
 
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "fh";
-  version = "0.1.26";
+  version = "0.1.27";
 
   src = fetchFromGitHub {
     owner = "DeterminateSystems";
     repo = "fh";
+<<<<<<< HEAD
     tag = "v${finalAttrs.version}";
     hash = "sha256-cHXpTe5tAXrAwVu5+ZTb3pzHIqAk353GnNFPvComIfQ=";
+||||||| 213fed0310e3
+    rev = "v${version}";
+    hash = "sha256-cHXpTe5tAXrAwVu5+ZTb3pzHIqAk353GnNFPvComIfQ=";
+=======
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-EUCV7/J9wJRroCGW5JqonFJIqcvJEBAwB7l3eWYxiSk=";
+>>>>>>> master
   };
 
-  cargoHash = "sha256-HwFehxL01pwT93jjVvCU9BXhaHhCDbox50ecXpod3Mo=";
+  cargoHash = "sha256-HOQqUNd0I85lAD6YVWT9baEj31JpjIgq9Ujfn4ys/3o=";
 
   nativeBuildInputs = [
     installShellFiles

@@ -2,7 +2,6 @@
   lib,
   buildPythonPackage,
   fetchFromGitHub,
-  pythonOlder,
   unittestCheckHook,
 }:
 
@@ -10,8 +9,6 @@ buildPythonPackage rec {
   pname = "simplefix";
   version = "1.0.17";
   format = "setuptools";
-
-  disabled = pythonOlder "3.7";
 
   src = fetchFromGitHub {
     repo = "simplefix";
@@ -33,7 +30,14 @@ buildPythonPackage rec {
     description = "Simple FIX Protocol implementation for Python";
     homepage = "https://github.com/da4089/simplefix";
     changelog = "https://github.com/da4089/simplefix/releases/tag/v${version}";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ catern ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ catern ];
+=======
+    license = lib.licenses.mit;
+>>>>>>> master
   };
 }

@@ -20,7 +20,15 @@ rustPlatform.buildRustPackage (
 
       patches = [ ./web-ui-package-json.patch ];
 
+<<<<<<< HEAD
       npmDepsHash = "sha256-jgsNF93DkEVgPGzdi192HKoSHPYhdrtog28jZvOLK6E=";
+||||||| 213fed0310e3
+      npmDepsHash = "sha256-1zCxKAH2IAKSFdL8Pyd8dJi0i8Y5mgYcWNKVpiQszc0=";
+=======
+      npmDepsHash = "sha256-jgsNF93DkEVgPGzdi192HKoSHPYhdrtog28jZvOLK6E=";
+      # Fix peer dependency conflicts with ESLint 9.
+      npmFlags = [ "--legacy-peer-deps" ];
+>>>>>>> master
 
       nativeBuildInputs = [ openapi-generator-cli ];
 
@@ -50,8 +58,14 @@ rustPlatform.buildRustPackage (
       (replaceVars ./hardcode-version.patch { inherit (finalAttrs) version; })
     ];
 
+<<<<<<< HEAD
     RUSTFLAGS = "--cfg tokio_unstable";
 
+||||||| 213fed0310e3
+=======
+    env.RUSTFLAGS = "--cfg tokio_unstable";
+
+>>>>>>> master
     buildFeatures = [
       "postgres"
       "mysql"

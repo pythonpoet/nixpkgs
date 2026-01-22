@@ -47,8 +47,18 @@ stdenv.mkDerivation rec {
       to fix its runtime dependenices.
     '';
     homepage = "https://wraith.botpack.net/";
+<<<<<<< HEAD
     license = lib.licenses.gpl2Plus;
     maintainers = with lib.maintainers; [ elitak ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    license = licenses.gpl2Plus;
+    maintainers = with maintainers; [ elitak ];
+    platforms = platforms.linux;
+=======
+    license = lib.licenses.gpl2Plus;
+    maintainers = [ ];
+    platforms = lib.platforms.linux;
+>>>>>>> master
   };
 }

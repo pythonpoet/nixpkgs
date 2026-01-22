@@ -9,20 +9,20 @@
 }:
 
 let
-  version = "2025.11.2";
+  version = "2026.1";
 
   product =
     if proEdition then
       {
         productName = "pro";
         productDesktop = "Burp Suite Professional Edition";
-        hash = "sha256-uI3xjh1z4g9+ZjjbXi4CLoKT+9y2rbu8u8rqD9+aOFA=";
+        hash = "sha256-4GvB1K4UZnZMor0jBWXvzgy0qfh234TZmtu6eSR4/jk=";
       }
     else
       {
         productName = "community";
         productDesktop = "Burp Suite Community Edition";
-        hash = "sha256-XZgG6BfA2O4gZfy+dYuc5yzpe+sHPjthzvexBb4YWcQ=";
+        hash = "sha256-q0vKBEIzO18mNX7bn1vhnstnGr1pwjMnHXq6HdtpJy0=";
       };
 
   src = fetchurl {
@@ -93,7 +93,7 @@ buildFHSEnv {
 
   passthru.updateScript = ./update.sh;
 
-  meta = with lib; {
+  meta = {
     inherit description;
     longDescription = ''
       Burp Suite is an integrated platform for performing security testing of web applications.
@@ -104,9 +104,19 @@ buildFHSEnv {
     homepage = "https://portswigger.net/burp/";
     changelog =
       "https://portswigger.net/burp/releases/professional-community-"
+<<<<<<< HEAD
       + replaceStrings [ "." ] [ "-" ] version;
     sourceProvenance = with lib.sourceTypes; [ binaryBytecode ];
     license = lib.licenses.unfree;
+||||||| 213fed0310e3
+      + replaceStrings [ "." ] [ "-" ] version;
+    sourceProvenance = with sourceTypes; [ binaryBytecode ];
+    license = licenses.unfree;
+=======
+      + lib.replaceStrings [ "." ] [ "-" ] version;
+    sourceProvenance = with lib.sourceTypes; [ binaryBytecode ];
+    license = lib.licenses.unfree;
+>>>>>>> master
     platforms = jdk.meta.platforms;
     hydraPlatforms = [ ];
     maintainers = with lib.maintainers; [

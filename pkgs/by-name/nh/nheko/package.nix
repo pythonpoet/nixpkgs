@@ -110,8 +110,15 @@ stdenv.mkDerivation (finalAttrs: {
     homepage = "https://github.com/Nheko-Reborn/nheko";
     license = lib.licenses.gpl3Plus;
     mainProgram = "nheko";
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [
       ekleog
+||||||| 213fed0310e3
+    maintainers = with maintainers; [
+      ekleog
+=======
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       fpletz
       rebmit
       rnhmjoj

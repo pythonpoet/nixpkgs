@@ -39,9 +39,19 @@ stdenv.mkDerivation {
   meta = {
     description = "Create an APNG from multiple PNG files";
     homepage = "https://github.com/apngasm/apngasm";
+<<<<<<< HEAD
     license = lib.licenses.zlib;
     maintainers = with lib.maintainers; [ orivej ];
     platforms = lib.platforms.linux;
+||||||| 213fed0310e3
+    license = licenses.zlib;
+    maintainers = with maintainers; [ orivej ];
+    platforms = platforms.linux;
+=======
+    license = lib.licenses.zlib;
+    maintainers = [ ];
+    platforms = lib.platforms.linux;
+>>>>>>> master
     mainProgram = "apngasm";
   };
 

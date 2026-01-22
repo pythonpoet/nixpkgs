@@ -27,8 +27,15 @@ stdenv.mkDerivation rec {
       binaryBytecode
       binaryNativeCode
     ];
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [
       grahamc
+||||||| 213fed0310e3
+    maintainers = with maintainers; [
+      grahamc
+=======
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       swarren83
     ];
   };

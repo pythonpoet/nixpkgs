@@ -66,6 +66,7 @@
   ffado,
   libselinux,
   libebur128,
+  bashNonInteractive,
 }:
 
 let
@@ -133,6 +134,7 @@ stdenv.mkDerivation (finalAttrs: {
     lilv
     ncurses
     readline
+    bashNonInteractive
   ]
   ++ (
     if enableSystemd then
@@ -264,10 +266,21 @@ stdenv.mkDerivation (finalAttrs: {
     description = "Server and user space API to deal with multimedia pipelines";
     changelog = "https://gitlab.freedesktop.org/pipewire/pipewire/-/releases/${finalAttrs.version}";
     homepage = "https://pipewire.org/";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     platforms = lib.platforms.linux ++ lib.platforms.freebsd;
     maintainers = with lib.maintainers; [
       kranzes
+||||||| 213fed0310e3
+    license = licenses.mit;
+    platforms = platforms.linux ++ platforms.freebsd;
+    maintainers = with maintainers; [
+      kranzes
+=======
+    license = lib.licenses.mit;
+    platforms = lib.platforms.linux ++ lib.platforms.freebsd;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       k900
     ];
     pkgConfigModules = [

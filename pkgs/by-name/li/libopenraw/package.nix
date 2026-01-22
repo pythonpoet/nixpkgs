@@ -47,11 +47,24 @@ stdenv.mkDerivation rec {
   meta = {
     description = "RAW camerafile decoding library";
     homepage = "https://libopenraw.freedesktop.org";
+<<<<<<< HEAD
     license = lib.licenses.lgpl3Plus;
     platforms = [
       "x86_64-linux"
       "aarch64-linux"
     ];
     maintainers = [ lib.maintainers.struan ];
+||||||| 213fed0310e3
+    license = licenses.lgpl3Plus;
+    platforms = [
+      "x86_64-linux"
+      "aarch64-linux"
+    ];
+    maintainers = [ maintainers.struan ];
+=======
+    license = lib.licenses.lgpl3Plus;
+    platforms = lib.platforms.linux;
+    maintainers = [ lib.maintainers.struan ];
+>>>>>>> master
   };
 }

@@ -7,15 +7,12 @@
   krb5-c, # C krb5 library, not PyPI krb5
   mock,
   pytestCheckHook,
-  pythonOlder,
 }:
 
 buildPythonPackage rec {
   pname = "cccolutils";
   version = "1.5";
   format = "setuptools";
-
-  disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     pname = "CCColUtils";
@@ -38,7 +35,14 @@ buildPythonPackage rec {
   meta = {
     description = "Python Kerberos 5 Credential Cache Collection Utilities";
     homepage = "https://pagure.io/cccolutils";
+<<<<<<< HEAD
     license = lib.licenses.gpl2Plus;
     maintainers = with lib.maintainers; [ disassembler ];
+||||||| 213fed0310e3
+    license = licenses.gpl2Plus;
+    maintainers = with maintainers; [ disassembler ];
+=======
+    license = lib.licenses.gpl2Plus;
+>>>>>>> master
   };
 }

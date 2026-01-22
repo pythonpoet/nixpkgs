@@ -62,9 +62,18 @@ stdenv.mkDerivation rec {
   meta = {
     description = "HTTP client library based on APR";
     homepage = "https://serf.apache.org/";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [
       orivej
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [
+      orivej
+=======
+    license = lib.licenses.asl20;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       raskin
     ];
     platforms = lib.platforms.linux ++ lib.platforms.darwin;

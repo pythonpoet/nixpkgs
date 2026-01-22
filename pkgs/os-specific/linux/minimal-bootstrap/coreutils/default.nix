@@ -7,6 +7,7 @@
   gnupatch,
 }:
 let
+  inherit (import ./common.nix { inherit lib; }) meta;
   pname = "bootstrap-coreutils";
   version = "5.0";
 
@@ -73,13 +74,14 @@ let
 in
 kaem.runCommand "${pname}-${version}"
   {
-    inherit pname version;
+    inherit pname version meta;
 
     nativeBuildInputs = [
       tinycc.compiler
       gnumake
       gnupatch
     ];
+<<<<<<< HEAD
 
     meta = {
       description = "GNU Core Utilities";
@@ -88,6 +90,17 @@ kaem.runCommand "${pname}-${version}"
       teams = [ lib.teams.minimal-bootstrap ];
       platforms = lib.platforms.unix;
     };
+||||||| 213fed0310e3
+
+    meta = with lib; {
+      description = "GNU Core Utilities";
+      homepage = "https://www.gnu.org/software/coreutils";
+      license = licenses.gpl3Plus;
+      teams = [ teams.minimal-bootstrap ];
+      platforms = platforms.unix;
+    };
+=======
+>>>>>>> master
   }
   ''
     # Unpack

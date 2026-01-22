@@ -29,6 +29,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
   # tests are failing on darwin
   doCheck = !stdenv.hostPlatform.isDarwin;
 
+<<<<<<< HEAD
   doInstallCheck = true;
   nativeInstallCheckInputs = [ versionCheckHook ];
   versionCheckProgramArg = "--version";
@@ -36,6 +37,17 @@ rustPlatform.buildRustPackage (finalAttrs: {
   passthru.update-script = nix-update-script { };
 
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  doInstallCheck = true;
+  nativeInstallCheckInputs = [ versionCheckHook ];
+  versionCheckProgramArg = "--version";
+
+  passthru.updateScript = nix-update-script { };
+
+  meta = {
+>>>>>>> master
     description = "Lints and suggestions for the nix programming language";
     homepage = "https://github.com/oppiliappan/statix";
     license = lib.licenses.mit;

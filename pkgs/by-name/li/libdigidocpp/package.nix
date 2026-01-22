@@ -73,8 +73,15 @@ stdenv.mkDerivation rec {
     license = lib.licenses.lgpl21Plus;
     platforms = lib.platforms.linux;
     maintainers = [
+<<<<<<< HEAD
       lib.maintainers.flokli
       lib.maintainers.jagajaga
+||||||| 213fed0310e3
+      maintainers.flokli
+      maintainers.jagajaga
+=======
+      lib.maintainers.flokli
+>>>>>>> master
     ];
   };
 }

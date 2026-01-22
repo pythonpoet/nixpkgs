@@ -45,7 +45,15 @@ stdenv.mkDerivation rec {
   ]
   ++ upstreamPatches;
 
+<<<<<<< HEAD
   meta = {
+||||||| 213fed0310e3
+  meta = with lib; {
+=======
+  env.NIX_CFLAGS_COMPILE = lib.optionalString stdenv.cc.isGNU "-std=gnu17";
+
+  meta = {
+>>>>>>> master
     description = "Library for interactive line editing";
 
     longDescription = ''

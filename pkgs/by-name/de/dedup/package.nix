@@ -46,6 +46,12 @@ stdenv.mkDerivation rec {
       bsd0
       isc
     ];
+<<<<<<< HEAD
     maintainers = with lib.maintainers; [ dtzWill ];
+||||||| 213fed0310e3
+    maintainers = with maintainers; [ dtzWill ];
+=======
+    maintainers = [ ];
+>>>>>>> master
   };
 }

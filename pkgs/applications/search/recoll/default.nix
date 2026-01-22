@@ -75,11 +75,11 @@ in
 
 mkDerivation rec {
   pname = "recoll";
-  version = "1.43.5";
+  version = "1.43.9";
 
   src = fetchurl {
     url = "https://www.recoll.org/${pname}-${version}.tar.gz";
-    hash = "sha256-Px3uK7I/MkrJbAOmV2ipVct/+p05SST6TLTYoDaLNdQ=";
+    hash = "sha256-irloDtMO9CBvtI+oEicUOy2myrGskieWoqNk5eapzU8=";
   };
 
   mesonFlags = [
@@ -197,7 +197,7 @@ mkDerivation rec {
 
   enableParallelBuilding = false; # XXX: -j44 tried linking befoire librecoll had been created
 
-  meta = with lib; {
+  meta = {
     description = "Full-text search tool";
     longDescription = ''
       Recoll is an Xapian frontend that can search through files, archive

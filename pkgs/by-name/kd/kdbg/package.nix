@@ -48,7 +48,14 @@ stdenv.mkDerivation rec {
       stepping through code.
     '';
     mainProgram = "kdbg";
+<<<<<<< HEAD
     license = lib.licenses.gpl2;
     maintainers = [ lib.maintainers.catern ];
+||||||| 213fed0310e3
+    license = licenses.gpl2;
+    maintainers = [ maintainers.catern ];
+=======
+    license = lib.licenses.gpl2;
+>>>>>>> master
   };
 }

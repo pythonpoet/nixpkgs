@@ -20,8 +20,16 @@ buildGoModule rec {
   meta = {
     description = "Fast static site generator";
     homepage = "https://github.com/piranha/gostatic";
+<<<<<<< HEAD
     license = lib.licenses.isc;
     maintainers = with lib.maintainers; [ urandom ];
+||||||| 213fed0310e3
+    license = licenses.isc;
+    maintainers = with maintainers; [ urandom ];
+=======
+    license = lib.licenses.isc;
+    maintainers = [ ];
+>>>>>>> master
     mainProgram = "gostatic";
   };
 }

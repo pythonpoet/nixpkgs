@@ -5,7 +5,6 @@
   decorator,
   fetchPypi,
   numpy,
-  pythonOlder,
   scipy,
   setuptools,
   six,
@@ -15,8 +14,6 @@ buildPythonPackage rec {
   pname = "pysptk";
   version = "1.0.1";
   format = "setuptools";
-
-  disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
@@ -43,7 +40,15 @@ buildPythonPackage rec {
   meta = {
     description = "Wrapper for Speech Signal Processing Toolkit (SPTK)";
     homepage = "https://pysptk.readthedocs.io/";
+<<<<<<< HEAD
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ hyphon81 ];
+||||||| 213fed0310e3
+    license = licenses.mit;
+    maintainers = with maintainers; [ hyphon81 ];
+=======
+    license = lib.licenses.mit;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

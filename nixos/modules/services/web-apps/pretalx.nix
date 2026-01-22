@@ -30,9 +30,17 @@ let
 in
 
 {
+<<<<<<< HEAD
   meta = {
     maintainers = with lib.maintainers; [ hexa ] ++ lib.teams.c3d2.members;
   };
+||||||| 213fed0310e3
+  meta = with lib; {
+    maintainers = with maintainers; [ hexa ] ++ teams.c3d2.members;
+  };
+=======
+  meta.maintainers = pkgs.pretalx.meta.maintainers;
+>>>>>>> master
 
   options.services.pretalx = {
     enable = lib.mkEnableOption "pretalx";

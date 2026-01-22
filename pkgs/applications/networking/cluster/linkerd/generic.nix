@@ -67,9 +67,18 @@ buildGoModule rec {
     mainProgram = "linkerd";
     downloadPage = "https://github.com/linkerd/linkerd2/";
     homepage = "https://linkerd.io/";
+<<<<<<< HEAD
     license = lib.licenses.asl20;
     maintainers = with lib.maintainers; [
       bryanasdev000
+||||||| 213fed0310e3
+    license = licenses.asl20;
+    maintainers = with maintainers; [
+      bryanasdev000
+=======
+    license = lib.licenses.asl20;
+    maintainers = with lib.maintainers; [
+>>>>>>> master
       Gonzih
     ];
   };

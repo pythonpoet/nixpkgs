@@ -43,7 +43,15 @@ buildPythonPackage rec {
     changelog = "https://github.com/tox-dev/py-filelock/releases/tag/${version}";
     description = "Platform independent file lock for Python";
     homepage = "https://github.com/benediktschmitt/py-filelock";
+<<<<<<< HEAD
     license = lib.licenses.unlicense;
     maintainers = with lib.maintainers; [ hyphon81 ];
+||||||| 213fed0310e3
+    license = licenses.unlicense;
+    maintainers = with maintainers; [ hyphon81 ];
+=======
+    license = lib.licenses.unlicense;
+    maintainers = [ ];
+>>>>>>> master
   };
 }

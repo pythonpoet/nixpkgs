@@ -5,6 +5,12 @@
   coreutils,
   fetchFromGitHub,
   fetchNpmDeps,
+<<<<<<< HEAD
+||||||| 213fed0310e3
+  grpc-tools,
+=======
+  glaze,
+>>>>>>> master
   kdePackages,
   lib,
   libqalculate,
@@ -15,19 +21,31 @@
   pkg-config,
   protobuf,
   qt6,
-  rapidfuzz-cpp,
-  stdenv,
+  gcc15Stdenv,
   wayland,
+  libxml2,
 }:
-stdenv.mkDerivation (finalAttrs: {
+gcc15Stdenv.mkDerivation (finalAttrs: {
   pname = "vicinae";
+<<<<<<< HEAD
   version = "0.16.11";
+||||||| 213fed0310e3
+  version = "0.16.8";
+=======
+  version = "0.18.3";
+>>>>>>> master
 
   src = fetchFromGitHub {
     owner = "vicinaehq";
     repo = "vicinae";
     tag = "v${finalAttrs.version}";
+<<<<<<< HEAD
     hash = "sha256-gX7bUoIP4PU0wUOW3ciyjYAInX/6VLVcEBKdQIQyzDk=";
+||||||| 213fed0310e3
+    hash = "sha256-TAKv3dmc8DSlVp0LXQeLgrgfLTbQ/saQelenFUp9sP0=";
+=======
+    hash = "sha256-TU8MKOBYgTvYIFI8Col3ePeGntOlux3yYqmbSi7FG70=";
+>>>>>>> master
   };
 
   apiDeps = fetchNpmDeps {
@@ -44,6 +62,7 @@ stdenv.mkDerivation (finalAttrs: {
     "VICINAE_GIT_TAG" = "v${finalAttrs.version}";
     "VICINAE_PROVENANCE" = "nix";
     "INSTALL_NODE_MODULES" = "OFF";
+    "USE_SYSTEM_GLAZE" = "ON";
     "CMAKE_INSTALL_PREFIX" = placeholder "out";
     "CMAKE_INSTALL_DATAROOTDIR" = "share";
     "CMAKE_INSTALL_BINDIR" = "bin";
@@ -64,6 +83,12 @@ stdenv.mkDerivation (finalAttrs: {
   buildInputs = [
     abseil-cpp
     cmark-gfm
+<<<<<<< HEAD
+||||||| 213fed0310e3
+    grpc-tools
+=======
+    glaze
+>>>>>>> master
     kdePackages.layer-shell-qt
     kdePackages.qtkeychain
     libqalculate
@@ -73,8 +98,8 @@ stdenv.mkDerivation (finalAttrs: {
     qt6.qtbase
     qt6.qtsvg
     qt6.qtwayland
-    rapidfuzz-cpp
     wayland
+    libxml2
   ];
 
   postPatch = ''
@@ -105,7 +130,7 @@ stdenv.mkDerivation (finalAttrs: {
     homepage = "https://github.com/vicinaehq/vicinae";
     license = lib.licenses.gpl3Plus;
     maintainers = with lib.maintainers; [
-      dawnofmidnight
+      whispersofthedawn
       zstg
     ];
     platforms = lib.platforms.linux;

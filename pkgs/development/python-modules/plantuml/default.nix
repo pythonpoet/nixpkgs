@@ -32,7 +32,14 @@ buildPythonPackage {
   meta = {
     description = "Python interface to a plantuml web service instead of having to run java locally";
     homepage = "https://github.com/dougn/python-plantuml";
+<<<<<<< HEAD
     license = lib.licenses.bsd2;
     maintainers = with lib.maintainers; [ nikstur ];
+||||||| 213fed0310e3
+    license = licenses.bsd2;
+    maintainers = with maintainers; [ nikstur ];
+=======
+    license = lib.licenses.bsd2;
+>>>>>>> master
   };
 }
