@@ -119,7 +119,7 @@ in
 
   config = lib.mkIf cfg.enable {
     services = {
-      nginx = lib.mkIf cfg.ngnix.enable {
+      nginx = lib.mkIf cfg.nginx.enable {
         enable = lib.mkDefault true;
         # misses text/csv, font/ttf, application/x-font-ttf, application/rtf, application/wasm
         recommendedGzipSettings = lib.mkDefault true;
