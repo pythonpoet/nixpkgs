@@ -14,6 +14,14 @@ in
 
     enableExampleServer = lib.mkEnableOption "OnlyOffice example server";
 
+    nginx = {
+      enable = lib.mkOption {
+        type = lib.types.bool;
+        default = true;
+        description = "Whether OnlyOffice should configure nginx automatically.";
+      };
+    };
+
     hostname = lib.mkOption {
       type = lib.types.str;
       default = "localhost";
@@ -111,7 +119,7 @@ in
 
   config = lib.mkIf cfg.enable {
     services = {
-      nginx = {
+      nginx = lib.mkIf cfg.ngnix.enable {
         enable = lib.mkDefault true;
         # misses text/csv, font/ttf, application/x-font-ttf, application/rtf, application/wasm
         recommendedGzipSettings = lib.mkDefault true;
