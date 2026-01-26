@@ -17,7 +17,7 @@ in
     nginx = {
       enable = lib.mkOption {
         type = lib.types.bool;
-        default = false;
+        default = true;
         description = "Whether OnlyOffice should configure nginx automatically.";
       };
     };
@@ -303,9 +303,15 @@ in
               )
             }
             umask 077
-            mkdir -p /run/onlyoffice/config/ /var/lib/onlyoffice/documentserver/sdkjs/{slide/themes,common}/ /var/lib/onlyoffice/documentserver/{fonts,server/FileConverter/bin}/ /var/lib/onlyoffice/documentserver/document-templates/new
+            mkdir -p /run/onlyoffice/config/ /var/lib/onlyoffice/documentserver/sdkjs/{slide/themes,common}/ /var/lib/onlyoffice/documentserver/{fonts,server/FileConverter/bin}/ 
             cp -r ${cfg.package}/etc/onlyoffice/documentserver/* /run/onlyoffice/config/
             chmod u+w /run/onlyoffice/config/default.json
+
+            # For wopi server: 
+            mkdir -p /var/www/onlyoffice/documentserver/document-templates/new/en-US
+            chown -R onlyoffice:onlyoffice /var/www/onlyoffice
+            chmod -R 755 /var/www/onlyoffice
+
 
             # Allow members of the onlyoffice group to serve files under /var/lib/onlyoffice/documentserver/App_Data
             chmod g+x /var/lib/onlyoffice/documentserver
@@ -374,7 +380,10 @@ in
             Group = "onlyoffice";
             Restart = "always";
             RuntimeDirectory = "onlyoffice";
-            StateDirectory = "onlyoffice";
+            StateDirectory = [
+              "onlyoffice"
+              "onlyoffice/documentserver/document-templates/new/en-US"
+            ];
             Type = "simple";
             User = "onlyoffice";
           };
