@@ -393,7 +393,6 @@ in
             RuntimeDirectory = "onlyoffice";
             StateDirectory = [
               "onlyoffice"
-              "onlyoffice/documentserver/document-templates/new/en-US"
             ];
             Type = "simple";
             User = "onlyoffice";
