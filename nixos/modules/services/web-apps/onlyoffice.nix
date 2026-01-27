@@ -274,7 +274,7 @@ in
         environment = {
           NODE_CONFIG_DIR = "/run/onlyoffice/config";
           NODE_DISABLE_COLORS = "1";
-          NODE_ENV = "default";
+          NODE_ENV = "production-linux";
         };
         serviceConfig = {
           # needs to be ran wrapped in FHS for now
@@ -302,8 +302,6 @@ in
                 ]
               )
             }
-
-            
             umask 077
             mkdir -p /run/onlyoffice/config/ /var/lib/onlyoffice/documentserver/sdkjs/{slide/themes,common}/ /var/lib/onlyoffice/documentserver/{fonts,server/FileConverter/bin}/ 
             cp -r ${cfg.package}/etc/onlyoffice/documentserver/* /run/onlyoffice/config/
@@ -336,7 +334,6 @@ in
               .services.CoAuthoring.server.port = ${toString cfg.port} |
               .services.CoAuthoring.sql.dbHost = "${cfg.postgresHost}" |
               .services.CoAuthoring.sql.dbName = "${cfg.postgresName}" |
-              services.CoAuthoring.wopi.templatePath = "'$REAL_TPL_PATH'" |
               .services.CoAuthoring.server.newFileTemplate = "'$REAL_TPL_PATH'" |
             ${lib.optionalString (cfg.postgresPasswordFile != null) ''
               .services.CoAuthoring.sql.dbPass = "'"$(cat ${cfg.postgresPasswordFile})"'" |
@@ -358,6 +355,7 @@ in
             jq '
               .log.filePath = "/run/onlyoffice/config/log4js/production.json" |
               .FileConverter.converter.x2tPath = "${cfg.package.x2t-with-fonts-and-themes}/bin/x2t"
+              .services.CoAuthoring.server.newFileTemplate = "/var/www/onlyoffice/documentserver/document-templates/new"
               ' /run/onlyoffice/config/production-linux.json | sponge /run/onlyoffice/config/production-linux.json
 
             chmod u+w /run/onlyoffice/config/log4js/production.json
@@ -384,7 +382,7 @@ in
           environment = {
             NODE_CONFIG_DIR = "/run/onlyoffice/config";
             NODE_DISABLE_COLORS = "1";
-            NODE_ENV = "default";
+            NODE_ENV = "production-linux";
           };
           serviceConfig = {
             ExecStart = "${cfg.package.fhs}/bin/onlyoffice-wrapper ${cfg.package.docservice}/bin/docservice";
@@ -394,6 +392,9 @@ in
             RuntimeDirectory = "onlyoffice";
             StateDirectory = [
               "onlyoffice"
+            ];
+            BindPaths = [
+              "/var/lib/onlyoffice/documentserver/document-templates/new/en-US:/var/www/onlyoffice/documentserver/document-templates/new/en-US"
             ];
             Type = "simple";
             User = "onlyoffice";
