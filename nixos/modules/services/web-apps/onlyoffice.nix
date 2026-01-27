@@ -320,6 +320,7 @@ in
               .services.CoAuthoring.server.port = ${toString cfg.port} |
               .services.CoAuthoring.sql.dbHost = "${cfg.postgresHost}" |
               .services.CoAuthoring.sql.dbName = "${cfg.postgresName}" |
+              .services.CoAuthoring.requestDefault.rejectUnauthorized = false |
               .services.CoAuthoring.server.newFileTemplate = "/var/lib/onlyoffice/documentserver/document-templates/new" |
             ${lib.optionalString (cfg.postgresPasswordFile != null) ''
               .services.CoAuthoring.sql.dbPass = "'"$(cat ${cfg.postgresPasswordFile})"'" |
