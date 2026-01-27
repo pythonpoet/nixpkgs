@@ -379,9 +379,9 @@ in
             StateDirectory = [
               "onlyoffice"
             ];
-            BindPaths = [
-              "/var/lib/onlyoffice/documentserver/document-templates/new/en-US:/var/www/onlyoffice/documentserver/document-templates/new/en-US"
-            ];
+            # BindPaths = [
+            #   "/var/lib/onlyoffice/documentserver/document-templates/new/en-US:/var/www/onlyoffice/documentserver/document-templates/new/en-US"
+            # ];
             Type = "simple";
             User = "onlyoffice";
           };
