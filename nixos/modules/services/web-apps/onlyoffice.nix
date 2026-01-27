@@ -274,7 +274,7 @@ in
         environment = {
           NODE_CONFIG_DIR = "/run/onlyoffice/config";
           NODE_DISABLE_COLORS = "1";
-          NODE_ENV = "production-linux";
+          NODE_ENV = "default";
         };
         serviceConfig = {
           # needs to be ran wrapped in FHS for now
