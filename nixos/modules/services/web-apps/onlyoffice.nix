@@ -336,6 +336,7 @@ in
               .services.CoAuthoring.server.port = ${toString cfg.port} |
               .services.CoAuthoring.sql.dbHost = "${cfg.postgresHost}" |
               .services.CoAuthoring.sql.dbName = "${cfg.postgresName}" |
+              services.CoAuthoring.wopi.templatePath = "'$REAL_TPL_PATH'" |
               .services.CoAuthoring.server.newFileTemplate = "'$REAL_TPL_PATH'" |
             ${lib.optionalString (cfg.postgresPasswordFile != null) ''
               .services.CoAuthoring.sql.dbPass = "'"$(cat ${cfg.postgresPasswordFile})"'" |
@@ -383,7 +384,7 @@ in
           environment = {
             NODE_CONFIG_DIR = "/run/onlyoffice/config";
             NODE_DISABLE_COLORS = "1";
-            NODE_ENV = "production-linux";
+            NODE_ENV = "default";
           };
           serviceConfig = {
             ExecStart = "${cfg.package.fhs}/bin/onlyoffice-wrapper ${cfg.package.docservice}/bin/docservice";
