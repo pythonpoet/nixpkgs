@@ -302,6 +302,8 @@ in
                 ]
               )
             }
+
+            
             umask 077
             mkdir -p /run/onlyoffice/config/ /var/lib/onlyoffice/documentserver/sdkjs/{slide/themes,common}/ /var/lib/onlyoffice/documentserver/{fonts,server/FileConverter/bin}/ 
             cp -r ${cfg.package}/etc/onlyoffice/documentserver/* /run/onlyoffice/config/
@@ -311,6 +313,14 @@ in
             mkdir -p /var/www/onlyoffice/documentserver/document-templates/new/en-US
             chown -R onlyoffice:onlyoffice /var/www/onlyoffice
             chmod -R 755 /var/www/onlyoffice
+            # 1. Define where we want the templates to actually live on the host
+            # We use /var/lib because that's persistent and usually visible to the wrapper
+            REAL_TPL_PATH="/var/lib/onlyoffice/documentserver/document-templates/new"
+            mkdir -p "$REAL_TPL_PATH/en-US"
+
+            # 2. Link the actual templates from the Nix Store into that path
+            # Without this, the directory exists but is empty (which causes the readdir error)
+            ln -sf ${cfg.package}/var/www/onlyoffice/documentserver/document-templates/new/en-US/* "$REAL_TPL_PATH/en-US/"
 
 
             # Allow members of the onlyoffice group to serve files under /var/lib/onlyoffice/documentserver/App_Data
@@ -326,6 +336,7 @@ in
               .services.CoAuthoring.server.port = ${toString cfg.port} |
               .services.CoAuthoring.sql.dbHost = "${cfg.postgresHost}" |
               .services.CoAuthoring.sql.dbName = "${cfg.postgresName}" |
+              .services.CoAuthoring.server.newFileTemplate = "'$REAL_TPL_PATH'" |
             ${lib.optionalString (cfg.postgresPasswordFile != null) ''
               .services.CoAuthoring.sql.dbPass = "'"$(cat ${cfg.postgresPasswordFile})"'" |
             ''}
