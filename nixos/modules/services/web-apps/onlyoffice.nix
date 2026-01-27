@@ -17,7 +17,7 @@ in
     nginx = {
       enable = lib.mkOption {
         type = lib.types.bool;
-        default = false;
+        default = true;
         description = "Whether OnlyOffice should configure nginx automatically.";
       };
     };
@@ -307,11 +307,9 @@ in
             cp -r ${cfg.package}/etc/onlyoffice/documentserver/* /run/onlyoffice/config/
             chmod u+w /run/onlyoffice/config/default.json
 
-            # For wopi server: 
-            mkdir -p /var/www/onlyoffice/documentserver/document-templates/new/en-US
             # 1. Define where we want the templates to actually live on the host
             # We use /var/lib because that's persistent and usually visible to the wrapper
-            REAL_TPL_PATH="/var/lib/onlyoffice/documentserver/document-templates/new"
+            REAL_TPL_PATH="/var/www/onlyoffice/documentserver/document-templates/new"
             mkdir -p "$REAL_TPL_PATH/en-US"
 
             # 2. Link the actual templates from the Nix Store into that path
@@ -352,7 +350,7 @@ in
             chmod u+w /run/onlyoffice/config/production-linux.json
             jq '
               .log.filePath = "/run/onlyoffice/config/log4js/production.json" |
-              .FileConverter.converter.x2tPath = "${cfg.package.x2t-with-fonts-and-themes}/bin/x2t"
+              .FileConverter.converter.x2tPath = "${cfg.package.x2t-with-fonts-and-themes}/bin/x2t" |
               .services.CoAuthoring.server.newFileTemplate = "/var/www/onlyoffice/documentserver/document-templates/new"
               ' /run/onlyoffice/config/production-linux.json | sponge /run/onlyoffice/config/production-linux.json
 
