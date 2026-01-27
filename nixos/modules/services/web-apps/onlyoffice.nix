@@ -309,8 +309,6 @@ in
 
             # For wopi server: 
             mkdir -p /var/www/onlyoffice/documentserver/document-templates/new/en-US
-            chown -R onlyoffice:onlyoffice /var/www/onlyoffice
-            chmod -R 755 /var/www/onlyoffice
             # 1. Define where we want the templates to actually live on the host
             # We use /var/lib because that's persistent and usually visible to the wrapper
             REAL_TPL_PATH="/var/lib/onlyoffice/documentserver/document-templates/new"
