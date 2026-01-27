@@ -17,7 +17,7 @@ in
     nginx = {
       enable = lib.mkOption {
         type = lib.types.bool;
-        default = true;
+        default = false;
         description = "Whether OnlyOffice should configure nginx automatically.";
       };
     };
@@ -303,19 +303,9 @@ in
               )
             }
             umask 077
-            mkdir -p /run/onlyoffice/config/ /var/lib/onlyoffice/documentserver/sdkjs/{slide/themes,common}/ /var/lib/onlyoffice/documentserver/{fonts,server/FileConverter/bin}/ 
+            mkdir -p /run/onlyoffice/config/ /var/lib/onlyoffice/documentserver/sdkjs/{slide/themes,common}/ /var/lib/onlyoffice/documentserver/{fonts,server/FileConverter/bin,document-templates/new/en-US}/ 
             cp -r ${cfg.package}/etc/onlyoffice/documentserver/* /run/onlyoffice/config/
             chmod u+w /run/onlyoffice/config/default.json
-
-            # 1. Define where we want the templates to actually live on the host
-            # We use /var/lib because that's persistent and usually visible to the wrapper
-            REAL_TPL_PATH="/var/www/onlyoffice/documentserver/document-templates/new"
-            mkdir -p "$REAL_TPL_PATH/en-US"
-
-            # 2. Link the actual templates from the Nix Store into that path
-            # Without this, the directory exists but is empty (which causes the readdir error)
-            ln -sf ${cfg.package}/var/www/onlyoffice/documentserver/document-templates/new/en-US/* "$REAL_TPL_PATH/en-US/"
-
 
             # Allow members of the onlyoffice group to serve files under /var/lib/onlyoffice/documentserver/App_Data
             chmod g+x /var/lib/onlyoffice/documentserver
@@ -330,7 +320,7 @@ in
               .services.CoAuthoring.server.port = ${toString cfg.port} |
               .services.CoAuthoring.sql.dbHost = "${cfg.postgresHost}" |
               .services.CoAuthoring.sql.dbName = "${cfg.postgresName}" |
-              .services.CoAuthoring.server.newFileTemplate = "'$REAL_TPL_PATH'" |
+              .services.CoAuthoring.server.newFileTemplate = "/var/lib/onlyoffice/documentserver/document-templates/new" |
             ${lib.optionalString (cfg.postgresPasswordFile != null) ''
               .services.CoAuthoring.sql.dbPass = "'"$(cat ${cfg.postgresPasswordFile})"'" |
             ''}
@@ -351,7 +341,7 @@ in
             jq '
               .log.filePath = "/run/onlyoffice/config/log4js/production.json" |
               .FileConverter.converter.x2tPath = "${cfg.package.x2t-with-fonts-and-themes}/bin/x2t" |
-              .services.CoAuthoring.server.newFileTemplate = "/var/www/onlyoffice/documentserver/document-templates/new"
+              .services.CoAuthoring.server.newFileTemplate = "/var/lib/onlyoffice/documentserver/document-templates/new"
               ' /run/onlyoffice/config/production-linux.json | sponge /run/onlyoffice/config/production-linux.json
 
             chmod u+w /run/onlyoffice/config/log4js/production.json
