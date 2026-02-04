@@ -321,7 +321,7 @@ in
               .services.CoAuthoring.sql.dbHost = "${cfg.postgresHost}" |
               .services.CoAuthoring.sql.dbName = "${cfg.postgresName}" |
               .services.CoAuthoring.requestDefaults.headers."X-Forwarded-Proto" = "https" |
-              .services.CoAuthoring.requestDefault.rejeclstUnauthorized = false |
+              .services.CoAuthoring.requestDefaults.rejeclstUnauthorized = false |
               .services.CoAuthoring["request-filtering-agent"].allowPrivateIPAddress = true |
               .services.CoAuthoring.server.newFileTemplate = "/var/lib/onlyoffice/documentserver/document-templates/new" |
             ${lib.optionalString (cfg.postgresPasswordFile != null) ''
@@ -337,7 +337,7 @@ in
               .services.CoAuthoring.secret.session.string = "'"$(cat ${cfg.jwtSecretFile})"'" |
             ''}
               .rabbitmq.url = "${cfg.rabbitmqUrl}" |
-              .wopi.enable = "${toString cfg.wopi}"
+              .wopi.enable = ${if cfg.wopi then "true" else "false"}
               ' /run/onlyoffice/config/default.json | sponge /run/onlyoffice/config/default.json
 
             chmod u+w /run/onlyoffice/config/production-linux.json
