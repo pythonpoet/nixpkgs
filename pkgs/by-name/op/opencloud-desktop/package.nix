@@ -49,7 +49,7 @@ stdenv.mkDerivation (finalAttrs: {
   ];
   
 
-  passthru.updateScript = nix-update-script { };
+  passthru.extensionPath = "/share/nautilus-python/extensions";
 
   meta = {
     changelog = "https://github.com/opencloud-eu/desktop/releases/tag/v${finalAttrs.version}";

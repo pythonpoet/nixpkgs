@@ -28,17 +28,10 @@ stdenv.mkDerivation (finalAttrs: {
   ];
 
   installPhase = ''
-    runHook preInstall
-
-    # The standard path where nautilus-python looks for extensions
     mkdir -p $out/share/nautilus-python/extensions
-    
-    # Copy the main script. 
-    # Note: Using 'src/syncstate.py' based on your previous directory mention.
     cp src/syncstate.py $out/share/nautilus-python/extensions/opencloud-syncstate.py
-
-    runHook postInstall
   '';
+  passthru.extensionPath = "/share/nautilus-python/extensions";
 
   meta = {
     description = "OpenCloud Desktop shell integration for Nautilus (Python)";
