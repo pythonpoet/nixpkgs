@@ -17,34 +17,37 @@ stdenv.mkDerivation (finalAttrs: {
     owner = "opencloud-eu";
     repo = "desktop-shell-integration-nautilus";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-M9kzaiCUV64JgS3110LUbjSeZ2wEf2kAmwqTTi4r0tY=";
+    hash = "sha256-M9kzaiCUV64JgS3110LUbjSeZ2wEf2kAmwqTTi4r0tY="; 
   };
 
   nativeBuildInputs = [
     cmake
     pkg-config
-    python3Packages.wrapPython # Required to make dependencies visible to the script
+    python3Packages.wrapPython
   ];
 
   buildInputs = [
     python3Packages.python
+    python3Packages.pygobject3 # Required for GNOME Python extensions
     nautilus-python
     opencloud-desktop-shell-integration-resources
   ];
 
-  # We force the path to 'share' because GNOME 47's python loader
-  # looks there, not in 'lib/nautilus/extensions-4'.
+  # We let CMake handle the configuration, but we override the destination 
+  # to match the standard Python extension path.
   cmakeFlags = [
     "-DCMAKE_INSTALL_PREFIX=${placeholder "out"}"
     "-DNAUTILUS_EXTENSION_DIR=${placeholder "out"}/share/nautilus-python/extensions"
   ];
 
-  # This ensures the Python script can find the 'opencloud' resources at runtime
   pythonPath = [
     opencloud-desktop-shell-integration-resources
+    python3Packages.pygobject3
   ];
 
-  postFixup = ''
+  # This ensures that when Nautilus loads the script, 
+  # the script can find its 'OpenCloud' Python modules.
+  postInstall = ''
     wrapPythonProgramsIn "$out/share/nautilus-python/extensions" "$pythonPath"
   '';
 
