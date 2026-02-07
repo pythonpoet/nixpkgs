@@ -17,7 +17,7 @@ stdenv.mkDerivation (finalAttrs: {
     owner = "opencloud-eu";
     repo = "desktop-shell-integration-nautilus";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-M9kzaiCUV64JgS3110LUbjSeZ2wEf2kAmwqTTi4r0tY="; # Run nix-build to get the real hash
+    hash = "sha256-M9kzaiCUV64JgS3110LUbjSeZ2wEf2kAmwqTTi4r0tY="; 
   };
 
   nativeBuildInputs = [
