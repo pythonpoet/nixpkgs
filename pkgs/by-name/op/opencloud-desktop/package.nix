@@ -26,7 +26,6 @@ stdenv.mkDerivation (finalAttrs: {
     qt6.qttools
     qt6.qtsvg        # Often needed for tray icons
     qt6.qt5compat
-    qt6.qtquickcontrols2
     kdePackages.extra-cmake-modules
     kdePackages.qtkeychain
     libre-graph-api-cpp-qt-client
