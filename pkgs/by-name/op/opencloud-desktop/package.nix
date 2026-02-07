@@ -26,6 +26,7 @@ stdenv.mkDerivation (finalAttrs: {
     qt6.qttools
     qt6.qtsvg        # Often needed for tray icons
     qt6.qt5compat
+    kdePackages.qtshadertools
     kdePackages.extra-cmake-modules
     kdePackages.qtkeychain
     libre-graph-api-cpp-qt-client
@@ -42,6 +43,11 @@ stdenv.mkDerivation (finalAttrs: {
   doInstallCheck = true;
   nativeInstallCheckInputs = [ versionCheckHook ];
   versionCheckProgram = "${placeholder "out"}/bin/opencloudcmd";
+
+  qtWrapperArgs = [
+    "--set QT_QPA_PLATFORM wayland;xcb"
+  ];
+  
 
   passthru.updateScript = nix-update-script { };
 
