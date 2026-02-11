@@ -280,6 +280,7 @@ in
         wants = [ "network-online.target" ];
         path = [ pkgs.openssl ];
         serviceConfig = {
+          BindPaths = [ cfg.dataDir ];
           User = user;
           Group = group;
           EnvironmentFile = [ configFile ] ++ cfg.environmentFile;
@@ -304,6 +305,7 @@ in
           ProtectKernelTunables = true;
           ProtectProc = "noaccess";
           ProtectSystem = "strict";
+          ReadWritePaths = [ cfg.dataDir ];
           RemoveIPC = true;
           RestrictAddressFamilies = [
             "AF_INET"
@@ -313,7 +315,8 @@ in
           RestrictNamespaces = true;
           RestrictRealtime = true;
           RestrictSUIDSGID = true;
-          inherit StateDirectory;
+          StateDirectory = lib.mkIf (lib.hasPrefix "/var/lib/" cfg.dataDir) (lib.mkBaseName cfg.dataDir);
+
           StateDirectoryMode = "0700";
           SystemCallArchitectures = "native";
           SystemCallFilter = [
@@ -331,7 +334,7 @@ in
       services.backup-vaultwarden = lib.mkIf (cfg.backupDir != null) {
         description = "Backup vaultwarden";
         environment = {
-          DATA_FOLDER = cfg.dataDir;
+          DATA_FOLDER = dataDir;
           BACKUP_FOLDER = cfg.backupDir;
         };
         path = [ pkgs.sqlite ];
@@ -357,8 +360,14 @@ in
         wantedBy = [ "multi-user.target" ];
       };
 
-      tmpfiles.settings = lib.mkIf (cfg.backupDir != null) {
-        "10-vaultwarden".${cfg.backupDir}.d = {
+      tmpfiles.settings = {
+        # This ensures your custom dataDir is created with correct permissions
+        "10-vaultwarden-data"."${cfg.dataDir}".d = {
+          inherit user group;
+          mode = "0700";
+        };
+      } // lib.mkIf (cfg.backupDir != null) {
+        "10-vaultwarden-backup"."${cfg.backupDir}".d = {
           inherit user group;
           mode = "0770";
         };
