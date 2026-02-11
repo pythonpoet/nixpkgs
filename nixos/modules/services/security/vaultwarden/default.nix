@@ -53,7 +53,7 @@ let
       ) cfg.config;
     in
     {
-      DATA_FOLDER = dataDir;
+      DATA_FOLDER = cfg.dataDir;
     }
     // lib.optionalAttrs (!(configEnv ? WEB_VAULT_ENABLED) || configEnv.WEB_VAULT_ENABLED == "true") {
       WEB_VAULT_FOLDER = "${cfg.webVaultPackage}/share/vaultwarden/vault";
@@ -86,6 +86,14 @@ in
       description = ''
         Which database backend vaultwarden will be using.
       '';
+    };
+    dataDir = lib.mkOption {
+      type = with lib.types; nullOr str;
+      default = /var/lib/${StateDirectory};
+      description = ''
+        The directory under which vaultwarden will store its persistent data.
+      '';
+      example = "/var/lib/${StateDirectory}";
     };
 
     backupDir = lib.mkOption {
@@ -212,8 +220,8 @@ in
         message = "Backups for database backends other than sqlite will need customization";
       }
       {
-        assertion = cfg.backupDir != null -> !(lib.hasPrefix dataDir cfg.backupDir);
-        message = "Backup directory can not be in ${dataDir}";
+        assertion = cfg.backupDir != null -> !(lib.hasPrefix cfg.dataDir cfg.backupDir);
+        message = "Backup directory can not be in ${cfg.dataDir}";
       }
       {
         assertion = cfg.configureNginx -> cfg.domain != null;
@@ -323,7 +331,7 @@ in
       services.backup-vaultwarden = lib.mkIf (cfg.backupDir != null) {
         description = "Backup vaultwarden";
         environment = {
-          DATA_FOLDER = dataDir;
+          DATA_FOLDER = cfg.dataDir;
           BACKUP_FOLDER = cfg.backupDir;
         };
         path = [ pkgs.sqlite ];
