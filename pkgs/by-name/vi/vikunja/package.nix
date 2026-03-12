@@ -3,7 +3,7 @@
   fetchFromGitHub,
   stdenv,
   nodejs_24,
-  pnpm_10_29_2,
+  pnpm_10,
   fetchPnpmDeps,
   pnpmConfigHook,
   buildGoModule,
@@ -35,7 +35,7 @@ let
         src
         sourceRoot
         ;
-      pnpm = pnpm_10_29_2;
+      pnpm = pnpm_10;
       fetcherVersion = 1;
       hash = "sha256-oY8DXJFFwLBjUno3EithLhmnA8hTksq4xgMSSOGtwuo=";
     };
@@ -44,7 +44,7 @@ let
       nodejs_24
       dart-sass
       pnpmConfigHook
-      pnpm_10_29_2
+      pnpm_10
     ];
 
     doCheck = true;
@@ -135,11 +135,7 @@ buildGoModule {
     runHook postInstall
   '';
 
-  passthru = {
-    tests.vikunja = nixosTests.vikunja;
-    frontend = frontend;
-    updateScript = ./update.sh;
-  };
+  passthru.tests.vikunja = nixosTests.vikunja;
 
   meta = {
     changelog = "https://github.com/go-vikunja/vikunja/blob/v${version}/CHANGELOG.md";
